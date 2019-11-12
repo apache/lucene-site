@@ -1,3 +1,7 @@
 pelican:
   whoami: master
+  notify: adam@adamwalz.net
+  autobuild: true
   target: asf-staging
+
+staging: false
