@@ -1,0 +1,682 @@
+<!doctype html>
+<html>
+  <head>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE- 2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="minimal-ui, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,600,500' rel='stylesheet' type='text/css'>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/theme/css/solr/lib/foundation/normalize.css" />
+<link rel="stylesheet" href="/theme/css/solr/lib/foundation/foundation.min.css"/>
+<link rel="stylesheet" href="/theme/css/solr/lib/foundation/foundation-icons.css"/>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.3.7/slick.css"/>
+<link rel="stylesheet" href="/theme/css/solr/base.css" />
+<meta name="Distribution" content="Global"/>
+<meta name="Robots" content="index,follow"/>
+
+<script src="/theme/javascript/solr/lib/jquery-2.1.1.min.js"></script>
+<script src="/theme/javascript/solr/lib/foundation/modernizr.js"></script>
+<script src="/theme/javascript/solr/lib/angularjs/angular.min.js"></script>
+<script src="/theme/javascript/solr/lib/angularjs/angular-animate.min.js"></script>
+<script src="/theme/javascript/solr/lib/foundation/foundation.min.js"></script>
+<script src="//cdn.jsdelivr.net/jquery.slick/1.3.7/slick.min.js"/></script>
+<script src="/theme/javascript/solr/lib/jquery.smooth-scroll.min.js"></script>
+<script src="/theme/javascript/solr/main.js"></script>    <title>Apache Solr - </title>
+
+    <meta name="keywords"
+          content="apache, apache lucene, apache solr, solr, lucene,
+                   search, information retrieval, spell checking, faceting, inverted index, open source"/>
+
+   <link rel="icon" href="/theme/images/solr/favicon.ico" type="image/x-icon">
+   <link rel="shortcut icon" href="/theme/images/solr/favicon.ico" type="image/x-icon">
+
+  </head>
+
+  <body class="page " x-ng-app-root="/solr" x-ng-app="page" x-ng-controller="page.controllers.main">
+<div class="contain-to-grid">
+  <div class="header-section">
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <a href="/solr/"><img class="logo" src="/theme/images/solr/logo.svg" /></a>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+      <div class="top-bar-section">
+        <ul class="navigation right">
+          <li>
+            <a href="/solr/news.html">News</a>
+          </li>
+          <li>
+            <a href="/solr/features.html">Features</a>
+          </li>
+          <li>
+            <a href="/solr/resources.html">Resources</a>
+          </li>
+          <li>
+            <a href="/solr/community.html">Community</a>
+          </li>
+          <li class="toggle">
+            <a ng-hide="toggled" ng-click="toggle();" href="#">Search</a>
+            <div id="search">
+<script type="text/javascript">
+  function getBlank(input, stdValue) {
+    if (input.value == stdValue) {
+      input.value = '';
+    }
+    return true;
+  }
+
+function selectProvider(form) {
+  lucidAction = "http://find.searchhub.org/p:lucene,solr";
+  searchLuceneAction = "http://search-lucene.com/solr";
+
+  provider = document.getElementById('searchProvider').value;
+  if (provider == "lucid" || provider == "sl") {
+    if (provider == "lucid") {
+      form.action = lucidAction;
+    } else if (provider == "sl") {
+      form.action = searchLuceneAction;
+    }
+
+    // Only store provider preference cookie if the user selected it
+    days = 90; // cookie will be valid for 90 days
+    date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    expires = "; expires=" + date.toGMTString();
+    document.cookie = "searchProvider=" + provider + expires + "; path=/";
+  } else {
+    if (Math.random() > 0.5) {
+      form.action = lucidAction;
+    } else {
+      form.action = searchLuceneAction;
+    }
+  }
+  return true;
+}
+</script>
+
+<form id="quick-search" method="GET" onsubmit="return selectProvider(this)"
+                                     action="http://search-lucene.com/solr"
+                                     name="searchform">
+  <fieldset>
+    <div ng-show="toggled" class="search-box ng-hide">
+      <input type="search" name="q" placeholder="Search |" accesskey="q"
+                                                           onfocus="getBlank(this, 'Search |');"/>
+      <a class="search-button" type="submit"
+                               onclick="form = document.getElementById('quick-search'); selectProvider(form); form.submit();"><img src="/theme/images/solr/magnifying-glass.png"/></a>
+      <select id="searchProvider" class="search-provider">
+        <option value="any"> - select provider - </option>
+        <option value="lucid">@ Lucid Find</option>
+        <option value="sl">@ Search-Lucene</option>
+      </select>
+    </div>
+  </fieldset>
+  <script type="text/javascript">
+    if (document.cookie.length > 0) {
+      cStart = document.cookie.indexOf("searchProvider=");
+      if (cStart != -1) {
+        cStart = cStart + "searchProvider=".length;
+        cEnd = document.cookie.indexOf(";", cStart);
+        if (cEnd == -1) {
+          cEnd = document.cookie.length;
+        }
+        provider = unescape(document.cookie.substring(cStart, cEnd));
+        document.getElementById('searchProvider').value = provider;
+      }
+    }
+  </script>
+</form>            </div>
+          </li>
+          <li>
+            <a class="btn" href="/solr/downloads.html">Download</a>
+          </li>
+          <li >
+            <a class="lucene-btn" href="/index.html">Lucene<br />&#8679; TLP</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<div class="header-fill"></div><div class="container">
+  <div class="row">
+<div class="small-12 columns">
+
+  <style type="text/css">
+.headerlink, .elementid-permalink {
+  visibility: hidden;
+}
+          h2:hover > .headerlink, h3:hover > .headerlink, h1:hover > .headerlink, h6:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, dt:hover > .elementid-permalink {
+            visibility: visible
+          }
+  </style>
+  <h1 id="solr-news">Solr<sup>™</sup> News<a class="headerlink" href="#solr-news" title="Permanent link">¶</a></h1>
+  
+
+  <h2 id="apache-solrtm-830-available" class="offset">2 November 2019, Apache Solr™ 8.3.0 available
+    <a class="headerlink" href="#apache-solrtm-830-available" title="Permanent link">¶</a>
+  </h2>
+  <p>The Lucene PMC is pleased to announce the release of Apache Solr 8.3.0.</p>
+<p>Solr is the popular, blazing fast, open source NoSQL search platform from the Apache Lucene project. Its major features include powerful full-text search, hit highlighting, faceted search, dynamic clustering, database integration, rich document handling, and geospatial search. Solr is highly scalable, providing fault tolerant distributed search and indexing, and powers the search and navigation features of many of the world's largest internet sites.</p>
+<p>Solr 8.3.0 is available for immediate download at:</p>
+<p><a href="https://lucene.apache.org/solr/downloads.html">https://lucene.apache.org/solr/downloads.html</a></p>
+<h3 id="solr-830-release-highlights">Solr 8.3.0 Release Highlights:</h3>
+<ul>
+<li>Two dimensional routed aliases are now available for organizing collections based on the data values of two fields</li>
+<li>SPLITSHARD implements a new splitByPrefix option that takes into account the actual document distribution when using compositeIds</li>
+<li>QueryElevationComponent can have query rules configured with match="subset" wherein the words need only match a subset of the query's words and in any order</li>
+<li>Command line option to export documents to a file</li>
+<li>Support deterministic replica routing preferences for better cache usage</li>
+<li>Ability to query aliases in Solr Admin UI</li>
+<li>JWTAuthPlugin supports multiple JWKS endpoints and multiple IdP issuers</li>
+<li>JSON faceting now supports arbitrary ranges for range facets</li>
+<li>Support integral plots, cosine distance and string truncation with math expressions (Joel Bernstein)</li>
+<li>New cat() stream source to create tuples from lines in local files</li>
+<li>Add upper, lower, trim and split Stream Evaluators</li>
+<li>Add CsvStream, TsvStream Streaming Expressions and supporting Stream Evaluators</li>
+<li>Add CaffeineCache, an efficient implementation of SolrCache</li>
+<li>Live SPLITSHARD can lose updates due to cluster state change between checking if the current shard is active and later checking if there are any sub-shard leaders to forward the update to</li>
+<li>Fix for SPLITSHARD (async) with failures in underlying sub-operations can result in data loss</li>
+<li>Allow dynamic resizing of SolrCache-s</li>
+<li>Allow optional redaction of data saved by 'bin/solr autoscaling -save'</li>
+<li>Optimized large managed schema modifications (internal O(n^2) problem)</li>
+<li>Max idle time support for SolrCache implementations</li>
+<li>Add Prometheus Exporter GC and Heap options</li>
+<li>SSL: Adding Enabling/Disabling client's hostname verification config</li>
+<li>Introducing SolrClient.ping(collection) in SolrJ</li>
+<li>Fix for CDCR bootstrap not replicating index to the replicas of target cluster</li>
+<li>Fixed a race condition when initializing metrics for new security plugins on security.json change</li>
+<li>Fixed JWTAuthPlugin to update metrics prior to continuing w/other filters or returning error</li>
+<li>Fixed distributed grouping when multiple 'fl' params are specified</li>
+<li>JMX MBeans are not exposed because of race condition between creating platform mbean server and registering mbeans</li>
+<li>Fix for class-cast issues during atomic-update 'removeregex' operations</li>
+<li>Fix for multi-node race condition to create/remove nodeLost markers</li>
+<li>Fix for too many cascading calls to remote servers, which can bring down nodes</li>
+<li>Fix for MOVEREPLICA ignoring replica type and always adding 'nrt' replicas</li>
+<li>Fix: DistributedZkUpdateProcessor should propagate URP.finish() lifecycle (regression since 8.1)</li>
+</ul>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="https://lucene.apache.org/solr/8_3_0/changes/Changes.html">https://lucene.apache.org/solr/8_3_0/changes/Changes.html</a></p>
+<p>Solr 8.3.0 also includes features, optimizations  and bugfixes in the corresponding Apache Lucene release:</p>
+<p><a href="https://lucene.apache.org/core/8_3_0/changes/Changes.html">https://lucene.apache.org/core/8_3_0/changes/Changes.html</a></p>
+  <h2 id="announce-811-and-820-users-check-enable_remote_jmx_opts-setting" class="offset">14 August 2019, [ANNOUNCE] 8.1.1 and 8.2.0 users check ENABLE_REMOTE_JMX_OPTS setting
+    <a class="headerlink" href="#announce-811-and-820-users-check-enable_remote_jmx_opts-setting" title="Permanent link">¶</a>
+  </h2>
+  <div class="highlight"><pre><span></span><span class="nv">Severity</span>: <span class="nv">Low</span>
+
+<span class="nv">Versions</span> <span class="nv">Affected</span>:
+<span class="mi">8</span>.<span class="mi">1</span>.<span class="mi">1</span> <span class="nv">and</span> <span class="mi">8</span>.<span class="mi">2</span>.<span class="mi">0</span> <span class="k">for</span> <span class="nv">Linux</span>
+
+<span class="nv">Description</span>:
+<span class="nv">It</span> <span class="nv">has</span> <span class="nv">been</span> <span class="nv">discovered</span> [<span class="mi">1</span>] <span class="nv">that</span> <span class="nv">the</span> <span class="mi">8</span>.<span class="mi">1</span>.<span class="mi">1</span> <span class="nv">and</span> <span class="mi">8</span>.<span class="mi">2</span>.<span class="mi">0</span> <span class="nv">releases</span> <span class="nv">contain</span> <span class="nv">a</span> <span class="nv">bad</span> <span class="nv">default</span>
+<span class="nv">setting</span> <span class="k">for</span> <span class="nv">the</span> <span class="nv">ENABLE_REMOTE_JMX_OPTS</span> <span class="nv">setting</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">default</span> <span class="nv">solr</span>.<span class="nv">in</span>.<span class="nv">sh</span> <span class="nv">file</span>
+<span class="nv">shipping</span> <span class="nv">with</span> <span class="nv">Solr</span>.
+
+<span class="nv">Windows</span> <span class="nv">users</span> <span class="nv">and</span> <span class="nv">users</span> <span class="nv">with</span> <span class="nv">custom</span> <span class="nv">solr</span>.<span class="nv">in</span>.<span class="nv">sh</span> <span class="nv">files</span> <span class="nv">are</span> <span class="nv">not</span> <span class="nv">affected</span>.
+
+<span class="k">If</span> <span class="nv">you</span> <span class="nv">are</span> <span class="nv">using</span> <span class="nv">the</span> <span class="nv">default</span> <span class="nv">solr</span>.<span class="nv">in</span>.<span class="nv">sh</span> <span class="nv">file</span> <span class="nv">from</span> <span class="nv">the</span> <span class="nv">affected</span> <span class="nv">releases</span>, <span class="k">then</span>
+<span class="nv">JMX</span> <span class="nv">monitoring</span> <span class="nv">will</span> <span class="nv">be</span> <span class="nv">enabled</span> <span class="nv">and</span> <span class="nv">exposed</span> <span class="nv">on</span> <span class="nv">JMX_PORT</span> <span class="ss">(</span><span class="nv">default</span> <span class="o">=</span> <span class="mi">18983</span><span class="ss">)</span>,
+<span class="nv">without</span> <span class="nv">any</span> <span class="nv">authentication</span>. <span class="nv">So</span> <span class="k">if</span> <span class="nv">your</span> <span class="nv">firewalls</span> <span class="nv">allows</span> <span class="nv">inbound</span> <span class="nv">traffic</span> <span class="nv">on</span>
+<span class="nv">JMX_PORT</span>, <span class="k">then</span> <span class="nv">anyone</span> <span class="nv">with</span> <span class="nv">network</span> <span class="nv">access</span> <span class="nv">to</span> <span class="nv">your</span> <span class="nv">Solr</span> <span class="nv">nodes</span> <span class="nv">will</span> <span class="nv">be</span> <span class="nv">able</span> <span class="nv">to</span>
+<span class="nv">access</span> <span class="nv">monitoring</span> <span class="nv">data</span> <span class="nv">exposed</span> <span class="nv">over</span> <span class="nv">JMX</span>.
+
+<span class="nv">Mitigation</span>:
+<span class="nv">Edit</span> <span class="nv">solr</span>.<span class="nv">in</span>.<span class="nv">sh</span>, <span class="nv">set</span> <span class="nv">ENABLE_REMOTE_JMX_OPTS</span><span class="o">=</span><span class="nv">false</span> <span class="nv">and</span> <span class="nv">restart</span> <span class="nv">Solr</span>.
+<span class="nv">Alternatively</span> <span class="k">wait</span> <span class="k">for</span> <span class="nv">the</span> <span class="nv">future</span> <span class="mi">8</span>.<span class="mi">3</span>.<span class="mi">0</span> <span class="nv">release</span> <span class="nv">and</span> <span class="nv">upgrade</span>.
+
+<span class="nv">References</span>:
+[<span class="mi">1</span>] <span class="nv">https</span>:<span class="o">//</span><span class="nv">issues</span>.<span class="nv">apache</span>.<span class="nv">org</span><span class="o">/</span><span class="nv">jira</span><span class="o">/</span><span class="nv">browse</span><span class="o">/</span><span class="nv">SOLR</span><span class="o">-</span><span class="mi">13647</span>
+</pre></div>
+  <h2 id="apache-solrtm-820-available" class="offset">26 July 2019, Apache Solr™ 8.2.0 available
+    <a class="headerlink" href="#apache-solrtm-820-available" title="Permanent link">¶</a>
+  </h2>
+  <p>The Lucene PMC is pleased to announce the release of Apache Solr 8.2.0</p>
+<p>Solr is the popular, blazing fast, open source NoSQL search platform from the Apache Lucene project. Its major features include powerful full-text search, hit highlighting, faceted search, dynamic clustering, database integration, rich document (e.g., Word, PDF) handling, and geospatial search. Solr is highly scalable, providing fault tolerant distributed search and indexing, and powers the search and navigation features of many of the world's largest internet sites.</p>
+<p>Solr 8.2.0 is available for immediate download at:
+  <a href="https://lucene.apache.org/solr/downloads.html">https://lucene.apache.org/solr/downloads.html</a></p>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="https://lucene.apache.org/solr/8_2_0/changes/Changes.html">https://lucene.apache.org/solr/8_2_0/changes/Changes.html</a></p>
+<h3 id="solr-820-release-highlights">Solr 8.2.0 Release Highlights</h3>
+<h4 id="new-features">New features</h4>
+<ul>
+<li>Add an update param failOnVersionConflicts=false to updates not fail when there is a version conflict</li>
+<li>Add facet2D Streaming Expression.</li>
+<li>Preferred replicas on nodes with same system properties as the query master</li>
+<li>OpenTracing support for Solr</li>
+<li>Raw index data analysis tool (extension of COLSTATUS collection command).</li>
+<li>Add recNum Stream Evaluator.</li>
+<li>Allow zplot to visualize 2D clusters and convex hulls.</li>
+<li>Add a field type for Estonian language to default managed_schema, document about Estonian language analysis in Solr Ref Guide</li>
+</ul>
+<h4 id="bug-fixes">Bug Fixes</h4>
+<ul>
+<li>Intermittent 401's for internode requests with basicauth enabled.</li>
+<li>In 8.1, Atomic Updates were broken (NPE) when the schema declared the new <em>nest_path</em> field even if you weren't using nested docs. In-place updates were not affected (worked)</li>
+<li>Fix atomic update encoding issue for UUID, enum, bool, and binary fields.</li>
+<li>Impossible to delete a collection with the same name as an existing alias. This fixes also a bug inREINDEXCOLLECTION when used with removeSource=true which could lead to a data loss.</li>
+</ul>
+<p>Solr 8.2.0 also includes many other new features as well as numerous optimizations and bugfixes of the corresponding Apache Lucene release:</p>
+<p><a href="http://lucene.apache.org/core/8_2_0/changes/Changes.html">http://lucene.apache.org/core/8_2_0/changes/Changes.html</a></p>
+  <h2 id="apache-solrtm-772-available" class="offset">4 June 2019, Apache Solr™ 7.7.2 available
+    <a class="headerlink" href="#apache-solrtm-772-available" title="Permanent link">¶</a>
+  </h2>
+  <p>The Lucene PMC is pleased to announce the release of Apache Solr 7.7.2.</p>
+<p>Solr is the popular, blazing fast, open source NoSQL search platform from the Apache Lucene project. Its major features include powerful full-text search, hit highlighting, faceted search, dynamic clustering, database integration, rich document handling, and geospatial search. Solr is highly scalable, providing fault tolerant distributed search and indexing, and powers the search and navigation features of many of the world's largest internet sites.</p>
+<p>Solr 7.7.2 is available for immediate download at:</p>
+<p><a href="https://lucene.apache.org/solr/downloads.html">https://lucene.apache.org/solr/downloads.html</a></p>
+<h3 id="solr-772-release-highlights">Solr 7.7.2 Release Highlights:</h3>
+<ul>
+<li>High CPU usage in Solr due to Java 8 bug (SOLR–13349)</li>
+<li>Multiplicative query boost in certain conditions not applied (SOLR–13126)</li>
+<li>InPlace update sometimes fail if schema has a required field (SOLR–11876)</li>
+<li>Admin UI inaccessible with RuleBasedAuthorizationPlugin (SOLR–13344)</li>
+<li>MetricsHistoryHandler does not work with BasicAuth (SOLR–12860)</li>
+<li>ByteArrayUtf8CharSequence cannot be cast to java.lang.String (SOLR–13285)</li>
+</ul>
+<p>Please read CHANGES.txt for a full list of and changes:</p>
+<p><a href="https://lucene.apache.org/solr/7_7_2/changes/Changes.html">https://lucene.apache.org/solr/7_7_2/changes/Changes.html</a></p>
+<p>Solr 7.7.2 also includes bugfixes in the corresponding Apache Lucene release:</p>
+<p><a href="https://lucene.apache.org/core/7_7_2/changes/Changes.html">https://lucene.apache.org/core/7_7_2/changes/Changes.html</a></p>
+  <h2 id="apache-solrtm-811-available" class="offset">28 May 2019, Apache Solr™ 8.1.1 available
+    <a class="headerlink" href="#apache-solrtm-811-available" title="Permanent link">¶</a>
+  </h2>
+  <p>The Lucene PMC is pleased to announce the release of Apache Solr 8.1.1</p>
+<p>Solr is the popular, blazing fast, open source NoSQL search platform from the
+Apache Lucene project. Its major features include powerful full-text search,
+hit highlighting, faceted search, dynamic clustering, database integration, rich document
+(e.g., Word, PDF) handling, and geospatial search. Solr is highly scalable, providing fault
+tolerant distributed search and indexing, and powers the search and navigation features of
+many of the world's largest internet sites.</p>
+<p>Solr 8.1.1 is available for immediate download at:
+  <a href="http://lucene.apache.org/solr/downloads.html">http://lucene.apache.org/solr/downloads.html</a></p>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="http://lucene.apache.org/solr/8_1_1/changes/Changes.html">http://lucene.apache.org/solr/8_1_1/changes/Changes.html</a></p>
+<h3 id="solr-811-release-highlights">Solr 8.1.1 Release Highlights</h3>
+<ul>
+<li>Fix for a Null Pointer Exception when querying collection through collection alias.</li>
+</ul>
+  <h2 id="apache-solrtm-810-available" class="offset">16 May 2019, Apache Solr™ 8.1.0 available
+    <a class="headerlink" href="#apache-solrtm-810-available" title="Permanent link">¶</a>
+  </h2>
+  <p>The Lucene PMC is pleased to announce the release of Apache Solr 8.1.0</p>
+<p>Solr is the popular, blazing fast, open source NoSQL search platform from the
+Apache Lucene project. Its major features include powerful full-text search,
+hit highlighting, faceted search, dynamic clustering, database integration, rich document
+(e.g., Word, PDF) handling, and geospatial search. Solr is highly scalable, providing fault
+tolerant distributed search and indexing, and powers the search and navigation features of
+many of the world's largest internet sites.</p>
+<p>Solr 8.1.0 is available for immediate download at:
+  <a href="http://lucene.apache.org/solr/downloads.html">http://lucene.apache.org/solr/downloads.html</a></p>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="http://lucene.apache.org/solr/8_1_0/changes/Changes.html">http://lucene.apache.org/solr/8_1_0/changes/Changes.html</a></p>
+<h3 id="solr-810-release-highlights">Solr 8.1.0 Release Highlights</h3>
+<ul>
+<li>Partial/Atomic Updates for nested documents. This enables atomic updates for nested documents, without the need to supply the whole nested hierarchy (which would be overwritten if absent).</li>
+<li>Category Routed Aliases feature introduced for data driven assignment of documents to collections based on values of a field</li>
+<li>JWT Token authentication plugin with OpenID Connect implicit flow login through Admin UI</li>
+<li>REINDEXCOLLECTION command for re-indexing of existing collections</li>
+<li>Collection RENAME command and support using aliases in most collection admin commands</li>
+<li>Read-only mode for SolrCloud collections</li>
+</ul>
+<p>Solr 8.1.0 also includes many other new features as well as numerous optimizations and bugfixes of the corresponding Apache Lucene release:</p>
+<p><a href="http://lucene.apache.org/core/8_1_0/changes/Changes.html">http://lucene.apache.org/core/8_1_0/changes/Changes.html</a></p>
+  <h2 id="apache-solrtm-666-available" class="offset">5 April 2019, Apache Solr™ 6.6.6 available
+    <a class="headerlink" href="#apache-solrtm-666-available" title="Permanent link">¶</a>
+  </h2>
+  <p>The Lucene PMC is pleased to announce the release of Apache Solr 6.6.6</p>
+<p>Solr is the popular, blazing fast, open source NoSQL search platform from the
+Apache Lucene project. Its major features include powerful full-text search,
+hit highlighting, faceted search and analytics, rich document parsing,
+geospatial search, extensive REST APIs as well as parallel SQL. Solr is
+enterprise grade, secure and highly scalable, providing fault tolerant
+distributed search and indexing, and powers the search and navigation
+features of many of the world's largest internet sites.</p>
+<p>Solr 6.6.6 is available for immediate download at:</p>
+<p><a href="http://archive.apache.org/dist/lucene/solr/6.6.6">http://archive.apache.org/dist/lucene/solr/6.6.6</a></p>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="https://lucene.apache.org/solr/6_6_6/changes/Changes.html">https://lucene.apache.org/solr/6_6_6/changes/Changes.html</a></p>
+<h3 id="solr-666-release-highlights">Solr 6.6.6 Release Highlights:</h3>
+<ul>
+<li>Fix memory leak (upon collection reload or ZooKeeper session expiry) in ZkIndexSchemaReader.</li>
+<li>Fix for Rule-based Authorization skipping authorization if querying node host the collection</li>
+<li>(CVE-2017-3164) Make it possible to configure a host whitelist for distributed search</li>
+</ul>
+  <h2 id="apache-solrtm-800-available" class="offset">14 March 2019, Apache Solr™ 8.0.0 available
+    <a class="headerlink" href="#apache-solrtm-800-available" title="Permanent link">¶</a>
+  </h2>
+  <p>The Lucene PMC is pleased to announce the release of Apache Solr 8.0.0</p>
+<p>Solr is the popular, blazing fast, open source NoSQL search platform from the
+Apache Lucene project. Its major features include powerful full-text search,
+hit highlighting, faceted search, dynamic clustering, database integration, rich document
+(e.g., Word, PDF) handling, and geospatial search. Solr is highly scalable, providing fault
+tolerant distributed search and indexing, and powers the search and navigation features of
+many of the world's largest internet sites.</p>
+<p>Solr 8.0.0 is available for immediate download at:
+  <a href="http://lucene.apache.org/solr/downloads.html">http://lucene.apache.org/solr/downloads.html</a></p>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="http://lucene.apache.org/solr/8_0_0/changes/Changes.html">http://lucene.apache.org/solr/8_0_0/changes/Changes.html</a></p>
+<h3 id="solr-800-release-highlights">Solr 8.0.0 Release Highlights</h3>
+<ul>
+<li>
+<p>Solr now uses HTTP/2 for inter-node communication to attain greater efficiency.
+Details:  Solr is switching from Apache HttpClient to Jetty Client for adding HTTP/2 support.
+Most frequent inter-communication between nodes like indexing and query are now sent in HTTP/2.
+HTTP/1.1 practically allows only one outstanding request per TCP connection this means that for sending multiple requests at the same time multiple TCP connections must be established.
+This leads to waste of resources on both-sides and long GC-pause.
+Solr 8 with HTTP/2 support overcomes that problem by allowing multiple requests can be sent in parallel using a same TCP connection.</p>
+</li>
+<li>
+<p>Nested documents (AKA child documents or block join) is significantly improved.
+Most improvements come from storing and leveraging more information about the relationships in the index, like the named relationship between a child and its parent.
+This information is used by the [child] doc transformer to return children in nested form instead of flat.
+There is plenty more that can be done with this in the future.
+Another key improvement is that nested documents can be deleted or replaced in a natural way without orphaning child documents; although care is still needed with delete-by-query.</p>
+</li>
+</ul>
+<p>Being a major release, Solr 8 removes many deprecated APIs, changes various parameter defaults and behavior. Some changes may require a re-index of your content.
+You are thus encouraged to thoroughly read the "Upgrade Notes" at:</p>
+<p><a href="http://lucene.apache.org/solr/8_0_0/changes/Changes.html">http://lucene.apache.org/solr/8_0_0/changes/Changes.html</a></p>
+<p>Solr 8.0 also includes many other new features as well as numerous optimizations and bugfixes of the corresponding Apache Lucene release:</p>
+<p><a href="http://lucene.apache.org/core/8_0_0/changes/Changes.html">http://lucene.apache.org/core/8_0_0/changes/Changes.html</a></p>
+  <h2 id="apache-solr-reference-guide-77-available" class="offset">11 March 2019, Apache Solr Reference Guide 7.7 available
+    <a class="headerlink" href="#apache-solr-reference-guide-77-available" title="Permanent link">¶</a>
+  </h2>
+  <p>The Lucene PMC is pleased to announce that the Solr Reference Guide for 7.7 is now available.  This 1,431-page PDF is the definitive guide to using Apache Solr, the search server built on Lucene.</p>
+<p>The PDF Guide can be downloaded from: <a href="https://www.apache.org/dyn/closer.cgi/lucene/solr/ref-guide/apache-solr-ref-guide-7.7.pdf">https://www.apache.org/dyn/closer.cgi/lucene/solr/ref-guide/apache-solr-ref-guide-7.7.pdf</a>.  It is also available online at <a href="https://lucene.apache.org/solr/guide/7_7">https://lucene.apache.org/solr/guide/7_7</a>.</p>
+  <h2 id="apache-solrtm-771-available" class="offset">1 March 2019, Apache Solr™ 7.7.1 available
+    <a class="headerlink" href="#apache-solrtm-771-available" title="Permanent link">¶</a>
+  </h2>
+  <p>The Lucene PMC is pleased to announce the release of Apache Solr 7.7.1</p>
+<p>Solr is the popular, blazing fast, open source NoSQL search platform from the
+Apache Lucene project. Its major features include powerful full-text search,
+hit highlighting, faceted search, dynamic clustering, database integration, rich document
+(e.g., Word, PDF) handling, and geospatial search. Solr is highly scalable, providing fault
+tolerant distributed search and indexing, and powers the search and navigation features of
+many of the world's largest internet sites.</p>
+<p>Solr 7.7.1 is available for immediate download at:
+  <a href="http://lucene.apache.org/solr/downloads.html">http://lucene.apache.org/solr/downloads.html</a></p>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="http://lucene.apache.org/solr/7_7_1/changes/Changes.html">http://lucene.apache.org/solr/7_7_1/changes/Changes.html</a></p>
+<h3 id="solr-771-release-highlights">Solr 7.7.1 Release Highlights:</h3>
+<ul>
+<li>
+<p>Bugfix for ClassCastException when URPs try to read a String field which returns a ByteArrayUTF8CHarSequence (a
+   regression in release 7.7.0).</p>
+</li>
+<li>
+<p>Bugfix: Autoscaling based replica placement was broken out of the box. Solr 7.6 enabled autoscaling based replica
+   placement by default but in the absence of default cluster policies, autoscaling can place more than 1 replica of the
+   same shard on the same node. Also, the maxShardsPerNode and createNodeSet was not respected. Due to these reasons,
+   this issue reverts the default replica placement policy to the 'legacy' assignment policy that was the default until
+   Solr 7.5.</p>
+</li>
+</ul>
+  <h2 id="apache-solrtm-770-available" class="offset">11 February 2019, Apache Solr™ 7.7.0 available
+    <a class="headerlink" href="#apache-solrtm-770-available" title="Permanent link">¶</a>
+  </h2>
+  <p>The Lucene PMC is pleased to announce the release of Apache Solr 7.7.0</p>
+<p>Solr is the popular, blazing fast, open source NoSQL search platform from the
+Apache Lucene project. Its major features include powerful full-text search,
+hit highlighting, faceted search, dynamic clustering, database integration, rich document
+(e.g., Word, PDF) handling, and geospatial search. Solr is highly scalable, providing fault
+tolerant distributed search and indexing, and powers the search and navigation features of
+many of the world's largest internet sites.</p>
+<p>Solr 7.7.0 is available for immediate download at:
+  <a href="http://lucene.apache.org/solr/downloads.html">http://lucene.apache.org/solr/downloads.html</a></p>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="http://lucene.apache.org/solr/7_7_0/changes/Changes.html">http://lucene.apache.org/solr/7_7_0/changes/Changes.html</a></p>
+<h3 id="solr-770-release-highlights">Solr 7.7.0 Release Highlights:</h3>
+<ul>
+<li>URI Too Long with large streaming expressions in SolrJ.</li>
+<li>A failure while reloading a SolrCore can result in the SolrCore not being closed.</li>
+<li>Spellcheck parameters not working in new UI.</li>
+<li>New Admin UI Query does not URL-encode the query produced in the URL box.</li>
+<li>Rule-base Authorization plugin skips authorization if querying node does not have collection replica.</li>
+<li>Solr installer fails on SuSE linux.</li>
+<li>Fix incorrect SOLR_SSL_KEYSTORE_TYPE variable in solr start script.</li>
+<li>JSON 'terms' Faceting now supports a 'prelim_sort' option to use when initially selecting the top ranking buckets, prior to the final 'sort' option used after refinement.</li>
+<li>Add a login page to Admin UI, with initial support for Basic Auth and Kerberos.</li>
+<li>New Node-level health check handler at /admin/info/healthcheck and /node/health paths that checks if the node is live, connected to zookeeper and not shutdown.</li>
+<li>It is now possible to configure a host whitelist for distributed search.</li>
+</ul>
+  <h2 id="apache-solrtm-760-available" class="offset">14 December 2018, Apache Solr™ 7.6.0 available
+    <a class="headerlink" href="#apache-solrtm-760-available" title="Permanent link">¶</a>
+  </h2>
+  <p>The Lucene PMC is pleased to announce the release of Apache Solr 7.6.0</p>
+<p>Solr is the popular, blazing fast, open source NoSQL search platform from the
+Apache Lucene project. Its major features include powerful full-text search,
+hit highlighting, faceted search, dynamic clustering, database integration, rich document
+(e.g., Word, PDF) handling, and geospatial search. Solr is highly scalable, providing fault
+tolerant distributed search and indexing, and powers the search and navigation features of
+many of the world's largest internet sites.</p>
+<p>Solr 7.6.0 is available for immediate download at:
+  <a href="http://lucene.apache.org/solr/downloads.html">http://lucene.apache.org/solr/downloads.html</a></p>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="http://lucene.apache.org/solr/7_6_0/changes/Changes.html">http://lucene.apache.org/solr/7_6_0/changes/Changes.html</a></p>
+<h3 id="solr-760-release-highlights">Solr 7.6.0 Release Highlights:</h3>
+<ul>
+<li>Field and FieldType now support a new <code>uninvertible</code> option to control using costly field cache or more efficient docValues.</li>
+<li>Collections API has been improved to support adding multiple replicas to a collection shard at a time as well as splitting into multiple sub-shards directly..</li>
+<li>Autoscaling's suggestions API now include rebalance options as well as suggestions to add new replicas for lost replicas.</li>
+<li>Several new Stream Evaluators have been added to include: oscillate, convexHull, enclosingDisk, pairSort, log10, percentiles, and pivot for geometric and scientific analysis.</li>
+<li>UnifiedHighlighter has been improved to support best/perfect highlighting accuracy and full phrase highlighting.</li>
+</ul>
+  <h2 id="apache-solrtm-750-available" class="offset">24 September 2018, Apache Solr™ 7.5.0 available
+    <a class="headerlink" href="#apache-solrtm-750-available" title="Permanent link">¶</a>
+  </h2>
+  <p>The Lucene PMC is pleased to announce the release of Apache Solr 7.5.0</p>
+<p>Solr is the popular, blazing fast, open source NoSQL search platform from the
+Apache Lucene project. Its major features include powerful full-text search,
+hit highlighting, faceted search, dynamic clustering, database integration, rich document
+(e.g., Word, PDF) handling, and geospatial search. Solr is highly scalable, providing fault
+tolerant distributed search and indexing, and powers the search and navigation features of
+many of the world's largest internet sites.</p>
+<p>Solr 7.5.0 is available for immediate download at:
+  <a href="http://lucene.apache.org/solr/downloads.html">http://lucene.apache.org/solr/downloads.html</a></p>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="http://lucene.apache.org/solr/7_5_0/changes/Changes.html">http://lucene.apache.org/solr/7_5_0/changes/Changes.html</a></p>
+<h3 id="solr-750-release-highlights">Solr 7.5.0 Release Highlights:</h3>
+<ul>
+<li>Nested/child documents may now be supplied as a field value instead of stand-off. Future releases will leverage this semantic information.</li>
+<li>Enhance Autoscaling policy support to equally distribute replicas on the basis of arbitrary properties.</li>
+<li>Nodes are now visible inside a view of the Admin UI "Cloud" tab, listing nodes and key metrics.</li>
+<li>The status of zookeeper ensemble is now accessible under the Admin UI Cloud tab.</li>
+<li>The new Korean morphological analyzer ("nori") has been added to default distribution.</li>
+</ul>
+  <h2 id="apache-solrtm-665-available" class="offset">3 July 2018, Apache Solr™ 6.6.5 available
+    <a class="headerlink" href="#apache-solrtm-665-available" title="Permanent link">¶</a>
+  </h2>
+  <p>The Lucene PMC is pleased to announce the release of Apache Solr 6.6.5</p>
+<p>Solr is the popular, blazing fast, open source NoSQL search platform from the
+Apache Lucene project. Its major features include powerful full-text search,
+hit highlighting, faceted search and analytics, rich document parsing,
+geospatial search, extensive REST APIs as well as parallel SQL. Solr is
+enterprise grade, secure and highly scalable, providing fault tolerant
+distributed search and indexing, and powers the search and navigation
+features of many of the world's largest internet sites.</p>
+<p>Solr 6.6.5 is available for immediate download at:</p>
+<p><a href="http://archive.apache.org/dist/lucene/solr/6.6.5">http://archive.apache.org/dist/lucene/solr/6.6.5</a></p>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="https://lucene.apache.org/solr/6_6_5/changes/Changes.html">https://lucene.apache.org/solr/6_6_5/changes/Changes.html</a></p>
+<h3 id="solr-665-release-highlights">Solr 6.6.5 Release Highlights:</h3>
+<ul>
+<li>Ability to disable configset upload via -Dconfigset.upload.enabled=false startup parameter</li>
+<li>Referal to external resources in various config files now disallowed</li>
+</ul>
+  <h2 id="apache-solrtm-740-available" class="offset">27 June 2018, Apache Solr™ 7.4.0 available
+    <a class="headerlink" href="#apache-solrtm-740-available" title="Permanent link">¶</a>
+  </h2>
+  <p>The Lucene PMC is pleased to announce the release of Apache Solr 7.4.0</p>
+<p>Solr is the popular, blazing fast, open source NoSQL search platform from the
+Apache Lucene project. Its major features include powerful full-text search,
+hit highlighting, faceted search and analytics, rich document parsing,
+geospatial search, extensive REST APIs as well as parallel SQL. Solr is
+enterprise grade, secure and highly scalable, providing fault tolerant
+distributed search and indexing, and powers the search and navigation
+features of many of the world's largest internet sites.</p>
+<p>Solr 7.4.0 is available for immediate download at:</p>
+<p><a href="http://lucene.apache.org/solr/downloads.html">http://lucene.apache.org/solr/downloads.html</a></p>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="https://lucene.apache.org/solr/7_4_0/changes/Changes.html">https://lucene.apache.org/solr/7_4_0/changes/Changes.html</a></p>
+<h3 id="solr-740-release-highlights">Solr 7.4.0 Release Highlights:</h3>
+<ul>
+<li>A new 'relatedness()' aggregate function for JSON Faceting to enable building Semantic Knowledge Graphs.</li>
+<li>Added the TaggerRequestHandler (AKA SolrTextTagger) for tagging text. It's used as a component of NER/ERD systems including query-understanding.</li>
+<li>The "Auto Scaling" feature area has been added to and enhanced a lot.</li>
+<li>The "Streaming Expressions" feature area has been added to and enhanced a lot.</li>
+<li>Upgraded from Log4j 1.x to 2.x.  Solr continues to log via SLF4J.</li>
+</ul>
+</div>
+  </div>
+</div>
+    <footer>
+<div class="row">
+  <div class="small-6 medium-3 columns">
+    <h4>Features</h4>
+    <ul>
+      <li><a href="/solr/features.html">Overview</a></li>
+      <li><a href="/solr/features.html#data-handling">Data Handling</a></li>
+      <li><a href="/solr/features.html#query">Querying</a></li>
+      <li><a href="/solr/features.html#facets">Faceting</a></li>
+      <li><a href="/solr/features.html#discovery">Discovery</a></li>
+      <li><a href="/solr/features.html#plugins">Plugins and Extensions</a></li>
+      <li><a href="/solr/features.html#stats">Statistics and Aggregations</a></li>
+      <li><a href="/solr/features.html#spatial">Spatial</a></li>
+      <li><a href="/solr/features.html#rich-content">Rich Content</a></li>
+      <li><a href="/solr/features.html#performance">Performance</a></li>
+      <li><a href="/solr/features.html#solrcloud">Scaling with SolrCloud</a></li>
+      <li><a href="/solr/features.html#admin-ui">User Interface</a></li>
+    </ul>
+  </div>
+  <div class="small-6 medium-3 columns">
+    <h4>Resources</h4>
+    <ul>
+      <li><a href="/solr/resources.html#tutorials">Tutorial</a></li>
+      <li><a href="/solr/resources.html#documentation">Docs</a></li>
+      <li><a href="/solr/resources.html#solr-books">Books</a></li>
+      <li><a href="/solr/resources.html#presentations">Presentations</a></li>
+      <li><a href="/solr/resources.html#videos">Videos</a></li>
+      <li><a href="/solr/logos-and-assets.html">Solr Logos and Assets</a></li>
+      <br/>
+      <li><a href="https://www.apache.org/">Apache Software Foundation</a></li>
+      <li><a href="https://www.apache.org/foundation/thanks.html">Thanks</a></li>
+      <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+      <li><a href="https://www.apache.org/security/">Security</a></li>
+      <li><a href="https://www.apache.org/licenses/">License</a></li>
+    </ul>
+  </div>
+  <div class="small-6 medium-3 columns">
+    <h4>Get Started</h4>
+    <ul>
+      <li><a href="/solr/downloads.html">Download</a></li>
+      <li><a href="/solr/guide/solr-tutorial.html">Run Through the Tutorial</a></li>
+      <li><a href="/solr/resources.html">Level Up</a></li>
+    </ul>
+    <br/>
+    <h4>Community</h4>
+    <ul>
+      <li><a href="/solr/community.html#support">Support</a></li>
+      <li><a href="/solr/community.html#mailing-lists-irc">Mailing Lists</a></li>
+      <li><a href="/solr/community.html#issue-tracker">Issues (JIRA)</a></li>
+      <li><a href="/solr/community.html#how-to-contribute">Contribute</a></li>
+      <li><a href="/solr/community.html#version-control">Version control (GIT)</a></li>
+    </ul>
+  </div>
+  <div class="small-6 medium-3 columns">
+    <h4>Related Projects</h4>
+    <ul>
+      <li><a href="http://hadoop.apache.org/">Apache Hadoop</a></li>
+      <li><a href="http://manifoldcf.apache.org/">Apache ManifoldCF</a></li>
+      <li><a href="http://mahout.apache.org/">Apache Mahout</a></li>
+      <li><a href="http://nutch.apache.org/">Apache Nutch</a></li>
+      <li><a href="http://opennlp.apache.org/">Apache OpenNLP</a></li>
+      <li><a href="http://spark.apache.org/">Apache Spark</a></li>
+      <li><a href="http://tika.apache.org/">Apache Tika</a></li>
+      <li><a href="http://zeppelin.apache.org/">Apache Zeppelin</a></li>
+      <li><a href="http://zookeeper.apache.org/">Apache Zookeeper</a></li>
+    </ul>
+  </div>
+</div>
+<div class="row copyright">
+<div class="large-centered columns">
+  <p>Copyright © 2019 The Apache Software Foundation, Licensed under the Apache License, Version 2.0. Privacy Policy<br/>Apache and the Apache feather logo are trademarks of The Apache Software Foundation. Apache Lucene, Apache Solr and their respective logos are trademarks of the Apache Software Foundation. Please see the Apache Trademark Policy for more information.  All non-Apache logos are the trademarks of their respective owners.</p>
+</div></div>    </footer>
+
+<script>
+  $(document).foundation();
+</script>
+<script>
+  $(document).ready(function(){
+    $('.slider').slick({
+      infinite: false,
+      speed: 300,
+      slidesToShow: 6,
+      slidesToScroll: 6,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            infinite: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 320,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ],
+      prevArrow: '<i class="fa fa-angle-left fa-2x slider-prev"></i>',
+      nextArrow: '<i class="fa fa-angle-right fa-2x slider-next"></i>'
+    });
+  });
+</script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-94576-12']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>  </body>
+</html>
