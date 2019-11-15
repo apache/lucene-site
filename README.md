@@ -44,6 +44,12 @@ pelican --autoreload --listen
 
 Now go to http://localhost:8000 to view the beautiful Lucene web page :)
 
+There is also a convenience script that will build the site and serve the site with live updates. It even attempts to install a virtual python env with pelican if pelican is not found on path:
+
+```sh
+./build.sh
+```
+
 ## Updating site during a Lucene/Solr release
 
 The release manager documentation will contain detailed instructions on how to update the site during a release. Some of the boring version number update and download link generation is handled by Pelican, see below.
