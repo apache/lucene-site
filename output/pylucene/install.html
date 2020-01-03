@@ -182,12 +182,12 @@ is used:<br/><code>$ CC=CC gmake</code></p>
 <li>Edit Makefile and do the following changes: Insert and enable a Solaris-Section
 with the following content</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="err">\</span><span class="c"># Solaris   (Solaris 11.1, Python 2.6, 32-bit, Java 1.7)</span>
-<span class="nv">PREFIX_PYTHON</span><span class="o">=</span>/usr
-<span class="nv">ANT</span><span class="o">=</span>/usr/bin/ant
-<span class="nv">PYTHON</span><span class="o">=</span><span class="k">$(</span>PREFIX_PYTHON<span class="k">)</span>/bin/python
-<span class="nv">JCC</span><span class="o">=</span><span class="k">$(</span>PYTHON<span class="k">)</span> -m jcc.<span class="se">\_\_</span>main<span class="se">\_\_</span> --reserved DEFAULT_TYPE
-<span class="nv">NUM_FILES</span><span class="o">=</span><span class="m">4</span>
+<div class="highlight"><pre><span></span><span class="err">\# Solaris   (Solaris 11.1, Python 2.6, 32-bit, Java 1.7)</span>
+<span class="err">PREFIX_PYTHON=/usr</span>
+<span class="err">ANT=/usr/bin/ant</span>
+<span class="err">PYTHON=$(PREFIX_PYTHON)/bin/python</span>
+<span class="err">JCC=$(PYTHON) -m jcc.\_\_main\_\_ --reserved DEFAULT_TYPE</span>
+<span class="err">NUM_FILES=4</span>
 </pre></div>
 
 
