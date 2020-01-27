@@ -164,11 +164,11 @@ but not to change the array size.</p>
 <p>A few Lucene APIs take array arguments and expect values to be returned in them.
 To call such an API and be able to retrieve the array values after the call, a
 Java array needs to instantiated first.<br/> For example, accessing termDocs:</p>
-<div class="highlight"><pre><span></span><span class="nv">termDocs</span> <span class="o">=</span> <span class="nv">reader</span>.<span class="nv">termDocs</span><span class="ss">(</span><span class="nv">Term</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">isbn</span><span class="s2">&quot;</span>, <span class="nv">isbn</span><span class="ss">))</span><span class="o">&lt;</span><span class="nv">br</span><span class="o">/&gt;</span>
-<span class="nv">docs</span> <span class="o">=</span> <span class="nv">JArray</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">int</span><span class="s1">&#39;</span><span class="ss">)(</span><span class="mi">1</span><span class="ss">)</span>   # <span class="nv">allocate</span> <span class="nv">an</span> <span class="nv">int</span>[<span class="mi">1</span>] <span class="nv">array</span><span class="o">&lt;</span><span class="nv">br</span><span class="o">/&gt;</span>
-<span class="nv">freq</span> <span class="o">=</span> <span class="nv">JArray</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">int</span><span class="s1">&#39;</span><span class="ss">)(</span><span class="mi">1</span><span class="ss">)</span>   # <span class="nv">allocate</span> <span class="nv">an</span> <span class="nv">int</span>[<span class="mi">1</span>] <span class="nv">array</span><span class="o">&lt;</span><span class="nv">br</span><span class="o">/&gt;</span>
-<span class="k">if</span> <span class="nv">termDocs</span>.<span class="nv">read</span><span class="ss">(</span><span class="nv">docs</span>, <span class="nv">freq</span><span class="ss">)</span> <span class="o">==</span> <span class="mi">1</span>:<span class="o">&lt;</span><span class="nv">br</span><span class="o">/&gt;</span>
-<span class="o">&amp;</span><span class="nv">nbsp</span><span class="c1">;&amp;nbsp;bits.set(docs[0])     # access the array&#39;s first element&lt;br/&gt;</span>
+<div class="highlight"><pre><span></span><span class="err">termDocs = reader.termDocs(Term(&quot;isbn&quot;, isbn))&lt;br/&gt;</span>
+<span class="err">docs = JArray(&#39;int&#39;)(1)   # allocate an int[1] array&lt;br/&gt;</span>
+<span class="err">freq = JArray(&#39;int&#39;)(1)   # allocate an int[1] array&lt;br/&gt;</span>
+<span class="err">if termDocs.read(docs, freq) == 1:&lt;br/&gt;</span>
+<span class="err">&amp;nbsp;&amp;nbsp;bits.set(docs[0])     # access the array&#39;s first element&lt;br/&gt;</span>
 </pre></div>
 
 
@@ -181,8 +181,8 @@ defaults to Object.</p>
 <p>Instead of an integer denoting the size of the desired Java array, a sequence of
 objects of the expected element type may be passed in to the array constructor.<br/>
 For example:</p>
-<div class="highlight"><pre><span></span><span class="err">\</span><span class="o">#</span> <span class="n">creating</span> <span class="n">a</span> <span class="n">Java</span> <span class="nb">array</span> <span class="k">of</span> <span class="n">double</span> <span class="k">from</span> <span class="n">the</span> <span class="p">[</span><span class="mi">1</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">.</span><span class="mi">5</span><span class="p">]</span> <span class="n">list</span><span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
-<span class="n">JArray</span><span class="p">(</span><span class="s1">&#39;double&#39;</span><span class="p">)([</span><span class="mi">1</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">.</span><span class="mi">5</span><span class="p">])</span><span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+<div class="highlight"><pre><span></span><span class="err">\# creating a Java array of double from the [1.5, 2.5] list&lt;br/&gt;</span>
+<span class="err">JArray(&#39;double&#39;)([1.5, 2.5])&lt;br/&gt;</span>
 </pre></div>
 
 
@@ -216,25 +216,25 @@ in Python. Two values are returned for each iteration, the zero-based number of
 the document in the Hits instance and the document instance itself.<br/>
 The Java loop:</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="k">for</span> <span class="ss">(</span><span class="nv">int</span> <span class="nv">i</span> <span class="o">=</span> <span class="mi">0</span><span class="c1">; i &amp;lt; hits.length(); i++) {&lt;br/&gt;</span>
-<span class="o">&amp;</span><span class="nv">nbsp</span><span class="c1">;&amp;nbsp;Document doc = hits.doc(i);&lt;br/&gt;</span>
-<span class="o">&amp;</span><span class="nv">nbsp</span><span class="c1">;&amp;nbsp;System.out.println(hits.score(i) + &quot; : &quot; + doc.get(&quot;title&quot;));&lt;br/&gt;</span>
-}<span class="o">&lt;</span><span class="nv">br</span><span class="o">/&gt;</span>
+<div class="highlight"><pre><span></span><span class="err">for (int i = 0; i &amp;lt; hits.length(); i++) {&lt;br/&gt;</span>
+<span class="err">&amp;nbsp;&amp;nbsp;Document doc = hits.doc(i);&lt;br/&gt;</span>
+<span class="err">&amp;nbsp;&amp;nbsp;System.out.println(hits.score(i) + &quot; : &quot; + doc.get(&quot;title&quot;));&lt;br/&gt;</span>
+<span class="err">}&lt;br/&gt;</span>
 </pre></div>
 
 
 <p>can be written in Python:</p>
-<div class="highlight"><pre><span></span><span class="k">for</span> <span class="nv">hit</span> <span class="nv">in</span> <span class="nv">hits</span>:<span class="o">&lt;</span><span class="nv">br</span><span class="o">/&gt;</span>
-<span class="o">&amp;</span><span class="nv">nbsp</span><span class="c1">;&amp;nbsp;hit = Hit.cast_(hit)&lt;br/&gt;</span>
-<span class="o">&amp;</span><span class="nv">nbsp</span><span class="c1">;&amp;nbsp;print hit.getScore(), &#39;:&#39;, hit.getDocument[&#39;title&#39;]&lt;br/&gt;</span>
+<div class="highlight"><pre><span></span><span class="err">for hit in hits:&lt;br/&gt;</span>
+<span class="err">&amp;nbsp;&amp;nbsp;hit = Hit.cast_(hit)&lt;br/&gt;</span>
+<span class="err">&amp;nbsp;&amp;nbsp;print hit.getScore(), &#39;:&#39;, hit.getDocument[&#39;title&#39;]&lt;br/&gt;</span>
 </pre></div>
 
 
 <p>if hit.iterator()'s next() method were declared to return <em>Hit</em> instead of
 <em>Object</em>, the above cast_() call would not be unnecessary.<br/> The same java
 loop can also be written:</p>
-<div class="highlight"><pre><span></span><span class="k">for</span> <span class="nv">i</span> <span class="nv">xrange</span><span class="ss">(</span><span class="nv">len</span><span class="ss">(</span><span class="nv">hits</span><span class="ss">))</span>:<span class="o">&lt;</span><span class="nv">br</span><span class="o">/&gt;</span>
-<span class="o">&amp;</span><span class="nv">nbsp</span><span class="c1">;&amp;nbsp;print hits.score(i), &#39;:&#39;, hits[i][&#39;title&#39;]&lt;br/&gt;</span>
+<div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">xrange</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">hits</span><span class="p">))</span><span class="err">:</span><span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span><span class="w"></span>
+<span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="k">print</span><span class="w"> </span><span class="n">hits</span><span class="p">.</span><span class="n">score</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">hits</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">&#39;title&#39;</span><span class="o">]&lt;</span><span class="n">br</span><span class="o">/&gt;</span><span class="w"></span>
 </pre></div>
 
 
@@ -242,8 +242,8 @@ loop can also be written:</p>
 <li>Hits instances partially implement the Python 'sequence' protocol.<br/>
 The Java expressions:</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="n">hits</span><span class="p">.</span><span class="k">length</span><span class="p">();</span><span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
-<span class="n">doc</span> <span class="o">=</span> <span class="n">hits</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+<div class="highlight"><pre><span></span><span class="err">hits.length();&lt;br/&gt;</span>
+<span class="err">doc = hits.get(i);&lt;br/&gt;</span>
 </pre></div>
 
 
@@ -257,30 +257,30 @@ The Java expressions:</li>
 <li>Document instances have fields whose values can be accessed through the mapping
 protocol.<br/> The Java expression:</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="n">doc</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="ss">&quot;title&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="err">doc.get(&quot;title&quot;)</span>
 </pre></div>
 
 
 <p>is better written in Python:</p>
-<div class="highlight"><pre><span></span><span class="n">doc</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><span class="err">doc[&#39;title&#39;]</span>
 </pre></div>
 
 
 <ul>
 <li>Document instances can be iterated over for their fields.<br/> The Java loop:</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="nv">Enumeration</span> <span class="nv">fields</span> <span class="o">=</span> <span class="nv">doc</span>.<span class="nv">getFields</span><span class="ss">()</span><span class="c1">;&lt;br/&gt;</span>
-<span class="k">while</span> <span class="ss">(</span><span class="nv">fields</span>.<span class="nv">hasMoreElements</span><span class="ss">())</span> {<span class="o">&lt;</span><span class="nv">br</span><span class="o">/&gt;</span>
-<span class="o">&amp;</span><span class="nv">nbsp</span><span class="c1">;&amp;nbsp;Field field = (Field) fields.nextElement();&lt;br/&gt;</span>
-<span class="o">&amp;</span><span class="nv">nbsp</span><span class="c1">;&amp;nbsp;...&lt;br/&gt;</span>
-}<span class="o">&lt;</span><span class="nv">br</span><span class="o">/&gt;</span>
+<div class="highlight"><pre><span></span><span class="err">Enumeration fields = doc.getFields();&lt;br/&gt;</span>
+<span class="err">while (fields.hasMoreElements()) {&lt;br/&gt;</span>
+<span class="err">&amp;nbsp;&amp;nbsp;Field field = (Field) fields.nextElement();&lt;br/&gt;</span>
+<span class="err">&amp;nbsp;&amp;nbsp;...&lt;br/&gt;</span>
+<span class="err">}&lt;br/&gt;</span>
 </pre></div>
 
 
 <p>is better written in Python:</p>
-<div class="highlight"><pre><span></span><span class="k">for</span> <span class="nv">field</span> <span class="nv">in</span> <span class="nv">doc</span>.<span class="nv">getFields</span><span class="ss">()</span>:<span class="o">&lt;</span><span class="nv">br</span><span class="o">/&gt;</span>
-<span class="o">&amp;</span><span class="nv">nbsp</span><span class="c1">;&amp;nbsp;field = Field.cast_(field)&lt;br/&gt;</span>
-<span class="o">&amp;</span><span class="nv">nbsp</span><span class="c1">;&amp;nbsp;...&lt;br/&gt;</span>
+<div class="highlight"><pre><span></span><span class="err">for field in doc.getFields():&lt;br/&gt;</span>
+<span class="err">&amp;nbsp;&amp;nbsp;field = Field.cast_(field)&lt;br/&gt;</span>
+<span class="err">&amp;nbsp;&amp;nbsp;...&lt;br/&gt;</span>
 </pre></div>
 
 

@@ -221,8 +221,8 @@ every distribution.<br/>For example:</p>
 <ul>
 <li>On Ubuntu, to install Java 5, these commands may be used:</li>
 </ul>
-<div class="highlight"><pre><span></span>      <span class="err">$</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">sun</span><span class="o">-</span><span class="n">java5</span><span class="o">-</span><span class="n">jdk</span><span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
-      <span class="err">$</span> <span class="n">sudo</span> <span class="k">update</span><span class="o">-</span><span class="n">java</span><span class="o">-</span><span class="n">alternatives</span> <span class="o">-</span><span class="n">s</span> <span class="n">java</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">5</span><span class="p">.</span><span class="mi">0</span><span class="o">-</span><span class="n">sun</span><span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+<div class="highlight"><pre><span></span><span class="err">      $ sudo apt-get install sun-java5-jdk&lt;br/&gt;</span>
+<span class="err">      $ sudo update-java-alternatives -s java-1.5.0-sun&lt;br/&gt;</span>
 </pre></div>
 
 
@@ -233,7 +233,7 @@ change, the default java installation. The sample flags for Linux in JCC's
 <em>setup.py</em> should be changed to reflect the root of the Java installation which
 may be obtained via:</li>
 </ul>
-<div class="highlight"><pre><span></span>      <span class="err">$</span> <span class="n">java</span><span class="o">-</span><span class="n">config</span> <span class="o">-</span><span class="n">O</span>
+<div class="highlight"><pre><span></span><span class="err">      $ java-config -O</span>
 </pre></div>
 
 

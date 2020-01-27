@@ -175,73 +175,73 @@ methods named <em>setField(value)</em>, <em>getField()</em> or <em>isField()</em
 classes' Java packages. The Python types are declared in a flat namespace at the
 top level of the resulting Python extension module.</p>
 <p>JCC's command-line arguments are best illustrated via the PyLucene example:</p>
-<div class="highlight"><pre><span></span>$ <span class="nv">python</span> <span class="o">-</span><span class="nv">m</span> <span class="nv">jcc</span>           # <span class="nv">run</span> <span class="nv">JCC</span> <span class="nv">to</span> <span class="nv">wrap</span>
-    <span class="o">--</span><span class="nv">jar</span> <span class="nv">lucene</span>.<span class="nv">jar</span>      # <span class="nv">all</span> <span class="nv">public</span> <span class="nv">classes</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">lucene</span> <span class="nv">jar</span> <span class="nv">file</span>
-    <span class="o">--</span><span class="nv">jar</span> <span class="nv">analyzers</span>.<span class="nv">jar</span>   # <span class="nv">and</span> <span class="nv">the</span> <span class="nv">lucene</span> <span class="nv">analyzers</span> <span class="nv">contrib</span> <span class="nv">package</span>
-    <span class="o">--</span><span class="nv">jar</span> <span class="nv">snowball</span>.<span class="nv">jar</span>    # <span class="nv">and</span> <span class="nv">the</span> <span class="nv">snowball</span> <span class="nv">contrib</span> <span class="nv">package</span>
-    <span class="o">--</span><span class="nv">jar</span> <span class="nv">highlighter</span>.<span class="nv">jar</span> # <span class="nv">and</span> <span class="nv">the</span> <span class="nv">highlighter</span> <span class="nv">contrib</span> <span class="nv">package</span>
-    <span class="o">--</span><span class="nv">jar</span> <span class="nv">regex</span>.<span class="nv">jar</span>       # <span class="nv">and</span> <span class="nv">the</span> <span class="nv">regex</span> <span class="nv">search</span> <span class="nv">contrib</span> <span class="nv">package</span>
-    <span class="o">--</span><span class="nv">jar</span> <span class="nv">queries</span>.<span class="nv">jar</span>     # <span class="nv">and</span> <span class="nv">the</span> <span class="nv">queries</span> <span class="nv">contrib</span> <span class="nv">package</span>
-    <span class="o">--</span><span class="nv">jar</span> <span class="nv">extensions</span>.<span class="nv">jar</span>  # <span class="nv">and</span> <span class="nv">the</span> <span class="nv">Python</span> <span class="nv">extensions</span> <span class="nv">package</span>
-    <span class="o">--</span><span class="nv">package</span> <span class="nv">java</span>.<span class="nv">lang</span>   # <span class="nv">including</span> <span class="nv">all</span> <span class="nv">dependencies</span> <span class="nv">found</span> <span class="nv">in</span> <span class="nv">the</span>
-                          # <span class="nv">java</span>.<span class="nv">lang</span> <span class="nv">package</span>
-    <span class="o">--</span><span class="nv">package</span> <span class="nv">java</span>.<span class="nv">util</span>   # <span class="nv">and</span> <span class="nv">the</span> <span class="nv">java</span>.<span class="nv">util</span> <span class="nv">package</span>
-    <span class="o">--</span><span class="nv">package</span> <span class="nv">java</span>.<span class="nv">io</span>     # <span class="nv">and</span> <span class="nv">the</span> <span class="nv">java</span>.<span class="nv">io</span> <span class="nv">package</span>
-      <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">System</span>    # <span class="nv">and</span> <span class="nv">to</span> <span class="nv">explicitely</span> <span class="nv">wrap</span> <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">System</span>
-      <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Runtime</span>   # <span class="nv">as</span> <span class="nv">well</span> <span class="nv">as</span> <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Runtime</span>
-      <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Boolean</span>   # <span class="nv">and</span> <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Boolean</span>
-      <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Byte</span>      # <span class="nv">and</span> <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Byte</span>
-      <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Character</span> # <span class="nv">and</span> <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Character</span>
-      <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Integer</span>   # <span class="nv">and</span> <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Integer</span>
-      <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Short</span>     # <span class="nv">and</span> <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Short</span>
-      <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Long</span>      # <span class="nv">and</span> <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Long</span>
-      <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Double</span>    # <span class="nv">and</span> <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Double</span>
-      <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Float</span>     # <span class="nv">and</span> <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Float</span>
-      <span class="nv">java</span>.<span class="nv">text</span>.<span class="nv">SimpleDateFormat</span>
-                          # <span class="nv">and</span> <span class="nv">java</span>.<span class="nv">text</span>.<span class="nv">SimpleDateFormat</span>
-      <span class="nv">java</span>.<span class="nv">io</span>.<span class="nv">StringReader</span>
-                          # <span class="nv">and</span> <span class="nv">java</span>.<span class="nv">io</span>.<span class="nv">StringReader</span>
-      <span class="nv">java</span>.<span class="nv">io</span>.<span class="nv">InputStreamReader</span>
-                          # <span class="nv">and</span> <span class="nv">java</span>.<span class="nv">io</span>.<span class="nv">InputStreamReader</span>
-      <span class="nv">java</span>.<span class="nv">io</span>.<span class="nv">FileInputStream</span>
-                          # <span class="nv">and</span> <span class="nv">java</span>.<span class="nv">io</span>.<span class="nv">FileInputStream</span>
-      <span class="nv">java</span>.<span class="nv">util</span>.<span class="nv">Arrays</span>    # <span class="nv">and</span> <span class="nv">java</span>.<span class="nv">util</span>.<span class="nv">Arrays</span>
-    <span class="o">--</span><span class="nv">exclude</span> <span class="nv">org</span>.<span class="nv">apache</span>.<span class="nv">lucene</span>.<span class="nv">queryParser</span>.<span class="nv">Token</span>
-                          # <span class="k">while</span> <span class="nv">explicitely</span> <span class="nv">not</span> <span class="nv">wrapping</span>
-                          # <span class="nv">org</span>.<span class="nv">apache</span>.<span class="nv">lucene</span>.<span class="nv">queryParser</span>.<span class="nv">Token</span>
-    <span class="o">--</span><span class="nv">exclude</span> <span class="nv">org</span>.<span class="nv">apache</span>.<span class="nv">lucene</span>.<span class="nv">queryParser</span>.<span class="nv">TokenMgrError</span>
-                          # <span class="nv">nor</span> <span class="nv">org</span>.<span class="nv">apache</span>.<span class="nv">lucene</span>.<span class="nv">queryParser</span>.<span class="nv">TokenMgrError</span>
-    <span class="o">--</span><span class="nv">exclude</span> <span class="nv">org</span>.<span class="nv">apache</span>.<span class="nv">lucene</span>.<span class="nv">queryParser</span>.<span class="nv">ParseException</span>
-                          # <span class="nv">nor</span>.<span class="nv">apache</span>.<span class="nv">lucene</span>.<span class="nv">queryParser</span>.<span class="nv">ParseException</span>
-    <span class="o">--</span><span class="nv">python</span> <span class="nv">lucene</span>       # <span class="nv">generating</span> <span class="nv">Python</span> <span class="nv">wrappers</span> <span class="nv">into</span> <span class="nv">a</span> <span class="nv">module</span>
-                          # <span class="nv">called</span> <span class="nv">lucene</span>
-    <span class="o">--</span><span class="nv">version</span> <span class="mi">2</span>.<span class="mi">4</span>.<span class="mi">0</span>       # <span class="nv">giving</span> <span class="nv">the</span> <span class="nv">Python</span> <span class="nv">extension</span> <span class="nv">egg</span> <span class="nv">version</span> <span class="mi">2</span>.<span class="mi">4</span>.<span class="mi">0</span>
-    <span class="o">--</span><span class="nv">mapping</span> <span class="nv">org</span>.<span class="nv">apache</span>.<span class="nv">lucene</span>.<span class="nv">document</span>.<span class="nv">Document</span>
-              <span class="s1">&#39;</span><span class="s">get:(Ljava/lang/String;)Ljava/lang/String;</span><span class="s1">&#39;</span>
-                          # <span class="nv">asking</span> <span class="k">for</span> <span class="nv">a</span> <span class="nv">Python</span> <span class="nv">mapping</span> <span class="nv">protocol</span> <span class="nv">wrapper</span>
-                          # <span class="k">for</span> <span class="nv">get</span> <span class="nv">access</span> <span class="nv">on</span> <span class="nv">the</span> <span class="nv">Document</span> <span class="nv">class</span> <span class="nv">by</span>
-                          # <span class="nv">calling</span> <span class="nv">its</span> <span class="nv">get</span> <span class="nv">method</span>
-    <span class="o">--</span><span class="nv">mapping</span> <span class="nv">java</span>.<span class="nv">util</span>.<span class="nv">Properties</span>
-              <span class="s1">&#39;</span><span class="s">getProperty:(Ljava/lang/String;)Ljava/lang/String;</span><span class="s1">&#39;</span>
-                          # <span class="nv">asking</span> <span class="k">for</span> <span class="nv">a</span> <span class="nv">Python</span> <span class="nv">mapping</span> <span class="nv">protocol</span> <span class="nv">wrapper</span>
-                          # <span class="k">for</span> <span class="nv">get</span> <span class="nv">access</span> <span class="nv">on</span> <span class="nv">the</span> <span class="nv">Properties</span> <span class="nv">class</span> <span class="nv">by</span>
-                          # <span class="nv">calling</span> <span class="nv">its</span> <span class="nv">getProperty</span> <span class="nv">method</span>
-    <span class="o">--</span><span class="nv">sequence</span> <span class="nv">org</span>.<span class="nv">apache</span>.<span class="nv">lucene</span>.<span class="nv">search</span>.<span class="nv">Hits</span>
-               <span class="s1">&#39;</span><span class="s">length:()I</span><span class="s1">&#39;</span>
-               <span class="s1">&#39;</span><span class="s">doc:(I)Lorg/apache/lucene/document/Document;</span><span class="s1">&#39;</span>
-                          # <span class="nv">asking</span> <span class="k">for</span> <span class="nv">a</span> <span class="nv">Python</span> <span class="nv">sequence</span> <span class="nv">protocol</span> <span class="nv">wrapper</span>
-                          # <span class="k">for</span> <span class="nv">length</span> <span class="nv">and</span> <span class="nv">get</span> <span class="nv">access</span> <span class="nv">on</span> <span class="nv">the</span> <span class="nv">Hits</span> <span class="nv">class</span> <span class="nv">by</span>
-                          # <span class="nv">calling</span> <span class="nv">its</span> <span class="nv">length</span> <span class="nv">and</span> <span class="nv">doc</span> <span class="nv">methods</span>
-    <span class="o">--</span><span class="nv">files</span> <span class="mi">2</span>             # <span class="nv">generating</span> <span class="nv">all</span> <span class="nv">C</span><span class="o">++</span> <span class="nv">classes</span> <span class="nv">into</span> <span class="nv">about</span> <span class="mi">2</span> .<span class="nv">cpp</span>
-                          # <span class="nv">files</span>
-    <span class="o">--</span><span class="nv">build</span>               # <span class="nv">and</span> <span class="nv">finally</span> <span class="nv">compiling</span> <span class="nv">the</span> <span class="nv">generated</span> <span class="nv">C</span><span class="o">++</span> <span class="nv">code</span>
-                          # <span class="nv">into</span> <span class="nv">a</span> <span class="nv">Python</span> <span class="nv">egg</span> <span class="nv">via</span> <span class="nv">setuptools</span> <span class="o">-</span> <span class="nv">when</span>
-                          # <span class="nv">installed</span> <span class="o">-</span> <span class="nv">or</span> <span class="nv">a</span> <span class="nv">regular</span> <span class="nv">Python</span> <span class="nv">extension</span> <span class="nv">via</span>
-                          # <span class="nv">distutils</span> <span class="nv">or</span> <span class="nv">setuptools</span> <span class="nv">otherwise</span>
-    <span class="o">--</span><span class="nv">module</span> <span class="nv">collections</span>.<span class="nv">py</span>
-                          # <span class="nv">copying</span> <span class="nv">the</span> <span class="nv">collections</span>.<span class="nv">py</span> <span class="nv">module</span> <span class="nv">into</span> <span class="nv">the</span> <span class="nv">egg</span>
-    <span class="o">--</span><span class="nv">install</span>             # <span class="nv">installing</span> <span class="nv">it</span> <span class="nv">into</span> <span class="nv">Python</span><span class="s1">&#39;</span><span class="s">s site-packages</span>
-                          # <span class="nv">directory</span>.
+<div class="highlight"><pre><span></span>$ python -m jcc           <span class="c1"># run JCC to wrap</span>
+    --jar lucene.jar      <span class="c1"># all public classes in the lucene jar file</span>
+    --jar analyzers.jar   <span class="c1"># and the lucene analyzers contrib package</span>
+    --jar snowball.jar    <span class="c1"># and the snowball contrib package</span>
+    --jar highlighter.jar <span class="c1"># and the highlighter contrib package</span>
+    --jar regex.jar       <span class="c1"># and the regex search contrib package</span>
+    --jar queries.jar     <span class="c1"># and the queries contrib package</span>
+    --jar extensions.jar  <span class="c1"># and the Python extensions package</span>
+    --package java.lang   <span class="c1"># including all dependencies found in the</span>
+                          <span class="c1"># java.lang package</span>
+    --package java.util   <span class="c1"># and the java.util package</span>
+    --package java.io     <span class="c1"># and the java.io package</span>
+      java.lang.System    <span class="c1"># and to explicitely wrap java.lang.System</span>
+      java.lang.Runtime   <span class="c1"># as well as java.lang.Runtime</span>
+      java.lang.Boolean   <span class="c1"># and java.lang.Boolean</span>
+      java.lang.Byte      <span class="c1"># and java.lang.Byte</span>
+      java.lang.Character <span class="c1"># and java.lang.Character</span>
+      java.lang.Integer   <span class="c1"># and java.lang.Integer</span>
+      java.lang.Short     <span class="c1"># and java.lang.Short</span>
+      java.lang.Long      <span class="c1"># and java.lang.Long</span>
+      java.lang.Double    <span class="c1"># and java.lang.Double</span>
+      java.lang.Float     <span class="c1"># and java.lang.Float</span>
+      java.text.SimpleDateFormat
+                          <span class="c1"># and java.text.SimpleDateFormat</span>
+      java.io.StringReader
+                          <span class="c1"># and java.io.StringReader</span>
+      java.io.InputStreamReader
+                          <span class="c1"># and java.io.InputStreamReader</span>
+      java.io.FileInputStream
+                          <span class="c1"># and java.io.FileInputStream</span>
+      java.util.Arrays    <span class="c1"># and java.util.Arrays</span>
+    --exclude org.apache.lucene.queryParser.Token
+                          <span class="c1"># while explicitely not wrapping</span>
+                          <span class="c1"># org.apache.lucene.queryParser.Token</span>
+    --exclude org.apache.lucene.queryParser.TokenMgrError
+                          <span class="c1"># nor org.apache.lucene.queryParser.TokenMgrError</span>
+    --exclude org.apache.lucene.queryParser.ParseException
+                          <span class="c1"># nor.apache.lucene.queryParser.ParseException</span>
+    --python lucene       <span class="c1"># generating Python wrappers into a module</span>
+                          <span class="c1"># called lucene</span>
+    --version <span class="m">2</span>.4.0       <span class="c1"># giving the Python extension egg version 2.4.0</span>
+    --mapping org.apache.lucene.document.Document
+              <span class="s1">&#39;get:(Ljava/lang/String;)Ljava/lang/String;&#39;</span>
+                          <span class="c1"># asking for a Python mapping protocol wrapper</span>
+                          <span class="c1"># for get access on the Document class by</span>
+                          <span class="c1"># calling its get method</span>
+    --mapping java.util.Properties
+              <span class="s1">&#39;getProperty:(Ljava/lang/String;)Ljava/lang/String;&#39;</span>
+                          <span class="c1"># asking for a Python mapping protocol wrapper</span>
+                          <span class="c1"># for get access on the Properties class by</span>
+                          <span class="c1"># calling its getProperty method</span>
+    --sequence org.apache.lucene.search.Hits
+               <span class="s1">&#39;length:()I&#39;</span>
+               <span class="s1">&#39;doc:(I)Lorg/apache/lucene/document/Document;&#39;</span>
+                          <span class="c1"># asking for a Python sequence protocol wrapper</span>
+                          <span class="c1"># for length and get access on the Hits class by</span>
+                          <span class="c1"># calling its length and doc methods</span>
+    --files <span class="m">2</span>             <span class="c1"># generating all C++ classes into about 2 .cpp</span>
+                          <span class="c1"># files</span>
+    --build               <span class="c1"># and finally compiling the generated C++ code</span>
+                          <span class="c1"># into a Python egg via setuptools - when</span>
+                          <span class="c1"># installed - or a regular Python extension via</span>
+                          <span class="c1"># distutils or setuptools otherwise</span>
+    --module collections.py
+                          <span class="c1"># copying the collections.py module into the egg</span>
+    --install             <span class="c1"># installing it into Python&#39;s site-packages</span>
+                          <span class="c1"># directory.</span>
 </pre></div>
 
 
@@ -378,10 +378,10 @@ casting operator.</p>
 the same functionality.</p>
 <p>Similarly, each wrapped class has a class method called _instance__ that tests
 whether the wrapped java instance is of the given type. For example:</p>
-<div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="nv">BooleanQuery</span>.<span class="nv">instance_</span><span class="ss">(</span><span class="nv">query</span><span class="ss">)</span>:
-        <span class="nv">booleanQuery</span> <span class="o">=</span> <span class="nv">BooleanQuery</span>.<span class="nv">cast_</span><span class="ss">(</span><span class="nv">query</span><span class="ss">)</span>
+<div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="n">BooleanQuery</span><span class="p">.</span><span class="n">instance_</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+        <span class="n">booleanQuery</span> <span class="o">=</span> <span class="n">BooleanQuery</span><span class="p">.</span><span class="n">cast_</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
 
-    <span class="nv">print</span> <span class="nv">booleanQuery</span>.<span class="nv">getClauses</span><span class="ss">()</span>
+    <span class="n">print</span> <span class="n">booleanQuery</span><span class="p">.</span><span class="n">getClauses</span><span class="p">()</span>
 </pre></div>
 
 
@@ -401,31 +401,31 @@ as type parameters. For example, _java.util.ArrayList&lt;E&gt;</em> is declared 
 accept one type parameter. Its wrapper's <em>of</em>()<em> method hence accepts one parameter,
 a Python class, to use as type parameter for the return type of its _get()</em> method,
 among others:</p>
-<div class="highlight"><pre><span></span>    <span class="o">&amp;</span><span class="nt">gt</span><span class="o">&amp;</span><span class="nt">gt</span><span class="o">&amp;</span><span class="nt">gt</span> <span class="nt">a</span> <span class="o">=</span> <span class="nt">ArrayList</span><span class="o">()</span><span class="p">.</span><span class="nc">of_</span><span class="o">(</span><span class="nt">Document</span><span class="o">)</span>
-    <span class="o">&amp;</span><span class="nt">gt</span><span class="o">&amp;</span><span class="nt">gt</span><span class="o">&amp;</span><span class="nt">gt</span> <span class="nt">a</span>
-    <span class="o">&amp;</span><span class="nt">lt</span><span class="o">;</span><span class="nt">ArrayList</span><span class="o">:</span> <span class="cp">[]</span><span class="o">&amp;</span><span class="nt">gt</span><span class="o">;</span>
-    <span class="o">&amp;</span><span class="nt">gt</span><span class="o">&amp;</span><span class="nt">gt</span><span class="o">&amp;</span><span class="nt">gt</span> <span class="nt">a</span><span class="p">.</span><span class="nc">parameters_</span>
-    <span class="o">(&amp;</span><span class="nt">lt</span><span class="o">;</span><span class="nt">type</span> <span class="s1">&#39;Document&#39;</span><span class="o">&amp;</span><span class="nt">gt</span><span class="o">;,)</span>
-    <span class="o">&gt;&gt;&gt;</span> <span class="nt">a</span><span class="p">.</span><span class="nc">add</span><span class="o">(</span><span class="nt">Document</span><span class="o">())</span>
-    <span class="nt">True</span>
-    <span class="o">&gt;&gt;&gt;</span> <span class="nt">a</span><span class="p">.</span><span class="nc">get</span><span class="o">(</span><span class="nt">0</span><span class="o">)</span>
-    <span class="o">&amp;</span><span class="nt">lt</span><span class="o">;</span><span class="nt">Document</span><span class="o">:</span> <span class="nt">Document</span><span class="o">&amp;</span><span class="nt">lt</span><span class="o">;&amp;</span><span class="nt">gt</span><span class="o">;&amp;</span><span class="nt">gt</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><span class="err">    &amp;gt&amp;gt&amp;gt a = ArrayList().of_(Document)</span>
+<span class="err">    &amp;gt&amp;gt&amp;gt a</span>
+<span class="err">    &amp;lt;ArrayList: []&amp;gt;</span>
+<span class="err">    &amp;gt&amp;gt&amp;gt a.parameters_</span>
+<span class="err">    (&amp;lt;type &#39;Document&#39;&amp;gt;,)</span>
+<span class="err">    &gt;&gt;&gt; a.add(Document())</span>
+<span class="err">    True</span>
+<span class="err">    &gt;&gt;&gt; a.get(0)</span>
+<span class="err">    &amp;lt;Document: Document&amp;lt;&amp;gt;&amp;gt;</span>
 </pre></div>
 
 
 <p>The use of type parameters is, of course, optional. A generic Java class can still
 be used as before, without type parameters. Downcasting from <em>Object</em> is then necessary:</p>
-<div class="highlight"><pre><span></span>    <span class="o">&gt;&gt;&gt;</span> <span class="nt">a</span> <span class="o">=</span> <span class="nt">ArrayList</span><span class="o">()</span>
-    <span class="o">&gt;&gt;&gt;</span> <span class="nt">a</span>
-    <span class="o">&amp;</span><span class="nt">lt</span><span class="o">;</span><span class="nt">ArrayList</span><span class="o">:</span> <span class="cp">[]</span><span class="o">&amp;</span><span class="nt">gt</span><span class="o">;</span>
-    <span class="o">&gt;&gt;&gt;</span> <span class="nt">a</span><span class="p">.</span><span class="nc">parameters_</span>
-    <span class="o">(</span><span class="nt">None</span><span class="o">,)</span>
-    <span class="o">&gt;&gt;&gt;</span> <span class="nt">a</span><span class="p">.</span><span class="nc">add</span><span class="o">(</span><span class="nt">Document</span><span class="o">())</span>
-    <span class="nt">True</span>
-    <span class="o">&gt;&gt;&gt;</span> <span class="nt">a</span><span class="p">.</span><span class="nc">get</span><span class="o">(</span><span class="nt">0</span><span class="o">)</span>
-    <span class="o">&amp;</span><span class="nt">lt</span><span class="o">;</span><span class="nt">Object</span><span class="o">:</span> <span class="nt">Document</span><span class="o">&amp;</span><span class="nt">lt</span><span class="o">;&amp;</span><span class="nt">gt</span><span class="o">;&amp;</span><span class="nt">gt</span><span class="o">;</span>
-    <span class="o">&gt;&gt;&gt;</span> <span class="nt">Document</span><span class="p">.</span><span class="nc">cast_</span><span class="o">(</span><span class="nt">a</span><span class="p">.</span><span class="nc">get</span><span class="o">(</span><span class="nt">0</span><span class="o">))</span>
-    <span class="o">&amp;</span><span class="nt">lt</span><span class="o">;</span><span class="nt">Document</span><span class="o">:</span> <span class="nt">Document</span><span class="o">&amp;</span><span class="nt">lt</span><span class="o">;&amp;</span><span class="nt">gt</span><span class="o">;&amp;</span><span class="nt">gt</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><span class="err">    &gt;&gt;&gt; a = ArrayList()</span>
+<span class="err">    &gt;&gt;&gt; a</span>
+<span class="err">    &amp;lt;ArrayList: []&amp;gt;</span>
+<span class="err">    &gt;&gt;&gt; a.parameters_</span>
+<span class="err">    (None,)</span>
+<span class="err">    &gt;&gt;&gt; a.add(Document())</span>
+<span class="err">    True</span>
+<span class="err">    &gt;&gt;&gt; a.get(0)</span>
+<span class="err">    &amp;lt;Object: Document&amp;lt;&amp;gt;&amp;gt;</span>
+<span class="err">    &gt;&gt;&gt; Document.cast_(a.get(0))</span>
+<span class="err">    &amp;lt;Document: Document&amp;lt;&amp;gt;&amp;gt;</span>
 </pre></div>
 
 
@@ -460,10 +460,10 @@ method becomes useful when the array returned to Python is wrapped as a plain _O
 This is the case, for example, with nested arrays since there is no distinct Python
 type for every different java object array class - all java object arrays are wrapped
 by <em>JArray('object')</em>. For example:</p>
-<div class="highlight"><pre><span></span><span class="o">#</span> <span class="k">cast</span> <span class="n">obj</span> <span class="k">to</span> <span class="n">an</span> <span class="nb">array</span> <span class="k">of</span> <span class="n">ints</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">JArray</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">).</span><span class="n">cast_</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-<span class="o">#</span> <span class="k">cast</span> <span class="n">obj</span> <span class="k">to</span> <span class="n">an</span> <span class="nb">array</span> <span class="k">of</span> <span class="n">Document</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">JArray</span><span class="p">(</span><span class="s1">&#39;object&#39;</span><span class="p">).</span><span class="n">cast_</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">Document</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="err"># cast obj to an array of ints</span>
+<span class="err">&gt;&gt;&gt; JArray(&#39;int&#39;).cast_(obj)</span>
+<span class="err"># cast obj to an array of Document</span>
+<span class="err">&gt;&gt;&gt; JArray(&#39;object&#39;).cast_(obj, Document)</span>
 </pre></div>
 
 
@@ -593,32 +593,32 @@ be included verbatim as above.</p>
 <p>Really, the only non boilerplate user input is the constructor of the class and
 the other native methods, <em>tokenStream()</em> in the example above.</p>
 <p>The corresponding Python class(es) are implemented as follows:</p>
-<div class="highlight"><pre><span></span><span class="nv">class</span> <span class="nv">_analyzer</span><span class="ss">(</span><span class="nv">PythonAnalyzer</span><span class="ss">)</span>:
-  <span class="nv">def</span> <span class="nv">tokenStream</span><span class="ss">(</span><span class="nv">_self</span>, <span class="nv">fieldName</span>, <span class="nv">reader</span><span class="ss">)</span>:
-      <span class="nv">class</span> <span class="nv">_tokenStream</span><span class="ss">(</span><span class="nv">PythonTokenStream</span><span class="ss">)</span>:
-          <span class="nv">def</span> <span class="nv">__init__</span><span class="ss">(</span><span class="nv">self_</span><span class="ss">)</span>:
-              <span class="nv">super</span><span class="ss">(</span><span class="nv">_tokenStream</span>, <span class="nv">self_</span><span class="ss">)</span>.<span class="nv">__init__</span><span class="ss">()</span>
-              <span class="nv">self_</span>.<span class="nv">TOKENS</span> <span class="o">=</span> [<span class="s2">&quot;</span><span class="s">1</span><span class="s2">&quot;</span>, <span class="s2">&quot;</span><span class="s">2</span><span class="s2">&quot;</span>, <span class="s2">&quot;</span><span class="s">3</span><span class="s2">&quot;</span>, <span class="s2">&quot;</span><span class="s">4</span><span class="s2">&quot;</span>, <span class="s2">&quot;</span><span class="s">5</span><span class="s2">&quot;</span>]
-              <span class="nv">self_</span>.<span class="nv">INCREMENTS</span> <span class="o">=</span> [<span class="mi">1</span>, <span class="mi">2</span>, <span class="mi">1</span>, <span class="mi">0</span>, <span class="mi">1</span>]
-              <span class="nv">self_</span>.<span class="nv">i</span> <span class="o">=</span> <span class="mi">0</span>
-              <span class="nv">self_</span>.<span class="nv">posIncrAtt</span> <span class="o">=</span> <span class="nv">self_</span>.<span class="nv">addAttribute</span><span class="ss">(</span><span class="nv">PositionIncrementAttribute</span>.<span class="nv">class_</span><span class="ss">)</span>
-              <span class="nv">self_</span>.<span class="nv">termAtt</span> <span class="o">=</span> <span class="nv">self_</span>.<span class="nv">addAttribute</span><span class="ss">(</span><span class="nv">TermAttribute</span>.<span class="nv">class_</span><span class="ss">)</span>
-              <span class="nv">self_</span>.<span class="nv">offsetAtt</span> <span class="o">=</span> <span class="nv">self_</span>.<span class="nv">addAttribute</span><span class="ss">(</span><span class="nv">OffsetAttribute</span>.<span class="nv">class_</span><span class="ss">)</span>
-          <span class="nv">def</span> <span class="nv">incrementToken</span><span class="ss">(</span><span class="nv">self_</span><span class="ss">)</span>:
-              <span class="k">if</span> <span class="nv">self_</span>.<span class="nv">i</span> <span class="o">==</span> <span class="nv">len</span><span class="ss">(</span><span class="nv">self_</span>.<span class="nv">TOKENS</span><span class="ss">)</span>:
-                  <span class="k">return</span> <span class="nv">False</span>
-              <span class="nv">self_</span>.<span class="nv">termAtt</span>.<span class="nv">setTermBuffer</span><span class="ss">(</span><span class="nv">self_</span>.<span class="nv">TOKENS</span>[<span class="nv">self_</span>.<span class="nv">i</span>]<span class="ss">)</span>
-              <span class="nv">self_</span>.<span class="nv">offsetAtt</span>.<span class="nv">setOffset</span><span class="ss">(</span><span class="nv">self_</span>.<span class="nv">i</span>, <span class="nv">self_</span>.<span class="nv">i</span><span class="ss">)</span>
-              <span class="nv">self_</span>.<span class="nv">posIncrAtt</span>.<span class="nv">setPositionIncrement</span><span class="ss">(</span><span class="nv">self_</span>.<span class="nv">INCREMENTS</span>[<span class="nv">self_</span>.<span class="nv">i</span>]<span class="ss">)</span>
-              <span class="nv">self_</span>.<span class="nv">i</span> <span class="o">+=</span> <span class="mi">1</span>
-              <span class="k">return</span> <span class="nv">True</span>
-          <span class="nv">def</span> <span class="k">end</span><span class="ss">(</span><span class="nv">self_</span><span class="ss">)</span>:
-              <span class="nv">pass</span>
-          <span class="nv">def</span> <span class="nv">reset</span><span class="ss">(</span><span class="nv">self_</span><span class="ss">)</span>:
-              <span class="nv">pass</span>
-          <span class="nv">def</span> <span class="nv">close</span><span class="ss">(</span><span class="nv">self_</span><span class="ss">)</span>:
-              <span class="nv">pass</span>
-      <span class="k">return</span> <span class="nv">_tokenStream</span><span class="ss">()</span>
+<div class="highlight"><pre><span></span><span class="err">class _analyzer(PythonAnalyzer):</span>
+<span class="err">  def tokenStream(_self, fieldName, reader):</span>
+<span class="err">      class _tokenStream(PythonTokenStream):</span>
+<span class="err">          def __init__(self_):</span>
+<span class="err">              super(_tokenStream, self_).__init__()</span>
+<span class="err">              self_.TOKENS = [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;]</span>
+<span class="err">              self_.INCREMENTS = [1, 2, 1, 0, 1]</span>
+<span class="err">              self_.i = 0</span>
+<span class="err">              self_.posIncrAtt = self_.addAttribute(PositionIncrementAttribute.class_)</span>
+<span class="err">              self_.termAtt = self_.addAttribute(TermAttribute.class_)</span>
+<span class="err">              self_.offsetAtt = self_.addAttribute(OffsetAttribute.class_)</span>
+<span class="err">          def incrementToken(self_):</span>
+<span class="err">              if self_.i == len(self_.TOKENS):</span>
+<span class="err">                  return False</span>
+<span class="err">              self_.termAtt.setTermBuffer(self_.TOKENS[self_.i])</span>
+<span class="err">              self_.offsetAtt.setOffset(self_.i, self_.i)</span>
+<span class="err">              self_.posIncrAtt.setPositionIncrement(self_.INCREMENTS[self_.i])</span>
+<span class="err">              self_.i += 1</span>
+<span class="err">              return True</span>
+<span class="err">          def end(self_):</span>
+<span class="err">              pass</span>
+<span class="err">          def reset(self_):</span>
+<span class="err">              pass</span>
+<span class="err">          def close(self_):</span>
+<span class="err">              pass</span>
+<span class="err">      return _tokenStream()</span>
 </pre></div>
 
 
@@ -696,11 +696,11 @@ the mapping get for and the Java method to use. The method is specified with its
 followed by ':' and its Java
 <a href="https://java.sun.com/j2se/1.5.0/docs/guide/jni/spec/types.html#wp16432">signature</a>.</p>
 <p>For example, <em>System.getProperties()['java.class.path']</em> is made possible by:</p>
-<div class="highlight"><pre><span></span><span class="o">--</span><span class="nv">mapping</span> <span class="nv">java</span>.<span class="nv">util</span>.<span class="nv">Properties</span>
-        <span class="s1">&#39;</span><span class="s">getProperty:(Ljava/lang/String;)Ljava/lang/String;</span><span class="s1">&#39;</span>
-                    # <span class="nv">asking</span> <span class="k">for</span> <span class="nv">a</span> <span class="nv">Python</span> <span class="nv">mapping</span> <span class="nv">protocol</span> <span class="nv">wrapper</span>
-                    # <span class="k">for</span> <span class="nv">get</span> <span class="nv">access</span> <span class="nv">on</span> <span class="nv">the</span> <span class="nv">Properties</span> <span class="nv">class</span> <span class="nv">by</span>
-                    # <span class="nv">calling</span> <span class="nv">its</span> <span class="nv">getProperty</span> <span class="nv">method</span>
+<div class="highlight"><pre><span></span><span class="err">--mapping java.util.Properties</span>
+<span class="err">        &#39;getProperty:(Ljava/lang/String;)Ljava/lang/String;&#39;</span>
+<span class="err">                    # asking for a Python mapping protocol wrapper</span>
+<span class="err">                    # for get access on the Properties class by</span>
+<span class="err">                    # calling its getProperty method</span>
 </pre></div>
 
 
@@ -710,16 +710,16 @@ the class to generate the sequence length and get for and the two java methods
 to use. The methods are specified with their name followed by ':' and their Java
 <a href="https://java.sun.com/j2se/1.5.0/docs/guide/jni/spec/types.html#wp16432">signature</a>.
 For example:</p>
-<div class="highlight"><pre><span></span><span class="k">for</span> <span class="nv">i</span> <span class="nv">in</span> <span class="nv">xrange</span><span class="ss">(</span><span class="nv">len</span><span class="ss">(</span><span class="nv">hits</span><span class="ss">))</span>:
-<span class="nv">doc</span> <span class="o">=</span> <span class="nv">hits</span>[<span class="nv">i</span>]
-...
+<div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">xrange</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">hits</span><span class="p">))</span><span class="err">:</span><span class="w"></span>
+<span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hits</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
 </pre></div>
 
 
 <p>is made possible by:</p>
-<div class="highlight"><pre><span></span><span class="nt">--sequence</span> <span class="nt">org</span><span class="p">.</span><span class="nc">apache</span><span class="p">.</span><span class="nc">lucene</span><span class="p">.</span><span class="nc">search</span><span class="p">.</span><span class="nc">Hits</span>
-         <span class="s1">&#39;length:()I&#39;</span>
-         <span class="s1">&#39;doc:(I)Lorg/apache/lucene/document/Document;&#39;</span>
+<div class="highlight"><pre><span></span><span class="err">--sequence org.apache.lucene.search.Hits</span>
+<span class="err">         &#39;length:()I&#39;</span>
+<span class="err">         &#39;doc:(I)Lorg/apache/lucene/document/Document;&#39;</span>
 </pre></div>
 </div>
         </div>
