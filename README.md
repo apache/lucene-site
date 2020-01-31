@@ -42,12 +42,13 @@ You can also tell Pelican to watch for your modifications, instead of manually r
 pelican --autoreload --listen
 ```
 
-Now go to http://localhost:8000 to view the beautiful Lucene web page :)
+Now go to <http://localhost:8000> to view the beautiful Lucene web page :)
 
-There is also a convenience script that will build the site and serve the site with live updates. It even attempts to install a virtual python env with pelican if pelican is not found on path:
+There is also a convenience build script that will help you prepare your Python environment and optionally serve serve the site with live updates on localhost.
 
 ```sh
-./build.sh
+Usage: ./build.sh [-s]
+       -s  Serve the site on localhost:8000 and auto reload on changes
 ```
 
 ## Updating site during a Lucene/Solr release

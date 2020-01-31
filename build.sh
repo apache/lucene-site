@@ -14,6 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+if [[ ! -z $1 ]]; then
+  if [[ "$1" == "-s" ]]; then
+    SERVE=true
+  else
+    echo "Usage: ./build.sh [-s]"
+    echo "       -s  Serve the site on localhost:8000 and auto reload on changes"
+    exit 0
+  fi
+fi
 if [[ ! $(python3 -h 2>/dev/null) ]]; then
   echo "No python installed"
   echo "Try one of"
@@ -34,6 +43,12 @@ if [[ ! $(pelican -h 2>/dev/null) ]]; then
     echo "Install OK" && echo && echo
   fi
 fi
-echo "Building Lucene site locally. Goto http://localhost:8000 to view"
-echo "Edits you do to the source tree will be compiled immediately!"
-pelican --autoreload --listen
+if [[ $SERVE ]]; then
+  echo "Building Lucene site locally. Goto http://localhost:8000 to view."
+  echo "Edits you do to the source tree will be compiled immediately!"
+  pelican --autoreload --listen
+else
+  echo "Building Lucene site."
+  echo "To build and serve live edits locally, run this script with -s option."
+  pelican
+fi
