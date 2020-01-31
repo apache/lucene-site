@@ -27,10 +27,11 @@ As of Solr 8.2, it is published only in HTML format.
 
 **Latest release**:
 
-  - [Solr 8.3](8_3/)
+  - [Solr 8.4](8_4/)
 
 **Earlier versions**:
 
+  - [Solr 8.3](8_3/)
   - [Solr 8.2](8_2/)
   - [Solr 8.1](8_1/)
   - [Solr 8.0](8_0/)
