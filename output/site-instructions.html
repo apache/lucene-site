@@ -180,52 +180,23 @@ document.observe('dom:loaded', StartSlides);
 <div>
   <h1 class="title">Updating the Lucene Website</h1>
   <h2 id="editing-content-on-the-lucenetm-sites">Editing Content on the Lucene<span style="vertical-align: super; font-size: xx-small">TM</span> sites</h2>
-<p>Editing any of the Lucene sites (Core, Solr<span style="vertical-align: super; font-size: xx-small">TM</span>, PyLucene) is easily done using the <a href="http://www.apache.org/dev/cms.html">ASF CMS</a>.</p>
-<h3 id="quick-edits">Quick Edits</h3>
-<p>The easiest way to make quick edits to content on the website is using the <a href="https://cms.apache.org/#bookmark">CMS Bookmarklet</a> to edit/stage/publish page edits.</p>
-<h3 id="major-edits">Major Edits</h3>
-<p>To get started, take the following steps from the command line:</p>
-<ul>
-<li>svn co https://svn.apache.org/repos/asf/lucene/cms/trunk cms/trunk</li>
-<li>svn co https://svn.apache.org/repos/infra/websites/cms/build if you wish to build and test locally<ul>
-<li><a href="http://www.apache.org/dev/cmsref.html#local-build">http://www.apache.org/dev/cmsref.html#local-build</a> for details on building locally.  If you are on a mac, you may need some perl dependencies installed.</li>
-<li>cd asf-cms</li>
-<li>./build_site.pl --target-base=<path to output on local HTTPd server, I use ~/Sites> --source=../trunk/</li>
-</ul>
-</li>
-<li>Edit the files in cms/trunk/content and cms/trunk/templates as you see fit.  When you are satisfied, svn commit.</li>
-<li>Browse to the <a href="http://lucene.staging.apache.org/">staging site</a> to see them live (it may take a few seconds to build, you can track builds at <a href="http://ci.apache.org/builders/lucene-site-staging">http://ci.apache.org/builders/lucene-site-staging</a>).</li>
-</ul>
-<h2 id="publishing-content-to-the-live-site">Publishing Content to the Live Site</h2>
-<ul>
-<li>Browse to <a href="https://cms.apache.org/lucene/publish">https://cms.apache.org/lucene/publish</a> and log in.</li>
-<li>Confirm svn differences.</li>
-<li>Click the 'submit' button to publish changes.</li>
-</ul>
-<h2 id="references">References</h2>
-<ul>
-<li>
-<p><a href="http://daringfireball.net/projects/markdown/syntax">Markdown Reference</a></p>
-</li>
-<li>
-<p><a href="http://www.apache.org/dev/cmsref.html">ASF CMS Reference</a> and <a href="http://www.apache.org/dev/cms.html">ASF CMS</a></p>
-</li>
-</ul>
+<p>The site is hosted in the git repo <a href="https://github.com/apache/lucene-site/">https://github.com/apache/lucene-site/</a></p>
+<p>Read the README file in that repo for instructions on how to update the site.</p>
 </div>
         </div>
         <div id="sidebar">
 <div class="button-green">
   <a href="/core/downloads.html">Download</a>
   <div class="flap top">Click to</div>
-  <div class="flap bottom">Apache Lucene 8.3.0</div>
+  <div class="flap bottom">Apache Lucene 8.4.1</div>
 </div>
-<div class="download-desc">Apache Lucene 8.3.0</div>
+<div class="download-desc">Apache Lucene 8.4.1</div>
 <div class="button-orange">
   <a href="/solr/downloads.html">Download</a>
   <div class="flap top">Click to</div>
-  <div class="flap bottom">Apache Solr 8.3.0</div>
+  <div class="flap bottom">Apache Solr 8.4.1</div>
 </div>
-<div class="download-desc">Apache Solr 8.3.0</div>
+<div class="download-desc">Apache Solr 8.4.1</div>
 
 <h1 id="projects">Projects<a class="headerlink" href="#projects" title="Permanent link">¶</a></h1>
 <ul>
@@ -257,8 +228,6 @@ document.observe('dom:loaded', StartSlides);
 <h1 id="editing-this-site">Editing This Site<a class="headerlink" href="#editing-this-site" title="Permanent link">¶</a></h1>
 <ul>
   <li><a href="site-instructions.html">Instructions</a></li>
-  <li><a href="http://www.apache.org/dev/cms.html">ASF CMS</a></li>
-  <li><a href="http://www.apache.org/dev/cmsref.html">ASF CMS Reference/FAQ</a></li>
   <li><a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a></li>
 </ul>
 
@@ -267,7 +236,6 @@ document.observe('dom:loaded', StartSlides);
   <li><a href="http://hadoop.apache.org">Apache Hadoop</a></li>
   <li><a href="http://manifoldcf.apache.org/">Apache ManifoldCF</a></li>
   <li><a href="http://lucenenet.apache.org/">Apache Lucene.Net</a></li>
-  <li><a href="http://lucy.apache.org/">Apache Lucy</a></li>
   <li><a href="http://mahout.apache.org">Apache Mahout</a></li>
   <li><a href="http://nutch.apache.org">Apache Nutch</a></li>
   <li><a href="http://opennlp.apache.org/">Apache OpenNLP</a></li>
@@ -276,11 +244,10 @@ document.observe('dom:loaded', StartSlides);
 </ul>        </div>
       </div> <!-- End #content-wrap -->
 
-
 <div id="footer">
   <div class="copyright">
     <p>
-      Copyright &copy; 2011-2019 The Apache Software Foundation, Licensed under
+      Copyright &copy; 2011-2020 The Apache Software Foundation, Licensed under
       the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.  <a href="/privacy.html">Privacy Policy</a>      <br/>
       Apache and the Apache feather logo are trademarks of The Apache Software Foundation.  Apache Lucene, Apache Solr and their
       respective logos are trademarks of the Apache Software Foundation.  Please see the <a href="http://www.apache.org/foundation/marks/">Apache Trademark Policy</a>

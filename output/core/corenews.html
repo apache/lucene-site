@@ -196,6 +196,53 @@ document.observe('dom:loaded', StartSlides);
 </div>
 
   <div>
+    <h2 id="apache-lucenetm-841-available">
+      13 January 2020 - Apache Lucene™ 8.4.1 available
+      <a class="headerlink" href="#apache-lucenetm-841-available" title="Permanent link">¶</a>
+    </h2>
+    <p>The Lucene PMC is pleased to announce the release of Apache Lucene 8.4.1.</p>
+<p>Apache Lucene is a high-performance, full-featured text search engine library written entirely in Java. It is a technology suitable for nearly any application that requires full-text search, especially cross-platform.</p>
+<p>This release contains numerous bug fixes, optimizations, and improvements, some of which are highlighted below. The release is available for immediate download at:</p>
+<p><a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a></p>
+<h3 id="lucene-841-release-highlights">Lucene 8.4.1 Release Highlights:</h3>
+<p>(No Changes since 8.4.0)</p>
+    <h2 id="apache-lucenetm-840-available">
+      29 December 2019 - Apache Lucene™ 8.4.0 available
+      <a class="headerlink" href="#apache-lucenetm-840-available" title="Permanent link">¶</a>
+    </h2>
+    <p>The Lucene PMC is pleased to announce the release of Apache Lucene 8.4.0.</p>
+<p>Apache Lucene is a high-performance, full-featured text search engine library written entirely in Java. It is a technology suitable for nearly any application that requires full-text search, especially cross-platform.</p>
+<p>This release contains numerous bug fixes, optimizations, and improvements, some of which are highlighted below. The release is available for immediate download at:</p>
+<p><a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a></p>
+<h3 id="lucene-840-release-highlights">Lucene 8.4.0 Release Highlights:</h3>
+<ul>
+<li>LatLonShape now supports the "CONTAINS" relation, which enables to find all indexed shapes that contain the query shape.</li>
+<li>Concurrent search is getting more efficient by allowing collectors to share information across threads in order to more efficiently skip non-competitive hits.</li>
+<li>Faster FST lookups on dense nodes.</li>
+<li>Postings are now decoded using SIMD instructions.</li>
+<li>LRUQueryCache includes new heuristics that prevent caching from hurting latency too much.</li>
+<li>LatLonShape builds a more efficient tree that is expected to translate into search speed improvements.</li>
+<li>BaseDirectoryReader no longer sums up document counts across leaves eagerly, allowing for more efficient reader views that hide a subset of documents.</li>
+<li>The index on top of BKD trees is now stored off-heap with MMapDirectory.</li>
+<li>Simple Intervals queries support highlighting.</li>
+<li>Reading DocValues can be interrupted when timeout is exceeded.</li>
+</ul>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="https://lucene.apache.org/core/8_4_0/changes/Changes.html">https://lucene.apache.org/core/8_4_0/changes/Changes.html</a></p>
+    <h2 id="apache-lucenetm-831-available">
+      3 December 2019 - Apache Lucene™ 8.3.1 available
+      <a class="headerlink" href="#apache-lucenetm-831-available" title="Permanent link">¶</a>
+    </h2>
+    <p>The Lucene PMC is pleased to announce the release of Apache Lucene 8.3.1.</p>
+<p>Apache Lucene is a high-performance, full-featured text search engine library written entirely in Java. It is a technology suitable for nearly any application that requires full-text search, especially cross-platform.</p>
+<p>This release contains numerous bug fixes, optimizations, and improvements, some of which are highlighted below. The release is available for immediate download at:</p>
+<p><a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a></p>
+<h3 id="lucene-831-release-highlights">Lucene 8.3.1 Release Highlights:</h3>
+<ul>
+<li>Bugfix: MultiTermIntervalsSource.visit() was not calling back to its visitor</li>
+</ul>
+<p>Please read CHANGES.txt for a full list of changes:</p>
+<p><a href="https://lucene.apache.org/core/8_3_1/changes/Changes.html">https://lucene.apache.org/core/8_3_1/changes/Changes.html</a></p>
     <h2 id="apache-lucenetm-830-available">
       2 November 2019 - Apache Lucene™ 8.3.0 available
       <a class="headerlink" href="#apache-lucenetm-830-available" title="Permanent link">¶</a>
@@ -1869,25 +1916,25 @@ with the release for a full list of details.</p>
         <div id="sidebar">
 <div class="button-wrapper">
   <div class="button-green">
-    <a href="/downloads.html">Download</a>
+    <a href="/core/downloads.html">Download</a>
     <div class="flap top">Click to</div>
-    <div class="flap bottom">Apache Lucene 8.3.0</div>
+    <div class="flap bottom">Apache Lucene 8.4.1</div>
   </div>
-  <div class="download-desc">Apache Lucene 8.3.0</div>
+  <div class="download-desc">Apache Lucene 8.4.1</div>
 </div>
 
 <h1 id="resources">Resources</h1>
 <ul>
-  <li><a href="/discussion.html">Mailing Lists</a></li>
-  <li><a href="/developer.html">Developer</a></li>
-  <li><a href="/features.html">Features</a></li>
-  <li><a href="/downloads.html">Releases</a></li>
-  <li><a href="/systemreqs.html">System Requirements</a></li>
+  <li><a href="/core/discussion.html">Mailing Lists</a></li>
+  <li><a href="/core/developer.html">Developer</a></li>
+  <li><a href="/core/features.html">Features</a></li>
+  <li><a href="/core/downloads.html">Releases</a></li>
+  <li><a href="/core/systemreqs.html">System Requirements</a></li>
 </ul>
 
 <h1 id="release-docs">Release Docs</h1>
 <ul>
-  <li><a href="/core/8_3_0/index.html">8.3.0</a></li>
+  <li><a href="/core/8_4_1/index.html">8.4.1</a></li>
 </ul>
 
 <h1 id="about">About</h1>
@@ -1914,7 +1961,6 @@ with the release for a full list of details.</p>
   <li><a href="http://hadoop.apache.org">Apache Hadoop</a></li>
   <li><a href="http://manifoldcf.apache.org/">Apache ManifoldCF</a></li>
   <li><a href="http://lucenenet.apache.org/">Apache Lucene.Net</a></li>
-  <li><a href="http://lucy.apache.org/">Apache Lucy</a></li>
   <li><a href="http://mahout.apache.org">Apache Mahout</a></li>
   <li><a href="http://nutch.apache.org">Apache Nutch</a></li>
   <li><a href="http://opennlp.apache.org/">Apache OpenNLP</a></li>
@@ -1929,11 +1975,10 @@ with the release for a full list of details.</p>
 </div>        </div>
       </div> <!-- End #content-wrap -->
 
-
 <div id="footer">
   <div class="copyright">
     <p>
-      Copyright &copy; 2011-2019 The Apache Software Foundation, Licensed under
+      Copyright &copy; 2011-2020 The Apache Software Foundation, Licensed under
       the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.  <a href="/privacy.html">Privacy Policy</a>      <br/>
       Apache and the Apache feather logo are trademarks of The Apache Software Foundation.  Apache Lucene, Apache Solr and their
       respective logos are trademarks of the Apache Software Foundation.  Please see the <a href="http://www.apache.org/foundation/marks/">Apache Trademark Policy</a>
