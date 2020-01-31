@@ -17,10 +17,13 @@
 if [[ ! -z $1 ]]; then
   if [[ "$1" == "-s" ]]; then
     SERVE=true
+    shift
   else
-    echo "Usage: ./build.sh [-s]"
+    echo "Usage: ./build.sh [-s] [<other pelican arguments>]"
     echo "       -s  Serve the site on localhost:8000 and auto reload on changes"
-    exit 0
+    if [[ "$1" == "-h" ]]; then
+      exit 0
+    fi
   fi
 fi
 if [[ ! $(python3 -h 2>/dev/null) ]]; then
@@ -46,9 +49,9 @@ fi
 if [[ $SERVE ]]; then
   echo "Building Lucene site locally. Goto http://localhost:8000 to view."
   echo "Edits you do to the source tree will be compiled immediately!"
-  pelican --autoreload --listen
+  pelican --autoreload --listen $@
 else
   echo "Building Lucene site."
   echo "To build and serve live edits locally, run this script with -s option."
-  pelican
+  pelican $@
 fi
