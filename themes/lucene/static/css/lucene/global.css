@@ -713,19 +713,6 @@ input.button {
     margin-left: 20px;
 }
 
-/* Lucene and Solr logos on TLP front page */
-.front-logo-container {
-    height:110px;
-    position: relative;
-    background: none;
-}
-
-.front-logo-container img {
-    position: absolute;
-    left: 10px;
-    bottom: 5px;
-}
-
 /********************************
  Content Styles
 ********************************/
@@ -958,6 +945,19 @@ body#home #col2 {
 	float:right;
 	margin:0px 20px 0 0;
 	display:inline;
+}
+
+/* Lucene and Solr logos on TLP front page */
+.front-logo-container {
+    height:110px;
+    position: relative;
+    background: none;
+}
+
+.front-logo-container img {
+    position: absolute;
+    left: 10px;
+    bottom: 5px;
 }
 
 /*SUBPAGE - NO SIDEBAR*/
