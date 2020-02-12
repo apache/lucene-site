@@ -1,0 +1,435 @@
+<!doctype html>
+<html>
+  <head>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE- 2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<link href="/theme/css/lucene/global.css" rel="stylesheet" type="text/css">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+<meta name="Distribution" content="Global"/>
+<meta name="Robots" content="index,follow"/>
+
+<script type="text/javascript" src="/theme/javascript/lucene/prototype.js"></script>
+<script type="text/javascript" src="/theme/javascript/lucene/effects.js"></script>
+<script type="text/javascript" src="/theme/javascript/lucene/search.js"></script>
+<script type="text/javascript" src="/theme/javascript/lucene/slides.js"></script>    <title>Apache Lucene - Who we are</title>
+<meta name="keywords"
+       content="apache, apache lucene, apache solr, solr, lucene
+       search, information retrieval, spell checking, faceting, inverted index,
+       open source"/><link rel="shortcut icon" type="image/x-icon"
+    href="/theme/images/lucene/lucene-favicon.ico"/>  </head>
+  <body id="home">
+    <div id="wrap">
+      <div id="header">
+        <div id="logo" style="float:left">
+          <a href="/">
+            <img border="0" src="/theme/images/lucene/lucene_logo_green_300.png" alt="Lucene Logo"/>
+          </a>
+          <div style="position:absolute;right:100px;top:10px;"><span style="vertical-align: super; font-size: xx-small">TM</span></div>
+        </div>
+<div id="search" style="float:right;zoom:1">
+  <script type="text/javascript">
+    function getBlank(input, stdValue) {
+      if (input.value == stdValue) {
+        input.value = '';
+      }
+      return true;
+    }
+
+    function submitForm(form) {
+      provider = form.elements['searchProvider'].value;
+      if (provider == "any") {
+        if (Math.random() > 0.5) {
+          provider = "lucid";
+        } else {
+          provider = "sl";
+        }
+      }
+
+      if (provider == "lucid") {
+        form.action = "http://find.searchhub.org/p:lucene,solr";
+      } else if (provider == "sl") {
+        form.action = "http://search-lucene.com/lucene";
+      }
+
+      days = 90; // cookie will be valid for 90 days
+      date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toGMTString();
+      document.cookie = "searchProvider=" + provider + expires + "; path=/";
+
+      return true;
+    }
+  </script>
+  <form id="quick-search" method="GET" onsubmit="return submitForm(this)"
+        action="http://search-lucene.com/lucene"
+        name="searchform">
+    <fieldset>
+      <input type="search" id="q" name="q" value="Search with Apache Solr..." class="class1 class2 hint" accesskey="q"
+             onfocus="getBlank(this, 'Search with Apache Solr...')">
+      <span style="color:white">@</span>
+      <select name="searchProvider" id="searchProvider">
+        <option value="any">select provider</option>
+        <option value="lucid">Lucid Find</option>
+        <option value="sl">Search-Lucene</option>
+      </select>
+    </fieldset>
+    <script type="text/javascript">
+      if (document.cookie.length > 0) {
+        cStart = document.cookie.indexOf("searchProvider=");
+        if (cStart != -1) {
+          cStart = cStart + "searchProvider=".length;
+          cEnd = document.cookie.indexOf(";", cStart);
+          if (cEnd == -1) {
+            cEnd = document.cookie.length;
+          }
+          provider = unescape(document.cookie.substring(cStart, cEnd));
+          document.forms['searchform'].elements['searchProvider'].value = provider;
+        }
+      }
+    </script>
+  </form>
+</div>        <div id="nav">
+          <ul>
+<li><a href="/core/">Core (Java)</a></li>
+<li><a href="/solr/">Solr</a></li>
+<li><a class="last" href="/pylucene/index.html">PyLucene</a></li>
+          </ul>
+        </div>
+
+<div id="slides">
+  <div class="slideshow" id="mantleSlides">
+<div id="slide1" >
+  <div class="callout">
+    Ultra-fast Search Library and Server<br/>
+  </div>
+  <div class="descwrapper"><div class="description">
+      Apache Lucene and Solr set the standard for search and indexing performance
+    </div></div>
+    <div class="mantle">
+      <img alt="Apache Lucene" src="/theme/images/lucene/tlp/mantle-lucene-solr.png"/>
+    </div>
+</div>
+<div id="slide2" style="display:none">
+  <div class="callout">
+    Proven search capabilities<br/>
+  </div>
+  <div class="descwrapper"><div class="description">
+      Our core algorithms along with the Solr search server power applications the world over, ranging
+      from mobile devices to sites like Twitter, Apple and Wikipedia.
+    </div></div>
+    <div class="mantle">
+      <img alt="Lucene Power" src="/theme/images/lucene/mantle-power.png"/>
+    </div>
+</div>
+<div id="slide3" style="display:none">
+  <div class="callout">
+    Large, Vibrant community
+  </div>
+  <div class="descwrapper"><div class="description">
+      The goal of Apache Lucene and Solr is to provide world class search capabilities
+    </div></div>
+    <div class="mantle">
+      <img alt="Apache Mahout community" src="/theme/images/lucene/tlp/mantle-community.png"/>
+    </div>
+</div>
+<div id="slide4" style="display:none">
+  <div class="callout">
+    Apache 2.0 licensed
+  </div>
+  <div class="descwrapper"><div class="description">
+      Apache Lucene and Solr are distributed under a commercially friendly Apache Software license
+    </div></div>
+    <div class="mantle">
+      <img alt="Apache Software Foundation" src="/theme/images/lucene/mantle-asf.png"/>
+    </div>
+</div>  </div>
+  <div class="controls">
+    <a class="next" id="next" title="Next" href="#">Next</a>
+    <a class="previous" id="previous" title="Previous" href="#">Previous</a>
+    <a class="start" id="start" title="Start" href="#" style="display: none; ">Start</a>
+    <a class="stop" id="stop" title="Stop" href="#">Stop</a>
+  </div>
+
+  <script type="text/javascript">
+    function StartSlides() {
+      new Slides('mantleSlides');
+    }
+document.observe('dom:loaded', StartSlides);
+  </script>
+</div> <!-- End #slides -->
+      </div> <!-- End #header -->
+
+      <div id="content-wrap" class="clearfix">
+        <div id="main">
+<div>
+  <h1 class="title">Who we are</h1>
+  <h2 id="lucenetmsolrtm-committers">Lucene<span style="vertical-align: super; font-size: xx-small">TM</span>/Solr<span style="vertical-align: super; font-size: xx-small">TM</span> Committers</h2>
+<ul>
+<li><em><a href="https://www.linkedin.com/in/danmuzi">Namgyu Kim</a></em> (namgyu@...)</li>
+<li><em><a href="https://www.linkedin.com/in/andyetitmoves">Ramkumar Aiyengar</a></em> (andyetitmoves@...)</li>
+<li><em>Ahmet Arslan</em> (iorixxx@...)</li>
+<li><em>Bill Au</em> (billa@...)</li>
+<li><em>Joel Bernstein</em> (jbernste@...)</li>
+<li><em>Andrzej Bialecki</em> (ab@...)</li>
+<li><em><a href="https://github.com/dragonsinth">Scott Blum</a></em> (dragonsinth@...)</li>
+<li><em>Greg Bowyer</em> (gbowyer@...)</li>
+<li><em>Michael Busch</em> (buschmi@...)</li>
+<li><em>Gregory Chanan</em> (gchanan@...)</li>
+<li><em>Ishan Chattopadhyaya</em> (ishan@...)</li>
+<li><em><a href="https://www.linkedin.com/in/cao-manh-dat-44244435/">Cao Manh Dat</a></em> (datcm@...)</li>
+<li><em>Doron Cohen</em> (doronc@...)</li>
+<li><em>Adriano Crestani</em> (adrianocrestani@...)</li>
+<li><em><a href="http://blog.lucene.com/">Doug Cutting</a></em> (cutting@...)</li>
+<li><em>Mike Drob</em> (mdrob@...)</li>
+<li><em>James Dyer</em> (jdyer@...)</li>
+<li><em><a href="http://shaierera.blogspot.com/">Shai Erera</a></em> (shaie@...)</li>
+<li><em>Erick Erickson</em> (erick@...)</li>
+<li><em>Ryan Ernst</em> (rjernst@...)</li>
+<li><em><a href="https://sbdevel.wordpress.com/author/eskildsen/">Toke Eskildsen</a></em> (toke@...)</li>
+<li><em>Tomas Fernandez Lobbe</em> (tflobbe@...)</li>
+<li><em>Jim Ferenczi</em> (jimczi@...)</li>
+<li><em><a href="https://twitter.com/jeg90">Jason Gerlowski</a></em> (gerlowskija@...)</li>
+<li><em><a href="http://www.sematext.com">Otis Gospodnetic</a></em> (otis@...)</li>
+<li><em>Dennis Gove</em> (dpgove@...)</li>
+<li><em>Adrien Grand</em> (jpountz@...)</li>
+<li><em>Martijn van Groningen</em> (mvg@...)</li>
+<li><em><a href="https://twitter.com/anshumgupta">Anshum Gupta</a></em> (anshum@...)</li>
+<li><em>Erik Hatcher</em> (ehatcher@...)</li>
+<li><em>Mark Harwood</em> (mharwood@...)</li>
+<li><em>Gus Heck</em> (gus@...)</li>
+<li><em>Shawn Heisey</em> (elyograg@...)</li>
+<li><em>Wolfgang Hoschek</em> (whoschek@...)</li>
+<li><em>Chris Hostetter</em> (hossman@...)</li>
+<li><em><a href="http://www.cominvent.com/">Jan H&oslash;ydahl</a></em> (janhoy@...)</li>
+<li><em><a href="http://lucene.grantingersoll.com">Grant Ingersoll</a></em> (gsingers@...)</li>
+<li><em>Han Jiang</em> (han@...)</li>
+<li><em><a href="https://plus.google.com/+MikhailKhludnev">Mikhail Khludnev</a></em> (mkhl@...)</li>
+<li><em>Nick Knize</em> (nknize@...)</li>
+<li><em>Chris Male</em> (chrism@...)</li>
+<li><em><a href="http://www.basistech.com/management/">Benson Margulies</a></em> (bimargulies@...)</li>
+<li><em>Stefan Matheis</em> (steffkes@...)</li>
+<li><em><a href="http://blog.mikemccandless.com">Mike McCandless</a></em> (mikemccand@...)</li>
+<li><em>Ryan McKinley</em> (ryan@...)</li>
+<li><em>Bernhard Messer</em> (bmesser@...)</li>
+<li><em><a href="http://twitter.com/heismark">Mark Miller</a></em> (markrmiller@...)</li>
+<li><em><a href="http://www.atilika.com">Christian Moen</a></em> (cm@...)</li>
+<li><em>Robert Muir</em> (rmuir@...)</li>
+<li><em>Munendra S N</em> (munendrasn@...)</li>
+<li><em><a href="http://stanislaw.osinski.name">Stanislaw Osinski</a></em> (stanislaw@...)</li>
+<li><em>Noble Paul</em> (noble@...)</li>
+<li><em>Christine Poerschke</em> (cpoerschke@...)</li>
+<li><em>Timothy Potter</em> (thelabdude@...)</li>
+<li><em><a href="http://www.linkedin.com/in/houston-putman-3b662361">Houston Putman</a></em> (houston@...)</li>
+<li><em><a href="http://www.solr-start.com/">Alexandre Rafalovitch</a></em> (arafalov@...)</li>
+<li><em><a href="https://risdenk.github.io/">Kevin Risden</a></em> (krisden@...)</li>
+<li><em>Bruno Roustant</em> (broustant@...)</li>
+<li><em>Steve Rowe</em> (sarowe@...)</li>
+<li><em><a href="http://www.thetaphi.de/">Uwe Schindler</a></em> (uschindler@...)</li>
+<li><em>Yonik Seeley</em> (yonik@...)</li>
+<li><em>Koji Sekiguchi</em> (koji@...)</li>
+<li><em>Atri Sharma</em> (atri@...)</li>
+<li><em><a href="http://shal.in">Shalin Shekhar Mangar</a></em> (shalin@...)</li>
+<li><em>Sami Siren</em> (siren@...)</li>
+<li><em><a href="http://www.linkedin.com/in/davidwsmiley">David Smiley</a></em> (dsmiley@...)</li>
+<li><em>Michael Sokolov</em> (msokolov@...)</li>
+<li><em>Cassandra Targett</em> (ctargett@...)</li>
+<li><em>Tommaso Teofili</em> (tommaso@...)</li>
+<li><em>Varun Thacker</em> (varun@...)</li>
+<li><em>Tomoko Uchida</em> (tomoko@...)</li>
+<li><em><a href="http://www.odoko.com">Upayavira</a></em> (upayavira@...)</li>
+<li><em>Andi Vajda</em> (vajda@...)</li>
+<li><em>Ignacio Vera</em> (ivera@...)</li>
+<li><em><a href="http://www.dawidweiss.com/">Dawid Weiss</a></em> (dweiss@...)</li>
+<li><em>Simon Willnauer</em> (simonw@...)</li>
+<li><em>Alan Woodward</em> (romseygeek@...)</li>
+<li><em>Karl Wright</em> (kwright@...)</li>
+<li><em><a href="http://www.linkedin.com/in/areekzillur">Areek Zillur</a></em> (areek@...)</li>
+</ul>
+<h2 id="emeritus">Emeritus</h2>
+<ul>
+<li><em>George Aroush</em> (aroush@...)</li>
+<li><em>Josh Bloch</em></li>
+<li><em>Peter Carlson</em> (carlson@...)</li>
+<li><em>Tal Dayan</em> (zapta@...)</li>
+<li><em>Bertrand Delacretaz</em> (bdelacretaz@...)</li>
+<li><em>Scott Ganyo</em> (scottganyo@...)</li>
+<li><em>Brian Goetz</em> (briangoetz@...)</li>
+<li><em>Christoph Goller</em> (goller@...)</li>
+<li><em>Eugene Gluzberg</em> (drag0n@...)</li>
+<li><em>Cory Hubert</em> (clhubert@...)</li>
+<li><em>Ted Husted</em></li>
+<li><em>Tim Jones</em> (tjones@...)</li>
+<li><em>Mike Klaas</em> (klaas@...)</li>
+<li><em>Dave Kor</em> (davekor@...)</li>
+<li><em>Daniel Naber</em> (dnaber@...)</li>
+<li><em>Patrick O'Leary</em> (pjaol@...)</li>
+<li><em>Andrew C. Oliver</em> (acoliver@...)</li>
+<li><em>Dmitry Serebrennikov</em> (dmitrys@...)</li>
+<li><em>Jon Stevens</em> (jon at latchkey.com)</li>
+<li><em>Matt Tucker</em> (mtucker@...)</li>
+<li><em>Karl Wettin</em> (kalle@...)</li>
+</ul>
+<h2 id="lucene-project-management-committee-pmc">Lucene Project Management Committee (PMC)</h2>
+<ul>
+<li><em>Joel Bernstein</em> (jbernste@...)</li>
+<li><em>Andrzej Bialecki</em> (ab@...)</li>
+<li><em>Michael Busch</em> (buschmi@...)</li>
+<li><em>Doron Cohen</em> (doronc@...)</li>
+<li><em>James Dyer</em> (jdyer@...)</li>
+<li><em>Shai Erera</em> (shaie@...)</li>
+<li><em>Erick Erickson</em> (erick@...)</li>
+<li><em>Ryan Ernst</em> (rjernst@...)</li>
+<li><em>Tomas Fernandez Lobbe</em> (tflobbe@...)</li>
+<li><em>Scott Ganyo</em> (scottganyo@...)</li>
+<li><em><a href="https://twitter.com/jeg90">Jason Gerlowski</a></em> (gerlowskija@...)</li>
+<li><em>Otis Gospodnetic</em> (otis@...)</li>
+<li><em>Dennis Gove</em> (dpgove@...)</li>
+<li><em>Adrien Grand</em> (jpountz@...)</li>
+<li><em>Martijn van Groningen</em> (mvg@...)</li>
+<li><em>Anshum Gupta</em> (anshum@...)</li>
+<li><em>Mark Harwood</em> (mharwood@...)</li>
+<li><em>Erik Hatcher</em> (ehatcher@...)</li>
+<li><em>Shawn Heisey</em> (elyograg@...)</li>
+<li><em>Jan H&oslash;ydahl</em> (janhoy@...)</li>
+<li><em>Grant Ingersoll</em> (gsingers@...)</li>
+<li><em>Nick Knize</em> (nknize@...)</li>
+<li><em>Shalin Shekhar Mangar</em> (shalin@...)</li>
+<li><em>Stefan Matheis</em> (steffkes@...)</li>
+<li><em>Mike McCandless</em> (mikemccand@...)</li>
+<li><em><a href="https://plus.google.com/+MikhailKhludnev">Mikhail Khludnev</a></em> (mkhl@...)</li>
+<li><em>Ryan McKinley</em> (ryan@...)</li>
+<li><em>Mark Miller</em> (markrmiller@...)</li>
+<li><em><a href="http://www.atilika.com">Christian Moen</a></em> (cm@...)</li>
+<li><em>Robert Muir</em> (rmuir@...)</li>
+<li><em>Christine Poerschke</em> (cpoerschke@...)</li>
+<li><em>Timothy Potter</em> (thelabdude@...)</li>
+<li><em><a href="https://risdenk.github.io/">Kevin Risden</a></em> (krisden@...)</li>
+<li><em>Steve Rowe</em> (sarowe@...)</li>
+<li><em><a href="http://www.thetaphi.de/">Uwe Schindler</a></em> (uschindler@...)</li>
+<li><em>Yonik Seeley</em> (yonik@...)</li>
+<li><em>Koji Sekiguchi</em> (koji@...)</li>
+<li><em>Sami Siren</em> (siren@...)</li>
+<li><em><a href="http://www.linkedin.com/in/davidwsmiley">David Smiley</a></em> (dsmiley@...)</li>
+<li><em>Cassandra Targett</em> (ctargett@...)</li>
+<li><em>Tommaso Teofili</em> (tommaso@...)</li>
+<li><em>Varun Thacker</em> (varun@...)</li>
+<li><em>Andi Vajda</em> (vajda@...)</li>
+<li><em>Ignacio Vera</em> (ivera@...)</li>
+<li><em>Dawid Weiss</em> (dweiss@...)</li>
+<li><em>Simon Willnauer</em> (simonw@...)</li>
+<li><em>Alan Woodward</em> (romseygeek@...)</li>
+<li><em>Karl Wright</em> (kwright@...)</li>
+<li><em><a href="http://www.linkedin.com/in/areekzillur">Areek Zillur</a></em> (areek@...)</li>
+</ul>
+<h2 id="emeritus-pmc-members">Emeritus PMC members:</h2>
+<ul>
+<li><em>George Aroush</em> (aroush@...)</li>
+<li><em>Doug Cutting</em> (cutting@...)</li>
+<li><em>Christoph Goller</em> (goller@...)</li>
+<li><em>Chris Hostetter</em> (hossman@...)</li>
+<li><em>Mike Klaas</em> (klaas@...)</li>
+</ul>
+<p>Note that the email addresses above end with @apache.org.</p>
+</div>
+        </div>
+        <div id="sidebar">
+<div class="button-green">
+  <a href="/core/downloads.html">Download</a>
+  <div class="flap top">Click to</div>
+  <div class="flap bottom">Apache Lucene 8.4.1</div>
+</div>
+<div class="download-desc">Apache Lucene 8.4.1</div>
+<div class="button-orange">
+  <a href="/solr/downloads.html">Download</a>
+  <div class="flap top">Click to</div>
+  <div class="flap bottom">Apache Solr 8.4.1</div>
+</div>
+<div class="download-desc">Apache Solr 8.4.1</div>
+
+<h1 id="projects">Projects<a class="headerlink" href="#projects" title="Permanent link">¶</a></h1>
+<ul>
+  <li><a href="/core/">Lucene Core (Java)</a></li>
+  <li><a href="/solr/">Solr</a></li>
+  <li><a href="/pylucene/">PyLucene</a></li>
+  <li><a href="/openrelevance/">Open Relevance (Discontinued)</a></li>
+</ul>
+
+<h1 id="about">About<a class="headerlink" href="#about" title="Permanent link">¶</a></h1>
+<ul>
+  <li><a href="https://www.apache.org/licenses/">License</a></li>
+  <li><a href="/whoweare.html">Who We are</a></li>
+</ul>
+
+<h1 id="events">Events<a class="headerlink" href="#events" title="Permanent link">¶</a></h1>
+<ul>
+  <li><a href="https://www.apache.org/events/current-event.html" target="_blank"><img src="https://www.apache.org/events/current-event-125x125.png"></a></li>
+</ul>
+
+<h1 id="asf-links">ASF links<a class="headerlink" href="#asf-links" title="Permanent link">¶</a></h1>
+<ul>
+  <li><a href="http://www.apache.org">Apache Software Foundation</a></li>
+  <li><a href="http://www.apache.org/foundation/thanks.html">Thanks</a></li>
+  <li><a href="http://www.apache.org/foundation/sponsorship.html">Become a Sponsor</a></li>
+  <li><a href="http://www.apache.org/security/">Security</a></li>
+</ul>
+
+<h1 id="editing-this-site">Editing This Site<a class="headerlink" href="#editing-this-site" title="Permanent link">¶</a></h1>
+<ul>
+  <li><a href="site-instructions.html">Instructions</a></li>
+  <li><a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a></li>
+</ul>
+
+<h1 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">¶</a></h1>
+<ul>
+  <li><a href="http://hadoop.apache.org">Apache Hadoop</a></li>
+  <li><a href="http://manifoldcf.apache.org/">Apache ManifoldCF</a></li>
+  <li><a href="http://lucenenet.apache.org/">Apache Lucene.Net</a></li>
+  <li><a href="http://mahout.apache.org">Apache Mahout</a></li>
+  <li><a href="http://nutch.apache.org">Apache Nutch</a></li>
+  <li><a href="http://opennlp.apache.org/">Apache OpenNLP</a></li>
+  <li><a href="http://tika.apache.org">Apache Tika</a></li>
+  <li><a href="http://zookeeper.apache.org">Apache Zookeeper</a></li>
+</ul>        </div>
+      </div> <!-- End #content-wrap -->
+
+<div id="footer">
+  <div class="copyright">
+    <p>
+      Copyright &copy; 2011-2020 The Apache Software Foundation, Licensed under
+      the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.  <a href="/privacy.html">Privacy Policy</a>      <br/>
+      Apache and the Apache feather logo are trademarks of The Apache Software Foundation.  Apache Lucene, Apache Solr and their
+      respective logos are trademarks of the Apache Software Foundation.  Please see the <a href="http://www.apache.org/foundation/marks/">Apache Trademark Policy</a>
+      for more information.
+    </p>
+  </div>
+</div>    </div> <!-- End #wrap -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-94576-12']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>  </body>
+</html>
