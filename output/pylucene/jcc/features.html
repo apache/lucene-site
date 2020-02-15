@@ -175,7 +175,7 @@ methods named <em>setField(value)</em>, <em>getField()</em> or <em>isField()</em
 classes' Java packages. The Python types are declared in a flat namespace at the
 top level of the resulting Python extension module.</p>
 <p>JCC's command-line arguments are best illustrated via the PyLucene example:</p>
-<div class="highlight"><pre><span></span>$ python -m jcc           <span class="c1"># run JCC to wrap</span>
+<div class="highlight"><pre><span></span><code>$ python -m jcc           <span class="c1"># run JCC to wrap</span>
     --jar lucene.jar      <span class="c1"># all public classes in the lucene jar file</span>
     --jar analyzers.jar   <span class="c1"># and the lucene analyzers contrib package</span>
     --jar snowball.jar    <span class="c1"># and the snowball contrib package</span>
@@ -242,7 +242,7 @@ top level of the resulting Python extension module.</p>
                           <span class="c1"># copying the collections.py module into the egg</span>
     --install             <span class="c1"># installing it into Python&#39;s site-packages</span>
                           <span class="c1"># directory.</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>There are limits to both how many files can fit on the command line and how large
@@ -301,20 +301,20 @@ is installed as a resource file with the extension when JCC is invoked with the
 <em>--install</em> command line argument. This parameter is optional and defaults to the
 <em>CLASSPATH</em> string exported by the module
 <em>initVM</em> is imported from.</p>
-<div class="highlight"><pre><span></span>    <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">lucene</span>
+<div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">lucene</span>
     <span class="o">&gt;&gt;&gt;</span> <span class="n">lucene</span><span class="o">.</span><span class="n">initVM</span><span class="p">(</span><span class="n">classpath</span><span class="o">=</span><span class="n">lucene</span><span class="o">.</span><span class="n">CLASSPATH</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>-
 <em>initialheap</em><br/>
 The initial amount of Java heap to start the Java VM with. This argument is a string
 that follows the same syntax as the similar <em>-Xms</em> java command line argument.</p>
-<div class="highlight"><pre><span></span>    <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">lucene</span>
+<div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">lucene</span>
     <span class="o">&gt;&gt;&gt;</span> <span class="n">lucene</span><span class="o">.</span><span class="n">initVM</span><span class="p">(</span><span class="n">initialheap</span><span class="o">=</span><span class="s1">&#39;32m&#39;</span><span class="p">)</span>
     <span class="o">&gt;&gt;&gt;</span> <span class="n">lucene</span><span class="o">.</span><span class="n">Runtime</span><span class="o">.</span><span class="n">getRuntime</span><span class="p">()</span><span class="o">.</span><span class="n">totalMemory</span><span class="p">()</span>
     <span class="il">33357824L</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>-
@@ -331,9 +331,9 @@ argument.</p>
 <em>vmargs</em><br/>
 A string of comma separated additional options to pass to the VM startup rountine.
 These are passed through as-is. For example:</p>
-<div class="highlight"><pre><span></span>    <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">lucene</span>
+<div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">lucene</span>
     <span class="o">&gt;&gt;&gt;</span> <span class="n">lucene</span><span class="o">.</span><span class="n">initVM</span><span class="p">(</span><span class="n">vmargs</span><span class="o">=</span><span class="s1">&#39;-Xcheck:jni,-verbose:jni,-verbose:gc&#39;</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>The <em>initVM()</em> and <em>getVMEnv()</em> functions return a JCCEnv object that has a few
@@ -354,7 +354,7 @@ className is a '/' separated string of names</p>
 <p>-
 the class loaders are different, <em>findClass()</em> may find classes that <em>Class.forName()</em> won't.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span>    <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">lucene</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">lucene</span> <span class="kn">import</span> <span class="o">*</span>
     <span class="o">&gt;&gt;&gt;</span> <span class="n">initVM</span><span class="p">(</span><span class="n">CLASSPATH</span><span class="p">)</span>
     <span class="o">&gt;&gt;&gt;</span> <span class="n">findClass</span><span class="p">(</span><span class="s1">&#39;org/apache/lucene/document/Document&#39;</span><span class="p">)</span>
     <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Class</span><span class="p">:</span> <span class="k">class</span> <span class="nc">org</span><span class="o">.</span><span class="n">apache</span><span class="o">.</span><span class="n">lucene</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">Document</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>
@@ -364,7 +364,7 @@ the class loaders are different, <em>findClass()</em> may find classes that <em>
     <span class="n">lucene</span><span class="o">.</span><span class="n">JavaError</span><span class="p">:</span> <span class="n">java</span><span class="o">.</span><span class="n">lang</span><span class="o">.</span><span class="n">ClassNotFoundException</span><span class="p">:</span> <span class="n">org</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">lucene</span><span class="o">/</span><span class="n">document</span><span class="o">/</span><span class="n">Document</span>
     <span class="o">&amp;</span><span class="n">gt</span><span class="o">&amp;</span><span class="n">gt</span><span class="o">&amp;</span><span class="n">gt</span> <span class="n">Class</span><span class="o">.</span><span class="n">forName</span><span class="p">(</span><span class="s1">&#39;java.lang.Object&#39;</span><span class="p">)</span>
     <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Class</span><span class="p">:</span> <span class="k">class</span> <span class="nc">java</span><span class="o">.</span><span class="n">lang</span><span class="o">.</span><span class="n">Object</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="type-casting-and-instance-checks">Type casting and instance checks</h2>
@@ -378,11 +378,11 @@ casting operator.</p>
 the same functionality.</p>
 <p>Similarly, each wrapped class has a class method called _instance__ that tests
 whether the wrapped java instance is of the given type. For example:</p>
-<div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="n">BooleanQuery</span><span class="p">.</span><span class="n">instance_</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code>    <span class="k">if</span> <span class="n">BooleanQuery</span><span class="p">.</span><span class="n">instance_</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
         <span class="n">booleanQuery</span> <span class="o">=</span> <span class="n">BooleanQuery</span><span class="p">.</span><span class="n">cast_</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
 
     <span class="n">print</span> <span class="n">booleanQuery</span><span class="p">.</span><span class="n">getClauses</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="handling-generic-classes">Handling generic classes</h2>
@@ -401,7 +401,7 @@ as type parameters. For example, _java.util.ArrayList&lt;E&gt;</em> is declared 
 accept one type parameter. Its wrapper's <em>of</em>()<em> method hence accepts one parameter,
 a Python class, to use as type parameter for the return type of its _get()</em> method,
 among others:</p>
-<div class="highlight"><pre><span></span><span class="err">    &amp;gt&amp;gt&amp;gt a = ArrayList().of_(Document)</span>
+<div class="highlight"><pre><span></span><code><span class="err">    &amp;gt&amp;gt&amp;gt a = ArrayList().of_(Document)</span>
 <span class="err">    &amp;gt&amp;gt&amp;gt a</span>
 <span class="err">    &amp;lt;ArrayList: []&amp;gt;</span>
 <span class="err">    &amp;gt&amp;gt&amp;gt a.parameters_</span>
@@ -410,12 +410,12 @@ among others:</p>
 <span class="err">    True</span>
 <span class="err">    &gt;&gt;&gt; a.get(0)</span>
 <span class="err">    &amp;lt;Document: Document&amp;lt;&amp;gt;&amp;gt;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>The use of type parameters is, of course, optional. A generic Java class can still
 be used as before, without type parameters. Downcasting from <em>Object</em> is then necessary:</p>
-<div class="highlight"><pre><span></span><span class="err">    &gt;&gt;&gt; a = ArrayList()</span>
+<div class="highlight"><pre><span></span><code><span class="err">    &gt;&gt;&gt; a = ArrayList()</span>
 <span class="err">    &gt;&gt;&gt; a</span>
 <span class="err">    &amp;lt;ArrayList: []&amp;gt;</span>
 <span class="err">    &gt;&gt;&gt; a.parameters_</span>
@@ -426,7 +426,7 @@ be used as before, without type parameters. Downcasting from <em>Object</em> is 
 <span class="err">    &amp;lt;Object: Document&amp;lt;&amp;gt;&amp;gt;</span>
 <span class="err">    &gt;&gt;&gt; Document.cast_(a.get(0))</span>
 <span class="err">    &amp;lt;Document: Document&amp;lt;&amp;gt;&amp;gt;</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="handling-arrays">Handling arrays</h2>
@@ -440,13 +440,13 @@ not to change an array's size.</p>
 <p>Any Java method expecting an array can be called with the corresponding sequence
 object from python.</p>
 <p>To instantiate a Java array from Python, use one of the following forms:</p>
-<div class="highlight"><pre><span></span>    <span class="o">&gt;&gt;&gt;</span> <span class="nb">array</span> <span class="o">=</span> <span class="n">JArray</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)(</span><span class="k">size</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="nb">array</span> <span class="o">=</span> <span class="n">JArray</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)(</span><span class="k">size</span><span class="p">)</span>
     <span class="o">#</span> <span class="n">the</span> <span class="n">resulting</span> <span class="n">Java</span> <span class="nb">int</span> <span class="nb">array</span> <span class="k">is</span> <span class="n">initialized</span> <span class="k">with</span> <span class="n">zeroes</span>
 
     <span class="o">&gt;&gt;&gt;</span> <span class="nb">array</span> <span class="o">=</span> <span class="n">JArray</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)(</span><span class="n">sequence</span><span class="p">)</span>
     <span class="o">#</span> <span class="n">the</span> <span class="n">sequence</span> <span class="n">must</span> <span class="k">only</span> <span class="n">contain</span> <span class="n">ints</span>
     <span class="o">#</span> <span class="n">the</span> <span class="n">resulting</span> <span class="n">Java</span> <span class="nb">int</span> <span class="nb">array</span> <span class="k">contains</span> <span class="n">the</span> <span class="n">ints</span> <span class="k">in</span> <span class="n">the</span> <span class="n">sequence</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Instead of <em>'int'</em>, you may also use one of <em>'object'</em>, <em>'string'</em>, <em>'bool'</em>,
@@ -460,16 +460,16 @@ method becomes useful when the array returned to Python is wrapped as a plain _O
 This is the case, for example, with nested arrays since there is no distinct Python
 type for every different java object array class - all java object arrays are wrapped
 by <em>JArray('object')</em>. For example:</p>
-<div class="highlight"><pre><span></span><span class="err"># cast obj to an array of ints</span>
+<div class="highlight"><pre><span></span><code><span class="err"># cast obj to an array of ints</span>
 <span class="err">&gt;&gt;&gt; JArray(&#39;int&#39;).cast_(obj)</span>
 <span class="err"># cast obj to an array of Document</span>
 <span class="err">&gt;&gt;&gt; JArray(&#39;object&#39;).cast_(obj, Document)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>In both cases, the java type of obj must be compatible with the array type it is
 being cast to.</p>
-<div class="highlight"><pre><span></span>    <span class="cp"># using nested array:</span>
+<div class="highlight"><pre><span></span><code>    <span class="cp"># using nested array:</span>
 
     <span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">JArray</span><span class="p">(</span><span class="err">&#39;</span><span class="n">object</span><span class="err">&#39;</span><span class="p">)(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Document</span><span class="p">)</span>
     <span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">Document</span><span class="p">()</span>
@@ -494,13 +494,13 @@ being cast to.</p>
     <span class="n">JArray</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="kt">int</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
     <span class="o">&gt;&gt;&gt;</span> <span class="n">JArray</span><span class="p">(</span><span class="err">&#39;</span><span class="kt">int</span><span class="err">&#39;</span><span class="p">).</span><span class="n">cast_</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
     <span class="mi">0</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>To verify that a Java object is of a given array type, use the <em>instance</em>()_ method
 available on the array type. This is not the same as verifying that it is assignable
 with elements of a given type. For example, using the arrays created above:</p>
-<div class="highlight"><pre><span></span>    <span class="o">#</span> <span class="k">is</span> <span class="n">d</span> <span class="nb">array</span> <span class="k">of</span> <span class="k">Object</span> <span class="o">?</span> <span class="k">are</span> <span class="n">d</span><span class="s1">&#39;s elements of type Object ?</span>
+<div class="highlight"><pre><span></span><code>    <span class="o">#</span> <span class="k">is</span> <span class="n">d</span> <span class="nb">array</span> <span class="k">of</span> <span class="k">Object</span> <span class="o">?</span> <span class="k">are</span> <span class="n">d</span><span class="s1">&#39;s elements of type Object ?</span>
 <span class="s1">    &gt;&gt;&gt; JArray(&#39;</span><span class="k">object</span><span class="s1">&#39;).instance_(d)</span>
 <span class="s1">    True</span>
 
@@ -519,7 +519,7 @@ with elements of a given type. For example, using the arrays created above:</p>
 <span class="s1">    # can it receive Document instances ?</span>
 <span class="s1">    &gt;&gt;&gt; JArray(&#39;</span><span class="k">object</span><span class="err">&#39;</span><span class="p">).</span><span class="n">assignable_</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">Document</span><span class="p">)</span>
     <span class="k">True</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="exception-reporting">Exception reporting</h2>
@@ -547,7 +547,7 @@ corresponding Python method implementations passing in parameters and returning
 the result to the Java VM caller.</p>
 <p>For example, to implement a Lucene analyzer in Python, one would implement first
 such an extension class in Java:</p>
-<div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">org</span><span class="o">.</span><span class="n">apache</span><span class="o">.</span><span class="n">pylucene</span><span class="o">.</span><span class="n">analysis</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="n">package</span> <span class="n">org</span><span class="o">.</span><span class="n">apache</span><span class="o">.</span><span class="n">pylucene</span><span class="o">.</span><span class="n">analysis</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">org.apache.lucene.analysis.Analyzer</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">org.apache.lucene.analysis.TokenStream</span><span class="p">;</span>
@@ -578,7 +578,7 @@ such an extension class in Java:</p>
     <span class="n">public</span> <span class="n">native</span> <span class="n">void</span> <span class="n">pythonDecRef</span><span class="p">();</span>
     <span class="n">public</span> <span class="n">native</span> <span class="n">TokenStream</span> <span class="n">tokenStream</span><span class="p">(</span><span class="n">String</span> <span class="n">fieldName</span><span class="p">,</span> <span class="n">Reader</span> <span class="n">reader</span><span class="p">);</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>The <em>pythonExtension()</em> methods is what makes this class recognized as an extension
@@ -593,7 +593,7 @@ be included verbatim as above.</p>
 <p>Really, the only non boilerplate user input is the constructor of the class and
 the other native methods, <em>tokenStream()</em> in the example above.</p>
 <p>The corresponding Python class(es) are implemented as follows:</p>
-<div class="highlight"><pre><span></span><span class="err">class _analyzer(PythonAnalyzer):</span>
+<div class="highlight"><pre><span></span><code><span class="err">class _analyzer(PythonAnalyzer):</span>
 <span class="err">  def tokenStream(_self, fieldName, reader):</span>
 <span class="err">      class _tokenStream(PythonTokenStream):</span>
 <span class="err">          def __init__(self_):</span>
@@ -619,7 +619,7 @@ the other native methods, <em>tokenStream()</em> in the example above.</p>
 <span class="err">          def close(self_):</span>
 <span class="err">              pass</span>
 <span class="err">      return _tokenStream()</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>When an <em>__init__()</em> is declared, <em>super()</em> must be called or else the Java
@@ -696,12 +696,12 @@ the mapping get for and the Java method to use. The method is specified with its
 followed by ':' and its Java
 <a href="https://java.sun.com/j2se/1.5.0/docs/guide/jni/spec/types.html#wp16432">signature</a>.</p>
 <p>For example, <em>System.getProperties()['java.class.path']</em> is made possible by:</p>
-<div class="highlight"><pre><span></span><span class="err">--mapping java.util.Properties</span>
+<div class="highlight"><pre><span></span><code><span class="err">--mapping java.util.Properties</span>
 <span class="err">        &#39;getProperty:(Ljava/lang/String;)Ljava/lang/String;&#39;</span>
 <span class="err">                    # asking for a Python mapping protocol wrapper</span>
 <span class="err">                    # for get access on the Properties class by</span>
 <span class="err">                    # calling its getProperty method</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>JCC generates Python sequence length and get methods for a class when requested
@@ -710,17 +710,17 @@ the class to generate the sequence length and get for and the two java methods
 to use. The methods are specified with their name followed by ':' and their Java
 <a href="https://java.sun.com/j2se/1.5.0/docs/guide/jni/spec/types.html#wp16432">signature</a>.
 For example:</p>
-<div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">xrange</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">hits</span><span class="p">))</span><span class="err">:</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">xrange</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">hits</span><span class="p">))</span><span class="err">:</span><span class="w"></span>
 <span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hits</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"></span>
 <span class="p">...</span><span class="w"></span>
-</pre></div>
+</code></pre></div>
 
 
 <p>is made possible by:</p>
-<div class="highlight"><pre><span></span><span class="err">--sequence org.apache.lucene.search.Hits</span>
+<div class="highlight"><pre><span></span><code><span class="err">--sequence org.apache.lucene.search.Hits</span>
 <span class="err">         &#39;length:()I&#39;</span>
 <span class="err">         &#39;doc:(I)Lorg/apache/lucene/document/Document;&#39;</span>
-</pre></div>
+</code></pre></div>
 </div>
         </div>
         <div id="sidebar">
@@ -749,7 +749,6 @@ For example:</p>
   <li><a href="http://hadoop.apache.org">Apache Hadoop</a></li>
   <li><a href="http://manifoldcf.apache.org/">Apache ManifoldCF</a></li>
   <li><a href="http://lucenenet.apache.org/">Apache Lucene.Net</a></li>
-  <li><a href="http://lucy.apache.org/">Apache Lucy</a></li>
   <li><a href="http://mahout.apache.org">Apache Mahout</a></li>
   <li><a href="http://nutch.apache.org">Apache Nutch</a></li>
   <li><a href="http://opennlp.apache.org/">Apache OpenNLP</a></li>
@@ -758,11 +757,10 @@ For example:</p>
 </ul>        </div>
       </div> <!-- End #content-wrap -->
 
-
 <div id="footer">
   <div class="copyright">
     <p>
-      Copyright &copy; 2011-2019 The Apache Software Foundation, Licensed under
+      Copyright &copy; 2011-2020 The Apache Software Foundation, Licensed under
       the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.  <a href="/privacy.html">Privacy Policy</a>      <br/>
       Apache and the Apache feather logo are trademarks of The Apache Software Foundation.  Apache Lucene, Apache Solr and their
       respective logos are trademarks of the Apache Software Foundation.  Please see the <a href="http://www.apache.org/foundation/marks/">Apache Trademark Policy</a>

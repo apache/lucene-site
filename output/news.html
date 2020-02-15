@@ -183,6 +183,65 @@ document.observe('dom:loaded', StartSlides);
 </div>
 
   <div>
+    <h2 id="apache-lucene-841-and-apache-solr-841-available">
+      13 January 2020 - Apache Lucene 8.4.1 and Apache Solr 8.4.1 available
+      <a class="headerlink" href="#apache-lucene-841-and-apache-solr-841-available" title="Permanent link">¶</a>
+    </h2>
+    <p>The Lucene PMC is pleased to announce the release of Apache® Lucene™ 8.4.1 and Apache® Solr™ 8.4.1.</p>
+<p>Lucene can be downloaded from <a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a>
+and Solr can be downloaded from <a href="https://lucene.apache.org/solr/downloads.html">https://lucene.apache.org/solr/downloads.html</a></p>
+<h3 id="highlights-of-this-lucene-release-include">Highlights of this Lucene release include:</h3>
+<p>(No changes since 8.4.0)</p>
+<h3 id="highlights-of-this-solr-release-include">Highlights of this Solr release include:</h3>
+<ul>
+<li>Fix for overseer serialization to support rolling upgrade (broken since 8.4)</li>
+<li>Fix for SSL support with SOLR_SSL_NEED_CLIENT_AUTH (broken since 8.2)</li>
+<li>Package manager to store public keys in a special "trusted" location instead of in ZooKeeper</li>
+</ul>
+    <h2 id="apache-lucene-840-and-apache-solr-840-available">
+      29 December 2019 - Apache Lucene 8.4.0 and Apache Solr 8.4.0 available
+      <a class="headerlink" href="#apache-lucene-840-and-apache-solr-840-available" title="Permanent link">¶</a>
+    </h2>
+    <p>The Lucene PMC is pleased to announce the release of Apache® Lucene™ 8.4.0 and Apache® Solr™ 8.4.0.</p>
+<p>Lucene can be downloaded from <a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a>
+and Solr can be downloaded from <a href="https://lucene.apache.org/solr/downloads.html">https://lucene.apache.org/solr/downloads.html</a></p>
+<h3 id="highlights-of-this-lucene-release-include">Highlights of this Lucene release include:</h3>
+<ul>
+<li>LatLonShape now supports the "CONTAINS" relation, which enables to find all indexed shapes that contain the query shape.</li>
+<li>Concurrent search is getting more efficient by allowing collectors to share information across threads in order to more efficiently skip non-competitive hits.</li>
+<li>Faster FST lookups on dense nodes.</li>
+<li>Postings are now decoded using SIMD instructions.</li>
+<li>LRUQueryCache includes new heuristics that prevent caching from hurting latency too much.</li>
+<li>LatLonShape builds a more efficient tree that is expected to translate into search speed improvements.</li>
+<li>BaseDirectoryReader no longer sums up document counts across leaves eagerly, allowing for more efficient reader views that hide a subset of documents.</li>
+<li>The index on top of BKD trees is now stored off-heap with MMapDirectory.</li>
+<li>Simple Intervals queries support highlighting.</li>
+<li>Reading DocValues can be interrupted when timeout is exceeded.</li>
+</ul>
+<h3 id="highlights-of-this-solr-release-include">Highlights of this Solr release include:</h3>
+<ul>
+<li>A new package management system was introduced in order to ease deploying plugins.</li>
+<li>Better security with the out-of-the-box configuration.</li>
+</ul>
+<p>A summary of important changes is published in the Solr Reference Guide at <a href="https://lucene.apache.org/solr/guide/8_4/solr-upgrade-notes.html">https://lucene.apache.org/solr/guide/8_4/solr-upgrade-notes.html</a>.</p>
+    <h2 id="apache-lucene-831-and-apache-solr-831-available">
+      3 December 2019 - Apache Lucene 8.3.1 and Apache Solr 8.3.1 available
+      <a class="headerlink" href="#apache-lucene-831-and-apache-solr-831-available" title="Permanent link">¶</a>
+    </h2>
+    <p>The Lucene PMC is pleased to announce the release of Apache® Lucene™ 8.3.1 and Apache® Solr™ 8.3.1.</p>
+<p>Lucene can be downloaded from <a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a>
+and Solr can be downloaded from <a href="https://lucene.apache.org/solr/downloads.html">https://lucene.apache.org/solr/downloads.html</a></p>
+<h3 id="highlights-of-this-lucene-release-include">Highlights of this Lucene release include:</h3>
+<ul>
+<li>Bugfix: MultiTermIntervalsSource.visit() was not calling back to its visitor</li>
+</ul>
+<h3 id="highlights-of-this-solr-release-include">Highlights of this Solr release include:</h3>
+<ul>
+<li>JavaBinCodec has concurrent modification of CharArr resulting in corrupt internode updates</li>
+<li>findRequestType in AuditEvent is more robust</li>
+<li>CoreContainer.auditloggerPlugin is volatile now</li>
+<li>Velocity response writer's resource loading now possible only through startup parameters</li>
+</ul>
     <h2 id="apache-lucene-830-and-apache-solr-830-available">
       2 November 2019 - Apache Lucene 8.3.0 and Apache Solr 8.3.0 available
       <a class="headerlink" href="#apache-lucene-830-and-apache-solr-830-available" title="Permanent link">¶</a>
@@ -3068,15 +3127,15 @@ with the release for a full list of details.</p>
 <div class="button-green">
   <a href="/core/downloads.html">Download</a>
   <div class="flap top">Click to</div>
-  <div class="flap bottom">Apache Lucene 8.3.0</div>
+  <div class="flap bottom">Apache Lucene 8.4.1</div>
 </div>
-<div class="download-desc">Apache Lucene 8.3.0</div>
+<div class="download-desc">Apache Lucene 8.4.1</div>
 <div class="button-orange">
   <a href="/solr/downloads.html">Download</a>
   <div class="flap top">Click to</div>
-  <div class="flap bottom">Apache Solr 8.3.0</div>
+  <div class="flap bottom">Apache Solr 8.4.1</div>
 </div>
-<div class="download-desc">Apache Solr 8.3.0</div>
+<div class="download-desc">Apache Solr 8.4.1</div>
 
 <h1 id="projects">Projects<a class="headerlink" href="#projects" title="Permanent link">¶</a></h1>
 <ul>
@@ -3108,8 +3167,6 @@ with the release for a full list of details.</p>
 <h1 id="editing-this-site">Editing This Site<a class="headerlink" href="#editing-this-site" title="Permanent link">¶</a></h1>
 <ul>
   <li><a href="site-instructions.html">Instructions</a></li>
-  <li><a href="http://www.apache.org/dev/cms.html">ASF CMS</a></li>
-  <li><a href="http://www.apache.org/dev/cmsref.html">ASF CMS Reference/FAQ</a></li>
   <li><a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a></li>
 </ul>
 
@@ -3118,7 +3175,6 @@ with the release for a full list of details.</p>
   <li><a href="http://hadoop.apache.org">Apache Hadoop</a></li>
   <li><a href="http://manifoldcf.apache.org/">Apache ManifoldCF</a></li>
   <li><a href="http://lucenenet.apache.org/">Apache Lucene.Net</a></li>
-  <li><a href="http://lucy.apache.org/">Apache Lucy</a></li>
   <li><a href="http://mahout.apache.org">Apache Mahout</a></li>
   <li><a href="http://nutch.apache.org">Apache Nutch</a></li>
   <li><a href="http://opennlp.apache.org/">Apache OpenNLP</a></li>
@@ -3127,11 +3183,10 @@ with the release for a full list of details.</p>
 </ul>        </div>
       </div> <!-- End #content-wrap -->
 
-
 <div id="footer">
   <div class="copyright">
     <p>
-      Copyright &copy; 2011-2019 The Apache Software Foundation, Licensed under
+      Copyright &copy; 2011-2020 The Apache Software Foundation, Licensed under
       the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.  <a href="/privacy.html">Privacy Policy</a>      <br/>
       Apache and the Apache feather logo are trademarks of The Apache Software Foundation.  Apache Lucene, Apache Solr and their
       respective logos are trademarks of the Apache Software Foundation.  Please see the <a href="http://www.apache.org/foundation/marks/">Apache Trademark Policy</a>

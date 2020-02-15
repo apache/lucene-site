@@ -133,8 +133,8 @@ Environment (JRE).</p>
 <a href="https://bugs.openjdk.java.net/browse/JDK-7131356">bug</a> in the JDK for macOS,
 you will <strong>also</strong> need to install Apple's Java 1.6.</p>
 <p>On macOS, once installed, a way to make Java 1.8 the default in your bash shell is:<br/></p>
-<div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span><span class="se">\`</span>/usr/libexec/java_home<span class="se">\`</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span><span class="se">\`</span>/usr/libexec/java_home<span class="se">\`</span>
+</code></pre></div>
 
 
 <p>Be sure to verify that JAVA_HOME value.</p>
@@ -182,13 +182,13 @@ is used:<br/><code>$ CC=CC gmake</code></p>
 <li>Edit Makefile and do the following changes: Insert and enable a Solaris-Section
 with the following content</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="err">\# Solaris   (Solaris 11.1, Python 2.6, 32-bit, Java 1.7)</span>
+<div class="highlight"><pre><span></span><code><span class="err">\# Solaris   (Solaris 11.1, Python 2.6, 32-bit, Java 1.7)</span>
 <span class="err">PREFIX_PYTHON=/usr</span>
 <span class="err">ANT=/usr/bin/ant</span>
 <span class="err">PYTHON=$(PREFIX_PYTHON)/bin/python</span>
 <span class="err">JCC=$(PYTHON) -m jcc.\_\_main\_\_ --reserved DEFAULT_TYPE</span>
 <span class="err">NUM_FILES=4</span>
-</pre></div>
+</code></pre></div>
 
 
 <ul>
@@ -231,7 +231,6 @@ with the following content</li>
   <li><a href="http://hadoop.apache.org">Apache Hadoop</a></li>
   <li><a href="http://manifoldcf.apache.org/">Apache ManifoldCF</a></li>
   <li><a href="http://lucenenet.apache.org/">Apache Lucene.Net</a></li>
-  <li><a href="http://lucy.apache.org/">Apache Lucy</a></li>
   <li><a href="http://mahout.apache.org">Apache Mahout</a></li>
   <li><a href="http://nutch.apache.org">Apache Nutch</a></li>
   <li><a href="http://opennlp.apache.org/">Apache OpenNLP</a></li>
@@ -240,11 +239,10 @@ with the following content</li>
 </ul>        </div>
       </div> <!-- End #content-wrap -->
 
-
 <div id="footer">
   <div class="copyright">
     <p>
-      Copyright &copy; 2011-2019 The Apache Software Foundation, Licensed under
+      Copyright &copy; 2011-2020 The Apache Software Foundation, Licensed under
       the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.  <a href="/privacy.html">Privacy Policy</a>      <br/>
       Apache and the Apache feather logo are trademarks of The Apache Software Foundation.  Apache Lucene, Apache Solr and their
       respective logos are trademarks of the Apache Software Foundation.  Please see the <a href="http://www.apache.org/foundation/marks/">Apache Trademark Policy</a>
