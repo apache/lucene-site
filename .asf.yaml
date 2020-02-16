@@ -1,3 +1,5 @@
 pelican:
   whoami: production
   target: asf-site
+publish:
+  whoami: asf-site
