@@ -169,9 +169,10 @@ one JCC-built Python extension is going to be imported into a given Python proce
 <p>Currently, shared mode is supported with <em>setuptools 0.6c7</em> and above out of the
 box on MacOS and Windows. On Linux, a patch to <em>setuptools</em> needs to be applied
 first. This patch is included in the JCC source distribution in the <em>jcc2/patches</em>
-directory, <em>patch.43</em>. This patch was submitted to the <em>setuptools</em> project via
-<a href="https://bugs.python.org/setuptools/issue43">issue 43</a>. <em>setup.py</em> will attempt
-to apply the patch for you via monkeypatching.</p>
+directory, <em>patch.43</em>. This patch was submitted to the <em>setuptools</em> project
+years ago via "Issue 43", originally tracked in the long defunct
+bugs.python.org/setuptools bug tracker. <em>setup.py</em> will attempt to apply the
+patch for you via monkeypatching.</p>
 <p>The <em>shared mode disabled</em> error reported during the build of JCC's on Linux
 contains the exact instructions on how to patch the <em>setuptools</em> installation
 with <em>patch.43</em> on your system.</p>

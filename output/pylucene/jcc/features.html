@@ -282,7 +282,7 @@ over <em>setuptools</em>, use the <em>--use-distutils</em> command line argument
 <h2 id="distributing-an-egg">Distributing an egg</h2>
 <p>The <em>--bdist</em> option can be used to ask JCC to invoke <em>distutils</em> with <em>bdist</em>
 or <em>setuptools</em> with <em>bdist_egg</em>. If <em>setuptools</em> is used, the resulting egg has
-to be installed with the <a href="https://peak.telecommunity.com/DevCenter/EasyInstall"><em>easy_install</em></a>
+to be installed with the <a href="https://setuptools.readthedocs.io/en/latest/easy_install.html"><em>easy_install</em></a>
 installer which is normally part of a Python installation that includes <em>setuptools</em>.</p>
 <h2 id="jccs-runtime-api-functions">JCC's runtime API functions</h2>
 <p>JCC includes a small runtime component that is compiled into any Python extension
@@ -628,7 +628,7 @@ wrapper class will not know about the Python instance it needs to invoke.</p>
 or protected equivalents available on the parent class, JCC generates code that
 makes it possible to call <em>super()</em> on these methods from Python as well.</p>
 <p>There are a number of extension examples available in PyLucene's test
-<a href="https://svn.apache.org/viewcvs.cgi/lucene/pylucene/trunk/test">suite</a> and
+<a href="https://svn.apache.org/viewvc/lucene/pylucene/trunk/test3">suite</a> and
 <a href="https://svn.apache.org/viewvc/lucene/pylucene/trunk/samples">samples</a>.</p>
 <h2 id="embedding-a-python-vm-in-a-java-vm">Embedding a Python VM in a Java VM</h2>
 <p>Using the same techniques used when writing a Python extension of a Java class,
