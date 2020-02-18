@@ -5,3 +5,5 @@ __pycache__
 
 # Distribution / packaging
 output
+.idea
+env

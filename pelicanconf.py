@@ -1,15 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
-from datetime import datetime
+from datetime import datetime, date
 
 AUTHOR = 'Lucene and Solr Developers'
 SITENAME = 'Apache Lucene'
 SITESUBTITLE = ''
 SITEURL = ''
+CURRENTYEAR = date.today().year
 
-LUCENE_LATEST_RELEASE = '8.3.0'
-LUCENE_LATEST_RELEASE_DATE = datetime(2019, 11, 2)
+LUCENE_LATEST_RELEASE = '8.4.1'
+LUCENE_LATEST_RELEASE_DATE = datetime(2019, 12, 3)
 LUCENE_PREVIOUS_MAJOR_RELEASE = '7.7.2'
 
 PATH = 'content'
@@ -81,11 +82,16 @@ EXTRA_PATH_METADATA = {
         'save_as': 'core/corenews.html',
         },
     }
+
+STATIC_PATHS = ['.']
+
+TEMPLATE_PAGES = {'htaccess.template': '.htaccess'}
+
 PLUGIN_PATHS = ['./plugins']
 PLUGINS = [
     'extract_toc',
     'jinja2content',
-    'md_inline_extension',
+#    'md_inline_extension',
 ]
 
 MARKDOWN = {
