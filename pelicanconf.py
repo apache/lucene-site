@@ -13,6 +13,10 @@ LUCENE_LATEST_RELEASE = '8.4.1'
 LUCENE_LATEST_RELEASE_DATE = datetime(2019, 12, 3)
 LUCENE_PREVIOUS_MAJOR_RELEASE = '7.7.2'
 
+# This string will be appended to all unversioned css and js resources to prevent caching surprises on edits
+# Change this to current date whenever you commit a change to CSS or our own JS
+STATIC_RESOURCE_SUFFIX = "?v20200218"
+
 PATH = 'content'
 
 THEME = 'themes/lucene'
