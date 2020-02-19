@@ -5,7 +5,6 @@
 
 {% block content_inner %}
 <div class="small-12 columns">
-
   <style type="text/css">
     .headerlink, .elementid-permalink {
       visibility: hidden;
@@ -17,8 +16,23 @@
   <h1 id="solr-news">Solr<sup>™</sup> Security News<a class="headerlink" href="#solr-news" title="Permanent link">¶</a></h1>
   {{page.content}}
 
-  {% for article in (articles | selectattr("category.name", "eq", "solr/security")|list)[:15] %}
-  <h2 id="{{ article.slug }}">{{ article.locale_date }}, {{ article.title }}
+    <table>
+        <tr>
+            <th width="130">CVE#</th>
+            <th width="95">Date</th>
+            <th>Announcement</th>
+        </tr>
+        {% for article in (articles | selectattr("category.name", "eq", "solr/security")|list)[:15] %}
+        <tr>
+            <td><a href="https://nvd.nist.gov/vuln/detail/{{ article.cve }}">{{ article.cve }}</a></td>
+            <td>{{ article.date | strftime("%Y-%m-%d") }}</td>
+            <td><a href="#{{ article.slug }}">{{ article.title }}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    {% for article in (articles | selectattr("category.name", "eq", "solr/security")|list)[:15] %}
+  <h2 id="{{ article.slug }}">{{ article.date | strftime("%Y-%m-%d") }}, {{ article.title }}
     <a class="headerlink" href="#{{article.slug}}" title="Permanent link">¶</a>
   </h2>
   {{article.content}}
