@@ -13,4 +13,4 @@ You may file your request by email to <mailto:security@lucene.apache.org> or alt
 You will find more security related information on our Wiki: <https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity>, such as information on how to treat the automated reports from security scanning tools.
 
 # Recent CVE reports for Apache Solr
-Below is a list of already announced CVE vulnerabilities:
+Below is a list of already announced CVE vulnerabilities. These are also available as an [RSS/ATOM feed](/feeds/solr/security.atom.xml):
