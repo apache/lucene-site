@@ -17,17 +17,17 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<link href="/theme/css/lucene/global.css" rel="stylesheet" type="text/css">
+<link href="/theme/css/lucene/global.css?v=dc722375" rel="stylesheet" type="text/css">
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta name="Distribution" content="Global"/>
 <meta name="Robots" content="index,follow"/>
 
-<script type="text/javascript" src="/theme/javascript/lucene/prototype.js"></script>
-<script type="text/javascript" src="/theme/javascript/lucene/effects.js"></script>
-<script type="text/javascript" src="/theme/javascript/lucene/search.js"></script>
-<script type="text/javascript" src="/theme/javascript/lucene/slides.js"></script>    <title>Apache Lucene - Welcome to Apache Lucene</title>
+<script type="text/javascript" src="/theme/javascript/lucene/prototype.js?v=dc722375"></script>
+<script type="text/javascript" src="/theme/javascript/lucene/effects.js?v=dc722375"></script>
+<script type="text/javascript" src="/theme/javascript/lucene/search.js?v=dc722375"></script>
+<script type="text/javascript" src="/theme/javascript/lucene/slides.js?v=dc722375"></script>    <title>Apache Lucene - Welcome to Apache Lucene</title>
 <meta name="keywords"
        content="apache, apache lucene, apache solr, solr, lucene
        search, information retrieval, spell checking, faceting, inverted index,
@@ -179,90 +179,69 @@ document.observe('dom:loaded', StartSlides);
         <div id="main">
 <div>
   <h1 class="title">Welcome to Apache Lucene</h1>
-  <p>The Apache Lucene<span style="vertical-align: super; font-size: xx-small">TM</span> project develops open-source search software, including:</p>
-<ul>
-<li><em><a href="./core/">Lucene Core</a></em>, our flagship sub-project, provides Java-based indexing and search technology, as well as spellchecking, hit highlighting and advanced analysis/tokenization capabilities.</li>
-<li><em><a href="./solr">Solr</a></em><span style="vertical-align: super; font-size: xx-small">TM</span> is a high performance search server built using Lucene Core, with XML/HTTP and JSON/Python/Ruby APIs, hit highlighting, faceted search, caching, replication, and a web admin interface.</li>
-<li><a href="./pylucene/index.html">PyLucene</a> is a Python wrapper around the Core project.</li>
-</ul>
+  
 </div>
 
 
-<h1 id="lucene-project-news">Lucene<span style="vertical-align: super; font-size: xx-small">TM</span> Project News
-  <a class="headerlink" href="#lucenetm-project-news" title="Permanent link">¶</a>
-</h1>
+<p>
+  The Apache Lucene<span style="vertical-align: super; font-size: xx-small">TM</span> project develops open-source search
+  software. The project releases a core search library, named Lucene<span style="vertical-align: super; font-size: xx-small">TM</span> core,
+  as well as the Solr<span style="vertical-align: super; font-size: xx-small">TM</span> search server.
+</p>
 
-<div>
-  <h2 id="apache-lucene-841-and-apache-solr-841-available">
-    13 January 2020 - Apache Lucene 8.4.1 and Apache Solr 8.4.1 available
-    <a class="headerlink" href="#apache-lucene-841-and-apache-solr-841-available" title="Permanent link">¶</a>
-  </h2>
-  <p>The Lucene PMC is pleased to announce the release of Apache® Lucene™ 8.4.1 and Apache® Solr™ 8.4.1.</p>
-<p>Lucene can be downloaded from <a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a>
-and Solr can be downloaded from <a href="https://lucene.apache.org/solr/downloads.html">https://lucene.apache.org/solr/downloads.html</a></p>
-<h3 id="highlights-of-this-lucene-release-include">Highlights of this Lucene release include:</h3>
-<p>(No changes since 8.4.0)</p>
-<h3 id="highlights-of-this-solr-release-include">Highlights of this Solr release include:</h3>
-<ul>
-<li>Fix for overseer serialization to support rolling upgrade (broken since 8.4)</li>
-<li>Fix for SSL support with SOLR_SSL_NEED_CLIENT_AUTH (broken since 8.2)</li>
-<li>Package manager to store public keys in a special "trusted" location instead of in ZooKeeper</li>
-</ul>
-  <h2 id="apache-lucene-840-and-apache-solr-840-available">
-    29 December 2019 - Apache Lucene 8.4.0 and Apache Solr 8.4.0 available
-    <a class="headerlink" href="#apache-lucene-840-and-apache-solr-840-available" title="Permanent link">¶</a>
-  </h2>
-  <p>The Lucene PMC is pleased to announce the release of Apache® Lucene™ 8.4.0 and Apache® Solr™ 8.4.0.</p>
-<p>Lucene can be downloaded from <a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a>
-and Solr can be downloaded from <a href="https://lucene.apache.org/solr/downloads.html">https://lucene.apache.org/solr/downloads.html</a></p>
-<h3 id="highlights-of-this-lucene-release-include">Highlights of this Lucene release include:</h3>
-<ul>
-<li>LatLonShape now supports the "CONTAINS" relation, which enables to find all indexed shapes that contain the query shape.</li>
-<li>Concurrent search is getting more efficient by allowing collectors to share information across threads in order to more efficiently skip non-competitive hits.</li>
-<li>Faster FST lookups on dense nodes.</li>
-<li>Postings are now decoded using SIMD instructions.</li>
-<li>LRUQueryCache includes new heuristics that prevent caching from hurting latency too much.</li>
-<li>LatLonShape builds a more efficient tree that is expected to translate into search speed improvements.</li>
-<li>BaseDirectoryReader no longer sums up document counts across leaves eagerly, allowing for more efficient reader views that hide a subset of documents.</li>
-<li>The index on top of BKD trees is now stored off-heap with MMapDirectory.</li>
-<li>Simple Intervals queries support highlighting.</li>
-<li>Reading DocValues can be interrupted when timeout is exceeded.</li>
-</ul>
-<h3 id="highlights-of-this-solr-release-include">Highlights of this Solr release include:</h3>
-<ul>
-<li>A new package management system was introduced in order to ease deploying plugins.</li>
-<li>Better security with the out-of-the-box configuration.</li>
-</ul>
-<p>A summary of important changes is published in the Solr Reference Guide at <a href="https://lucene.apache.org/solr/guide/8_4/solr-upgrade-notes.html">https://lucene.apache.org/solr/guide/8_4/solr-upgrade-notes.html</a>.</p>
-  <h2 id="apache-lucene-831-and-apache-solr-831-available">
-    3 December 2019 - Apache Lucene 8.3.1 and Apache Solr 8.3.1 available
-    <a class="headerlink" href="#apache-lucene-831-and-apache-solr-831-available" title="Permanent link">¶</a>
-  </h2>
-  <p>The Lucene PMC is pleased to announce the release of Apache® Lucene™ 8.3.1 and Apache® Solr™ 8.3.1.</p>
-<p>Lucene can be downloaded from <a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a>
-and Solr can be downloaded from <a href="https://lucene.apache.org/solr/downloads.html">https://lucene.apache.org/solr/downloads.html</a></p>
-<h3 id="highlights-of-this-lucene-release-include">Highlights of this Lucene release include:</h3>
-<ul>
-<li>Bugfix: MultiTermIntervalsSource.visit() was not calling back to its visitor</li>
-</ul>
-<h3 id="highlights-of-this-solr-release-include">Highlights of this Solr release include:</h3>
-<ul>
-<li>JavaBinCodec has concurrent modification of CharArr resulting in corrupt internode updates</li>
-<li>findRequestType in AuditEvent is more robust</li>
-<li>CoreContainer.auditloggerPlugin is volatile now</li>
-<li>Velocity response writer's resource loading now possible only through startup parameters</li>
-</ul>
+<div id="col1">
+  <div class="front-logo-container">
+    <a href="/core/">
+      <img src="/theme/images/lucene/lucene_logo_green_300.png" width="300" alt="Lucene Logo" />
+    </a>
+  </div>
+  <p><a href="/core/">Lucene Core</a> is a Java library providing powerful indexing and search features,
+  as well as spellchecking, hit highlighting and advanced analysis/tokenization capabilities. The <a href="/pylucene/">PyLucene</a>
+    sub project provides Python bindings for Lucene Core.
+  </p>
+  <h2 id="lucene-core-news">Latest Lucene Core News</h2>
+  <div>
+    <p id="apache-lucenetm-841-available">
+      <a href="/core/corenews.html#apache-lucenetm-841-available">Apache Lucene™ 8.4.1 available</a>
+    </p>
+    <p id="apache-lucenetm-840-available">
+      <a href="/core/corenews.html#apache-lucenetm-840-available">Apache Lucene™ 8.4.0 available</a>
+    </p>
+    <p id="apache-lucenetm-831-available">
+      <a href="/core/corenews.html#apache-lucenetm-831-available">Apache Lucene™ 8.3.1 available</a>
+    </p>
+  </div>
 </div>
-
-<div>
-  <h3>For more see <a href url="/news.html"> all Lucene<span style="vertical-align: super; font-size: xx-small">TM</span> Project News</a></h3>
+<div id="col2">
+  <div class="front-logo-container">
+    <a href="/solr/">
+      <img src="/theme/images/solr/Solr_Logo_200x101.png" width="200" alt="Solr Logo" />
+    </a>
+  </div>
+  <p><a href="/solr/">Solr<span style="vertical-align: super; font-size: xx-small">TM</span></a> is a high
+  performance search server built using Lucene Core. Solr is highly scalable, providing fully fault tolerant distributed
+  indexing, search and analytics. It exposes Lucene's features through easy to use JSON/HTTP interfaces or native clients
+  for Java and other languages.
+  </p>
+  <h2 id="solr-news">Latest Solr News</h2>
+  <div>
+    <p id="apache-solrtm-841-available">
+      <a href="/solr/news.html#apache-solrtm-841-available">Apache Solr™ 8.4.1 available</a>
+    </p>
+    <p id="apache-solrtm-840-available">
+      <a href="/solr/news.html#apache-solrtm-840-available">Apache Solr™ 8.4.0 available</a>
+    </p>
+    <p id="apache-solrtm-831-available">
+      <a href="/solr/news.html#apache-solrtm-831-available">Apache Solr™ 8.3.1 available</a>
+    </p>
+  </div>
 </div>
-
+<br clear="all"/>
 <div>
   <h2 id="the-apache-software-foundation">The Apache Software Foundation
     <a class="headerlink" href="#the-apache-software-foundation" title="Permanent link">¶</a>
   </h2>
-  <p>The <a href="http://www.apache.org">Apache Software Foundation</a> provides support for the Apache community of open-source software projects. The Apache projects are defined by collaborative consensus based processes, an open, pragmatic software license and a desire to create high quality software that leads the way in its field. Apache Lucene, Apache Solr, Apache PyLucene, Apache Open Relevance Project and their respective logos are trademarks of The Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p>The <a href="https://www.apache.org">Apache Software Foundation</a> provides support for the Apache community of open-source software projects. The Apache projects are defined by collaborative consensus based processes, an open, pragmatic software license and a desire to create high quality software that leads the way in its field. Apache Lucene, Apache Solr, Apache PyLucene, Apache Open Relevance Project and their respective logos are trademarks of The Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
 </div>        </div>
         <div id="sidebar">
 <div class="button-green">
@@ -290,6 +269,7 @@ and Solr can be downloaded from <a href="https://lucene.apache.org/solr/download
 <ul>
   <li><a href="https://www.apache.org/licenses/">License</a></li>
   <li><a href="/whoweare.html">Who We are</a></li>
+  <li><a href="/news.html">TLP News</a></li>
 </ul>
 
 <h1 id="events">Events<a class="headerlink" href="#events" title="Permanent link">¶</a></h1>
@@ -299,10 +279,10 @@ and Solr can be downloaded from <a href="https://lucene.apache.org/solr/download
 
 <h1 id="asf-links">ASF links<a class="headerlink" href="#asf-links" title="Permanent link">¶</a></h1>
 <ul>
-  <li><a href="http://www.apache.org">Apache Software Foundation</a></li>
-  <li><a href="http://www.apache.org/foundation/thanks.html">Thanks</a></li>
-  <li><a href="http://www.apache.org/foundation/sponsorship.html">Become a Sponsor</a></li>
-  <li><a href="http://www.apache.org/security/">Security</a></li>
+  <li><a href="https://www.apache.org">Apache Software Foundation</a></li>
+  <li><a href="https://www.apache.org/foundation/thanks.html">Thanks</a></li>
+  <li><a href="https://www.apache.org/foundation/sponsorship.html">Become a Sponsor</a></li>
+  <li><a href="https://www.apache.org/security/">Security</a></li>
 </ul>
 
 <h1 id="editing-this-site">Editing This Site<a class="headerlink" href="#editing-this-site" title="Permanent link">¶</a></h1>
@@ -328,9 +308,9 @@ and Solr can be downloaded from <a href="https://lucene.apache.org/solr/download
   <div class="copyright">
     <p>
       Copyright &copy; 2011-2020 The Apache Software Foundation, Licensed under
-      the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.  <a href="/privacy.html">Privacy Policy</a>      <br/>
+      the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.  <a href="/privacy.html">Privacy Policy</a>      <br/>
       Apache and the Apache feather logo are trademarks of The Apache Software Foundation.  Apache Lucene, Apache Solr and their
-      respective logos are trademarks of the Apache Software Foundation.  Please see the <a href="http://www.apache.org/foundation/marks/">Apache Trademark Policy</a>
+      respective logos are trademarks of the Apache Software Foundation.  Please see the <a href="https://www.apache.org/foundation/marks/">Apache Trademark Policy</a>
       for more information.
     </p>
   </div>
