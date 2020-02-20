@@ -3,7 +3,7 @@ URL: news.html
 save_as: news.html
 template: lucene/tlp/news
 
-You may also read Lucene news as RSS/ATOM feeds:
+You may also read Lucene news as ATOM feeds:
 
 * [TLP news feed](/feeds/news.atom.xml).
 * [All news feed](/feeds/all.atom.xml).

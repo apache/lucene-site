@@ -19,4 +19,4 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
            specific language governing permissions and limitations
            under the License.
 
-You may also read these news as an [RSS/ATOM feed](/feeds/solr/news.atom.xml).
+You may also read these news as an [ATOM feed](/feeds/solr/news.atom.xml).
