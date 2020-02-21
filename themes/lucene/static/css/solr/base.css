@@ -514,6 +514,14 @@ section.orange.full-width {
   color:#fff;
 }
 
+.security {
+  background-color: #cccc33;
+}
+
+.security a {
+  color: #262130;
+}
+
 /*
  * Footer
  */
