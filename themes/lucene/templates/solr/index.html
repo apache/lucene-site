@@ -8,10 +8,7 @@
 <section class="security">
   <div class="row">
     <div class="large-12 columns text-center">
-      <h2>Recent security announcements</h2>
-      {% for article in (articles | selectattr("category.name", "eq", "solr/security") | selectattr("date", "age_days_lt", 90)) %}
-      <div><a href="security.html">{{ article.date | strftime("%Y-%m-%d") }} - {{ article.title }}</a></div>
-      {% endfor %}
+      <h2><a href="security.html">There are recent security announcements. Read more on the Security page.</a></h2>
     </div>
   </div>
 </section>

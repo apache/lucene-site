@@ -516,6 +516,8 @@ section.orange.full-width {
 
 .security {
   background-color: #cccc33;
+  padding-top: 10px;
+  padding-bottom: 0px;
 }
 
 .security a {
