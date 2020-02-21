@@ -22,22 +22,22 @@
 
 <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600,500' rel='stylesheet' type='text/css'>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="/theme/css/solr/lib/foundation/normalize.css?v=2d016b96" />
-<link rel="stylesheet" href="/theme/css/solr/lib/foundation/foundation.min.css?v=2d016b96"/>
-<link rel="stylesheet" href="/theme/css/solr/lib/foundation/foundation-icons.css?v=2d016b96"/>
+<link rel="stylesheet" href="/theme/css/solr/lib/foundation/normalize.css?v=b9d25f2e" />
+<link rel="stylesheet" href="/theme/css/solr/lib/foundation/foundation.min.css?v=b9d25f2e"/>
+<link rel="stylesheet" href="/theme/css/solr/lib/foundation/foundation-icons.css?v=b9d25f2e"/>
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.3.7/slick.css"/>
-<link rel="stylesheet" href="/theme/css/solr/base.css?v=2d016b96" />
+<link rel="stylesheet" href="/theme/css/solr/base.css?v=b9d25f2e" />
 <meta name="Distribution" content="Global"/>
 <meta name="Robots" content="index,follow"/>
 
 <script src="/theme/javascript/solr/lib/jquery-2.1.1.min.js"></script>
-<script src="/theme/javascript/solr/lib/foundation/modernizr.js?v=2d016b96"></script>
-<script src="/theme/javascript/solr/lib/angularjs/angular.min.js?v=2d016b96"></script>
-<script src="/theme/javascript/solr/lib/angularjs/angular-animate.min.js?v=2d016b96"></script>
-<script src="/theme/javascript/solr/lib/foundation/foundation.min.js?v=2d016b96"></script>
+<script src="/theme/javascript/solr/lib/foundation/modernizr.js?v=b9d25f2e"></script>
+<script src="/theme/javascript/solr/lib/angularjs/angular.min.js?v=b9d25f2e"></script>
+<script src="/theme/javascript/solr/lib/angularjs/angular-animate.min.js?v=b9d25f2e"></script>
+<script src="/theme/javascript/solr/lib/foundation/foundation.min.js?v=b9d25f2e"></script>
 <script src="//cdn.jsdelivr.net/jquery.slick/1.3.7/slick.min.js"/></script>
-<script src="/theme/javascript/solr/lib/jquery.smooth-scroll.min.js?v=2d016b96"></script>
-<script src="/theme/javascript/solr/main.js?v=2d016b96"></script>    <title>Apache Solr - </title>
+<script src="/theme/javascript/solr/lib/jquery.smooth-scroll.min.js?v=b9d25f2e"></script>
+<script src="/theme/javascript/solr/main.js?v=b9d25f2e"></script>    <title>Apache Solr - </title>
 
     <meta name="keywords"
           content="apache, apache lucene, apache solr, solr, lucene,
@@ -45,8 +45,7 @@
 
    <link rel="icon" href="/theme/images/solr/favicon.ico" type="image/x-icon">
    <link rel="shortcut icon" href="/theme/images/solr/favicon.ico" type="image/x-icon">
-
-  </head>
+<link rel="alternate" type="application/atom+xml" title="Solr news except security news" href="/feeds/solr/news.atom.xml" />  </head>
 
   <body class="page " x-ng-app-root="/solr" x-ng-app="page" x-ng-controller="page.controllers.main">
 <div class="contain-to-grid">
@@ -63,6 +62,9 @@
         <ul class="navigation right">
           <li>
             <a href="/solr/news.html">News</a>
+          </li>
+          <li>
+            <a href="/solr/security.html">Security</a>
           </li>
           <li>
             <a href="/solr/features.html">Features</a>
@@ -157,7 +159,8 @@ function selectProvider(form) {
   </div>
 </div>
 
-<div class="header-fill"></div><div class="container">
+<div class="header-fill"></div>
+<div class="container">
   <div class="row">
 <div class="small-12 columns">
 
@@ -170,7 +173,7 @@ function selectProvider(form) {
     }
   </style>
   <h1 id="solr-news">Solr<sup>™</sup> News<a class="headerlink" href="#solr-news" title="Permanent link">¶</a></h1>
-  
+  <p>You may also read these news as an <a href="/feeds/solr/news.atom.xml">ATOM feed</a>.</p>
 
   <h2 id="apache-solrtm-841-available">13 January 2020, Apache Solr™ 8.4.1 available
     <a class="headerlink" href="#apache-solrtm-841-available" title="Permanent link">¶</a>
@@ -189,6 +192,37 @@ function selectProvider(form) {
 <p><a href="https://lucene.apache.org/solr/8_4_1/changes/Changes.html">https://lucene.apache.org/solr/8_4_1/changes/Changes.html</a></p>
 <p>Solr 8.4.1 also includes  and bugfixes in the corresponding Apache Lucene release:</p>
 <p><a href="https://lucene.apache.org/core/8_4_1/changes/Changes.html">https://lucene.apache.org/core/8_4_1/changes/Changes.html</a></p>
+  <h2 id="cve-2019-17558-apache-solr-rce-through-velocityresponsewriter">30 December 2019, CVE-2019-17558: Apache Solr RCE through VelocityResponseWriter
+    <a class="headerlink" href="#cve-2019-17558-apache-solr-rce-through-velocityresponsewriter" title="Permanent link">¶</a>
+  </h2>
+  <p><strong>Severity:</strong> High</p>
+<p><strong>Vendor:</strong><br>
+The Apache Software Foundation</p>
+<p><strong>Versions Affected:</strong>
+5.0.0 to 8.3.1</p>
+<p><strong>Description:</strong><br>
+The affected versions are vulnerable to a Remote Code Execution through the
+VelocityResponseWriter.  A Velocity template can be provided through
+Velocity templates in a configset <code>velocity/</code> directory or as a parameter.
+A user defined configset could contain renderable, potentially malicious,
+templates.  Parameter provided templates are disabled by default, but can
+be enabled by setting <code>params.resource.loader.enabled</code> by defining a
+response writer with that setting set to <code>true</code>.  Defining a response
+writer requires configuration API access.</p>
+<p>Solr 8.4 removed the params resource loader entirely, and only enables the
+configset-provided template rendering when the configset is <code>trusted</code> (has
+been uploaded by an authenticated user).</p>
+<p><strong>Mitigation:</strong><br>
+Ensure your network settings are configured so that only trusted traffic
+communicates with Solr, especially to the configuration APIs.</p>
+<p><strong>Credit:</strong><br>
+Github user <code>s00py</code></p>
+<p><strong>References:</strong></p>
+<ul>
+<li><a href="https://issues.apache.org/jira/browse/SOLR-13971">https://issues.apache.org/jira/browse/SOLR-13971</a></li>
+<li><a href="https://issues.apache.org/jira/browse/SOLR-14025">https://issues.apache.org/jira/browse/SOLR-14025</a></li>
+<li><a href="https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity">https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity</a></li>
+</ul>
   <h2 id="apache-solrtm-840-available">29 December 2019, Apache Solr™ 8.4.0 available
     <a class="headerlink" href="#apache-solrtm-840-available" title="Permanent link">¶</a>
   </h2>
@@ -227,8 +261,7 @@ function selectProvider(form) {
   <h2 id="cve-2019-12409-apache-solr-rce-vulnerability-due-to-bad-config-default">18 November 2019, CVE-2019-12409: Apache Solr RCE vulnerability due to bad config default
     <a class="headerlink" href="#cve-2019-12409-apache-solr-rce-vulnerability-due-to-bad-config-default" title="Permanent link">¶</a>
   </h2>
-  <p><code>
-<strong>Severity:</strong>
+  <p><strong>Severity:</strong>
 High</p>
 <p><strong>Vendor:</strong><br>
 The Apache Software Foundation</p>
@@ -264,8 +297,7 @@ Matei "Mal" Badanoiu<br>
 Solr JIRA user 'jnyryan' (John)</p>
 <p><strong>References:</strong><br>
 [1] https://issues.apache.org/jira/browse/SOLR-13647<br>
-[3] https://lucene.apache.org/solr/news.html
-</code></p>
+[3] https://lucene.apache.org/solr/news.html</p>
   <h2 id="apache-solrtm-830-available">2 November 2019, Apache Solr™ 8.3.0 available
     <a class="headerlink" href="#apache-solrtm-830-available" title="Permanent link">¶</a>
   </h2>
@@ -312,6 +344,35 @@ Solr JIRA user 'jnyryan' (John)</p>
 <p><a href="https://lucene.apache.org/solr/8_3_0/changes/Changes.html">https://lucene.apache.org/solr/8_3_0/changes/Changes.html</a></p>
 <p>Solr 8.3.0 also includes features, optimizations  and bugfixes in the corresponding Apache Lucene release:</p>
 <p><a href="https://lucene.apache.org/core/8_3_0/changes/Changes.html">https://lucene.apache.org/core/8_3_0/changes/Changes.html</a></p>
+  <h2 id="cve-2019-12401-xml-bomb-in-apache-solr-versions-prior-to-50">9 September 2019, CVE-2019-12401: XML Bomb in Apache Solr versions prior to 5.0
+    <a class="headerlink" href="#cve-2019-12401-xml-bomb-in-apache-solr-versions-prior-to-50" title="Permanent link">¶</a>
+  </h2>
+  <p><strong>Severity:</strong> Medium</p>
+<p><strong>Vendor:</strong><br>
+The Apache Software Foundation</p>
+<p><strong>Versions Affected:</strong></p>
+<ul>
+<li>1.3.0 to 1.4.1</li>
+<li>3.1.0 to 3.6.2</li>
+<li>4.0.0 to 4.10.4</li>
+</ul>
+<p><strong>Description:</strong><br>
+Solr versions prior to 5.0.0 are vulnerable to an XML resource
+consumption attack (a.k.a. Lol Bomb) via it’s update handler. By leveraging
+XML DOCTYPE and ENTITY type elements, the attacker can create a pattern
+that will expand when the server parses the XML causing OOMs</p>
+<p><strong>Mitigation:</strong>  </p>
+<ul>
+<li>Upgrade to Apache Solr 5.0 or later.</li>
+<li>Ensure your network settings are configured so that only trusted traffic is allowed to post documents to the running Solr instances.</li>
+</ul>
+<p><strong>Credit:</strong><br>
+Matei "Mal" Badanoiu</p>
+<p><strong>References:</strong></p>
+<ul>
+<li><a href="https://issues.apache.org/jira/browse/SOLR-13750">https://issues.apache.org/jira/browse/SOLR-13750</a></li>
+<li><a href="https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity">https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity</a></li>
+</ul>
   <h2 id="announce-811-and-820-users-check-enable_remote_jmx_opts-setting">14 August 2019, [ANNOUNCE] 8.1.1 and 8.2.0 users check ENABLE_REMOTE_JMX_OPTS setting
     <a class="headerlink" href="#announce-811-and-820-users-check-enable_remote_jmx_opts-setting" title="Permanent link">¶</a>
   </h2>
@@ -340,6 +401,39 @@ Solr JIRA user 'jnyryan' (John)</p>
 <span class="n">References</span><span class="o">:</span>
 <span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="n">https</span><span class="o">://</span><span class="n">issues</span><span class="o">.</span><span class="na">apache</span><span class="o">.</span><span class="na">org</span><span class="sr">/jira/browse/</span><span class="n">SOLR</span><span class="o">-</span><span class="mi">13647</span>
 </code></pre></div>
+  <h2 id="cve-2019-0193-apache-solr-remote-code-execution-via-dataimporthandler">31 July 2019, CVE-2019-0193: Apache Solr, Remote Code Execution via DataImportHandler
+    <a class="headerlink" href="#cve-2019-0193-apache-solr-remote-code-execution-via-dataimporthandler" title="Permanent link">¶</a>
+  </h2>
+  <p><strong>Severity:</strong> High</p>
+<p><strong>Vendor:</strong><br>
+The Apache Software Foundation</p>
+<p><strong>Versions Affected:</strong></p>
+<ul>
+<li>5.0.0 to 5.5.5</li>
+<li>6.0.0 to 6.6.5</li>
+</ul>
+<p><strong>Description:</strong><br>
+The DataImportHandler, an optional but popular module to pull in data from
+databases and other sources, has a feature in which the whole DIH
+configuration can come from a request's "dataConfig" parameter. The debug
+mode of the DIH admin screen uses this to allow convenient debugging /
+development of a DIH config. Since a DIH config can contain scripts, this
+parameter is a security risk. Starting with version 8.2.0 of Solr, use of
+this parameter requires setting the Java System property
+<code>enable.dih.dataConfigParam</code> to true.</p>
+<p><strong>Mitigation:</strong>  </p>
+<ul>
+<li>Upgrade to 8.2.0 or later, which is secure by default.</li>
+<li>or, edit solrconfig.xml to configure all DataImportHandler usages with an "invariants" section listing the "dataConfig" parameter set to am empty string.</li>
+<li>Ensure your network settings are configured so that only trusted traffic communicates with Solr, especially to the DIH request handler.  This is a best practice to all of Solr.</li>
+</ul>
+<p><strong>Credit:</strong><br>
+Michael Stepankin (JPMorgan Chase)</p>
+<p><strong>References:</strong></p>
+<ul>
+<li><a href="https://issues.apache.org/jira/browse/SOLR-13669">https://issues.apache.org/jira/browse/SOLR-13669</a></li>
+<li><a href="https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity">https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity</a></li>
+</ul>
   <h2 id="apache-solrtm-820-available">26 July 2019, Apache Solr™ 8.2.0 available
     <a class="headerlink" href="#apache-solrtm-820-available" title="Permanent link">¶</a>
   </h2>
@@ -496,6 +590,37 @@ You are thus encouraged to thoroughly read the "Upgrade Notes" at:</p>
   </h2>
   <p>The Lucene PMC is pleased to announce that the Solr Reference Guide for 7.7 is now available.  This 1,431-page PDF is the definitive guide to using Apache Solr, the search server built on Lucene.</p>
 <p>The PDF Guide can be downloaded from: <a href="https://www.apache.org/dyn/closer.cgi/lucene/solr/ref-guide/apache-solr-ref-guide-7.7.pdf">https://www.apache.org/dyn/closer.cgi/lucene/solr/ref-guide/apache-solr-ref-guide-7.7.pdf</a>.  It is also available online at <a href="https://lucene.apache.org/solr/guide/7_7">https://lucene.apache.org/solr/guide/7_7</a>.</p>
+  <h2 id="cve-2019-0192-deserialization-of-untrusted-data-via-jmxserviceurl-in-apache-solr">6 March 2019, CVE-2019-0192: Deserialization of untrusted data via jmx.serviceUrl in Apache Solr
+    <a class="headerlink" href="#cve-2019-0192-deserialization-of-untrusted-data-via-jmxserviceurl-in-apache-solr" title="Permanent link">¶</a>
+  </h2>
+  <p><strong>Severity:</strong> High</p>
+<p><strong>Vendor:</strong><br>
+The Apache Software Foundation</p>
+<p><strong>Versions Affected:</strong></p>
+<ul>
+<li>5.0.0 to 5.5.5</li>
+<li>6.0.0 to 6.6.5</li>
+</ul>
+<p><strong>Description:</strong><br>
+ConfigAPI allows to configure Solr's JMX server via an HTTP POST request.
+By pointing it to a malicious RMI server, an attacker could take advantage
+of Solr's unsafe deserialization to trigger remote code execution on the
+Solr side.</p>
+<p><strong>Mitigation:</strong><br>
+Any of the following are enough to prevent this vulnerability:</p>
+<ul>
+<li>Upgrade to Apache Solr 7.0 or later.</li>
+<li>Disable the ConfigAPI if not in use, by running Solr with the system property “disable.configEdit=true”</li>
+<li>If upgrading or disabling the Config API are not viable options, apply patch in [1] and re-compile Solr.</li>
+<li>Ensure your network settings are configured so that only trusted traffic is allowed to ingress/egress your hosts running Solr.</li>
+</ul>
+<p><strong>Credit:</strong><br>
+Michael Stepankin</p>
+<p><strong>References:</strong></p>
+<ul>
+<li><a href="https://issues.apache.org/jira/browse/SOLR-13301">https://issues.apache.org/jira/browse/SOLR-13301</a></li>
+<li><a href="https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity">https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity</a></li>
+</ul>
   <h2 id="apache-solrtm-771-available">1 March 2019, Apache Solr™ 7.7.1 available
     <a class="headerlink" href="#apache-solrtm-771-available" title="Permanent link">¶</a>
   </h2>
@@ -523,6 +648,28 @@ many of the world's largest internet sites.</p>
    this issue reverts the default replica placement policy to the 'legacy' assignment policy that was the default until
    Solr 7.5.</p>
 </li>
+</ul>
+  <h2 id="cve-2017-3164-ssrf-issue-in-apache-solr">12 February 2019, CVE-2017-3164: SSRF issue in Apache Solr
+    <a class="headerlink" href="#cve-2017-3164-ssrf-issue-in-apache-solr" title="Permanent link">¶</a>
+  </h2>
+  <p><strong>Severity:</strong> High</p>
+<p><strong>Vendor:</strong><br>
+The Apache Software Foundation</p>
+<p><strong>Versions Affected:</strong>
+Apache Solr versions from 1.3 to 7.6.0</p>
+<p><strong>Description:</strong><br>
+The "shards" parameter does not have a corresponding whitelist mechanism,
+so it can request any URL.</p>
+<p><strong>Mitigation:</strong><br>
+Upgrade to Apache Solr 7.7.0 or later.
+Ensure your network settings are configured so that only trusted traffic is
+allowed to ingress/egress your hosts running Solr.</p>
+<p><strong>Credit:</strong><br>
+dk from Chaitin Tech</p>
+<p><strong>References:</strong></p>
+<ul>
+<li><a href="https://issues.apache.org/jira/browse/SOLR-12770">https://issues.apache.org/jira/browse/SOLR-12770</a></li>
+<li><a href="https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity">https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity</a></li>
 </ul>
   <h2 id="apache-solrtm-770-available">11 February 2019, Apache Solr™ 7.7.0 available
     <a class="headerlink" href="#apache-solrtm-770-available" title="Permanent link">¶</a>
@@ -682,6 +829,42 @@ fix since the 7.3.0 release.</p>
 <p><a href="https://www.apache.org/dyn/closer.lua/lucene/solr/7.3.1">https://www.apache.org/dyn/closer.lua/lucene/solr/7.3.1</a></p>
 <p>Please read CHANGES.txt for a detailed list of changes:</p>
 <p><a href="https://lucene.apache.org/solr/7_3_1/changes/Changes.html">https://lucene.apache.org/solr/7_3_1/changes/Changes.html</a></p>
+  <h2 id="cve-2018-1308-xxe-attack-through-apache-solrs-dihs-dataconfig-request-parameter">8 April 2018, CVE-2018-1308: XXE attack through Apache Solr's DIH's dataConfig request parameter
+    <a class="headerlink" href="#cve-2018-1308-xxe-attack-through-apache-solrs-dihs-dataconfig-request-parameter" title="Permanent link">¶</a>
+  </h2>
+  <p>CVE-2018-1308: XXE attack through Apache Solr's DIH's dataConfig request parameter</p>
+<p><strong>Severity:</strong> Major</p>
+<p><strong>Vendor:</strong><br>
+The Apache Software Foundation</p>
+<p><strong>Versions Affected:</strong></p>
+<ul>
+<li>Solr 1.2 to 6.6.2</li>
+<li>Solr 7.0.0 to 7.2.1</li>
+</ul>
+<p><strong>Description:</strong><br>
+The details of this vulnerability were reported to the Apache Security mailing list. </p>
+<p>This vulnerability relates to an XML external entity expansion (XXE) in the
+<code>&amp;dataConfig=&lt;inlinexml&gt;</code> parameter of Solr's DataImportHandler. It can be
+used as XXE using file/ftp/http protocols in order to read arbitrary local
+files from the Solr server or the internal network. See [1] for more details.</p>
+<p><strong>Mitigation:</strong><br>
+Users are advised to upgrade to either Solr 6.6.3 or Solr 7.3.0 releases both
+of which address the vulnerability. Once upgrade is complete, no other steps
+are required. Those releases disable external entities in anonymous XML files
+passed through this request parameter. </p>
+<p>If users are unable to upgrade to Solr 6.6.3 or Solr 7.3.0 then they are
+advised to disable data import handler in their solrconfig.xml file and
+restart their Solr instances. Alternatively, if Solr instances are only used
+locally without access to public internet, the vulnerability cannot be used
+directly, so it may not be required to update, and instead reverse proxies or
+Solr client applications should be guarded to not allow end users to inject
+<code>dataConfig</code> request parameters. Please refer to [2] on how to correctly
+secure Solr servers.</p>
+<p><strong>Credit:</strong><br>
+麦 香浓郁</p>
+<p><strong>References:</strong></p>
+<p>[1] <a href="https://issues.apache.org/jira/browse/SOLR-11971">https://issues.apache.org/jira/browse/SOLR-11971</a><br>
+[2] <a href="https://wiki.apache.org/solr/SolrSecurity">https://wiki.apache.org/solr/SolrSecurity</a></p>
   <h2 id="apache-solrtm-730-available">4 April 2018, Apache Solr™ 7.3.0 available
     <a class="headerlink" href="#apache-solrtm-730-available" title="Permanent link">¶</a>
   </h2>
@@ -784,6 +967,40 @@ fix since the 7.2.0 release.</p>
 <p>This 1,077-page PDF is the definitive guide to using Apache Solr, the search server built on Lucene.</p>
 <p>The PDF Guide can be downloaded from: <a href="https://www.apache.org/dyn/closer.cgi/lucene/solr/ref-guide/apache-solr-ref-guide-7.1.pdf">https://www.apache.org/dyn/closer.cgi/lucene/solr/ref-guide/apache-solr-ref-guide-7.1.pdf</a>.</p>
 <p>It is also available online at <a href="https://lucene.apache.org/solr/guide/7_1">https://lucene.apache.org/solr/guide/7_1</a>.</p>
+  <h2 id="cve-2016-6809-java-code-execution-for-serialized-objects-embedded-in-matlab-files-parsed-by-apache-solr-using-tika">26 October 2017, CVE-2016-6809: Java code execution for serialized objects embedded in MATLAB files parsed by Apache Solr using Tika
+    <a class="headerlink" href="#cve-2016-6809-java-code-execution-for-serialized-objects-embedded-in-matlab-files-parsed-by-apache-solr-using-tika" title="Permanent link">¶</a>
+  </h2>
+  <p><strong>Severity:</strong> Important</p>
+<p><strong>Vendor:</strong><br>
+The Apache Software Foundation</p>
+<p><strong>Versions Affected:</strong></p>
+<ul>
+<li>Solr 5.0.0 to 5.5.4</li>
+<li>Solr 6.0.0 to 6.6.1</li>
+<li>Solr 7.0.0 to 7.0.1</li>
+</ul>
+<p><strong>Description:</strong><br>
+Apache Solr uses Apache Tika for parsing binary file types such as
+doc, xls, pdf etc. Apache Tika wraps the jmatio parser
+(https://github.com/gradusnikov/jmatio) to handle MATLAB files. The
+parser uses native deserialization on serialized Java objects embedded
+in MATLAB files. A malicious user could inject arbitrary code into a
+MATLAB file that would be executed when the object is deserialized.</p>
+<p>This vulnerability was originally described at
+http://mail-archives.apache.org/mod_mbox/tika-user/201611.mbox/%3C2125912914.1308916.1478787314903%40mail.yahoo.com%3E</p>
+<p><strong>Mitigation:</strong><br>
+Users are advised to upgrade to either Solr 5.5.5 or Solr 6.6.2 or Solr 7.1.0
+releases which have fixed this vulnerability.</p>
+<p>Solr 5.5.5 upgrades the jmatio parser to v1.2 and disables the Java
+deserialisation support to protect against this vulnerability.</p>
+<p>Solr 6.6.2 and Solr 7.1.0 have upgraded the bundled Tika to v1.16.</p>
+<p>Once upgrade is complete, no other steps are required.</p>
+<p><strong>References:</strong></p>
+<ul>
+<li><a href="https://issues.apache.org/jira/browse/SOLR-11486">https://issues.apache.org/jira/browse/SOLR-11486</a></li>
+<li><a href="https://issues.apache.org/jira/browse/SOLR-10335">https://issues.apache.org/jira/browse/SOLR-10335</a></li>
+<li><a href="https://wiki.apache.org/solr/SolrSecurity">https://wiki.apache.org/solr/SolrSecurity</a></li>
+</ul>
   <h2 id="apache-solrtm-555-available">24 October 2017, Apache Solr™ 5.5.5 available
     <a class="headerlink" href="#apache-solrtm-555-available" title="Permanent link">¶</a>
   </h2>
@@ -822,6 +1039,60 @@ fix since the 7.2.0 release.</p>
 <p><a href="https://www.apache.org/dyn/closer.lua/lucene/solr/6.6.2">https://www.apache.org/dyn/closer.lua/lucene/solr/6.6.2</a></p>
 <p>Please read CHANGES.txt for a detailed list of changes:</p>
 <p><a href="https://lucene.apache.org/solr/6_6_2/changes/Changes.html">https://lucene.apache.org/solr/6_6_2/changes/Changes.html</a></p>
+  <h2 id="several-critical-vulnerabilities-discovered-in-apache-solr-xxe-rce">18 October 2017, Several critical vulnerabilities discovered in Apache Solr (XXE & RCE)
+    <a class="headerlink" href="#several-critical-vulnerabilities-discovered-in-apache-solr-xxe-rce" title="Permanent link">¶</a>
+  </h2>
+  <p><strong>Severity:</strong><br>
+Critical</p>
+<p><strong>Vendor:</strong><br>
+The Apache Software Foundation</p>
+<p><strong>Versions Affected:</strong>  </p>
+<ul>
+<li>Solr 5.5.0 to 5.5.4</li>
+<li>Solr 6.0.0 to 6.6.1</li>
+<li>Solr 7.0.0 to 7.0.1</li>
+</ul>
+<p><strong>Description:</strong><br>
+The details of this vulnerability were reported on public mailing
+lists. See https://s.apache.org/FJDl</p>
+<p>The first vulnerability relates to XML external entity expansion in
+the XML Query Parser which is available, by default, for any query
+request with parameters deftype=xmlparser. This can be exploited to
+upload malicious data to the /upload request handler. It can also be
+used as Blind XXE using ftp wrapper in order to read arbitrary local
+files from the solr server.</p>
+<p>The second vulnerability relates to remote code execution using the
+RunExecutableListener available on all affected versions of Solr.</p>
+<p>At the time of the above report, this was a 0-day vulnerability with a
+working exploit affecting the versions of Solr mentioned in the
+previous section. However, mitigation steps were announced to protect
+Solr users the same day. See
+https://lucene.apache.org/solr/news.html#12-october-2017-please-secure-your-apache-solr-servers-since-a-zero-day-exploit-has-been-reported-on-a-public-mailing-list</p>
+<p><strong>Mitigation:</strong><br>
+Users are advised to upgrade to either Solr 6.6.2 or Solr 7.1.0
+releases both of which address the two vulnerabilities. Once upgrade is
+complete, no other steps are required.</p>
+<p>If users are unable to upgrade to Solr 6.6.2 or Solr 7.1.0 then they
+are advised to restart their Solr instances with the system parameter
+<code>-Ddisable.configEdit=true</code>. This will disallow any changes to be made
+to your configurations via the Config API. This is a key factor in
+this vulnerability, since it allows GET requests to add the
+RunExecutableListener to your config. Users are also advised to re-map
+the XML Query Parser to another parser to mitigate the XXE
+vulnerability. For example, adding the following to the solrconfig.xml
+file re-maps the xmlparser to the edismax parser:
+<code>&lt;queryParser name="xmlparser" class="solr.ExtendedDismaxQParserPlugin"/&gt;</code></p>
+<p><strong>Credit:</strong>  </p>
+<ul>
+<li>Michael Stepankin (JPMorgan Chase)</li>
+<li>Olga Barinova (Gotham Digital Science)</li>
+</ul>
+<p><strong>References:</strong>  </p>
+<ul>
+<li><a href="https://issues.apache.org/jira/browse/SOLR-11482">https://issues.apache.org/jira/browse/SOLR-11482</a></li>
+<li><a href="https://issues.apache.org/jira/browse/SOLR-11477">https://issues.apache.org/jira/browse/SOLR-11477</a></li>
+<li><a href="https://wiki.apache.org/solr/SolrSecurity">https://wiki.apache.org/solr/SolrSecurity</a></li>
+</ul>
   <h2 id="apache-solrtm-710-available">17 October 2017, Apache Solr™ 7.1.0 available
     <a class="headerlink" href="#apache-solrtm-710-available" title="Permanent link">¶</a>
   </h2>
@@ -866,8 +1137,8 @@ fix since the 7.2.0 release.</p>
 </ul>
 <p>You are encouraged to thoroughly read the "Upgrade Notes" at <a href="https://lucene.apache.org/solr/7_1_0/changes/Changes.html">https://lucene.apache.org/solr/7_1_0/changes/Changes.html</a> or in the CHANGES.txt file accompanying the release.</p>
 <p>Solr 7.1 also includes many other new features as well as numerous optimizations and bugfixes of the corresponding Apache Lucene release.</p>
-  <h2 id="solr-news-please-secure-your-apache-solr-servers-since-a-zero-day-exploit-has-been-reported-on-a-public-mailing-list">12 October 2017, Please secure your Apache Solr servers since a zero-day exploit has been reported on a public mailing list
-    <a class="headerlink" href="#solr-news-please-secure-your-apache-solr-servers-since-a-zero-day-exploit-has-been-reported-on-a-public-mailing-list" title="Permanent link">¶</a>
+  <h2 id="solr-security-please-secure-your-apache-solr-servers-since-a-zero-day-exploit-has-been-reported-on-a-public-mailing-list">12 October 2017, Please secure your Apache Solr servers since a zero-day exploit has been reported on a public mailing list
+    <a class="headerlink" href="#solr-security-please-secure-your-apache-solr-servers-since-a-zero-day-exploit-has-been-reported-on-a-public-mailing-list" title="Permanent link">¶</a>
   </h2>
   <p>Please secure your Solr servers since a zero-day exploit has been
 reported on a <a href="https://s.apache.org/FJDl">public mailing list</a>.
@@ -990,23 +1261,23 @@ of many of the world's largest internet sites.</p>
 </li>
 </ul>
 <p>See the <a href="/solr/7_0_0/changes/Changes.html">Solr CHANGES.txt</a> files included with the release for a full list of details.</p>
-  <h2 id="security-cve-2017-9803">18 September 2017, [SECURITY] - CVE-2017-9803
-    <a class="headerlink" href="#security-cve-2017-9803" title="Permanent link">¶</a>
+  <h2 id="cve-2017-9803-security-vulnerability-in-kerberos-delegation-token-functionality">18 September 2017, CVE-2017-9803: Security vulnerability in kerberos delegation token functionality**
+    <a class="headerlink" href="#cve-2017-9803-security-vulnerability-in-kerberos-delegation-token-functionality" title="Permanent link">¶</a>
   </h2>
   <p><strong>CVE-2017-9803: Security vulnerability in kerberos delegation token functionality</strong></p>
 <p><strong>Severity</strong>: Important</p>
-<p><strong>Vendor</strong>:
+<p><strong>Vendor</strong>:<br>
 The Apache Software Foundation</p>
-<p><strong>Versions Affected</strong>:
+<p><strong>Versions Affected</strong>:<br>
 Solr 6.2.0 to 6.6.0</p>
 <p><strong>Description</strong>:</p>
 <p>Solr's Kerberos plugin can be configured to use delegation tokens, which allows an application to reuse the authentication of an end-user or another application.
 There are two issues with this functionality (when using SecurityAwareZkACLProvider type of ACL provider e.g. SaslZkACLProvider),</p>
 <p>Firstly, access to the security configuration can be leaked to users other than the solr super user. Secondly, malicious users can exploit this leaked configuration for privilege escalation to further expose/modify private data and/or disrupt operations in the Solr cluster.</p>
 <p>The vulnerability is fixed from Solr 6.6.1 onwards.</p>
-<p><strong>Mitigation</strong>:
+<p><strong>Mitigation</strong>:<br>
 6.x users should upgrade to 6.6.1</p>
-<p><strong>Credit</strong>:
+<p><strong>Credit</strong>:<br>
 This issue was discovered by Hrishikesh Gadre of Cloudera Inc.</p>
 <p><strong>References</strong>:</p>
 <ul>
@@ -1077,18 +1348,20 @@ of many of the world's largest internet sites.</p>
 <p>Furthermore, this release includes Apache Lucene 6.6.1 which includes 2 bug fixes since the 6.6.0 release.</p>
 <p>See the <a href="/solr/6_6_1/changes/Changes.html">Solr CHANGES.txt</a> files included
 with the release for a full list of details.</p>
-  <h2 id="security-cve-2017-7660">7 July 2017, [SECURITY] CVE-2017-7660
-    <a class="headerlink" href="#security-cve-2017-7660" title="Permanent link">¶</a>
+  <h2 id="cve-2017-7660-security-vulnerability-in-secure-inter-node-communication-in-apache-solr">7 July 2017, CVE-2017-7660: Security Vulnerability in secure inter-node communication in Apache Solr**
+    <a class="headerlink" href="#cve-2017-7660-security-vulnerability-in-secure-inter-node-communication-in-apache-solr" title="Permanent link">¶</a>
   </h2>
   <p><strong>CVE-2017-7660: Security Vulnerability in secure inter-node communication in Apache Solr</strong></p>
 <p><strong>Severity</strong>: Important</p>
-<p><strong>Vendor</strong>:
+<p><strong>Vendor</strong>:<br>
 The Apache Software Foundation</p>
-<p><strong>Versions Affected</strong>:
-Solr 5.3 to 5.5.4
-Solr 6.0 to 6.5.1</p>
-<p><strong>Description:</strong></p>
-<p>Solr uses a PKI based mechanism to secure inter-node communication
+<p><strong>Versions Affected</strong>:  </p>
+<ul>
+<li>Solr 5.3 to 5.5.4</li>
+<li>Solr 6.0 to 6.5.1</li>
+</ul>
+<p><strong>Description:</strong><br>
+Solr uses a PKI based mechanism to secure inter-node communication
 when security is enabled. It is possible to create a specially crafted
 node name that does not exist as part of the cluster and point it to a
 malicious node. This can trick the nodes in cluster to believe that
@@ -1105,7 +1378,7 @@ who use Kerberos are not affected.</p>
 <li>5.x users should obtain the latest source from git and apply this patch:
 <a href="http://git-wip-us.apache.org/repos/asf/lucene-solr/commit/2f5ecbcf">http://git-wip-us.apache.org/repos/asf/lucene-solr/commit/2f5ecbcf</a></li>
 </ul>
-<p><strong>Credit</strong>:
+<p><strong>Credit</strong>:<br>
 This issue was discovered by Noble Paul of Lucidworks Inc.</p>
 <p><strong>References</strong>:</p>
 <ul>
@@ -1395,15 +1668,16 @@ internet sites.</p>
 </ul>
 <p>See the <a href="/solr/5_5_4/changes/Changes.html">Solr CHANGES.txt</a> files included
 with the release for a full list of details.</p>
-  <h2 id="security-cve-2017-3163">15 February 2017, [SECURITY] CVE-2017-3163
-    <a class="headerlink" href="#security-cve-2017-3163" title="Permanent link">¶</a>
+  <h2 id="cve-2017-3163-apache-solr-replicationhandler-path-traversal-attack">15 February 2017, CVE-2017-3163: Apache Solr ReplicationHandler path traversal attack**
+    <a class="headerlink" href="#cve-2017-3163-apache-solr-replicationhandler-path-traversal-attack" title="Permanent link">¶</a>
   </h2>
-  <p><strong>Severity:</strong> Moderate</p>
-<p><strong>Vendor:</strong>
+  <p><strong>CVE-2017-3163: Apache Solr ReplicationHandler path traversal attack</strong></p>
+<p><strong>Severity:</strong> Moderate</p>
+<p><strong>Vendor:</strong><br>
 The Apache Software Foundation</p>
-<p><strong>Versions Affected:</strong>
+<p><strong>Versions Affected:</strong><br>
 Solr 1.4 to 6.4.0</p>
-<p><strong>Description:</strong>
+<p><strong>Description:</strong><br>
 When using the Index Replication feature, Solr nodes can pull index files from
 a master/leader node using an HTTP API which accepts a file name. However,
 Solr did not validate the file name, hence it was possible to craft a special
@@ -1415,10 +1689,9 @@ would gain direct HTTP access.</p>
 <ul>
 <li>6.x users should upgrade to 6.4.1</li>
 <li>5.x users should upgrade to 5.5.4</li>
-<li>4.x, 3.x and 1.4 users should upgrade to a supported version of Solr
-or setup proper firewalling, or disable the ReplicationHandler if not in use.</li>
+<li>4.x, 3.x and 1.4 users should upgrade to a supported version of Solr or setup proper firewalling, or disable the ReplicationHandler if not in use.</li>
 </ul>
-<p><strong>Credit:</strong>
+<p><strong>Credit:</strong><br>
 This issue was discovered by ﻿Hrishikesh Gadre of Cloudera Inc.</p>
 <p><strong>References:</strong></p>
 <ul>
@@ -2545,6 +2818,67 @@ file included with the release for a full list of details.</p>
 </ul>
   <h2 id="solr-news-recommendation-to-update-apache-poi-in-apache-solr-480-481-and-490-installations">18 August 2014, Recommendation to update Apache POI in Apache Solr 4.8.0, 4.8.1, and 4.9.0 installations
     <a class="headerlink" href="#solr-news-recommendation-to-update-apache-poi-in-apache-solr-480-481-and-490-installations" title="Permanent link">¶</a>
+  </h2>
+  <p>Apache Solr versions 4.8.0, 4.8.1, 4.9.0 bundle Apache POI 3.10-beta2 with its binary release tarball.
+This version (and all previous ones) of Apache POI are vulnerable to the following issues:</p>
+<h3 id="cve-2014-3529-xml-external-entity-xxe-problem-in-apache-pois-openxml-parser">CVE-2014-3529: XML External Entity (XXE) problem in Apache POI's OpenXML parser</h3>
+<p><em>Information disclosure:</em> Apache POI uses Java's XML components to parse OpenXML files produced by Microsoft Office products (DOCX, XLSX, PPTX,...).
+Applications that accept such files from end-users are vulnerable to XML External Entity (XXE) attacks, which allows remote attackers to bypass
+security restrictions and read arbitrary files via a crafted OpenXML document that provides an XML external entity declaration in conjunction
+with an entity reference.</p>
+<h3 id="cve-2014-3574-xml-entity-expansion-xee-problem-in-apache-pois-openxml-parser">CVE-2014-3574: XML Entity Expansion (XEE) problem in Apache POI's OpenXML parser</h3>
+<p><em>Denial of service:</em> Apache POI uses Java's XML components and Apache Xmlbeans to parse OpenXML files produced by Microsoft Office products
+(DOCX, XLSX, PPTX,...). Applications that accept such files from end-users are vulnerable to XML Entity Expansion (XEE) attacks ("XML bombs"),
+which allows remote hackers to consume large amounts of CPU resources.</p>
+<p><strong>The Apache POI PMC released a bugfix version (3.10.1) today.</strong></p>
+<p>Solr users are affected by these issues, if they enable the "Apache Solr Content Extraction Library (Solr Cell)"
+contrib module from the folder "contrib/extraction" of the release tarball.</p>
+<p>Users of Apache Solr are strongly advised to keep the module disabled if they don't use it.
+Alternatively, users of Apache Solr 4.8.0, 4.8.1, or 4.9.0 can update the affected libraries by
+replacing the vulnerable JAR files in the distribution folder. Users of previous versions have
+to update their Solr release first, patching older versions is impossible.</p>
+<h3 id="to-replace-the-vulnerable-jar-files-follow-these-steps">To replace the vulnerable JAR files follow these steps:</h3>
+<ul>
+<li>
+<p>Download the <a href="http://poi.apache.org/download.html#POI-3.10.1">Apache POI 3.10.1</a> binary release.</p>
+</li>
+<li>
+<p>Unzip the archive.</p>
+</li>
+<li>
+<p>Delete the following files in your "solr-4.X.X/contrib/extraction/lib" folder:</p>
+<ul>
+<li>poi-3.10-beta2.jar</li>
+<li>poi-ooxml-3.10-beta2.jar</li>
+<li>poi-ooxml-schemas-3.10-beta2.jar</li>
+<li>poi-scratchpad-3.10-beta2.jar</li>
+<li>xmlbeans-2.3.0.jar</li>
+</ul>
+</li>
+<li>
+<p>Copy the following files from the base folder of the Apache POI distribution to the "solr-4.X.X/contrib/extraction/lib" folder:</p>
+<ul>
+<li>poi-3.10.1-20140818.jar</li>
+<li>poi-ooxml-3.10.1-20140818.jar</li>
+<li>poi-ooxml-schemas-3.10.1-20140818.jar</li>
+<li>poi-scratchpad-3.10.1-20140818.jar</li>
+</ul>
+</li>
+<li>
+<p>Copy "xmlbeans-2.6.0.jar" from POI's "ooxml-lib/" folder to the "solr-4.X.X/contrib/extraction/lib" folder.</p>
+</li>
+<li>
+<p>Verify that the "solr-4.X.X/contrib/extraction/lib" no longer contains any files with version number "3.10-beta2".</p>
+</li>
+<li>
+<p>Verify that the folder contains one xmlbeans JAR file with version 2.6.0.</p>
+</li>
+</ul>
+<p>If you just want to disable extraction of Microsoft Office documents, delete the files above and don't replace them.
+"Solr Cell" will automatically detect this and disable Microsoft Office document extraction.</p>
+<p>Coming versions of Apache Solr will have the updated libraries bundled.</p>
+  <h2 id="solr-security-security-recommendation-to-update-apache-poi-in-apache-solr-480-481-and-490-installations">18 August 2014, CVE-2014-3529, CVE-2014-3574: Recommendation to update Apache POI in Apache Solr 4.8.0, 4.8.1, and 4.9.0 installations
+    <a class="headerlink" href="#solr-security-security-recommendation-to-update-apache-poi-in-apache-solr-480-481-and-490-installations" title="Permanent link">¶</a>
   </h2>
   <p>Apache Solr versions 4.8.0, 4.8.1, 4.9.0 bundle Apache POI 3.10-beta2 with its binary release tarball.
 This version (and all previous ones) of Apache POI are vulnerable to the following issues:</p>
