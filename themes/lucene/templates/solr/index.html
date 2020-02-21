@@ -3,16 +3,19 @@
 {% block bodyclass %}homepage{% endblock %}
 
 {% block security_warning %}
+{% set num_security_news_90d = articles | selectattr("category.name", "eq", "solr/security") | selectattr("date", "age_days_lt", 90) | list | length %}
+{% if num_security_news_90d > 0 %}
 <section class="security">
   <div class="row">
     <div class="large-12 columns text-center">
       <h2>Recent security announcements</h2>
-      {% for article in (articles | selectattr("category.name", "eq", "solr/security")|list)[:2] %}
+      {% for article in (articles | selectattr("category.name", "eq", "solr/security") | selectattr("date", "age_days_lt", 90)) %}
       <div><a href="security.html">{{ article.date | strftime("%Y-%m-%d") }} - {{ article.title }}</a></div>
       {% endfor %}
     </div>
   </div>
 </section>
+{% endif %}
 {% endblock %}
 
 {% block content_inner %}

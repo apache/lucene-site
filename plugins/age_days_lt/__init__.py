@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -15,20 +14,24 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
+
 """
-Markdown regex_replace filter for pelican
+The age_in_days plugin adds a Jinja test, age_days_lt.
+
+It is intended to be used in Pelican templates like this to select articles newer than 90 days:
+
+    {% for article in (articles | selectattr("date", "age_days_lt", 90) ) %}
+        ...
+    {% endif %}
 """
 from pelican import signals
-import re
+from . import agedayslt
 
-# Custom filter method
-def regex_replace(s, find, replace):
-    return re.sub(find, replace, s)
+def add_test(pelican):
+    """Add age_days_lt test to Pelican."""
+    pelican.env.tests.update({'age_days_lt': agedayslt.age_days_lt})
 
-def add_filter(pelican):
-    """Add filter to Pelican."""
-    pelican.env.filters.update({'regex_replace': regex_replace})
 
 def register():
     """Plugin registration."""
-    signals.generator_init.connect(add_filter)
+    signals.generator_init.connect(add_test)

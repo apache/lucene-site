@@ -95,7 +95,8 @@ PLUGIN_PATHS = ['./plugins']
 PLUGINS = [
     'extract_toc',
     'jinja2content',
-    'regex_replace'
+    'regex_replace',
+    'age_days_lt'
 #    'md_inline_extension',
 ]
 

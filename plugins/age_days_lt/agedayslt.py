@@ -15,20 +15,10 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-"""
-Markdown regex_replace filter for pelican
-"""
-from pelican import signals
-import re
+from datetime import datetime
 
-# Custom filter method
-def regex_replace(s, find, replace):
-    return re.sub(find, replace, s)
-
-def add_filter(pelican):
-    """Add filter to Pelican."""
-    pelican.env.filters.update({'regex_replace': regex_replace})
-
-def register():
-    """Plugin registration."""
-    signals.generator_init.connect(add_filter)
+def age_days_lt(dt, days):
+    """Return true if a number of days since 'dt' < 'days'"""
+    now = datetime.now(dt.tzinfo)
+    delta = now - dt
+    return delta.days < days
