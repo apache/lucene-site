@@ -14,7 +14,8 @@ LUCENE_LATEST_RELEASE = '8.4.1'
 LUCENE_LATEST_RELEASE_DATE = datetime(2019, 12, 3)
 LUCENE_PREVIOUS_MAJOR_RELEASE = '7.7.2'
 
-# This string will be appended to all unversioned css and js resources to prevent caching surprises on edits
+# This string will be appended to all unversioned css and js resources to prevent caching surprises on edits.
+# The theme's htaccess file also sets a cache-control header with longer lifetime, if the v=XXXX query string is added.
 STATIC_RESOURCE_SUFFIX = "?v=%s" % dirhash('themes/lucene/static', 'sha1')[-8:]
 
 PATH = 'content'
@@ -33,8 +34,8 @@ DATE_FORMATS = {
 USE_FOLDER_AS_CATEGORY = False
 
 # Feed generation is usually not desired when developing
-FEED_ALL_ATOM = None
-CATEGORY_FEED_ATOM = None
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
+CATEGORY_FEED_ATOM = 'feeds/{slug}.atom.xml'
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
@@ -95,6 +96,8 @@ PLUGIN_PATHS = ['./plugins']
 PLUGINS = [
     'extract_toc',
     'jinja2content',
+    'regex_replace',
+    'age_days_lt'
 #    'md_inline_extension',
 ]
 
