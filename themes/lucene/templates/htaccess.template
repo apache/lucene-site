@@ -55,8 +55,9 @@ RewriteRule ^solr/version_control.html solr/resources.html#solr-version-control 
 RewriteRule ^solr/mailing_lists.html solr/resources.html#community               [R=301,NE]
 
 # Simple redirect to "directory", so later rules match
-RedirectMatch temp ^/core/api$ /core/api/
-RedirectMatch temp ^/solr/api$ /solr/api/
+RedirectMatch temp ^/(core|solr)/api$ $0/
+RedirectMatch Permanent ^/(core|solr)/\d+_\d+_\d+$ $0/
+RedirectMatch Permanent ^/solr/guide/\d+_\d+$ $0/
 
 # Other pages can always be redirected to the "most current" released javadocs
 # using "temp" instead of permanent so crawlers know that they
@@ -128,6 +129,6 @@ RedirectMatch Permanent ^/lucy/(.*)$ https://lucy.apache.org/
 ### Javadocs & Solr Refguide
 
 # __root/docs.lucene.apache.org/content/ is a special alias added by INFRA-19439, so we can refer to stuff in other places like SVN:
-RewriteRule ^(core|solr)/(\d+_\d+_\d+\b.*)$ __root/docs.lucene.apache.org/content/$1/$2 [PT]
-RewriteRule ^solr/guide/(\d+_\d+\b.*)$ __root/docs.lucene.apache.org/content/solr/guide/$1 [PT]
+RewriteRule ^(core|solr)/(\d+_\d+_\d+/.*)$ __root/docs.lucene.apache.org/content/$1/$2 [PT]
+RewriteRule ^solr/guide/(\d+_\d+/.*)$ __root/docs.lucene.apache.org/content/solr/guide/$1 [PT]
 
