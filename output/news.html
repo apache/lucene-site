@@ -133,6 +133,32 @@ document.observe('dom:loaded', StartSlides);
 </div>
 
   <div>
+    <h2 id="apache-lucene-850-and-apache-solr-850-available">
+      24 March 2020 - Apache Lucene 8.5.0 and Apache Solr 8.5.0 available
+      <a class="headerlink" href="#apache-lucene-850-and-apache-solr-850-available" title="Permanent link">¶</a>
+    </h2>
+    <p>The Lucene PMC is pleased to announce the release of Apache® Lucene™ 8.5.0 and Apache® Solr™ 8.5.0.</p>
+<p>Lucene can be downloaded from <a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a>
+and Solr can be downloaded from <a href="https://lucene.apache.org/solr/downloads.html">https://lucene.apache.org/solr/downloads.html</a></p>
+<h3 id="highlights-of-this-lucene-release-include">Highlights of this Lucene release include:</h3>
+<ul>
+<li>XYPointField allows you to index points in flat X,Y space and efficiently find documents that fall within a bounding box, distance or arbitrary polygon</li>
+<li>New query builders on LatLonShape allow you to efficiently find documents with a specific relation to a point or polygon</li>
+<li>You can now store up to 16 data dimensions in a Point field</li>
+<li>KoreanTokenizer supports custom dictionaries</li>
+<li>Binary doc values are now compressed, and term dictionaries have improved compression</li>
+<li>Index flushes are up to 20% faster if all docvalues updates are updating a single field to the same value</li>
+<li>The index of stored fields and term vectors is now stored off-heap</li>
+<li>Query parsers based on QueryBuilder can boost particular terms or synonyms by setting BoostAttribute values on a token stream</li>
+<li>Intervals queries correctly handle repeated subterms in ordered and unordered sources</li>
+</ul>
+<h3 id="highlights-of-this-solr-release-include">Highlights of this Solr release include:</h3>
+<ul>
+<li>A new queries property of JSON Request API let to declare queries in Query DSL format and refer to them by their names.</li>
+<li>A new command line tool bin/postlogs allows you to index Solr logs into a Solr collection. </li>
+<li>A new stream decorator delete() is available to help solve some issues with traditional delete-by-query, which can be expensive in large indexes.</li>
+<li>Solr now has the ability to run with a Java Security Manager enabled.</li>
+</ul>
     <h2 id="apache-lucene-841-and-apache-solr-841-available">
       13 January 2020 - Apache Lucene 8.4.1 and Apache Solr 8.4.1 available
       <a class="headerlink" href="#apache-lucene-841-and-apache-solr-841-available" title="Permanent link">¶</a>
@@ -3077,15 +3103,15 @@ with the release for a full list of details.</p>
 <div class="button-green">
   <a href="/core/downloads.html">Download</a>
   <div class="flap top">Click to</div>
-  <div class="flap bottom">Apache Lucene 8.4.1</div>
+  <div class="flap bottom">Apache Lucene 8.5.0</div>
 </div>
-<div class="download-desc">Apache Lucene 8.4.1</div>
+<div class="download-desc">Apache Lucene 8.5.0</div>
 <div class="button-orange">
   <a href="/solr/downloads.html">Download</a>
   <div class="flap top">Click to</div>
-  <div class="flap bottom">Apache Solr 8.4.1</div>
+  <div class="flap bottom">Apache Solr 8.5.0</div>
 </div>
-<div class="download-desc">Apache Solr 8.4.1</div>
+<div class="download-desc">Apache Solr 8.5.0</div>
 
 <h1 id="projects">Projects<a class="headerlink" href="#projects" title="Permanent link">¶</a></h1>
 <ul>
