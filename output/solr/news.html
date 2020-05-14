@@ -115,6 +115,35 @@
   <h1 id="solr-news">Solr<sup>™</sup> News<a class="headerlink" href="#solr-news" title="Permanent link">¶</a></h1>
   <p>You may also read these news as an <a href="/feeds/solr/news.atom.xml">ATOM feed</a>.</p>
 
+  <h2 id="apache-solrtm-773-available">28 April 2020, Apache Solr™ 7.7.3 available
+    <a class="headerlink" href="#apache-solrtm-773-available" title="Permanent link">¶</a>
+  </h2>
+  <p>The Lucene PMC is pleased to announce the release of Apache Solr 7.7.3.</p>
+<p>Solr is the popular, blazing fast, open source NoSQL search platform from the Apache Lucene project. Its major features include powerful full-text search, hit highlighting, faceted search, dynamic clustering, database integration, rich document handling, and geospatial search. Solr is highly scalable, providing fault tolerant distributed search and indexing, and powers the search and navigation features of many of the world's largest internet sites.</p>
+<p>Solr 7.7.3 is available for immediate download at:</p>
+<p><a href="https://lucene.apache.org/solr/downloads.html">https://lucene.apache.org/solr/downloads.html</a></p>
+<h3 id="solr-773-release-highlights">Solr 7.7.3 Release Highlights:</h3>
+<ul>
+<li>SOLR-13779: Use the safe fork of simple-xml for clustering contrib</li>
+<li>SOLR-13718: SPLITSHARD (async) with failures in underlying sub-operations can result in data loss</li>
+<li>SOLR-12291: prematurely reporting not yet finished async Collections API call as completed when collection's replicas are collocated at least at one node</li>
+<li>SOLR-13828: Improve ExecutePlanAction error handling</li>
+<li>SOLR-13472: Forwarded requests should skip authorization on receiving nodes</li>
+<li>SOLR-13793: HttpSolrCall now maintains internal request count (_forwardedCount) for remote queries and limits them to
+  the number of replicas. This avoids making too many cascading calls to remote servers, which, if not restricted, can
+  bring down nodes containing the said collection</li>
+<li>SOLR-13971: Velocity response writer's resource loading now possible only through startup parameters. Also, removed velocity 
+  response writer from _default configset</li>
+<li>SOLR-14025: VelocityResponseWriter has been hardened - only trusted configsets can render configset provided
+  templates and rendering templates from request parameters has been removed.</li>
+<li>SOLR-13158: DataImportHandler: Added enable.dih.dataConfigParam system property to toggle whether the dataConfig param
+  is permitted</li>
+<li>SOLR-14259: Fix javabin performance regression fixes </li>
+</ul>
+<p>Please read CHANGES.txt for a full list of and changes:</p>
+<p><a href="https://lucene.apache.org/solr/7_7_3/changes/Changes.html">https://lucene.apache.org/solr/7_7_3/changes/Changes.html</a></p>
+<p>Solr 7.7.3 also includes bugfixes in the corresponding Apache Lucene release:</p>
+<p><a href="https://lucene.apache.org/core/7_7_3/changes/Changes.html">https://lucene.apache.org/core/7_7_3/changes/Changes.html</a></p>
   <h2 id="apache-solrtm-851-available">16 April 2020, Apache Solr™ 8.5.1 available
     <a class="headerlink" href="#apache-solrtm-851-available" title="Permanent link">¶</a>
   </h2>
