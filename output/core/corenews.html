@@ -139,6 +139,24 @@ document.observe('dom:loaded', StartSlides);
 </div>
 
   <div>
+    <h2 id="apache-lucenetm-860-available">
+      15 July 2020 - Apache Lucene™ 8.6.0 available
+      <a class="headerlink" href="#apache-lucenetm-860-available" title="Permanent link">¶</a>
+    </h2>
+    <p>The Lucene PMC is pleased to announce the release of Apache Lucene 8.6.0.</p>
+<p>Apache Lucene is a high-performance, full-featured text search engine library written entirely in Java. It is a technology suitable for nearly any application that requires full-text search, especially cross-platform.</p>
+<p>This release contains numerous bug fixes, optimizations, and improvements, some of which are highlighted below. The release is available for immediate download at:</p>
+<p><a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a></p>
+<h3 id="lucene-860-release-highlights">Lucene 8.6.0 Release Highlights:</h3>
+<ul>
+<li>API change in: SimpleFSDireectory, IndexWriterConfig, MergeScheduler, SortFields, SimpleBindings, QueryVisitor, DocValues, CodecUtil.</li>
+<li>New: IndexWriter merge-on-commit feature to selectively merge small segments on commit, subject to a configurable timeout, to improve search performance by reducing the number of small segments for searching.</li>
+<li>New: Grouping by range based on DoubleValueSource and LongValueSource.</li>
+<li>Optimizations: BKD trees and index, DoubleValuesSource/QueryValueSource, UsageTrackingQueryingCachingPolicy, FST, Geometry queries, Points, UniformSplit.</li>
+<li>Others: Ukrainian analyzer, checksums verification, resource leaks fixes.</li>
+</ul>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="https://lucene.apache.org/core/8_6_0/changes/Changes.html">https://lucene.apache.org/core/8_6_0/changes/Changes.html</a></p>
     <h2 id="apache-lucenetm-852-available">
       26 May 2020 - Apache Lucene™ 8.5.2 available
       <a class="headerlink" href="#apache-lucenetm-852-available" title="Permanent link">¶</a>

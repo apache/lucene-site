@@ -115,6 +115,29 @@
   <h1 id="solr-news">Solr<sup>™</sup> News<a class="headerlink" href="#solr-news" title="Permanent link">¶</a></h1>
   <p>You may also read these news as an <a href="/feeds/solr/news.atom.xml">ATOM feed</a>.</p>
 
+  <h2 id="apache-solrtm-860-available">15 July 2020, Apache Solr™ 8.6.0 available
+    <a class="headerlink" href="#apache-solrtm-860-available" title="Permanent link">¶</a>
+  </h2>
+  <p>The Lucene PMC is pleased to announce the release of Apache Solr 8.6.0.</p>
+<p>Solr is the popular, blazing fast, open source NoSQL search platform from the Apache Lucene project. Its major features include powerful full-text search, hit highlighting, faceted search, dynamic clustering, database integration, rich document handling, and geospatial search. Solr is highly scalable, providing fault tolerant distributed search and indexing, and powers the search and navigation features of many of the world's largest internet sites.</p>
+<p>Solr 8.6.0 is available for immediate download at:</p>
+<p><a href="https://lucene.apache.org/solr/downloads.html">https://lucene.apache.org/solr/downloads.html</a></p>
+<h3 id="solr-860-release-highlights">Solr 8.6.0 Release Highlights:</h3>
+<ul>
+<li>Cross-Collection Join Queries: Join queries can now work cross-collection, even when shared or when spanning nodes.</li>
+<li>Search: Performance improvement for some types of queries when using when exact hit count isn't needed by using BlockMax WAND algorithm.</li>
+<li>Streaming Expression: Percentiles and standard deviation aggregations added to stats, facet and time series.  Streaming expressions added to /export handler.  Drill Streaming Expression for efficient and accurate high cardinality aggregation.</li>
+<li>Package manager: Support for cluster (CoreContainer) level plugins.</li>
+<li>Health Check: HealthCheckHandler can now require that all cores are healthy before returning OK.</li>
+<li>Zookeeper read API: A read API at /api/cluster/zk/* to fetch raw ZK data and view contents of a ZK directory.</li>
+<li>Admin UI: New panel with security info in admin UI's dashboard.</li>
+<li>Query DSL: Support for {param:ref} and {bool: {excludeTags:""}}</li>
+<li>Ref Guide: Major redesign of Solr's documentation.</li>
+</ul>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="https://lucene.apache.org/solr/8_6_0/changes/Changes.html">https://lucene.apache.org/solr/8_6_0/changes/Changes.html</a></p>
+<p>Solr 8.6.0 also includes features, optimizations  and bugfixes in the corresponding Apache Lucene release:</p>
+<p><a href="https://lucene.apache.org/core/8_6_0/changes/Changes.html">https://lucene.apache.org/core/8_6_0/changes/Changes.html</a></p>
   <h2 id="apache-solrtm-852-available">26 May 2020, Apache Solr™ 8.5.2 available
     <a class="headerlink" href="#apache-solrtm-852-available" title="Permanent link">¶</a>
   </h2>
