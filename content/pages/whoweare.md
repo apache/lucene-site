@@ -17,7 +17,6 @@ template: lucene/tlp/page
 - *Gregory Chanan* (gchanan@...)
 - *Ishan Chattopadhyaya* (ishan@...)
 - *[Cao Manh Dat](https://www.linkedin.com/in/cao-manh-dat-44244435/)* (datcm@...)
-- *Doron Cohen* (doronc@...)
 - *Adriano Crestani* (adrianocrestani@...)
 - *[Doug Cutting](http://blog.lucene.com/)* (cutting@...)
 - *Mike Drob* (mdrob@...)
@@ -29,6 +28,7 @@ template: lucene/tlp/page
 - *Tomas Fernandez Lobbe* (tflobbe@...)
 - *Jim Ferenczi* (jimczi@...)
 - *[Jason Gerlowski](https://twitter.com/jeg90)* (gerlowskija@...)
+- *Ilan Ginzburg* (ilan@...)
 - *[Otis Gospodnetic](http://www.sematext.com)* (otis@...)
 - *Dennis Gove* (dpgove@...)
 - *Adrien Grand* (jpountz@...)
@@ -172,6 +172,7 @@ template: lucene/tlp/page
 ## Emeritus PMC members:
 
 - *George Aroush* (aroush@...)
+- *Doron Cohen* (doronc@...)
 - *Doug Cutting* (cutting@...)
 - *Christoph Goller* (goller@...)
 - *Chris Hostetter* (hossman@...)
