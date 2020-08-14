@@ -9,9 +9,11 @@
 &lt;li&gt;SOLR-14665: Revert SOLR-12845 adding of default autoscaling cluster policy, due to performance issues&lt;/li&gt;
 &lt;li&gt;SOLR-14671: Parsing dynamic ZK config sometimes cause NumberFormatException&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Please read CHANGES.txt for a full list of changes:&lt;/p&gt;
+&lt;p&gt;Please refer to the Upgrade Notes in the Solr Ref Guide for information on upgrading from previous Solr versions:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://lucene.apache.org/solr/guide/8_6/solr-upgrade-notes.html"&gt;https://lucene.apache.org/solr/guide/8_6/solr-upgrade-notes.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Please read CHANGES.txt for a full list of bugfixes:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://lucene.apache.org/solr/8_6_1/changes/Changes.html"&gt;https://lucene.apache.org/solr/8_6_1/changes/Changes.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Solr 8.6.1 also includes  and bugfixes in the corresponding Apache Lucene release:&lt;/p&gt;
+&lt;p&gt;Solr 8.6.1 also includes bugfixes in the corresponding Apache Lucene release:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://lucene.apache.org/core/8_6_1/changes/Changes.html"&gt;https://lucene.apache.org/core/8_6_1/changes/Changes.html&lt;/a&gt;&lt;/p&gt;</content><category term="solr/news"></category></entry><entry><title>Apache Solr™ 8.6.0 available</title><link href="/apache-solrtm-860-available.html" rel="alternate"></link><published>2020-07-15T00:00:00+00:00</published><updated>2020-07-15T00:00:00+00:00</updated><author><name>Lucene and Solr Developers</name></author><id>tag:None,2020-07-15:/apache-solrtm-860-available.html</id><summary type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Solr 8.6.0.&lt;/p&gt;
 &lt;p&gt;Solr is the popular, blazing fast, open source NoSQL search platform from the Apache Lucene project. Its major features include powerful full-text search, hit highlighting, faceted search, dynamic clustering, database integration, rich document handling, and …&lt;/p&gt;</summary><content type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Solr 8.6.0.&lt;/p&gt;
 &lt;p&gt;Solr is the popular, blazing fast, open source NoSQL search platform from the Apache Lucene project. Its major features include powerful full-text search, hit highlighting, faceted search, dynamic clustering, database integration, rich document handling, and geospatial search. Solr is highly scalable, providing fault tolerant distributed search and indexing, and powers the search and navigation features of many of the world's largest internet sites.&lt;/p&gt;
