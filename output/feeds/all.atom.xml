@@ -26,7 +26,36 @@ Source distributions are available &lt;a href="https://www.apache.org/dyn/closer
 &lt;p&gt;Please read CHANGES.txt for a full list of bugfixes:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://lucene.apache.org/solr/8_6_2/changes/Changes.html"&gt;https://lucene.apache.org/solr/8_6_2/changes/Changes.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Solr 8.6.2 also includes bugfixes in the corresponding Apache Lucene release:&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://lucene.apache.org/core/8_6_2/changes/Changes.html"&gt;https://lucene.apache.org/core/8_6_2/changes/Changes.html&lt;/a&gt;&lt;/p&gt;</content><category term="solr/news"></category></entry><entry><title>Apache Lucene™ 8.6.1 available</title><link href="/" rel="alternate"></link><published>2020-08-13T00:00:00+00:00</published><updated>2020-08-13T00:00:00+00:00</updated><author><name>Lucene and Solr Developers</name></author><id>tag:None,2020-08-13:/</id><summary type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 8.6.1.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://lucene.apache.org/core/8_6_2/changes/Changes.html"&gt;https://lucene.apache.org/core/8_6_2/changes/Changes.html&lt;/a&gt;&lt;/p&gt;</content><category term="solr/news"></category></entry><entry><title>[CVE-2020-13941] Apache Solr information disclosure vulnerability</title><link href="/cve-2020-13941-apache-solr-information-disclosure-vulnerability.html" rel="alternate"></link><published>2020-08-14T00:00:00+00:00</published><updated>2020-08-14T00:00:00+00:00</updated><author><name>Lucene and Solr Developers</name></author><id>tag:None,2020-08-14:/cve-2020-13941-apache-solr-information-disclosure-vulnerability.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Severity:&lt;/strong&gt; 
+Medium&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Versions Affected:&lt;/strong&gt;&lt;br&gt;
+Before Solr 8.6.  Some risks are specific to Windows.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt;
+Reported in SOLR-14515 (private) and fixed in SOLR-14561 (public), released in Solr version 8.6.0. 
+The Replication handler (https://lucene.apache.org/solr/guide/8_6/index-replication.html#http-api-commands-for-the-replicationhandler) allows commands backup, restore and deleteBackup …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;Severity:&lt;/strong&gt; 
+Medium&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Versions Affected:&lt;/strong&gt;&lt;br&gt;
+Before Solr 8.6.  Some risks are specific to Windows.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt;
+Reported in SOLR-14515 (private) and fixed in SOLR-14561 (public), released in Solr version 8.6.0. 
+The Replication handler (https://lucene.apache.org/solr/guide/8_6/index-replication.html#http-api-commands-for-the-replicationhandler) allows commands backup, restore and deleteBackup. Each of these take a location parameter, which was not validated, i.e you could read/write to any location the solr user can access. &lt;/p&gt;
+&lt;p&gt;On a windows system SMB paths such as \10.0.0.99\share\folder may also be used, leading to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The possibility of restoring another SolrCore from a server on the network (or mounted remote file system) may lead to:&lt;ul&gt;
+&lt;li&gt;Exposing search index data that the attacker should otherwise not have access to&lt;/li&gt;
+&lt;li&gt;Replacing the index data entirely by loading it from a remote file system that the attacker controls&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Launching SMB attacks which may result in:&lt;ul&gt;
+&lt;li&gt;The exfiltration of sensitive data such as OS user hashes (NTLM/LM hashes),&lt;/li&gt;
+&lt;li&gt;In case of misconfigured systems, SMB Relay Attacks which can lead to user impersonation on SMB Shares or, in a worse-case scenario, Remote Code Execution &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Mitigation:&lt;/strong&gt;
+Upgrade to Solr 8.6, and/or ensure only trusted clients can make requests of Solr's replication handler.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Credit:&lt;/strong&gt;
+Matei "Mal" Badanoiu&lt;/p&gt;</content><category term="solr/security"></category></entry><entry><title>Apache Lucene™ 8.6.1 available</title><link href="/" rel="alternate"></link><published>2020-08-13T00:00:00+00:00</published><updated>2020-08-13T00:00:00+00:00</updated><author><name>Lucene and Solr Developers</name></author><id>tag:None,2020-08-13:/</id><summary type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 8.6.1.&lt;/p&gt;
 &lt;p&gt;Apache Lucene is a high-performance, full-featured text search engine library written entirely in Java. It is a technology suitable for nearly any application that requires full-text search, especially cross-platform.&lt;/p&gt;
 &lt;p&gt;This release contains numerous bug fixes …&lt;/p&gt;</summary><content type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 8.6.1.&lt;/p&gt;
 &lt;p&gt;Apache Lucene is a high-performance, full-featured text search engine library written entirely in Java. It is a technology suitable for nearly any application that requires full-text search, especially cross-platform.&lt;/p&gt;
