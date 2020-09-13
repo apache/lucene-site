@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Apache Lucene - solr/security</title><link href="/" rel="alternate"></link><link href="/feeds/solr/security.atom.xml" rel="self"></link><id>/</id><updated>2019-12-30T00:00:00+00:00</updated><subtitle></subtitle><entry><title>CVE-2019-17558: Apache Solr RCE through VelocityResponseWriter</title><link href="/cve-2019-17558-apache-solr-rce-through-velocityresponsewriter.html" rel="alternate"></link><published>2019-12-30T00:00:00+00:00</published><updated>2019-12-30T00:00:00+00:00</updated><author><name>Lucene and Solr Developers</name></author><id>tag:None,2019-12-30:/cve-2019-17558-apache-solr-rce-through-velocityresponsewriter.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Severity:&lt;/strong&gt; High&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Apache Lucene - solr/security</title><link href="/" rel="alternate"></link><link href="/feeds/solr/security.atom.xml" rel="self"></link><id>/</id><updated>2020-08-14T00:00:00+00:00</updated><subtitle></subtitle><entry><title>CVE-2020-13941: Apache Solr information disclosure vulnerability</title><link href="/cve-2020-13941-apache-solr-information-disclosure-vulnerability.html" rel="alternate"></link><published>2020-08-14T00:00:00+00:00</published><updated>2020-08-14T00:00:00+00:00</updated><author><name>Lucene and Solr Developers</name></author><id>tag:None,2020-08-14:/cve-2020-13941-apache-solr-information-disclosure-vulnerability.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Severity:&lt;/strong&gt; 
+Medium&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Versions Affected:&lt;/strong&gt;&lt;br&gt;
+Before Solr 8.6.  Some risks are specific to Windows.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt;
+Reported in SOLR-14515 (private) and fixed in SOLR-14561 (public), released in Solr version 8.6.0. 
+The Replication handler (https://lucene.apache.org/solr/guide/8_6/index-replication.html#http-api-commands-for-the-replicationhandler) allows commands backup, restore and deleteBackup …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;Severity:&lt;/strong&gt; 
+Medium&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Versions Affected:&lt;/strong&gt;&lt;br&gt;
+Before Solr 8.6.  Some risks are specific to Windows.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt;
+Reported in SOLR-14515 (private) and fixed in SOLR-14561 (public), released in Solr version 8.6.0. 
+The Replication handler (https://lucene.apache.org/solr/guide/8_6/index-replication.html#http-api-commands-for-the-replicationhandler) allows commands backup, restore and deleteBackup. Each of these take a location parameter, which was not validated, i.e you could read/write to any location the solr user can access. &lt;/p&gt;
+&lt;p&gt;On a windows system SMB paths such as \10.0.0.99\share\folder may also be used, leading to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The possibility of restoring another SolrCore from a server on the network (or mounted remote file system) may lead to:&lt;ul&gt;
+&lt;li&gt;Exposing search index data that the attacker should otherwise not have access to&lt;/li&gt;
+&lt;li&gt;Replacing the index data entirely by loading it from a remote file system that the attacker controls&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Launching SMB attacks which may result in:&lt;ul&gt;
+&lt;li&gt;The exfiltration of sensitive data such as OS user hashes (NTLM/LM hashes),&lt;/li&gt;
+&lt;li&gt;In case of misconfigured systems, SMB Relay Attacks which can lead to user impersonation on SMB Shares or, in a worse-case scenario, Remote Code Execution &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Mitigation:&lt;/strong&gt;
+Upgrade to Solr 8.6, and/or ensure only trusted clients can make requests of Solr's replication handler.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Credit:&lt;/strong&gt;
+Matei "Mal" Badanoiu&lt;/p&gt;</content><category term="solr/security"></category></entry><entry><title>CVE-2019-17558: Apache Solr RCE through VelocityResponseWriter</title><link href="/cve-2019-17558-apache-solr-rce-through-velocityresponsewriter.html" rel="alternate"></link><published>2019-12-30T00:00:00+00:00</published><updated>2019-12-30T00:00:00+00:00</updated><author><name>Lucene and Solr Developers</name></author><id>tag:None,2019-12-30:/cve-2019-17558-apache-solr-rce-through-velocityresponsewriter.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Severity:&lt;/strong&gt; High&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Vendor:&lt;/strong&gt;&lt;br&gt;
 The Apache Software Foundation&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Versions Affected:&lt;/strong&gt;
