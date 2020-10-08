@@ -3,3 +3,9 @@ pelican:
   target: asf-site
 publish:
   whoami: asf-site
+
+github:
+  labels:
+    - lucene
+    - website
+    - pelican
