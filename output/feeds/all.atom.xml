@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Apache Lucene</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2020-10-07T00:00:00+00:00</updated><subtitle></subtitle><entry><title>Apache Lucene™ 8.6.3 available</title><link href="/" rel="alternate"></link><published>2020-10-07T00:00:00+00:00</published><updated>2020-10-07T00:00:00+00:00</updated><author><name>Lucene and Solr Developers</name></author><id>tag:None,2020-10-07:/</id><summary type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 8.6.3.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Apache Lucene</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2020-10-12T00:00:00+00:00</updated><subtitle></subtitle><entry><title>CVE-2020-13957: The checks added to unauthenticated configset uploads in Apache Solr can be circumvented</title><link href="/cve-2020-13957-the-checks-added-to-unauthenticated-configset-uploads-in-apache-solr-can-be-circumvented.html" rel="alternate"></link><published>2020-10-12T00:00:00+00:00</published><updated>2020-10-12T00:00:00+00:00</updated><author><name>Lucene and Solr Developers</name></author><id>tag:None,2020-10-12:/cve-2020-13957-the-checks-added-to-unauthenticated-configset-uploads-in-apache-solr-can-be-circumvented.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Severity:&lt;/strong&gt;
+High&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Versions Affected:&lt;/strong&gt;
+6.6.0 to 6.6.6
+7.0.0 to 7.7.3
+8.0.0 to 8.6.2&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt;
+Solr prevents some features considered dangerous (which could be used for remote code execution) to be configured in a ConfigSet that's uploaded via API …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;Severity:&lt;/strong&gt;
+High&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Versions Affected:&lt;/strong&gt;
+6.6.0 to 6.6.6
+7.0.0 to 7.7.3
+8.0.0 to 8.6.2&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt;
+Solr prevents some features considered dangerous (which could be used for remote code execution) to be configured in a ConfigSet that's uploaded via API without authentication/authorization. The checks in place to prevent such features can be circumvented by using a combination of UPLOAD/CREATE actions.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mitigation:&lt;/strong&gt;
+Any of the following are enough to prevent this vulnerability:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Disable UPLOAD command in ConfigSets API if not used by setting the system property: &lt;code&gt;configset.upload.enabled&lt;/code&gt; to &lt;code&gt;false&lt;/code&gt; (&lt;a href="https://lucene.apache.org/solr/guide/8_6/configsets-api.html"&gt;see docs&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Use Authentication/Authorization and make sure unknown requests aren't allowed (&lt;a href="https://lucene.apache.org/solr/guide/8_6/authentication-and-authorization-plugins.html"&gt;see docs&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Upgrade to &lt;code&gt;Solr 8.6.3&lt;/code&gt; or greater.&lt;/li&gt;
+&lt;li&gt;If upgrading is not an option, consider applying the patch in &lt;a href="https://issues.apache.org/jira/browse/SOLR-14663"&gt;SOLR-14663&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;No Solr API, including the Admin UI, is designed to be exposed to non-trusted parties. Tune your firewall so that only trusted computers and people are allowed access&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Credit:&lt;/strong&gt;
+Tomás Fernández Löbbe, András Salamon&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;References:&lt;/strong&gt;
+&lt;a href="https://issues.apache.org/jira/browse/SOLR-14925"&gt;SOLR-14925&lt;/a&gt;: CVE-2020-13957: The checks added to unauthenticated configset uploads can be circumvented&lt;/p&gt;</content><category term="solr/security"></category></entry><entry><title>Apache Lucene™ 8.6.3 available</title><link href="/" rel="alternate"></link><published>2020-10-07T00:00:00+00:00</published><updated>2020-10-07T00:00:00+00:00</updated><author><name>Lucene and Solr Developers</name></author><id>tag:None,2020-10-07:/</id><summary type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 8.6.3.&lt;/p&gt;
 &lt;p&gt;Apache Lucene is a high-performance, full-featured text search engine library written entirely in Java. It is a technology suitable for nearly any application that requires full-text search, especially cross-platform.&lt;/p&gt;
 &lt;p&gt;This release contains no additional bug …&lt;/p&gt;</summary><content type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 8.6.3.&lt;/p&gt;
 &lt;p&gt;Apache Lucene is a high-performance, full-featured text search engine library written entirely in Java. It is a technology suitable for nearly any application that requires full-text search, especially cross-platform.&lt;/p&gt;
