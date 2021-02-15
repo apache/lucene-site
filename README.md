@@ -5,7 +5,7 @@ This repository contains the "source code" of the Lucene/Solr website at [lucene
 ## Building the site
 
 The site is written in [Markdown][9] syntax and built into a static site using [Pelican][1]. The site is re-built automatically by [ASF Buildbot][5] on every push to master branch and the result can be previewed at [lucene.staged.apache.org][6]. Build success/failure emails are sent to [commits@lucene.apache.org][7] mailing list. Read more about the mechanics behind auto building in [INFRA Confluence][8].
- 
+
 If the staged site looks good, simply merge the changes to branch `production` and the site will be deployed in a minute or two. Note that simple edits can also be done directly in the GitHub UI rather than clone -> edit -> commit -> push.
 
 For larger edits it is recommended to build and preview the site locally. This lets you see the result of your changes instantly without committing anything. The next sections detail that procedure. The TL;DR instructions goes like this:
@@ -13,7 +13,7 @@ For larger edits it is recommended to build and preview the site locally. This l
     # Usage: ./build.sh [-l] [<other pelican arguments>]
     #        -l     Live build and reload source changes on localhost:8000
     #        --help Show full help for options that Pelican accepts
-    ./build -l
+    ./build.sh -l
 
 Now go to <http://localhost:8000> to view the beautiful Lucene/Solr web page served from your laptop with live-preview of updates :)
 
