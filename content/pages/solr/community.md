@@ -130,8 +130,8 @@ wealth of information about how to get the most out of the IRC channels.
 * The project's Slack channel are the `#lucene-dev` and `#solr-dev` channels in the `the-asf` organization. These are primarily for developer discussions and not meant as support channels. Link: <https://the-asf.slack.com/messages/CE70MDPMF>
 
 * There are unofficial slack organizations for Solr support
-    * A community maintained/unofficial Slack organization that relays messages bi-directionally to/from the official IRC channels. Link: https://s.apache.org/solr-slack
-    * For relevance related discussions (Solr or other search engines), there's Relevance Slack: https://opensourceconnections.com/slack
+    * A community maintained/unofficial Slack organization that relays messages bi-directionally to/from the official IRC channels. Link: <https://s.apache.org/solr-slack>
+    * For relevance related discussions (Solr or other search engines), there's Relevance Slack: <https://opensourceconnections.com/slack>
 
 ## Issue tracker ##
 
