@@ -131,7 +131,7 @@ wealth of information about how to get the most out of the IRC channels.
 
 * There are unofficial slack organizations for Solr support
     * A community maintained/unofficial Slack organization that relays messages bi-directionally to/from the official IRC channels. Link: <https://s.apache.org/solr-slack>
-    * For relevance related discussions (Solr or other search engines), there's Relevance Slack: <https://opensourceconnections.com/slack>
+    * For relevance related discussions (Solr and other search engines), there's Relevance Slack: <https://relevancy.slack.com>.    Sign up via <https://opensourceconnections.com/slack>
 
 ## Issue tracker ##
 
