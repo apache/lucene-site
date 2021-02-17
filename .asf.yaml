@@ -1,9 +1,8 @@
 pelican:
-  whoami: master
-  target: asf-staging
-
-staging:
-  whoami: asf-staging
+  whoami: production
+  target: asf-site
+publish:
+  whoami: asf-site
 
 github:
   labels:
