@@ -115,7 +115,6 @@ Java array needs to instantiated first.<br/> For example, accessing termDocs:</p
 <span class="err">&amp;nbsp;&amp;nbsp;bits.set(docs[0])     # access the array&#39;s first element&lt;br/&gt;</span>
 </code></pre></div>
 
-
 <p>In addition to <em>int</em>, the <em>JArray</em> function accepts <em>object</em>, <em>string</em>,
 <em>bool</em>, <em>byte</em>, <em>char</em>, <em>double</em>, <em>float</em>, <em>long</em> and <em>short</em> to create an array
 of the corresponding type. The <em>JArray('object')</em> constructor takes a second
@@ -128,7 +127,6 @@ For example:</p>
 <div class="highlight"><pre><span></span><code><span class="err">\# creating a Java array of double from the [1.5, 2.5] list&lt;br/&gt;</span>
 <span class="err">JArray(&#39;double&#39;)([1.5, 2.5])&lt;br/&gt;</span>
 </code></pre></div>
-
 
 <p>All methods that expect an array also accept a sequence of Python objects of the
 expected element type. If no values are expected from the array arguments after
@@ -166,13 +164,11 @@ The Java loop:</li>
 <span class="err">}&lt;br/&gt;</span>
 </code></pre></div>
 
-
 <p>can be written in Python:</p>
 <div class="highlight"><pre><span></span><code><span class="err">for hit in hits:&lt;br/&gt;</span>
 <span class="err">&amp;nbsp;&amp;nbsp;hit = Hit.cast_(hit)&lt;br/&gt;</span>
 <span class="err">&amp;nbsp;&amp;nbsp;print hit.getScore(), &#39;:&#39;, hit.getDocument[&#39;title&#39;]&lt;br/&gt;</span>
 </code></pre></div>
-
 
 <p>if hit.iterator()'s next() method were declared to return <em>Hit</em> instead of
 <em>Object</em>, the above cast_() call would not be unnecessary.<br/> The same java
@@ -180,7 +176,6 @@ loop can also be written:</p>
 <div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">xrange</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">hits</span><span class="p">))</span><span class="err">:</span><span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span><span class="w"></span>
 <span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="k">print</span><span class="w"> </span><span class="n">hits</span><span class="p">.</span><span class="n">score</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">hits</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">&#39;title&#39;</span><span class="o">]&lt;</span><span class="n">br</span><span class="o">/&gt;</span><span class="w"></span>
 </code></pre></div>
-
 
 <ul>
 <li>Hits instances partially implement the Python 'sequence' protocol.<br/>
@@ -190,12 +185,10 @@ The Java expressions:</li>
 <span class="err">doc = hits.get(i);&lt;br/&gt;</span>
 </code></pre></div>
 
-
 <p>are better written in Python:</p>
 <div class="highlight"><pre><span></span><code><span class="nf">len</span><span class="p">(</span><span class="n">hits</span><span class="p">)</span><span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span><span class="w"></span>
 <span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hits</span><span class="o">[</span><span class="n">i</span><span class="o">]&lt;</span><span class="n">br</span><span class="o">/&gt;</span><span class="w"></span>
 </code></pre></div>
-
 
 <ul>
 <li>Document instances have fields whose values can be accessed through the mapping
@@ -204,11 +197,9 @@ protocol.<br/> The Java expression:</li>
 <div class="highlight"><pre><span></span><code><span class="err">doc.get(&quot;title&quot;)</span>
 </code></pre></div>
 
-
 <p>is better written in Python:</p>
 <div class="highlight"><pre><span></span><code><span class="err">doc[&#39;title&#39;]</span>
 </code></pre></div>
-
 
 <ul>
 <li>Document instances can be iterated over for their fields.<br/> The Java loop:</li>
@@ -220,13 +211,11 @@ protocol.<br/> The Java expression:</li>
 <span class="err">}&lt;br/&gt;</span>
 </code></pre></div>
 
-
 <p>is better written in Python:</p>
 <div class="highlight"><pre><span></span><code><span class="err">for field in doc.getFields():&lt;br/&gt;</span>
 <span class="err">&amp;nbsp;&amp;nbsp;field = Field.cast_(field)&lt;br/&gt;</span>
 <span class="err">&amp;nbsp;&amp;nbsp;...&lt;br/&gt;</span>
 </code></pre></div>
-
 
 <p>Once JCC heeds Java 1.5 type parameters and once Java Lucene makes use of them,
 such casting should become unnecessary</p>

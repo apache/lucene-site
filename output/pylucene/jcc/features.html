@@ -187,7 +187,6 @@ top level of the resulting Python extension module.</p>
                           <span class="c1"># directory.</span>
 </code></pre></div>
 
-
 <p>There are limits to both how many files can fit on the command line and how large
 a C++ file the C++ compiler can handle. By default, JCC generates one large C++
 file containing the source code for all wrapper classes.</p>
@@ -248,7 +247,6 @@ is installed as a resource file with the extension when JCC is invoked with the
     <span class="o">&gt;&gt;&gt;</span> <span class="n">lucene</span><span class="o">.</span><span class="n">initVM</span><span class="p">(</span><span class="n">classpath</span><span class="o">=</span><span class="n">lucene</span><span class="o">.</span><span class="n">CLASSPATH</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>-
 <em>initialheap</em><br/>
 The initial amount of Java heap to start the Java VM with. This argument is a string
@@ -258,7 +256,6 @@ that follows the same syntax as the similar <em>-Xms</em> java command line argu
     <span class="o">&gt;&gt;&gt;</span> <span class="n">lucene</span><span class="o">.</span><span class="n">Runtime</span><span class="o">.</span><span class="n">getRuntime</span><span class="p">()</span><span class="o">.</span><span class="n">totalMemory</span><span class="p">()</span>
     <span class="il">33357824L</span>
 </code></pre></div>
-
 
 <p>-
 <em>maxheap</em><br/>
@@ -277,7 +274,6 @@ These are passed through as-is. For example:</p>
 <div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">lucene</span>
     <span class="o">&gt;&gt;&gt;</span> <span class="n">lucene</span><span class="o">.</span><span class="n">initVM</span><span class="p">(</span><span class="n">vmargs</span><span class="o">=</span><span class="s1">&#39;-Xcheck:jni,-verbose:jni,-verbose:gc&#39;</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p>The <em>initVM()</em> and <em>getVMEnv()</em> functions return a JCCEnv object that has a few
 utility methods on it:</p>
@@ -309,7 +305,6 @@ the class loaders are different, <em>findClass()</em> may find classes that <em>
     <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">Class</span><span class="p">:</span> <span class="k">class</span> <span class="nc">java</span><span class="o">.</span><span class="n">lang</span><span class="o">.</span><span class="n">Object</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>
 </code></pre></div>
 
-
 <h2 id="type-casting-and-instance-checks">Type casting and instance checks</h2>
 <p>Many Java APIs are declared to return types that are less specific than the types
 actually returned. In Java 1.5, this is worked around with type parameters. JCC
@@ -326,7 +321,6 @@ whether the wrapped java instance is of the given type. For example:</p>
 
     <span class="n">print</span> <span class="n">booleanQuery</span><span class="p">.</span><span class="n">getClauses</span><span class="p">()</span>
 </code></pre></div>
-
 
 <h2 id="handling-generic-classes">Handling generic classes</h2>
 <p>Java 1.5 added support for parameterized types. JCC generates code to heed type
@@ -355,7 +349,6 @@ among others:</p>
 <span class="err">    &amp;lt;Document: Document&amp;lt;&amp;gt;&amp;gt;</span>
 </code></pre></div>
 
-
 <p>The use of type parameters is, of course, optional. A generic Java class can still
 be used as before, without type parameters. Downcasting from <em>Object</em> is then necessary:</p>
 <div class="highlight"><pre><span></span><code><span class="err">    &gt;&gt;&gt; a = ArrayList()</span>
@@ -370,7 +363,6 @@ be used as before, without type parameters. Downcasting from <em>Object</em> is 
 <span class="err">    &gt;&gt;&gt; Document.cast_(a.get(0))</span>
 <span class="err">    &amp;lt;Document: Document&amp;lt;&amp;gt;&amp;gt;</span>
 </code></pre></div>
-
 
 <h2 id="handling-arrays">Handling arrays</h2>
 <p>Java arrays are wrapped with a C++ JArray template. The <em>[]</em> is available for read
@@ -391,7 +383,6 @@ object from python.</p>
     <span class="o">#</span> <span class="n">the</span> <span class="n">resulting</span> <span class="n">Java</span> <span class="nb">int</span> <span class="nb">array</span> <span class="k">contains</span> <span class="n">the</span> <span class="n">ints</span> <span class="k">in</span> <span class="n">the</span> <span class="n">sequence</span>
 </code></pre></div>
 
-
 <p>Instead of <em>'int'</em>, you may also use one of <em>'object'</em>, <em>'string'</em>, <em>'bool'</em>,
 <em>'byte'</em>, <em>'char'</em>, <em>'double'</em>, <em>'float'</em>, <em>'long'</em> and <em>'short'</em> to create an
 array of the corresponding type.</p>
@@ -408,7 +399,6 @@ by <em>JArray('object')</em>. For example:</p>
 <span class="err"># cast obj to an array of Document</span>
 <span class="err">&gt;&gt;&gt; JArray(&#39;object&#39;).cast_(obj, Document)</span>
 </code></pre></div>
-
 
 <p>In both cases, the java type of obj must be compatible with the array type it is
 being cast to.</p>
@@ -439,7 +429,6 @@ being cast to.</p>
     <span class="mi">0</span>
 </code></pre></div>
 
-
 <p>To verify that a Java object is of a given array type, use the <em>instance</em>()_ method
 available on the array type. This is not the same as verifying that it is assignable
 with elements of a given type. For example, using the arrays created above:</p>
@@ -463,7 +452,6 @@ with elements of a given type. For example, using the arrays created above:</p>
 <span class="s1">    &gt;&gt;&gt; JArray(&#39;</span><span class="k">object</span><span class="err">&#39;</span><span class="p">).</span><span class="n">assignable_</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">Document</span><span class="p">)</span>
     <span class="k">True</span>
 </code></pre></div>
-
 
 <h2 id="exception-reporting">Exception reporting</h2>
 <p>Exceptions that occur in the Java VM and that escape to C++ are reported as a
@@ -523,7 +511,6 @@ such an extension class in Java:</p>
 <span class="p">}</span>
 </code></pre></div>
 
-
 <p>The <em>pythonExtension()</em> methods is what makes this class recognized as an extension
 class by JCC. They should be included verbatim as above along with the declaration of
 the <em>pythonObject</em> instance variable.</p>
@@ -563,7 +550,6 @@ the other native methods, <em>tokenStream()</em> in the example above.</p>
 <span class="err">              pass</span>
 <span class="err">      return _tokenStream()</span>
 </code></pre></div>
-
 
 <p>When an <em>__init__()</em> is declared, <em>super()</em> must be called or else the Java
 wrapper class will not know about the Python instance it needs to invoke.</p>
@@ -646,7 +632,6 @@ followed by ':' and its Java
 <span class="err">                    # calling its getProperty method</span>
 </code></pre></div>
 
-
 <p>JCC generates Python sequence length and get methods for a class when requested
 to do so via the <em>--sequence</em> command line option which takes three arguments,
 the class to generate the sequence length and get for and the two java methods
@@ -657,7 +642,6 @@ For example:</p>
 <span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hits</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"></span>
 <span class="p">...</span><span class="w"></span>
 </code></pre></div>
-
 
 <p>is made possible by:</p>
 <div class="highlight"><pre><span></span><code><span class="err">--sequence org.apache.lucene.search.Hits</span>
