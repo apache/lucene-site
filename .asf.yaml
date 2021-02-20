@@ -1,5 +1,5 @@
 pelican:
-  whoami: main-solrTLP
+  whoami: main/solr
   target: solrtlp-staging
 
 staging:
