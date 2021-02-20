@@ -1,12 +1,14 @@
 pelican:
-  whoami: master
-  target: asf-staging
+  whoami: main-solrTLP
+  target: solrtlp-staging
 
 staging:
-  whoami: asf-staging
+  whoami: solrtlp-staging
+  profile: solrtlp
 
 github:
   labels:
+    - apache
     - solr
     - website
     - pelican
@@ -15,5 +17,5 @@ github:
     merge:  true
     rebase: false
   protected_branches:
-    master
+    main
     production
