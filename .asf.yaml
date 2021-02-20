@@ -1,9 +1,9 @@
 pelican:
   whoami: main/solr
-  target: solrtlp-staging
+  target: asf-staging-solrtlp
 
 staging:
-  whoami: solrtlp-staging
+  whoami: asf-staging-solrtlp
   profile: solrtlp
 
 github:
