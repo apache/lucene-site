@@ -1,10 +1,10 @@
 # Website for Apache Solr
 
-This repository contains the "source code" of the Lucene/Solr website at [lucene.apache.org](https://lucene.apache.org/).
+This repository contains the "source code" of the Solr website at [solr.apache.org](https://solr.apache.org/).
 
 ## Building the site
 
-The site is written in [Markdown][9] syntax and built into a static site using [Pelican][1]. The site is re-built automatically by [ASF Buildbot][5] on every push to main branch, and the result can be previewed at [lucene.staged.apache.org][6]. Build success/failure emails are sent to [commits@lucene.apache.org][7] mailing list. Read more about the mechanics behind auto building in [INFRA Confluence][8].
+The site is written in [Markdown][9] syntax and built into a static site using [Pelican][1]. The site is re-built automatically by [ASF Buildbot][5] on every push to main branch, and the result can be previewed at [solr.staged.apache.org][6]. Build success/failure emails are sent to [commits@solr.apache.org][7] mailing list. Read more about the mechanics behind auto building in [INFRA Confluence][8].
  
 If the staged site looks good, simply merge the changes to branch `production` and the site will be deployed in a minute or two. Note that simple edits can also be done directly in the GitHub UI rather than clone -> edit -> commit -> push.
 
@@ -78,10 +78,10 @@ Modify `SOLR_LATEST_RELEASE` and `SOLR_PREVIOUS_MAJOR_RELEASE`, and
 
 [1]: https://blog.getpelican.com/
 [2]: https://docs.getpelican.com/en/stable/install.html
-[3]: https://lucene.apache.org/solr/downloads.html#about-versions-and-support
+[3]: https://solr.apache.org/downloads.html#about-versions-and-support
 [4]: https://www.python.org/downloads/
 [5]: https://ci2.apache.org/#/builders/3
-[6]: https://lucene.staged.apache.org
-[7]: https://lists.apache.org/list.html?commits@lucene.apache.org
+[6]: https://solr.staged.apache.org
+[7]: https://lists.apache.org/list.html?commits@solr.apache.org
 [8]: https://wiki.apache.org/confluence/display/INFRA/.asf.yaml+features+for+git+repositories
 [9]: http://daringfireball.net/projects/markdown/syntax
