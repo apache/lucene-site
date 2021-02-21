@@ -127,7 +127,9 @@ RedirectMatch Permanent ^/nutch/(.*)$ https://nutch.apache.org/$1
 RedirectMatch Permanent ^/lucy/(.*)$ https://lucy.apache.org/
 
 # promote Solr to TLP
-RedirectMatch Permanent ^/solr/(.*)$ https://solr.apache.org/$1
+# TODO: This links to the staging site for new Solr - change the redirect to TLP page
+#RedirectMatch Permanent ^/solr/(.*)$ https://solr.apache.org/$1
+RedirectMatch Permanent ^/solr/(.*)$ https://lucene-solrtlp.staged.apache.org/$1
 
 
 ### Javadocs & Solr Refguide
