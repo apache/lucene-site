@@ -27,6 +27,7 @@ RewriteBase /
 
 # DOAP file redirects to source repository
 RedirectMatch Permanent ^/core/doap.rdf https://gitbox.apache.org/repos/asf?p=lucene-solr.git;a=blob_plain;f=dev-tools/doap/lucene.rdf;hb=HEAD
+# TODO: Point the Solr DOAP to the new solr.git repo
 RedirectMatch Permanent ^/solr/doap.rdf https://gitbox.apache.org/repos/asf?p=lucene-solr.git;a=blob_plain;f=dev-tools/doap/solr.rdf;hb=HEAD
 
 # page renames
@@ -124,6 +125,9 @@ RedirectMatch Permanent ^/nutch/(.*)$ https://nutch.apache.org/$1
 
 # Lucy has moved, site strcuture has changed, do don't use $1 in redirect...
 RedirectMatch Permanent ^/lucy/(.*)$ https://lucy.apache.org/
+
+# promote Solr to TLP
+RedirectMatch Permanent ^/solr/(.*)$ https://solr.apache.org/$1
 
 
 ### Javadocs & Solr Refguide
