@@ -1,12 +1,14 @@
 pelican:
-  whoami: master
-  target: asf-staging
+  whoami: main/lucene
+  target: asf-staging-lucene
 
 staging:
-  whoami: asf-staging
+  whoami: asf-staging-lucene
+  profile: new
 
 github:
   labels:
+    - apache
     - lucene
     - website
     - pelican
@@ -15,5 +17,5 @@ github:
     merge:  true
     rebase: false
   protected_branches:
-    master
+    main
     production

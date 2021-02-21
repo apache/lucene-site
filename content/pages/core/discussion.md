@@ -22,10 +22,10 @@ send questions to this list to verify your problem before filing issues in JIRA.
 ### Developer Discussion: dev@lucene.apache.org
 
 This is the list where participating developers of the Java Lucene project meet
-and discuss issues concerning Lucene/Solr internals, code changes/additions, etc.
+and discuss issues concerning Lucene internals, code changes/additions, etc.
 
 ***NOTE:*** _Please do not send mail to this list with usage questions or configuration
-questions and problems; that is what the java-user and solr-user mailing lists are for._
+questions and problems; that is what the java-user mailing list is for._
 
 - Subscribe: [dev-subscribe](mailto:dev-subscribe@lucene.apache.org)
 - Unsubscribe: [dev-unsubscribe](mailto:dev-unsubscribe@lucene.apache.org)
@@ -50,7 +50,6 @@ This is an automated announcement only list where notifications about all JIRA i
 Subscribe: [issues-subscribe](mailto:issues-subscribe@lucene.apache.org)
 
 Unsubscribe: [issues-unsubscribe](mailto:issues-unsubscribe@lucene.apache.org)
-([Problems?](https://cwiki.apache.org/confluence/display/solr/Unsubscribing%20from%20mailing%20lists))
 
 [Official Apache Archive](http://mail-archives.apache.org/mod_mbox/lucene-issues/)
 
@@ -61,13 +60,12 @@ This is an automated announcement only list where notifications about all CI bui
 Subscribe: [builds-subscribe](mailto:builds-subscribe@lucene.apache.org)
 
 Unsubscribe: [builds-unsubscribe](mailto:builds-unsubscribe@lucene.apache.org)
-([Problems?](https://cwiki.apache.org/confluence/display/solr/Unsubscribing%20from%20mailing%20lists))
 
 [Official Apache Archive](http://mail-archives.apache.org/mod_mbox/lucene-builds/)
 
 ### Commit Notifications: commits@lucene
 
-This is an automated announcement only list where notifications about every Lucene/Solr commit are sent.
+This is an automated announcement only list where notifications about every Lucene commit are sent.
 
 - Subscribe: [commits-subscribe](mailto:commits-subscribe@lucene.apache.org)
 - Unsubscribe: [commits-unsubscribe](mailto:commits-unsubscribe@lucene.apache.org)
