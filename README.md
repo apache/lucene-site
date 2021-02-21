@@ -2,7 +2,7 @@
 
 This repository contains the "source code" of the Lucene website at [lucene.apache.org](https://lucene.apache.org/).
 
-**NOTE:** The Apache [Solr website](https://solr.apache.org/) now has [its own git repository(https://github.com/apache/solr-site)].
+**NOTE:** The Apache [Solr website](https://solr.apache.org/) now has [its own git repository](https://github.com/apache/solr-site).
 
 ## Building the site
 
