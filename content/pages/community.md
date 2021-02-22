@@ -9,6 +9,8 @@ The Solr Community provides user support for free through the [solr-user mailing
 here. There are also a number of external companies and professionals ready to help, see the user-maintained list at
 [cwiki.apache.org/confluence/display/solr/Support](https://cwiki.apache.org/confluence/display/solr/Support).
 
+<a name="mailing-lists-irc"></a>
+
 ## Mailing Lists & Chat ##
 
 #### Solr User List: users@solr.apache.org ####
@@ -24,28 +26,21 @@ the JIRA issue tracker, make sure it's a real bug and that it hasn't been alread
 This is the list where participating developers of the Solr project meet and discuss
 issues concerning Solr internals, code changes/additions, etc.
 
+[Subscribe - Unsubscribe - Archives : dev@solr.apache.org at Apache's PonyMail](https://lists.apache.org/list.html?dev@solr.apache.org).
+
 **NOTE: Please do not send mail to this list with usage questions or configuration questions and
 problems, that is what the solr-user mailing list is for.**
 
-[Subscribe - Unsubscribe - Archives : dev@solr.apache.org at Apache's PonyMail](https://lists.apache.org/list.html?users@solr.apache.org).
+#### Notification / automated announcements lists for developers ####
 
-#### Issue Notifications: issues@solr.apache.org ####
+Notifications about all JIRA issues and Github pull requests:  
+[Subscribe - Unsubscribe - Archives : issues@solr.apache.org at Apache's PonyMail](https://lists.apache.org/list.html?issues@solr.apache.org).
 
-This is an automated announcement only list where notifications about all JIRA issues and Github pull requests are sent.
+Notifications about all CI builds by Jenkins:  
+[Subscribe - Unsubscribe - Archives : builds@solr.apache.org at Apache's PonyMail](https://lists.apache.org/list.html?builds@solr.apache.org).
 
-[Subscribe - Unsubscribe - Archives : issues@solr.apache.org at Apache's PonyMail](https://lists.apache.org/list.html?users@solr.apache.org).
-
-#### Build Notifications: builds@solr.apache.org ####
-
-This is an automated announcement only list where notifications about all CI builds by Jenkins are sent.
-
-[Subscribe - Unsubscribe - Archives : builds@solr.apache.org at Apache's PonyMail](https://lists.apache.org/list.html?users@solr.apache.org).
-
-#### Commit Notifications: commits@solr.apache.org ####
-
-This is an automated announcement only list where notifications about every Solr commit are sent.
-
-[Subscribe - Unsubscribe - Archives : commits@solr.apache.org at Apache's PonyMail](https://lists.apache.org/list.html?users@solr.apache.org).
+Notifications about every Solr commit:  
+[Subscribe - Unsubscribe - Archives : commits@solr.apache.org at Apache's PonyMail](https://lists.apache.org/list.html?commits@solr.apache.org).
 
 #### IRC  ####
 
