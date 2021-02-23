@@ -14,7 +14,7 @@
 &lt;p&gt;Solr 8.8.1 is available for immediate download at:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://lucene.apache.org/solr/downloads.html"&gt;https://lucene.apache.org/solr/downloads.html&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id="solr-881-release-highlights"&gt;Solr 8.8.1 Release Highlights:&lt;/h3&gt;
-&lt;p&gt;Fix for a SolrJ backwards compatibility issue when upgrading the server to 8.8.0 without upgrading SolrJ to 8.8.0.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Fix for a SolrJ backwards compatibility issue when upgrading the server to 8.8.0 without upgrading SolrJ to 8.8.0. Users are encouraged to use 8.8.1 instead of 8.8.0.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Please refer to the Upgrade Notes in the Solr Ref Guide for information on upgrading from previous Solr versions:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://lucene.apache.org/solr/guide/8_8/solr-upgrade-notes.html"&gt;https://lucene.apache.org/solr/guide/8_8/solr-upgrade-notes.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Please read CHANGES.txt for a full list of bugfixes:&lt;/p&gt;
