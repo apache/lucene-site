@@ -5,7 +5,7 @@ template: resources
 
 ## Tutorials ##
 
-* [Solr Quick Start](/solr/guide/solr-tutorial.html)
+* [Solr Quick Start](/guide/solr-tutorial.html)
 
 <!--
 * More to come: Ideas include "Solr in a Day", "Solr and JSON", "Solr and CSV", "Solr and XML"
@@ -21,11 +21,11 @@ Users who have completed the tutorial are encouraged to review the [other docume
 
 Beginning with Solr 4.4, a detailed reference guide is available online.
 
-* [HTML Version of the Reference Guide](/solr/guide)
+* [HTML Version of the Reference Guide](/guide)
 
 * [Visual Guide to Streaming Expressions and Math Expressions](http://bit.ly/32srTpA)
 
-* [Previous Releases in PDF (until Solr 8.1)](http://archive.apache.org/dist/lucene/solr/ref-guide/)
+* [Previous Releases in PDF (until Solr 8.x)](http://archive.apache.org/dist/lucene/solr/ref-guide/)
 
 
 <h3 class="offset" id="javadocs">Solr Javadocs</h3>
@@ -33,7 +33,7 @@ Beginning with Solr 4.4, a detailed reference guide is available online.
 Solr generates JavaDocs for all included code in each release.
 Copies of this documentation for every release can be found online:
 
-* [Latest Release](/solr/api/index.html)
+* [Latest Release](/api/index.html)
 
 <h3 class="offset" id="additional-documentation">Additional Documentation</h3>
 
@@ -43,7 +43,7 @@ Additional documentation can be found on the [Solr Community Wiki](https://cwiki
 
 ## Solr Books ##
 
-If you have a Solr book that you would like to see listed here, please [edit this website add submit a Pull Request]("/editing-website.html").
+If you have a Solr book that you would like to see listed here, please [edit this website add submit a Pull Request](/editing-website.html).
 
 <h3 class="offset" id="book-relevant-search">Relevant Search</h3>
 Doug Turnbull, John Berryman and Manning Publications are proud to announce *Relevant Search*.
@@ -209,7 +209,7 @@ If you have a Solr presentation that you would like to see listed here, please s
 
 ## Videos ##
 
-If you have a Solr video that you would like to see listed here, please [edit this website add submit a Pull Request]("/editing-website.html").
+If you have a Solr video that you would like to see listed here, please [edit this website add submit a Pull Request](/editing-website.html).
 
 <!-- TODO: WOULD BE NICE TO HAVE A SLIDER OR RANDOMLY PICKED VIDEO HERE -->
 
