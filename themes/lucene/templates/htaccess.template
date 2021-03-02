@@ -92,19 +92,8 @@ RedirectMatch Permanent ^/nutch/(.*)$ https://nutch.apache.org/$1
 RedirectMatch Permanent ^/lucy/(.*)$ https://lucy.apache.org/
 
 # Solr moved to TLP Feb 2021
-# Redirect old location of Solr release doc and javadoc to new, changed location in solr.apache.org/docs
-RedirectMatch temp ^/solr/api$ https://solr.apache.org/api/
-RedirectMatch Permanent ^/solr/(\d+_\d+_\d+)$ https://solr.apache.org/docs/$1
-# These will be further rewritten to SOLR_LATEST_RELEASE on the solr side
-RedirectMatch temp ^/solr/api/org/(.*) https://solr.apache.org/api/org/$1
-RedirectMatch temp ^/solr/api/(.*) https://solr.apache.org/api/$1
-RedirectMatch Permanent ^/solr/4_0_0-(ALPHA|BETA)(.*) https://solr.apache.org/docs/4_0_0/$2
-RedirectMatch Permanent ^/solr/api-(.*) https://solr.apache.org/docs/$1
-RedirectMatch Permanent ^feeds/solr/news.atom.xml https://solr.apache.org/feeds/solr/news.atom.xml
-RedirectMatch Permanent ^feeds/solr/security.atom.xml https://solr.apache.org/feeds/solr/security.atom.xml
-# Fallback redirect for anythin not caught above
-RedirectMatch Permanent ^/solr/(.*)$ https://solr.apache.org/$1
-
+Redirect Permanent /feeds/solr https://solr.apache.org/feeds/solr
+Redirect permanent /solr https://solr.apache.org
 
 ### Javadocs
 
