@@ -26,7 +26,7 @@ RewriteBase /
 ### Pre-CMS site redirects
 
 # DOAP file redirects to source repository
-RedirectMatch Permanent ^/solr/doap.rdf https://gitbox.apache.org/repos/asf?p=solr.git;a=blob_plain;f=dev-tools/doap/solr.rdf;hb=HEAD
+RedirectMatch Permanent ^/doap.rdf https://gitbox.apache.org/repos/asf?p=solr.git;a=blob_plain;f=dev-tools/doap/solr.rdf;hb=HEAD
 
 # Solr site redesign
 # needs to use mod_rewrite because of the anchor fragments
@@ -46,33 +46,32 @@ RedirectMatch Permanent ^mirrors-solr-3x-redir downloads.html
 RedirectMatch Permanent ^mirrors-solr-redir.html downloads.html
 
 # Simple redirect to "directory", so later rules match
-RedirectMatch temp ^/(core|solr)/api$ $0/
-RedirectMatch Permanent ^/(core|solr)/\d+_\d+_\d+$ $0/
-RedirectMatch Permanent ^/solr/guide/\d+_\d+$ $0/
+RedirectMatch temp ^/api$ $0/
+RedirectMatch Permanent ^/docs/\d+_\d+_\d+$ $0/
+RedirectMatch Permanent ^/guide/\d+_\d+$ $0/
 
 # Other pages can always be redirected to the "most current" released javadocs
 # using "temp" instead of permanent so crawlers know that they
 # might change again in the future
-RedirectMatch temp ^/core/api/(.*) /core/{{ SOLR_LATEST_RELEASE | replace(".", "_") }}/$1
-RedirectMatch temp ^/solr/api/org/(.*) /solr/{{ SOLR_LATEST_RELEASE | replace(".", "_") }}/solr-core/org/$1
-RedirectMatch temp ^/solr/api/(.*) /solr/{{ SOLR_LATEST_RELEASE | replace(".", "_") }}/$1
-RedirectMatch temp ^/solr/guide/(?!index.html)([a-z].*) /solr/guide/{{ SOLR_LATEST_RELEASE.rsplit(".", 1) | first | replace(".", "_") }}/$1
+RedirectMatch temp ^/api/org/(.*) /docs/{{ SOLR_LATEST_RELEASE | replace(".", "_") }}/solr-core/org/$1
+RedirectMatch temp ^/api/(.*) /docs/{{ SOLR_LATEST_RELEASE | replace(".", "_") }}/$1
+RedirectMatch temp ^/guide/(?!index.html)([a-z].*) /guide/{{ SOLR_LATEST_RELEASE.rsplit(".", 1) | first | replace(".", "_") }}/$1
 
 # Solr Tutorial is now in the Solr Ref Guide
 # should redirect automatically to latest version
-RedirectMatch Permanent ^/quickstart.html /solr/guide/solr-tutorial.html
+RedirectMatch Permanent ^/quickstart.html /guide/solr-tutorial.html
 
 # redirect older point versions to latest (to keep number of javadocs small):
-RedirectMatch Permanent ^/solr/4_0_0-(ALPHA|BETA)(.*) /solr/4_0_0$2
-RedirectMatch Permanent ^/solr/api-(.*) /solr/$1
+RedirectMatch Permanent ^/docs/4_0_0-(ALPHA|BETA)(.*) /docs/4_0_0$2
+RedirectMatch Permanent ^/docs/api-(.*) /docs/$1
 
 ### Javadocs & Solr Refguide
 
 # Hack: Append slash, if folder name does not end with slash - everything containing a "." is treated as file and excluded from redirect:
-RewriteRule ^(core|solr)/\d+_\d+_\d+/(?!.+\.\w+$|.+/$).+$   $0/ [R=301,L]
-RewriteRule ^solr/guide/\d+_\d+/(?!.+\.\w+$|.+/$).+$        $0/ [R=301,L]
+RewriteRule ^docs/\d+_\d+_\d+/(?!.+\.\w+$|.+/$).+$          $0/ [R=301,L]
+RewriteRule ^guide/\d+_\d+/(?!.+\.\w+$|.+/$).+$             $0/ [R=301,L]
 
 # __root/docs.lucene.apache.org/content/ is a special alias added by INFRA-19439, so we can refer to stuff in other places like SVN:
-RewriteRule ^(core|solr)/\d+_\d+_\d+/.*$  __root/docs.lucene.apache.org/content/$0 [PT]
-RewriteRule ^solr/guide/\d+_\d+/.*$       __root/docs.lucene.apache.org/content/$0 [PT]
+RewriteRule ^docs/(\d+_\d+_\d+/.*)$  __root/docs.lucene.apache.org/content/solr/$1 [PT]
+RewriteRule ^guide/\d+_\d+/.*$       __root/docs.lucene.apache.org/content/solr/$0 [PT]
 
