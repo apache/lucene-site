@@ -5,7 +5,7 @@ template: community
 
 ## Support ##
 
-The Solr Community provides user support for free through the [solr-user mailing list](#mailing-lists-irc) and other channels mentioned
+The Solr Community provides user support for free through the [users mailing list](#mailing-lists-irc) and other channels mentioned
 here. There are also a number of external companies and professionals ready to help, see the user-maintained list at
 [cwiki.apache.org/confluence/display/solr/Support](https://cwiki.apache.org/confluence/display/solr/Support).
 
@@ -29,7 +29,7 @@ issues concerning Solr internals, code changes/additions, etc.
 [Subscribe - Unsubscribe - Archives : dev@solr.apache.org at Apache's PonyMail](https://lists.apache.org/list.html?dev@solr.apache.org).
 
 **NOTE: Please do not send mail to this list with usage questions or configuration questions and
-problems, that is what the solr-user mailing list is for.**
+problems, that is what the users mailing list is for.**
 
 #### Notification / automated announcements lists for developers ####
 
@@ -52,7 +52,7 @@ There are two primary IRC channels dedicated to Solr at freenode.net.
 
 The IRC channel can be used for online discussion about Solr related stuff,
 but developers should be careful to transfer all the official decisions or useful discussions to the issue
-tracking system.  Note that the solr-user mailing list will reach a lot more people than the IRC channel,
+tracking system.  Note that the users mailing list will reach a lot more people than the IRC channel,
 but if it's the right time of day, the IRC channel can offer a more interactive experience with faster turnaround.
 
 [This wiki page](https://cwiki.apache.org/confluence/display/SOLR/IRCChannels) has links to a web-based IRC client, and a
