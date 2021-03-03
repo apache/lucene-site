@@ -1,6 +1,8 @@
-# Web site for Apache Lucene and Solr
+# Website for Apache Lucene
 
-This repository contains the "source code" of the Lucene/Solr website at [lucene.apache.org](https://lucene.apache.org/).
+This repository contains the "source code" of the Lucene website at [lucene.apache.org](https://lucene.apache.org/).
+
+**NOTE:** The Apache [Solr website](https://solr.apache.org/) now has [its own git repository](https://github.com/apache/solr-site).
 
 ## Building the site
 
@@ -17,7 +19,7 @@ For larger edits it is recommended to build and preview the site locally. This l
     #        --help Show full help for options that Pelican accepts
     ./build -l
 
-Now go to <http://localhost:8000> to view the beautiful Lucene/Solr web page served from your laptop with live-preview of updates :)
+Now go to <http://localhost:8000> to view the beautiful Lucene web page served from your laptop with live-preview of updates :)
 
 ### Installing Pelican by hand
 
@@ -53,13 +55,13 @@ pelican --autoreload --listen
 
 Remember that on Mac/Linux you can use the `build.sh` script with `-l` option to do the same.
 
-## Updating site during a Lucene/Solr release
+## Updating site during a Lucene release
 
 The release manager documentation will contain detailed instructions on how to update the site during a release. Some of the boring version number update and download link generation is handled by Pelican, see below.
 
-JavaDoc publishing and Solr RefGuide publishing is **not** done through this repo, but in SVN as detailed in Release Manager instructions, and will then appear in respective sections of the website automatically, see `.htaccess` for how.
+JavaDoc publishing is **not** done through this repo, but in SVN as detailed in Release Manager instructions, and will then appear in respective sections of the website automatically, see `.htaccess` for how.
 
-### Bump Lucene/Solr latest version after the release
+### Bump Lucene latest version after the release
 
 There are variables in **pelicanconf.py** to modify the latest 2 supported release versions. This will affect all references to release version in the theme, but not in pages or articles. Pelican views pages and articles as static write-once, like a blog post, whereas the theme can be more dynamic and change with every build.
 
@@ -68,9 +70,6 @@ Modify `LUCENE_LATEST_RELEASE` and `LUCENE_PREVIOUS_MAJOR_RELEASE`, and
 
 * Full patch release versions in html such as "6.3.0".
 * Minor release versions in html such as "6.3.x".
-* References to unsupported versions such as "<6" in [Solr downloads][3].
-* References to upcoming unreleased versions such as "7" in [Solr downloads][3]
-  which is a +1 increment of the `LUCENE_LATEST_RELEASE` setting.
 * Links to source, javadocs, PGP, and SHA512 which use underscores to separate
   version parts such as `6_3_0`
 * References to the release date of the latest version which can be dynamically
@@ -78,7 +77,6 @@ Modify `LUCENE_LATEST_RELEASE` and `LUCENE_PREVIOUS_MAJOR_RELEASE`, and
 
 [1]: https://blog.getpelican.com/
 [2]: https://docs.getpelican.com/en/stable/install.html
-[3]: https://lucene.apache.org/solr/downloads.html#about-versions-and-support
 [4]: https://www.python.org/downloads/
 [5]: https://ci2.apache.org/#/builders/3
 [6]: https://lucene.staged.apache.org

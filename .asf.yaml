@@ -6,6 +6,7 @@ publish:
 
 github:
   labels:
+    - apache
     - lucene
     - website
     - pelican
@@ -16,3 +17,4 @@ github:
   protected_branches:
     master
     production
+

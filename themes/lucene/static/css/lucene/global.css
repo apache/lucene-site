@@ -216,6 +216,11 @@ p img {
     margin:0 10px 0 0;
 }
 
+p img.solrlogo {
+  background: none;
+  border: none;
+}
+
 img.float-right {
     margin: 5px 0px 10px 10px;
 }

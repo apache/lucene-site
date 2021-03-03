@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from datetime import datetime, date
 from checksumdir import dirhash
 
-AUTHOR = 'Lucene and Solr Developers'
+AUTHOR = 'Lucene Developers'
 SITENAME = 'Apache Lucene'
 SITESUBTITLE = ''
 SITEURL = ''
