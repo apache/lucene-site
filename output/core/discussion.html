@@ -17,21 +17,21 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<link href="/theme/css/lucene/global.css?v=f684ea48" rel="stylesheet" type="text/css">
+<link href="/theme/css/lucene/global.css?v=4240f230" rel="stylesheet" type="text/css">
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta name="Distribution" content="Global"/>
 <meta name="Robots" content="index,follow"/>
 
-<script type="text/javascript" src="/theme/javascript/lucene/prototype.js?v=f684ea48"></script>
-<script type="text/javascript" src="/theme/javascript/lucene/effects.js?v=f684ea48"></script>
-<script type="text/javascript" src="/theme/javascript/lucene/slides.js?v=f684ea48"></script>    <title>Apache Lucene - Lucene<span style="vertical-align: super; font-size: xx-small">TM</span> Mailing Lists and IRC</title>
+<script type="text/javascript" src="/theme/javascript/lucene/prototype.js?v=4240f230"></script>
+<script type="text/javascript" src="/theme/javascript/lucene/effects.js?v=4240f230"></script>
+<script type="text/javascript" src="/theme/javascript/lucene/slides.js?v=4240f230"></script>    <title>Apache Lucene - Lucene<span style="vertical-align: super; font-size: xx-small">TM</span> Mailing Lists and IRC</title>
 <meta name="keywords"
        content="apache, apache lucene, apache solr, solr, lucene
        search, information retrieval, spell checking, faceting, inverted index,
        open source"/><link rel="shortcut icon" type="image/png"
-    href="/theme/images/lucene/lucene-favicon.png"/><link href="/theme/css/lucene/core.css?v=f684ea48" rel="stylesheet" type="text/css">
+    href="/theme/images/lucene/lucene-favicon.png"/><link href="/theme/css/lucene/core.css?v=4240f230" rel="stylesheet" type="text/css">
   </head>
   <body id="home">
     <div id="wrap">
@@ -42,13 +42,15 @@
           </a>
           <div style="position:absolute;right:100px;top:10px;"><span style="vertical-align: super; font-size: xx-small">TM</span></div>
         </div>
+<!-- TODO: Search disabled as it does not work, 2021-02-21
 <div id="search" style="float:right;zoom:1">
   <form id="quick-search" method="GET" action="https://sematext.com/opensee/lucene" name="searchform">
     <fieldset>
       <input type="search" id="q" name="q" placeholder="Search with Apache Solr..." class="class1 class2 hint" accesskey="q">
     </fieldset>
   </form>
-</div>        <div id="nav">
+</div>-->
+        <div id="nav">
           <ul>
 <li><a href="/core/index.html">Core</a></li>
 <li><a href="/core/corenews.html">News</a></li>
@@ -169,9 +171,9 @@ send questions to this list to verify your problem before filing issues in JIRA.
 <h2 id="developer-lists">Developer Lists</h2>
 <h3 id="developer-discussion-devluceneapacheorg">Developer Discussion: dev@lucene.apache.org</h3>
 <p>This is the list where participating developers of the Java Lucene project meet
-and discuss issues concerning Lucene/Solr internals, code changes/additions, etc.</p>
+and discuss issues concerning Lucene internals, code changes/additions, etc.</p>
 <p><strong><em>NOTE:</em></strong> <em>Please do not send mail to this list with usage questions or configuration
-questions and problems; that is what the java-user and solr-user mailing lists are for.</em></p>
+questions and problems; that is what the java-user mailing list is for.</em></p>
 <ul>
 <li>Subscribe: <a href="mailto:dev-subscribe@lucene.apache.org">dev-subscribe</a></li>
 <li>Unsubscribe: <a href="mailto:dev-unsubscribe@lucene.apache.org">dev-unsubscribe</a></li>
@@ -190,17 +192,15 @@ and for questions from users who have no idea where to get started (Lucene-Core?
 <h3 id="issue-notifications-issueslucene">Issue Notifications: issues@lucene</h3>
 <p>This is an automated announcement only list where notifications about all JIRA issues and Github pull requests are sent.</p>
 <p>Subscribe: <a href="mailto:issues-subscribe@lucene.apache.org">issues-subscribe</a></p>
-<p>Unsubscribe: <a href="mailto:issues-unsubscribe@lucene.apache.org">issues-unsubscribe</a>
-(<a href="https://cwiki.apache.org/confluence/display/solr/Unsubscribing%20from%20mailing%20lists">Problems?</a>)</p>
+<p>Unsubscribe: <a href="mailto:issues-unsubscribe@lucene.apache.org">issues-unsubscribe</a></p>
 <p><a href="http://mail-archives.apache.org/mod_mbox/lucene-issues/">Official Apache Archive</a></p>
 <h3 id="build-notifications-buildslucene">Build Notifications: builds@lucene</h3>
 <p>This is an automated announcement only list where notifications about all CI builds by Jenkins are sent.</p>
 <p>Subscribe: <a href="mailto:builds-subscribe@lucene.apache.org">builds-subscribe</a></p>
-<p>Unsubscribe: <a href="mailto:builds-unsubscribe@lucene.apache.org">builds-unsubscribe</a>
-(<a href="https://cwiki.apache.org/confluence/display/solr/Unsubscribing%20from%20mailing%20lists">Problems?</a>)</p>
+<p>Unsubscribe: <a href="mailto:builds-unsubscribe@lucene.apache.org">builds-unsubscribe</a></p>
 <p><a href="http://mail-archives.apache.org/mod_mbox/lucene-builds/">Official Apache Archive</a></p>
 <h3 id="commit-notifications-commitslucene">Commit Notifications: commits@lucene</h3>
-<p>This is an automated announcement only list where notifications about every Lucene/Solr commit are sent.</p>
+<p>This is an automated announcement only list where notifications about every Lucene commit are sent.</p>
 <ul>
 <li>Subscribe: <a href="mailto:commits-subscribe@lucene.apache.org">commits-subscribe</a></li>
 <li>Unsubscribe: <a href="mailto:commits-unsubscribe@lucene.apache.org">commits-unsubscribe</a></li>
@@ -268,6 +268,7 @@ No endorsement is implied by the listing of an archive on the Wiki.</p>
 
 <h1 id="related-projects">Related Projects</h1>
 <ul>
+  <li><a href="https://solr.apache.org">Apache Solr</a></li>
   <li><a href="http://hadoop.apache.org">Apache Hadoop</a></li>
   <li><a href="http://manifoldcf.apache.org/">Apache ManifoldCF</a></li>
   <li><a href="http://lucenenet.apache.org/">Apache Lucene.Net</a></li>

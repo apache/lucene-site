@@ -27,7 +27,6 @@ RewriteBase /
 
 # DOAP file redirects to source repository
 RedirectMatch Permanent ^/core/doap.rdf https://gitbox.apache.org/repos/asf?p=lucene-solr.git;a=blob_plain;f=dev-tools/doap/lucene.rdf;hb=HEAD
-RedirectMatch Permanent ^/solr/doap.rdf https://gitbox.apache.org/repos/asf?p=lucene-solr.git;a=blob_plain;f=dev-tools/doap/solr.rdf;hb=HEAD
 
 # page renames
 RedirectMatch Permanent ^/who.html /whoweare.html
@@ -35,41 +34,15 @@ RedirectMatch Permanent ^/java/docs/irc.html /core/discussion.html#irc
 RedirectMatch Permanent ^/java/docs/mailinglists.html /core/discussion.html
 RedirectMatch Permanent ^/java/docs/systemrequirements.html /core/systemreqs.html
 RedirectMatch Permanent ^/java/docs/developer-resources.html /core/developer.html
-RedirectMatch Permanent ^/solr/issue_tracking.html https://issues.apache.org/jira/browse/SOLR
-RedirectMatch Permanent ^/solr/mirrors-solr-latest-redir.html /solr/downloads.html
-RedirectMatch Permanent ^/solr/mirrors-solr-3x-redir /solr/downloads.html
-RedirectMatch Permanent ^/solr/mirrors-solr-redir.html /solr/downloads.html
-RedirectMatch Permanent ^/core/mirrors-core-latest-redir.html /core/downloads.html
-RedirectMatch Permanent ^/core/mirrors-core-redir.html /core/downloads.html
-
-# Solr site redesign
-# needs to use mod_rewrite because of the anchor fragments
-RewriteRule ^solr/books.html solr/resources.html#solr-books                      [R=301,NE,L]
-RewriteRule ^solr/discussion.html solr/resources.html#community                  [R=301,NE,L]
-RewriteRule ^solr/documentation.html solr/resources.html#documentation           [R=301,NE,L]
-RewriteRule ^solr/screenshots.html solr/features.html                            [R=301,NE,L]
-RewriteRule ^solr/solrnews.html solr/news.html                                   [R=301,NE,L]
-RewriteRule ^solr/tutorial.html solr/resources.html#tutorials                    [R=301,NE,L]
-RewriteRule ^solr/versioncontrol.html solr/resources.html#solr-version-control   [R=301,NE,L]
-RewriteRule ^solr/version_control.html solr/resources.html#solr-version-control  [R=301,NE,L]
-RewriteRule ^solr/mailing_lists.html solr/resources.html#community               [R=301,NE,L]
 
 # Simple redirect to "directory", so later rules match
-RedirectMatch temp ^/(core|solr)/api$ $0/
-RedirectMatch Permanent ^/(core|solr)/\d+_\d+_\d+$ $0/
-RedirectMatch Permanent ^/solr/guide/\d+_\d+$ $0/
+RedirectMatch temp ^/core/api$ $0/
+RedirectMatch Permanent ^/core/\d+_\d+_\d+$ $0/
 
 # Other pages can always be redirected to the "most current" released javadocs
 # using "temp" instead of permanent so crawlers know that they
 # might change again in the future
 RedirectMatch temp ^/core/api/(.*) /core/8_8_1/$1
-RedirectMatch temp ^/solr/api/org/(.*) /solr/8_8_1/solr-core/org/$1
-RedirectMatch temp ^/solr/api/(.*) /solr/8_8_1/$1
-RedirectMatch temp ^/solr/guide/(?!index.html)([a-z].*) /solr/guide/8_8/$1
-
-# Solr Tutorial is now in the Solr Ref Guide
-# should redirect automatically to latest version
-RedirectMatch Permanent ^/solr/quickstart.html /solr/guide/solr-tutorial.html
 
 # we no longer have a TLP mail.html page use 'core' for now
 RedirectMatch Permanent ^/mail.html /core/discussion.html
@@ -81,8 +54,6 @@ RedirectMatch Permanent ^/core/old_versioned_docs/versions/(.*) /core/$1
 RedirectMatch Permanent ^/core/2_9_[0123](.*) /core/2_9_4$1
 RedirectMatch Permanent ^/core/3_0_[012](.*) /core/3_0_3$1
 RedirectMatch Permanent ^/core/4_0_0-(ALPHA|BETA)(.*) /core/4_0_0$2
-RedirectMatch Permanent ^/solr/4_0_0-(ALPHA|BETA)(.*) /solr/4_0_0$2
-RedirectMatch Permanent ^/solr/api-(.*) /solr/$1
 
 # Default catch for "java" - Core is the new Java!
 RedirectMatch Permanent ^/java/docs(.*) /core$1
@@ -99,11 +70,6 @@ RedirectMatch Permanent ^/pylucene/resources/version_control.html /pylucene/
 # when in doubt, assume they've moved up a dir
 RedirectMatch Permanent ^/pylucene/documentation/(.*) /pylucene/$1
 RedirectMatch Permanent ^/pylucene/jcc/documentation/(.*) /pylucene/jcc/$1
-
-# this got added to the new site nav, even though it has never existed.
-# faster for now to put a redirect in then to try and figure out how to fix the nav
-RedirectMatch Permanent ^/solr/wiki.html https://cwiki.apache.org/confluence/display/solr/
-
 
 ### old subprojects
 
@@ -125,13 +91,14 @@ RedirectMatch Permanent ^/nutch/(.*)$ https://nutch.apache.org/$1
 # Lucy has moved, site strcuture has changed, do don't use $1 in redirect...
 RedirectMatch Permanent ^/lucy/(.*)$ https://lucy.apache.org/
 
+# Solr moved to TLP Feb 2021
+Redirect Permanent /feeds/solr https://solr.apache.org/feeds/solr
+Redirect permanent /solr https://solr.apache.org
 
-### Javadocs & Solr Refguide
+### Javadocs
 
 # Hack: Append slash, if folder name does not end with slash - everything containing a "." is treated as file and excluded from redirect:
-RewriteRule ^(core|solr)/\d+_\d+_\d+/(?!.+\.\w+$|.+/$).+$   $0/ [R=301,L]
-RewriteRule ^solr/guide/\d+_\d+/(?!.+\.\w+$|.+/$).+$        $0/ [R=301,L]
+RewriteRule ^core/\d+_\d+_\d+/(?!.+\.\w+$|.+/$).+$   $0/ [R=301,L]
 
 # __root/docs.lucene.apache.org/content/ is a special alias added by INFRA-19439, so we can refer to stuff in other places like SVN:
-RewriteRule ^(core|solr)/\d+_\d+_\d+/.*$  __root/docs.lucene.apache.org/content/$0 [PT]
-RewriteRule ^solr/guide/\d+_\d+/.*$       __root/docs.lucene.apache.org/content/$0 [PT]
+RewriteRule ^core/\d+_\d+_\d+/.*$         __root/docs.lucene.apache.org/content/$0 [PT]
