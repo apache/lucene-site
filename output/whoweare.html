@@ -17,16 +17,16 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<link href="/theme/css/lucene/global.css?v=f684ea48" rel="stylesheet" type="text/css">
+<link href="/theme/css/lucene/global.css?v=4240f230" rel="stylesheet" type="text/css">
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta name="Distribution" content="Global"/>
 <meta name="Robots" content="index,follow"/>
 
-<script type="text/javascript" src="/theme/javascript/lucene/prototype.js?v=f684ea48"></script>
-<script type="text/javascript" src="/theme/javascript/lucene/effects.js?v=f684ea48"></script>
-<script type="text/javascript" src="/theme/javascript/lucene/slides.js?v=f684ea48"></script>    <title>Apache Lucene - Who we are</title>
+<script type="text/javascript" src="/theme/javascript/lucene/prototype.js?v=4240f230"></script>
+<script type="text/javascript" src="/theme/javascript/lucene/effects.js?v=4240f230"></script>
+<script type="text/javascript" src="/theme/javascript/lucene/slides.js?v=4240f230"></script>    <title>Apache Lucene - Who we are</title>
 <meta name="keywords"
        content="apache, apache lucene, apache solr, solr, lucene
        search, information retrieval, spell checking, faceting, inverted index,
@@ -41,16 +41,17 @@
           </a>
           <div style="position:absolute;right:100px;top:10px;"><span style="vertical-align: super; font-size: xx-small">TM</span></div>
         </div>
+<!-- TODO: Search disabled as it does not work, 2021-02-21
 <div id="search" style="float:right;zoom:1">
   <form id="quick-search" method="GET" action="https://sematext.com/opensee/lucene" name="searchform">
     <fieldset>
       <input type="search" id="q" name="q" placeholder="Search with Apache Solr..." class="class1 class2 hint" accesskey="q">
     </fieldset>
   </form>
-</div>        <div id="nav">
+</div>-->
+        <div id="nav">
           <ul>
 <li><a href="/core/">Core (Java)</a></li>
-<li><a href="/solr/">Solr</a></li>
 <li><a class="last" href="/pylucene/index.html">PyLucene</a></li>
           </ul>
         </div>
@@ -59,13 +60,14 @@
   <div class="slideshow" id="mantleSlides">
 <div id="slide1" >
   <div class="callout">
-    Ultra-fast Search Library and Server<br/>
+    Ultra-fast Search Library<br/>
   </div>
   <div class="descwrapper"><div class="description">
-      Apache Lucene and Solr set the standard for search and indexing performance
+      Apache Lucene set the standard for search and indexing performance.
+      Lucene is the search core of both Apache Solr<span style="vertical-align: super; font-size: xx-small">TM</span> and Elasticsearch<span style="vertical-align: super; font-size: xx-small">TM</span>.
     </div></div>
     <div class="mantle">
-      <img alt="Apache Lucene" src="/theme/images/lucene/tlp/mantle-lucene-solr.png"/>
+      <img alt="Apache Lucene" src="/theme/images/lucene/tlp/mantle-lucene.png"/>
     </div>
 </div>
 <div id="slide2" style="display:none">
@@ -85,7 +87,7 @@
     Large, Vibrant community
   </div>
   <div class="descwrapper"><div class="description">
-      The goal of Apache Lucene and Solr is to provide world class search capabilities
+      The goal of Apache Lucene is to provide world class search capabilities
     </div></div>
     <div class="mantle">
       <img alt="Apache Mahout community" src="/theme/images/lucene/tlp/mantle-community.png"/>
@@ -96,7 +98,7 @@
     Apache 2.0 licensed
   </div>
   <div class="descwrapper"><div class="description">
-      Apache Lucene and Solr are distributed under a commercially friendly Apache Software license
+      Apache Lucene is distributed under a commercially friendly Apache Software license
     </div></div>
     <div class="mantle">
       <img alt="Apache Software Foundation" src="/theme/images/lucene/mantle-asf.png"/>
@@ -122,7 +124,7 @@ document.observe('dom:loaded', StartSlides);
         <div id="main">
 <div>
   <h1 class="title">Who we are</h1>
-  <h2 id="lucenetmsolrtm-committers">Lucene<span style="vertical-align: super; font-size: xx-small">TM</span>/Solr<span style="vertical-align: super; font-size: xx-small">TM</span> Committers</h2>
+  <h2 id="lucenetm-committers">Lucene<span style="vertical-align: super; font-size: xx-small">TM</span> Committers</h2>
 <ul>
 <li><em><a href="https://www.linkedin.com/in/danmuzi">Namgyu Kim</a></em> (namgyu@...)</li>
 <li><em><a href="https://www.linkedin.com/in/andyetitmoves">Ramkumar Aiyengar</a></em> (andyetitmoves@...)</li>
@@ -312,17 +314,10 @@ document.observe('dom:loaded', StartSlides);
   <div class="flap bottom">Apache Lucene 8.8.1</div>
 </div>
 <div class="download-desc">Apache Lucene 8.8.1</div>
-<div class="button-orange">
-  <a href="/solr/downloads.html">Download</a>
-  <div class="flap top">Click to</div>
-  <div class="flap bottom">Apache Solr 8.8.1</div>
-</div>
-<div class="download-desc">Apache Solr 8.8.1</div>
 
 <h1 id="projects">Projects<a class="headerlink" href="#projects" title="Permanent link">¶</a></h1>
 <ul>
   <li><a href="/core/">Lucene Core (Java)</a></li>
-  <li><a href="/solr/">Solr</a></li>
   <li><a href="/pylucene/">PyLucene</a></li>
   <li><a href="/openrelevance/">Open Relevance (Discontinued)</a></li>
 </ul>
@@ -332,6 +327,7 @@ document.observe('dom:loaded', StartSlides);
   <li><a href="https://www.apache.org/licenses/">License</a></li>
   <li><a href="/whoweare.html">Who We are</a></li>
   <li><a href="/news.html">TLP News</a></li>
+  <li><a href="/code-of-conduct.html">Code of Conduct</a></li>
 </ul>
 
 <h1 id="events">Events<a class="headerlink" href="#events" title="Permanent link">¶</a></h1>
@@ -355,6 +351,7 @@ document.observe('dom:loaded', StartSlides);
 
 <h1 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">¶</a></h1>
 <ul>
+  <li><a href="https://solr.apache.org">Apache Solr</a></li>
   <li><a href="http://hadoop.apache.org">Apache Hadoop</a></li>
   <li><a href="http://manifoldcf.apache.org/">Apache ManifoldCF</a></li>
   <li><a href="http://lucenenet.apache.org/">Apache Lucene.Net</a></li>
