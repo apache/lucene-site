@@ -1,10 +1,9 @@
 pelican:
-  whoami: main/lucene
-  target: asf-staging-lucene
+  whoami: master
+  target: asf-staging
 
 staging:
-  whoami: asf-staging-lucene
-  profile: new
+  whoami: asf-staging
 
 github:
   labels:
@@ -19,3 +18,4 @@ github:
   protected_branches:
     main
     production
+
