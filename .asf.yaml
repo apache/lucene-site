@@ -16,6 +16,6 @@ github:
     merge:  true
     rebase: false
   protected_branches:
-    main
+    master
     production
 
