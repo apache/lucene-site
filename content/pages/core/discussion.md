@@ -32,17 +32,6 @@ questions and problems; that is what the java-user mailing list is for._
 - Send: [dev](mailto:dev@lucene.apache.org) \(Requires subscription\)
 - [Official Apache Archive](http://mail-archives.apache.org/mod_mbox/lucene-dev/)
 
-
-### General Discussion: general@lucene.apache.org
-
-This list is for broader questions and discussions about the Lucene project, announcements,
-and for questions from users who have no idea where to get started (Lucene-Core?, Solr? PyLucene?)
-
-- Subscribe: [general-subscribe](mailto:general-subscribe@lucene.apache.org)
-- Unsubscribe: [general-unsubscribe](mailto:general-unsubscribe@lucene.apache.org)
-- Send: [general](mailto:general@lucene.apache.org) \(Requires subscription\)
-- [Official Apache Archive](http://mail-archives.apache.org/mod_mbox/lucene-general/)
-
 ### Issue Notifications: issues@lucene ###
 
 This is an automated announcement only list where notifications about all JIRA issues and Github pull requests are sent.
@@ -88,9 +77,10 @@ The project's Slack channel is the **#lucene-dev** channel in the **the-asf** or
 
 ## Mail Archives
 
-The Lucene Wiki maintains a list of searchable mailing list archives at [https://cwiki.apache.org/confluence/display/lucene/MailingListArchives](https://cwiki.apache.org/confluence/display/lucene/MailingListArchives).
-No endorsement is implied by the listing of an archive on the Wiki.
+Use the Apache service [Ponymail - lists.apache.org](https://lists.apache.org/list.html?dev@lucene.apache.org) to 
+browse the mail archives of all the project's mailing lists.
 
-## Other Mailing Lists
+## Retired mailing lists
+These lists are no longer in use, so we just provide a link to the archives.
 
-Each Lucene project maintains its own mailing lists.  Please refer to the project you are interested in for details on subscribing to its mailing list.
+* [general@lucene.apache.org](http://mail-archives.apache.org/mod_mbox/lucene-general/)
