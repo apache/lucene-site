@@ -8,8 +8,11 @@
        search, information retrieval, spell checking, faceting, inverted index,
        open source"/>{% endblock %}
     {% block ogmeta %}
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lucene.apache.org/{{ page.url }}"/>
     <meta property="og:title" content="{{ page.title }}"/>
-    <meta property="og:image" content="http://lucene.apache.org/theme/images/lucene/lucene_og_image.png{{ STATIC_RESOURCE_SUFFIX }}"/>
+    <meta property="og:description" content="{{ page.content | striptags | replace("\"", "&quot;") | truncate(137, False, '...') }}"/>
+    <meta property="og:image" content="https://lucene.apache.org/theme/images/lucene/lucene_og_image.png{{ STATIC_RESOURCE_SUFFIX }}"/>
     <meta property="og:image:secure_url" content="https://lucene.apache.org/theme/images/lucene/lucene_og_image.png{{ STATIC_RESOURCE_SUFFIX }}"/>
     {% endblock %}
     {% block favicon %}<link rel="shortcut icon" type="image/png"
