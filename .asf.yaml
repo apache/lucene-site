@@ -1,5 +1,5 @@
 pelican:
-  whoami: master
+  whoami: main
   target: asf-staging
 
 staging:
@@ -16,6 +16,6 @@ github:
     merge:  true
     rebase: false
   protected_branches:
-    master
+    main
     production
 
