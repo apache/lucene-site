@@ -7,6 +7,10 @@
        content="apache, apache lucene, apache solr, solr, lucene
        search, information retrieval, spell checking, faceting, inverted index,
        open source"/>{% endblock %}
+    {% block ogmeta %}
+    <meta name="og:title" content="{{ page.title }}"/>
+    <meta name="og:image" content="https://lucene.apache.org/theme/images/lucene/core/mantle-innovation.png{{ STATIC_RESOURCE_SUFFIX }}"/>
+    {% endblock %}
     {% block favicon %}<link rel="shortcut icon" type="image/png"
                                                  href="{{ SITEURL }}/theme/images/lucene/lucene-favicon.png{{ STATIC_RESOURCE_SUFFIX }}"/>{% endblock %}
     {% block css %}{% endblock %}
