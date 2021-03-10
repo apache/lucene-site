@@ -26,7 +26,7 @@ RewriteBase /
 ### Pre-CMS site redirects
 
 # DOAP file redirects to source repository
-RedirectMatch Permanent ^/core/doap.rdf https://gitbox.apache.org/repos/asf?p=lucene-solr.git;a=blob_plain;f=dev-tools/doap/lucene.rdf;hb=HEAD
+RedirectMatch Permanent ^/core/doap.rdf https://gitbox.apache.org/repos/asf?p=lucene.git;a=blob_plain;f=dev-tools/doap/lucene.rdf;hb=HEAD
 
 # page renames
 RedirectMatch Permanent ^/who.html /whoweare.html
