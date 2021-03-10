@@ -8,7 +8,7 @@
        search, information retrieval, spell checking, faceting, inverted index,
        open source"/>{% endblock %}
     {% block favicon %}<link rel="shortcut icon" type="image/png"
-    href="{{ SITEURL }}/theme/images/lucene/lucene-favicon.png"/>{% endblock %}
+                                                 href="{{ SITEURL }}/theme/images/lucene/lucene-favicon.png{{ STATIC_RESOURCE_SUFFIX }}"/>{% endblock %}
     {% block css %}{% endblock %}
     {% block javascript %}{% endblock %}
   </head>
@@ -19,7 +19,7 @@
         <div id="logo" style="float:left">
           {% block logo %}
           <a href="{{ SITEURL }}/">
-            <img border="0" src="{{ SITEURL }}/theme/images/lucene/lucene_logo_green_300.png" alt="Lucene Logo"/>
+            <img border="0" src="{{ SITEURL }}/theme/images/lucene/lucene_logo_green_300.png{{ STATIC_RESOURCE_SUFFIX }}" alt="Lucene Logo"/>
           </a>
           {% endblock %}
         </div>
