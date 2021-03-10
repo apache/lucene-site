@@ -1,4 +1,4 @@
-Title: Lucene<span style="vertical-align: super; font-size: xx-small">TM</span> Downloads
+Title: Lucene™ Downloads
 URL: core/downloads.html
 save_as: core/downloads.html
 template: lucene/core/downloads

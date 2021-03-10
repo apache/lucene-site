@@ -1,4 +1,4 @@
-Title: Lucene<span style="vertical-align: super; font-size: xx-small">TM</span> Features
+Title: Lucene™ Features
 URL: core/features.html
 save_as: core/features.html
 template: lucene/core/page

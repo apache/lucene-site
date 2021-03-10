@@ -1,4 +1,4 @@
-Title: Lucene<span style="vertical-align: super; font-size: xx-small">TM</span> Tutorials
+Title: Lucene™ Tutorials
 URL: core/quickstart.html
 save_as: core/quickstart.html
 template: lucene/core/quickstart

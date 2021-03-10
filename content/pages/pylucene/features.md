@@ -22,7 +22,7 @@ Instructions for building PyLucene are [here](install.html).
 ## API documentation
 
 PyLucene is closely tracking Java
-Lucene<span style="vertical-align: super; font-size: xx-small">TM</span> releases.
+Lucene™ releases.
 It intends to supports the entire Lucene API.
 
 

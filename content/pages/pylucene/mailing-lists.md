@@ -5,7 +5,7 @@ template: lucene/pylucene/page
 
 ## Users
 
-Historically, Lucene<span style="vertical-align: super; font-size: xx-small">TM</span>
+Historically, Lucene™
 user issues or questions have almost always been best addressed on the Java Lucene
 User mailing list. PyLucene users with general Lucene questions should consider
 contacting the [Java Lucene User](https://lucene.apache.org/java/docs/mailinglists.html#Java%20User%20List)

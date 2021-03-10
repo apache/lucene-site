@@ -4,7 +4,7 @@ save_as: core/index.html
 theme: lucene-core
 template: lucene/core/page
 
-Apache Lucene<span style="vertical-align: super; font-size: xx-small">TM</span> is a
+Apache Lucene™ is a
 high-performance, full-featured text search engine library written entirely in Java.
 It is a technology suitable for nearly any application that requires full-text search,
 especially cross-platform.
@@ -12,7 +12,7 @@ especially cross-platform.
 Apache Lucene is an open source project available for free download. Please use the
 links on the right to access Lucene.
 
-# Lucene<span style="vertical-align: super; font-size: xx-small">TM</span> Features
+# Lucene™ Features
 
 Lucene offers powerful features through a simple API:
 
