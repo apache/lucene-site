@@ -1,4 +1,4 @@
-Title: Lucene<span style="vertical-align: super; font-size: xx-small">TM</span> Dev
+Title: Lucene™ Dev
 URL: core/developer.html
 save_as: core/developer.html
 theme: lucene-core

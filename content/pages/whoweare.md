@@ -3,7 +3,7 @@ URL: whoweare.html
 save_as: whoweare.html
 template: lucene/tlp/page
 
-## Lucene<span style="vertical-align: super; font-size: xx-small">TM</span> Committers
+## Lucene™ Committers
 - *[Namgyu Kim](https://www.linkedin.com/in/danmuzi)* (namgyu@...)
 - *[Ramkumar Aiyengar](https://www.linkedin.com/in/andyetitmoves)* (andyetitmoves@...)
 - *Ahmet Arslan* (iorixxx@...)

@@ -1,4 +1,4 @@
-Title: Lucene<span style="vertical-align: super; font-size: xx-small">TM</span> Mailing Lists and IRC
+Title: Lucene™ Mailing Lists and IRC
 URL: core/discussion.html
 save_as: core/discussion.html
 template: lucene/core/page
