@@ -44,181 +44,253 @@
         <created>2021-03-08</created>
         <revision>8.8.1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-8.6.1</name>
         <created>2020-09-09</created>
         <revision>8.6.1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-8.3.0</name>
         <created>2020-04-29</created>
         <revision>8.3.0</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-8.1.1</name>
         <created>2019-09-11</created>
         <revision>8.1.1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-7.7.1</name>
         <created>2019-03-18</created>
         <revision>7.7.1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-7.6.0</name>
         <created>2019-01-11</created>
         <revision>7.6.0</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-7.5.0</name>
         <created>2018-10-19</created>
         <revision>7.5.0</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-7.4.0</name>
         <created>2018-09-03</created>
         <revision>7.4.0</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-6.5.0</name>
         <created>2017-04-06</created>
         <revision>6.5.0</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-6.4.1</name>
         <created>2017-02-14</created>
         <revision>6.4.1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-6.2.0</name>
         <created>2016-09-18</created>
         <revision>6.2.0</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-4.10.1-1</name>
         <created>2014-10-06</created>
         <revision>4.10.1-1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-4.9.0-0</name>
         <created>2014-07-17</created>
         <revision>4.9.0-0</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-4.8.0-1</name>
         <created>2014-05-03</created>
         <revision>4.8.0-1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-4.7.2-1</name>
         <created>2014-04-28</created>
         <revision>4.7.2-1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-4.6.1-1</name>
         <created>2014-02-13</created>
         <revision>4.6.1-1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-4.5.1-1</name>
         <created>2013-11-04</created>
         <revision>4.5.1-1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-4.4.0-1</name>
         <created>2013-08-23</created>
         <revision>4.4.0-1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-4.3.0-1</name>
         <created>2013-05-14</created>
         <revision>4.3.0-1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-3.6.2-1</name>
         <created>2013-01-04</created>
         <revision>3.6.2-1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-3.6.1-2</name>
         <created>2012-08-24</created>
         <revision>3.6.1-2</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-3.6.0-2</name>
         <created>2012-05-11</created>
         <revision>3.6.0-2</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-3.5.0-3</name>
         <created>2011-12-12</created>
         <revision>3.5.0-3</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-3.4.0-1</name>
         <created>2011-09-19</created>
         <revision>3.4.0-1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-3.3.3</name>
         <created>2011-07-23</created>
         <revision>3.3.3</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-3.2.0-1</name>
         <created>2011-06-09</created>
         <revision>3.2.0-1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-3.1.0-1</name>
         <created>2011-04-04</created>
         <revision>3.1.0-1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-3.0.3-1</name>
         <created>2010-12-16</created>
         <revision>3.0.3-1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-2.9.4-1</name>
         <created>2010-12-16</created>
         <revision>2.9.4-1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-3.0.2-1</name>
         <created>2010-07-02</created>
         <revision>3.0.2-1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-2.9.3-1</name>
         <created>2010-07-02</created>
         <revision>2.9.3-1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-3.0.1-1</name>
         <created>2010-03-03</created>
         <revision>3.0.1-1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-2.9.2-1</name>
         <created>2010-03-03</created>
         <revision>2.9.2-1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-3.0.0-1</name>
         <created>2009-12-08</created>
         <revision>3.0.0-1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-2.9.1-1</name>
         <created>2009-11-10</created>
         <revision>2.9.1-1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-2.9.0-1</name>
         <created>2009-10-13</created>
         <revision>2.9.0-1</revision>
       </Version>
+    </release>
+    <release>
       <Version>
         <name>pylucene-2.4.1-1</name>
         <created>2009-04-03</created>
