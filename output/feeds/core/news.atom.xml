@@ -1730,4 +1730,17 @@ with the release for a full list of details.&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;Various bugfixes and optimizations since the 4.6.1 release.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="core/news"></category></entry></feed>
+&lt;/ul&gt;</content><category term="core/news"></category></entry><entry><title>Apache Lucene™ 8.8.2 available</title><link href="https://cwiki.apache.org/confluence/display/LUCENE/ReleaseNote882" rel="alternate"></link><published>2012-04-12T00:00:00+00:00</published><updated>2012-04-12T00:00:00+00:00</updated><author><name>Lucene Developers</name></author><id>tag:cwiki.apache.org,2012-04-12:/confluence/display/LUCENE/ReleaseNote882</id><summary type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 8.8.2.&lt;/p&gt;
+&lt;p&gt;Apache Lucene is a high-performance, full-featured text search engine library written entirely in Java. It is a technology suitable for nearly any application that requires full-text search, especially cross-platform.&lt;/p&gt;
+&lt;p&gt;This release contains three bug fixes …&lt;/p&gt;</summary><content type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 8.8.2.&lt;/p&gt;
+&lt;p&gt;Apache Lucene is a high-performance, full-featured text search engine library written entirely in Java. It is a technology suitable for nearly any application that requires full-text search, especially cross-platform.&lt;/p&gt;
+&lt;p&gt;This release contains three bug fixes. The release is available for immediate download at:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://lucene.apache.org/core/downloads.html"&gt;https://lucene.apache.org/core/downloads.html&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="lucene-882-release-highlights"&gt;Lucene 8.8.2 Release Highlights:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;LUCENE-9870: Fix Circle2D intersectsLine t-value (distance) range clamp&lt;/li&gt;
+&lt;li&gt;LUCENE-9744: NPE on a degenerate query in MinimumShouldMatchIntervalsSource$MinimumMatchesIterator.getSubMatches().&lt;/li&gt;
+&lt;li&gt;LUCENE-9762: DoubleValuesSource.fromQuery (also used by FunctionScoreQuery.boostByQuery) could throw an exception when the query implements TwoPhaseIterator and when the score is requested repeatedly&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please read CHANGES.txt for a full list of changes:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://lucene.apache.org/core/8_8_2/changes/Changes.html"&gt;https://lucene.apache.org/core/8_8_2/changes/Changes.html&lt;/a&gt;&lt;/p&gt;</content><category term="core/news"></category></entry></feed>
