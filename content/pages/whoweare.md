@@ -86,6 +86,7 @@ template: lucene/tlp/page
 - *Karl Wright* (kwright@...)
 - *[Areek Zillur](http://www.linkedin.com/in/areekzillur)* (areek@...)
 - *Nhat Nguyen* (dnhatn@...)
+- *[Zach Chen](http://www.linkedin.com/in/zacharychen)* (zacharymorn@...)
 
 ## Emeritus
 
