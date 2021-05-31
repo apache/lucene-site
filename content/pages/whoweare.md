@@ -87,6 +87,7 @@ template: lucene/tlp/page
 - *[Areek Zillur](http://www.linkedin.com/in/areekzillur)* (areek@...)
 - *Nhat Nguyen* (dnhatn@...)
 - *[Zach Chen](http://www.linkedin.com/in/zacharychen)* (zacharymorn@...)
+- *[Greg Miller](http://www.linkedin.com/in/greg-miller-7399636)* (gsmiller@...)
 
 ## Emeritus
 
