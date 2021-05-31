@@ -1,9 +1,8 @@
 pelican:
-  whoami: main
-  target: asf-staging
-
-staging:
-  whoami: asf-staging
+  whoami: production
+  target: asf-site
+publish:
+  whoami: asf-site
 
 github:
   labels:
@@ -16,6 +15,6 @@ github:
     merge:  true
     rebase: false
   protected_branches:
-    main
+    master
     production
 
