@@ -97,9 +97,11 @@ Redirect permanent /solr https://solr.apache.org
 
 ### Javadocs
 
-# Hack: Append slash, if folder name does not end with slash - everything containing a "." is treated as file and excluded from redirect:
-RewriteRule ^core/\d+_\d+_\d+/(?!.+\.\w+$|.+/$).+$   $0/ [R=301,L]
+# TODO: Move the javadocs to a subfolder core/docs/ instead of directly below core/
 
-# __root/docs.lucene.apache.org/content/ is a special alias added by INFRA-19439, so we can refer to stuff in other places like SVN:
-RewriteRule ^core/\d+_\d+_\d+/.*$         __root/docs.lucene.apache.org/content/$0 [PT]
+# Hack: Append slash, if folder name does not end with slash - everything containing a "." is treated as file and excluded from redirect:
+RewriteRule ^core/\d+(?!.+\.\w+$|.+/$).+$   $0/ [R=301,L]
+
+# __root/docs.lucene.apache.org/ is a special alias added by INFRA-19439, so we can refer to stuff in other places like SVN:
+RewriteRule ^core/\d+.*$         __root/docs.lucene.apache.org/$0 [PT]
 
