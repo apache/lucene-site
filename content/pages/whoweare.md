@@ -123,7 +123,6 @@ template: lucene/tlp/page
   - *Mike Drob* (mdrob@...)
   - *James Dyer* (jdyer@...)
   - *Shai Erera* (shaie@...)
-  - *Erick Erickson* (erick@...)
   - *Ryan Ernst* (rjernst@...)
   - *Tomas Fernandez Lobbe* (tflobbe@...)
   - *Scott Ganyo* (scottganyo@...)
