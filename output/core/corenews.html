@@ -147,6 +147,43 @@ document.observe('dom:loaded', StartSlides);
 </div>
 
   <div>
+    <h2 id="apache-lucenetm-900-available">
+      7 December 2021 - Apache Lucene™ 9.0.0 available
+      <a class="headerlink" href="#apache-lucenetm-900-available" title="Permanent link">¶</a>
+    </h2>
+    <p>The Lucene PMC is pleased to announce the release of Apache Lucene 9.0.0.</p>
+<p>Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search across high-dimensionality vectors, spell correction or query suggestions.</p>
+<p>This release contains numerous bug fixes, optimizations, and improvements, some of which are highlighted below. The release is available for immediate download at:</p>
+<p><a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a></p>
+<h3 id="lucene-900-release-highlights">Lucene 9.0.0 Release Highlights:</h3>
+<h4 id="system-requirements">System requirements</h4>
+<ul>
+<li>Lucene 9.0 requires JDK 11 or newer</li>
+</ul>
+<h4 id="new-features">New features</h4>
+<ul>
+<li>Support for indexing high-dimensionality numeric vectors to perform nearest-neighbor search, using the Hierarchical Navigable Small World graph algorithm</li>
+<li>New Analyzers for Serbian, Nepali, and Tamil languages</li>
+<li>IME-friendly autosuggest for Japanese</li>
+<li>Snowball 2, adding Hindi, Indonesian, Nepali, Serbian, Tamil, and Yiddish stemmers</li>
+<li>New normalization/stemming for Swedish and Norwegian</li>
+</ul>
+<h4 id="optimizations">Optimizations</h4>
+<ul>
+<li>Up to 400% faster taxonomy faceting</li>
+<li>10-15% faster indexing of multi-dimensional points</li>
+<li>Several times faster sorting on fields that are indexed with points. This optimization used to be an opt-in in late 8.x releases and is now opt-out as of 9.0.</li>
+<li>ConcurrentMergeScheduler now assumes fast I/O, likely improving indexing speed in case where heuristics would incorrectly detect whether the system had modern I/O or not</li>
+<li>Encoding of postings lists changed from FOR-delta to PFOR-delta to save further disk space</li>
+</ul>
+<h4 id="other">Other</h4>
+<ul>
+<li>File formats have all been changed from big-endian order to little endian order</li>
+<li>Lucene 9 no longer has split packages. This required renaming some packages outside of the lucene-core JAR, so you will need to adjust some imports accordingly.</li>
+<li>Using Lucene 9 with the module system should be considered experimental. We expect to make progress on this in future 9.x releases.</li>
+</ul>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="https://lucene.apache.org/core/9_0_0/changes/Changes.html">https://lucene.apache.org/core/9_0_0/changes/Changes.html</a></p>
     <h2 id="apache-lucenetm-8110-available">
       16 November 2021 - Apache Lucene™ 8.11.0 available
       <a class="headerlink" href="#apache-lucenetm-8110-available" title="Permanent link">¶</a>
