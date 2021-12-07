@@ -10,8 +10,6 @@ The source files are stored using GIT (see https://git-scm.com/documentation)
 - Latest **main**:
 `git clone https://github.com/apache/lucene.git`
   
-**NOTE:** Until the Solr project split is complete, the code is still located in <https://github.com/apache/lucene-solr.git> 
-
 ## Making a Contribution
 Lucene Java is always looking for contributions. See the [Wiki][1] for details on contributing.
 

@@ -5,9 +5,10 @@ theme: lucene-core
 template: lucene/core/page
 
 Apache Lucene™ is a
-high-performance, full-featured text search engine library written entirely in Java.
-It is a technology suitable for nearly any application that requires full-text search,
-especially cross-platform.
+high-performance, full-featured search engine library written entirely in Java.
+It is a technology suitable for nearly any application that requires structured
+search, full-text search, faceting, nearest-neighbor search across
+high-dimensionality vectors, spell correction or query suggestions.
 
 Apache Lucene is an open source project available for free download. Please use the
 links on the right to access Lucene.
@@ -16,10 +17,9 @@ links on the right to access Lucene.
 
 Lucene offers powerful features through a simple API:
 
-
 ## Scalable, High-Performance Indexing
 
-- over [150GB/hour on modern hardware][1]
+- over [800GB/hour on modern hardware][1]
 - small RAM requirements -- only 1MB heap
 - incremental indexing as fast as batch indexing
 - index size roughly 20-30% the size of text indexed
@@ -30,6 +30,7 @@ Lucene offers powerful features through a simple API:
 - many powerful query types: phrase queries, wildcard queries, proximity
   queries, range queries and more
 - fielded searching (e.g. title, author, contents)
+* nearest-neighbor search for high-dimensionality vectors
 - sorting by any field
 - multiple-index searching with merged results
 - allows simultaneous update and searching
