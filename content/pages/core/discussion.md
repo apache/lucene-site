@@ -14,8 +14,7 @@ send questions to this list to verify your problem before filing issues in JIRA.
 - Subscribe: [java-user-subscribe](mailto:java-user-subscribe@lucene.apache.org)
 - Unsubscribe: [java-user-unsubscribe](mailto:java-user-unsubscribe@lucene.apache.org)
 - Send: [java-user](mailto:java-user@lucene.apache.org) \(Requires subscription\)
-- [Official Apache Archive](http://mail-archives.apache.org/mod_mbox/lucene-java-user/)
-- [Old Jakarta Archive](http://mail-archives.apache.org/mod_mbox/jakarta-lucene-user/)
+- [Apache Archive](http://mail-archives.apache.org/mod_mbox/lucene-java-user/)
 
 ## Developer Lists
 
@@ -30,7 +29,7 @@ questions and problems; that is what the java-user mailing list is for._
 - Subscribe: [dev-subscribe](mailto:dev-subscribe@lucene.apache.org)
 - Unsubscribe: [dev-unsubscribe](mailto:dev-unsubscribe@lucene.apache.org)
 - Send: [dev](mailto:dev@lucene.apache.org) \(Requires subscription\)
-- [Official Apache Archive](http://mail-archives.apache.org/mod_mbox/lucene-dev/)
+- [Apache Archive](http://mail-archives.apache.org/mod_mbox/lucene-dev/)
 
 ### Issue Notifications: issues@lucene ###
 
@@ -50,7 +49,7 @@ Subscribe: [builds-subscribe](mailto:builds-subscribe@lucene.apache.org)
 
 Unsubscribe: [builds-unsubscribe](mailto:builds-unsubscribe@lucene.apache.org)
 
-[Official Apache Archive](http://mail-archives.apache.org/mod_mbox/lucene-builds/)
+[Apache Archive](http://mail-archives.apache.org/mod_mbox/lucene-builds/)
 
 ### Commit Notifications: commits@lucene
 
@@ -58,7 +57,7 @@ This is an automated announcement only list where notifications about every Luce
 
 - Subscribe: [commits-subscribe](mailto:commits-subscribe@lucene.apache.org)
 - Unsubscribe: [commits-unsubscribe](mailto:commits-unsubscribe@lucene.apache.org)
-- [Official Apache Archive](http://mail-archives.apache.org/mod_mbox/lucene-commits/)
+- [Apache Archive](http://mail-archives.apache.org/mod_mbox/lucene-commits/)
 
 
 ## IRC

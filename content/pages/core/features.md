@@ -7,7 +7,7 @@ Lucene offers powerful features through a simple API:
 
 ## Scalable, High-Performance Indexing
 
-* over [150GB/hour on modern hardware](http://home.apache.org/~mikemccand/lucenebench/indexing.html)
+* over [800GB/hour on modern hardware](http://home.apache.org/~mikemccand/lucenebench/indexing.html)
 * small RAM requirements -- only 1MB heap
 * incremental indexing as fast as batch indexing
 * index size roughly 20-30% the size of text indexed
@@ -17,6 +17,7 @@ Lucene offers powerful features through a simple API:
 * ranked searching -- best results returned first
 * many powerful query types: phrase queries, wildcard queries, proximity queries, range queries and more
 * fielded searching (e.g. title, author, contents)
+* nearest-neighbor search for high-dimensionality vectors
 * sorting by any field
 * multiple-index searching with merged results
 * allows simultaneous update and searching
