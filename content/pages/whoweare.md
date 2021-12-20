@@ -89,6 +89,7 @@ template: lucene/tlp/page
 - *Nhat Nguyen* (dnhatn@...)
 - *[Zach Chen](http://www.linkedin.com/in/zacharychen)* (zacharymorn@...)
 - *[Greg Miller](http://www.linkedin.com/in/greg-miller-7399636)* (gsmiller@...)
+- *[Patrick Zhai](https://www.linkedin.com/in/haoyu-zhai-23b226136)* (patrickz@...)
 
 ## Emeritus
 
