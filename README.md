@@ -84,4 +84,3 @@ Modify `LUCENE_LATEST_RELEASE` and `LUCENE_PREVIOUS_MAJOR_RELEASE`, and
 [7]: https://lists.apache.org/list.html?commits@lucene.apache.org
 [8]: https://wiki.apache.org/confluence/display/INFRA/.asf.yaml+features+for+git+repositories
 [9]: http://daringfireball.net/projects/markdown/syntax
-
