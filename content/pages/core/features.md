@@ -31,3 +31,7 @@ Lucene offers powerful features through a simple API:
 * Available as Open Source software under the [Apache License](https://www.apache.org/licenses/LICENSE-2.0.html) which lets you use Lucene in both commercial and Open Source programs
 * 100%-pure Java
 * Implementations in [other programming languages available](https://cwiki.apache.org/confluence/display/lucene/LuceneImplementations) that are index-compatible
+
+## Utility tools
+
+* integrated desktop GUI tool (Luke): a utility for browsing, searchning and maintaining indexes and documents. It can be started with "bin/luke.{sh|cmd}".
