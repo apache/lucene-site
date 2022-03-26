@@ -34,4 +34,4 @@ Lucene offers powerful features through a simple API:
 
 ## Utility tools
 
-* integrated desktop GUI tool (Luke): a utility for browsing, searchning and maintaining indexes and documents. It can be started with "bin/luke.{sh|cmd}".
+* integrated desktop GUI tool (Luke): a utility for browsing, searching and maintaining indexes and documents. It can be started with "bin/luke.{sh|cmd}".
