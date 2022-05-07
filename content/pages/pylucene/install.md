@@ -10,21 +10,14 @@ PyLucene sources.
 
 ## Requirements
 
-To build PyLucene a Java Development Kit (JDK) and [Ant](https://ant.apache.org)
-are required; use of the resulting PyLucene binaries requires only a Java Runtime
-Environment (JRE).
+To build PyLucene a Java Development Kit is required; use of the resulting PyLucene binaries requires only a Java Runtime Environment (JRE).
+A recent C/C++ compiler is also required.
 
+**Attention:** Starting with release 9.x, Lucene requires Java 11 or above.<br/>
 **Attention:** Starting with release 6.x, Lucene requires Java 1.8.
 
-On macOS, you will need to install Oracle Java 8, and due to a
-[bug](https://bugs.openjdk.java.net/browse/JDK-7131356) in the JDK for macOS,
-you will **also** need to install Apple's Java 1.6.
-
-On macOS, once installed, a way to make Java 1.8 the default in your bash shell is:<br/>
-```
-$ export JAVA_HOME=\`/usr/libexec/java_home\`
-```
-Be sure to verify that JAVA_HOME value.
+On macos and linux, the [Temurin JDK](https://adoptium.net/) is recommended.
+See "Notes for Linux" at [this page](jcc/install.html) for installation instructions on Linux Debian 11.
 
 On any system, if you're upgrading your Java installation, please rebuild
 JCC as well. You must use the same version of Java for both JCC and PyLucene.

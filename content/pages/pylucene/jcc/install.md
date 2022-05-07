@@ -8,8 +8,10 @@ template: lucene/pylucene/jcc/page
 JCC's source code is included with PyLucene's. If you've downloaded the PyLucene
 source code already, JCC's is to be found in the _jcc_ subdirectory.
 
-To get the JCC source code only from SVN use:<br/>
-`$ svn co https://svn.apache.org/repos/asf/lucene/pylucene/trunk/jcc jcc`
+To get the JCC source code only from SVN use:
+```
+svn co https://svn.apache.org/repos/asf/lucene/pylucene/trunk/jcc jcc
+```
 
 ## Building JCC
 
@@ -31,18 +33,15 @@ compile the extensions it is used to generate code for.
 
 - At the command line, enter:
 ```
-$ python setup.py build<br/>
-$ sudo python setup.py install<br/>
+python setup.py build
+sudo python setup.py install
 ```
 
 ## Requirements
 
-JCC requires a Java Development Kit to be present. It uses the Java Native Invocation
-Interface and expects _&lt;jni.h&gt;_ and the Java libraries to be present at build
-and runtime.
+JCC requires a Java Development Kit to be present. It uses the Java Native Invocation (JNI) interface and expects _&lt;jni.h&gt;_ and the Java libraries to be present at build and runtime.
 
-JCC requires a C++ compiler. A recent C++ compiler for your platform is expected
-to work as expected.
+JCC requires a C++ compiler. A recent C++ compiler for your platform is recommeded and should work as expected.
 
 ## Shared Mode: Support for the _--shared_ Flag
 
@@ -113,21 +112,27 @@ JCC has been built and tested on a variety of Linux distributions, 32- and 64-bi
 Getting the java configuration correct is important and is done differently for
 every distribution.<br/>For example:
 
-- On Ubuntu, to install Java 5, these commands may be used:
+- On Debian 11, the commands below install Temurin Java 17, Python 3.9, gcc, g++ and make
+
+install Temurin Java (Adoptium)
 ```
-      $ sudo apt-get install sun-java5-jdk<br/>
-      $ sudo update-java-alternatives -s java-1.5.0-sun<br/>
+sudo -s
+apt install wget apt-transport-https gnupg
+wget -O - https://packages.adoptium.net/artifactory/api/gpg/key/public | apt-key add -
+echo "deb https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION_CODENAME/{print$2}' /etc/os-release) main" | tee /etc/apt/sources.list.d/adoptium.list
 ```
+
+install gcc, g++ and make
+```
+sudo apt install gcc-x86-64-linux-gnu g++-x86-64-linux-gnu make
+```
+
+install Python 3.9 with development, virtual environment and setuptools support
+```
+sudo apt install python3.9-dev python3-venv python3-setuptools
+```
+
 The samples flags for Linux in JCC's setup.py should be close to correct.
-
-- On Gentoo, the _java-config_ utility should be used to locate, and possibly
-change, the default java installation. The sample flags for Linux in JCC's
-_setup.py_ should be changed to reflect the root of the Java installation which
-may be obtained via:
-```
-      $ java-config -O
-```
-
 See earlier section about [Shared Mode](#shared) for Linux support.
 
 ## Notes for Solaris 11 with Sun Studio C++ 12

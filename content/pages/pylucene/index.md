@@ -27,9 +27,8 @@ See [here](features.html) for more information and documentation about PyLucene.
 PyLucene is supported on macOS, Linux, Solaris and Windows.
 
 PyLucene requires Python 3.x (x >= 3), or Python version 2.x (x >= 3.5), and
-Java x (x >= 8). Building PyLucene requires GNU Make, a recent version of
-[Ant](https://ant.apache.org) capable of building Java
-[Lucene](https://lucene.apache.org/java/) and a C++ compiler. Use of
+Java x (x >= 8 for PyLucene 8 and earlier, x >= 11 for PyLucene 9).
+Building PyLucene requires GNU Make and a C++ compiler. Use of
 [setuptools](https://pypi.python.org/pypi/setuptools) is recommended.
 
 See the JCC [installation](jcc/install.html) instructions for more information
