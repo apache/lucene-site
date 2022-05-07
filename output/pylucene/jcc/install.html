@@ -75,8 +75,10 @@
   <h2 id="getting-jccs-source-code">Getting JCC's Source Code</h2>
 <p>JCC's source code is included with PyLucene's. If you've downloaded the PyLucene
 source code already, JCC's is to be found in the <em>jcc</em> subdirectory.</p>
-<p>To get the JCC source code only from SVN use:<br/>
-<code>$ svn co https://svn.apache.org/repos/asf/lucene/pylucene/trunk/jcc jcc</code></p>
+<p>To get the JCC source code only from SVN use:</p>
+<div class="highlight"><pre><span></span><code><span class="err">svn co https://svn.apache.org/repos/asf/lucene/pylucene/trunk/jcc jcc</span>
+</code></pre></div>
+
 <h2 id="building-jcc">Building JCC</h2>
 <p>JCC is a Python extension written in Python and C++. It requires a Java Runtime
 Environment to operate as it uses Java's reflection APIs to do its work. It is
@@ -99,16 +101,13 @@ compile the extensions it is used to generate code for.</p>
 <p>At the command line, enter:</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code>$ python setup.py build&lt;br/&gt;
-$ sudo python setup.py install&lt;br/&gt;
+<div class="highlight"><pre><span></span><code><span class="err">python setup.py build</span>
+<span class="err">sudo python setup.py install</span>
 </code></pre></div>
 
 <h2 id="requirements">Requirements</h2>
-<p>JCC requires a Java Development Kit to be present. It uses the Java Native Invocation
-Interface and expects <em>&lt;jni.h&gt;</em> and the Java libraries to be present at build
-and runtime.</p>
-<p>JCC requires a C++ compiler. A recent C++ compiler for your platform is expected
-to work as expected.</p>
+<p>JCC requires a Java Development Kit to be present. It uses the Java Native Invocation (JNI) interface and expects <em>&lt;jni.h&gt;</em> and the Java libraries to be present at build and runtime.</p>
+<p>JCC requires a C++ compiler. A recent C++ compiler for your platform is recommeded and should work as expected.</p>
 <h2 id="shared-mode-support-for-the-shared-flag">Shared Mode: Support for the <em>--shared</em> Flag</h2>
 <p>JCC includes a small runtime that keeps track of the Java VM and of Java objects
 escaping it. Because there can be only one Java VM embedded in a given process
@@ -170,23 +169,25 @@ to use when <em>setup.py</em> was able to derive <em>JAVAHOME</em> and <em>JAVAF
 Getting the java configuration correct is important and is done differently for
 every distribution.<br/>For example:</p>
 <ul>
-<li>On Ubuntu, to install Java 5, these commands may be used:</li>
+<li>On Debian 11, the commands below install Temurin Java 17, Python 3.9, gcc, g++ and make</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="err">      $ sudo apt-get install sun-java5-jdk&lt;br/&gt;</span>
-<span class="err">      $ sudo update-java-alternatives -s java-1.5.0-sun&lt;br/&gt;</span>
+<p>install Temurin Java (Adoptium)</p>
+<div class="highlight"><pre><span></span><code><span class="err">sudo -s</span>
+<span class="err">apt install wget apt-transport-https gnupg</span>
+<span class="err">wget -O - https://packages.adoptium.net/artifactory/api/gpg/key/public | apt-key add -</span>
+<span class="err">echo &quot;deb https://packages.adoptium.net/artifactory/deb $(awk -F= &#39;/^VERSION_CODENAME/{print$2}&#39; /etc/os-release) main&quot; | tee /etc/apt/sources.list.d/adoptium.list</span>
 </code></pre></div>
 
-<p>The samples flags for Linux in JCC's setup.py should be close to correct.</p>
-<ul>
-<li>On Gentoo, the <em>java-config</em> utility should be used to locate, and possibly
-change, the default java installation. The sample flags for Linux in JCC's
-<em>setup.py</em> should be changed to reflect the root of the Java installation which
-may be obtained via:</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="err">      $ java-config -O</span>
+<p>install gcc, g++ and make</p>
+<div class="highlight"><pre><span></span><code><span class="err">sudo apt install gcc-x86-64-linux-gnu g++-x86-64-linux-gnu make</span>
 </code></pre></div>
 
-<p>See earlier section about <a href="#shared">Shared Mode</a> for Linux support.</p>
+<p>install Python 3.9 with development, virtual environment and setuptools support</p>
+<div class="highlight"><pre><span></span><code><span class="err">sudo apt install python3.9-dev python3-venv python3-setuptools</span>
+</code></pre></div>
+
+<p>The samples flags for Linux in JCC's setup.py should be close to correct.
+See earlier section about <a href="#shared">Shared Mode</a> for Linux support.</p>
 <h2 id="notes-for-solaris-11-with-sun-studio-c-12">Notes for Solaris 11 with Sun Studio C++ 12</h2>
 <p>JCC has been built and tested on Solaris 11 with Sun Studio C++ 12, Java 1.6 and
 Python 2.4.</p>
