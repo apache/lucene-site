@@ -170,6 +170,8 @@ every distribution.<br/>For example:</p>
 <span class="err">apt install wget apt-transport-https gnupg</span>
 <span class="err">wget -O - https://packages.adoptium.net/artifactory/api/gpg/key/public | apt-key add -</span>
 <span class="err">echo &quot;deb https://packages.adoptium.net/artifactory/deb $(awk -F= &#39;/^VERSION_CODENAME/{print$2}&#39; /etc/os-release) main&quot; | tee /etc/apt/sources.list.d/adoptium.list</span>
+<span class="err">apt update</span>
+<span class="err">apt install temurin-17-jdk</span>
 </code></pre></div>
 
 <p>install gcc, g++ and make</p>
