@@ -17,30 +17,36 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<link href="/theme/css/lucene/global.css?v=bf266435" rel="stylesheet" type="text/css">
+<link href="/theme/css/lucene/global.css?v=0e493d7a" rel="stylesheet" type="text/css">
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta name="Distribution" content="Global"/>
 <meta name="Robots" content="index,follow"/>
 
-<script type="text/javascript" src="/theme/javascript/lucene/prototype.js?v=bf266435"></script>
-<script type="text/javascript" src="/theme/javascript/lucene/effects.js?v=bf266435"></script>
-<script type="text/javascript" src="/theme/javascript/lucene/slides.js?v=bf266435"></script>    <title>Apache Lucene - Lucene<span style="vertical-align: super; font-size: xx-small">TM</span> Dev</title>
+<script type="text/javascript" src="/theme/javascript/lucene/prototype.js?v=0e493d7a"></script>
+<script type="text/javascript" src="/theme/javascript/lucene/effects.js?v=0e493d7a"></script>
+<script type="text/javascript" src="/theme/javascript/lucene/slides.js?v=0e493d7a"></script>
+<script src="https://www.apachecon.com/event-images/snippet.js"></script>    <title>Apache Lucene - Lucene™ Dev</title>
 <meta name="keywords"
        content="apache, apache lucene, apache solr, solr, lucene
        search, information retrieval, spell checking, faceting, inverted index,
-       open source"/><link rel="shortcut icon" type="image/png"
-    href="/theme/images/lucene/lucene-favicon.png"/><link href="/theme/css/lucene/core.css?v=bf266435" rel="stylesheet" type="text/css">
+       open source"/>    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lucene.apache.org/core/developer.html"/>
+    <meta property="og:title" content="Lucene™ Dev"/>
+    <meta property="og:description" content="Source Code The source files are stored using GIT (see https://git-scm.com/documentation) Latest main: git clone..."/>
+    <meta property="og:image" content="https://lucene.apache.org/theme/images/lucene/lucene_og_image.png?v=0e493d7a"/>
+    <meta property="og:image:secure_url" content="https://lucene.apache.org/theme/images/lucene/lucene_og_image.png?v=0e493d7a"/>
+<link rel="shortcut icon" type="image/png"
+                                                 href="/theme/images/lucene/lucene-favicon.png?v=0e493d7a"/><link href="/theme/css/lucene/core.css?v=0e493d7a" rel="stylesheet" type="text/css">
   </head>
   <body id="home">
     <div id="wrap">
       <div id="header">
         <div id="logo" style="float:left">
           <a href="/">
-            <img border="0" src="/theme/images/lucene/lucene_logo_green_300.png" alt="Lucene Logo"/>
+            <img border="0" src="/theme/images/lucene/lucene_logo_green_300.png?v=0e493d7a" alt="Lucene Logo"/>
           </a>
-          <div style="position:absolute;right:100px;top:10px;"><span style="vertical-align: super; font-size: xx-small">TM</span></div>
         </div>
 <!-- TODO: Search disabled as it does not work, 2021-02-21
 <div id="search" style="float:right;zoom:1">
@@ -75,7 +81,7 @@
     </div>
   </div>
   <div class="mantle">
-    <img alt="Apache Lucene" src="/theme/images/lucene/core/mantle-lucene.png"/>
+    <img alt="Apache Lucene" src="/theme/images/lucene/core/mantle-lucene.png?v=0e493d7a"/>
   </div>
 </div>
 <div id="slide2" style="display:none">
@@ -88,7 +94,7 @@
     </div>
   </div>
   <div class="mantle">
-    <img alt="Lucene Power" src="/theme/images/lucene/mantle-power.png"/>
+    <img alt="Lucene Power" src="/theme/images/lucene/mantle-power.png?v=0e493d7a"/>
   </div>
 </div>
 <div id="slide3" style="display:none">
@@ -101,7 +107,7 @@
     </div>
   </div>
   <div class="mantle">
-    <img alt="Apache Lucene" src="/theme/images/lucene/core/mantle-innovation.png"/>
+    <img alt="Apache Lucene" src="/theme/images/lucene/core/mantle-innovation.png?v=0e493d7a"/>
   </div>
 </div>
 <div id="slide4" style="display:none">
@@ -114,7 +120,7 @@
     </div>
   </div>
   <div class="mantle">
-    <img alt="Apache Software Foundation" src="/theme/images/lucene/mantle-asf.png"/>
+    <img alt="Apache Software Foundation" src="/theme/images/lucene/mantle-asf.png?v=0e493d7a"/>
   </div>
 </div>  </div>
   <div class="controls">
@@ -136,37 +142,31 @@ document.observe('dom:loaded', StartSlides);
       <div id="content-wrap" class="clearfix">
         <div id="main">
 <div>
-  <h1 class="title">Lucene<span style="vertical-align: super; font-size: xx-small">TM</span> Dev</h1>
+  <h1 class="title">Lucene™ Dev</h1>
   <h2 id="source-code">Source Code</h2>
 <p>The source files are stored using GIT (see https://git-scm.com/documentation)</p>
 <ul>
-<li>Latest <strong>master</strong>:
+<li>Latest <strong>main</strong>:
 <code>git clone https://github.com/apache/lucene.git</code></li>
 </ul>
-<p><strong>NOTE:</strong> Until the Solr project split is complete, the code is still located in <a href="https://github.com/apache/lucene-solr.git">https://github.com/apache/lucene-solr.git</a> </p>
 <h2 id="making-a-contribution">Making a Contribution</h2>
 <p>Lucene Java is always looking for contributions. See the <a href="https://cwiki.apache.org/confluence/display/LUCENE/HowToContribute">Wiki</a> for details on contributing.</p>
 <h2 id="nightly-builds">Nightly Builds</h2>
-<p><a href="http://jenkins-ci.org/">Jenkins</a> is providing continuous integration capabilities to the Lucene project.
+<p><a href="https://www.jenkins.io/">Jenkins</a> is providing continuous integration capabilities to the Lucene project.
 It is responsible for running nightly builds, tests, javadocs, and code coverage reports.</p>
 <h3 id="nightly-build-javadocs">Nightly Build Javadocs</h3>
 <p>Unofficial nightly Javadocs are also generated by Jenkins:</p>
 <ul>
-<li>Unofficial Javadocs from the nightly <strong>master</strong> build are available <a href="https://ci-builds.apache.org/job/Lucene/job/Lucene-Artifacts-master/javadoc/">here</a>.</li>
-</ul>
-<h3 id="clover-test-coverage-reports">Clover Test Coverage Reports</h3>
-<p><a href="http://www.atlassian.com/software/clover/">Clover</a> test coverage results are available:</p>
-<ul>
-<li>As of the most recent nightly <strong>master</strong> build: <a href="https://ci-builds.apache.org/job/Lucene/job/Lucene-Solr-Clover-master/lastSuccessfulBuild/clover-report/dashboard.html">here</a></li>
+<li>Unofficial Javadocs from the nightly <strong>main</strong> build are available <a href="https://ci-builds.apache.org/job/Lucene/job/Lucene-Artifacts-main/javadoc/">here</a>.</li>
 </ul>
 <h3 id="nightly-build-download">Nightly Build Download</h3>
 <ul>
-<li>Nightly build artifacts are based on the <strong>master</strong> version of the code checked into <a href="https://git-wip-us.apache.org/repos/asf?p=lucene.git">GIT</a>: <br/>
-  <a href="https://ci-builds.apache.org/job/Lucene/job/Lucene-Artifacts-master/lastSuccessfulBuild/artifact/lucene/dist/">Download master Artifacts</a>. Also, Maven artifacts are available from <a href="https://repository.apache.org/snapshots/org/apache/lucene/">the ASF snapshot repository</a>.</li>
+<li>Nightly build artifacts are based on the <strong>main</strong> version of the code checked into <a href="https://git-wip-us.apache.org/repos/asf?p=lucene.git">GIT</a>: <br/>
+  <a href="https://ci-builds.apache.org/job/Lucene/job/Lucene-Artifacts-main/lastSuccessfulBuild/">Download main Artifacts</a>. Also, Maven artifacts are available from <a href="https://repository.apache.org/snapshots/org/apache/lucene/">the ASF snapshot repository</a>.</li>
 </ul>
 <h2 id="nightly-benchmarks">Nightly Benchmarks</h2>
 <ul>
-<li>Nightly automated benchmarks based on the <strong>master</strong> version of the code are available <a href="http://home.apache.org/~mikemccand/lucenebench/">here</a>.</li>
+<li>Nightly automated benchmarks based on the <strong>main</strong> version of the code are available <a href="http://home.apache.org/~mikemccand/lucenebench/">here</a>.</li>
 </ul>
 </div>
         </div>
@@ -175,9 +175,9 @@ It is responsible for running nightly builds, tests, javadocs, and code coverage
   <div class="button-green">
     <a href="/core/downloads.html">Download</a>
     <div class="flap top">Click to</div>
-    <div class="flap bottom">Apache Lucene 8.8.1</div>
+    <div class="flap bottom">Apache Lucene 9.2.0</div>
   </div>
-  <div class="download-desc">Apache Lucene 8.8.1</div>
+  <div class="download-desc">Apache Lucene 9.2.0</div>
 </div>
 
 <h1 id="resources">Resources</h1>
@@ -191,7 +191,7 @@ It is responsible for running nightly builds, tests, javadocs, and code coverage
 
 <h1 id="release-docs">Release Docs</h1>
 <ul>
-  <li><a href="/core/8_8_1/index.html">8.8.1</a></li>
+  <li><a href="/core/9_2_0/index.html">9.2.0</a></li>
 </ul>
 
 <h1 id="about">About</h1>
@@ -202,7 +202,7 @@ It is responsible for running nightly builds, tests, javadocs, and code coverage
 
 <h1 id="events">Events</h1>
 <ul>
-  <li><a href="https://www.apache.org/events/current-event.html" target="_blank"><img src="https://www.apache.org/events/current-event-125x125.png"></a></li>
+  <a class="acevent" data-format="square" data-mode="light" data-width="160" data-style="border: 1px solid lightgrey"></a>
 </ul>
 
 <h1 id="asf-links">ASF links</h1>
@@ -244,17 +244,5 @@ It is responsible for running nightly builds, tests, javadocs, and code coverage
     </p>
   </div>
 </div>    </div> <!-- End #wrap -->
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-94576-12']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>  </body>
+  </body>
 </html>
