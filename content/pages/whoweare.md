@@ -91,6 +91,7 @@ template: lucene/tlp/page
 - *[Greg Miller](http://www.linkedin.com/in/greg-miller-7399636)* (gsmiller@...)
 - *[Patrick Zhai](https://www.linkedin.com/in/haoyu-zhai-23b226136)* (patrickz@...)
 - *Feng Guo* (guofeng@...)
+- *[Lu Xugang](https://www.amazingkoala.com.cn)* (luxugang@...)
 
 ## Emeritus
 
