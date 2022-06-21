@@ -158,12 +158,16 @@ It is a technology suitable for nearly any application that requires structured 
 <p>This release contains numerous bug fixes, optimizations, and improvements, some of which are highlighted below. The release is available for immediate download at:</p>
 <p><a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a></p>
 <h3 id="lucene-8112-release-highlights">Lucene 8.11.2 Release Highlights:</h3>
-<p>Bug fixes
-* LUCENE-10564: Make sure SparseFixedBitSet#or updates ramBytesUsed.
-* LUCENE-10477: Highlighter: WeightedSpanTermExtractor.extractWeightedSpanTerms to Query#rewrite
-  multiple times if necessary.</p>
-<p>Optimizations
-* LUCENE-10481: FacetsCollector will not request scores if it does not use them.</p>
+<p>Bug fixes</p>
+<ul>
+<li>LUCENE-10564: Make sure SparseFixedBitSet#or updates ramBytesUsed.</li>
+<li>LUCENE-10477: Highlighter: WeightedSpanTermExtractor.extractWeightedSpanTerms to Query#rewrite
+  multiple times if necessary.</li>
+</ul>
+<p>Optimizations</p>
+<ul>
+<li>LUCENE-10481: FacetsCollector will not request scores if it does not use them.</li>
+</ul>
 <p>Please read CHANGES.txt for a full list of changes:</p>
 <p><a href="https://lucene.apache.org/core/8_11_2/changes/Changes.html">https://lucene.apache.org/core/8_11_2/changes/Changes.html</a></p>
     <h2 id="apache-lucenetm-920-available">
