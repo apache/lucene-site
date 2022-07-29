@@ -149,6 +149,25 @@ It is a technology suitable for nearly any application that requires structured 
 </div>
 
   <div>
+    <h2 id="apache-lucenetm-930-available">
+      29 July 2022 - Apache Lucene™ 9.3.0 available
+      <a class="headerlink" href="#apache-lucenetm-930-available" title="Permanent link">¶</a>
+    </h2>
+    <p>The Lucene PMC is pleased to announce the release of Apache Lucene 9.3.0.</p>
+<p>Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search across high-dimensionality vectors, spell correction or query suggestions.</p>
+<p>This release contains numerous bug fixes, optimizations, and improvements, some of which are highlighted below. The release is available for immediate download at:</p>
+<p><a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a></p>
+<h3 id="lucene-930-release-highlights">Lucene 9.3.0 Release Highlights:</h3>
+<ul>
+<li>Merge on full flush is enabled now by default with a timeout of 500ms, giving the merge policy a chance to merge NRT segments together before publishing a new point-in-time view of the IndexReader. This should give queries a small performance boost in the near-realtime case, especially terms-dictionary-intensive queries like fuzzy queries.</li>
+<li>Add getAllChildren functionality to facets.</li>
+<li>Added facetsets module for high dimensional (hyper-rectangle) faceting. </li>
+<li>Top-level two-clause disjunctions sorted by score now use the block-max MAXSCORE algorithm, which introduced a 40%-75% speedup in our benchmarks.</li>
+<li>BooleanQuery can return quick counts for simple boolean queries.</li>
+<li>When running KnnVectorQuery with a filter, reuse the cached filter bit set.</li>
+</ul>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="https://lucene.apache.org/core/9_3_0/changes/Changes.html">https://lucene.apache.org/core/9_3_0/changes/Changes.html</a></p>
     <h2 id="apache-lucenetm-8112-available">
       17 June 2022 - Apache Lucene™ 8.11.2 available
       <a class="headerlink" href="#apache-lucenetm-8112-available" title="Permanent link">¶</a>
@@ -2244,9 +2263,9 @@ with the release for a full list of details.</p>
   <div class="button-green">
     <a href="/core/downloads.html">Download</a>
     <div class="flap top">Click to</div>
-    <div class="flap bottom">Apache Lucene 9.2.0</div>
+    <div class="flap bottom">Apache Lucene 9.3.0</div>
   </div>
-  <div class="download-desc">Apache Lucene 9.2.0</div>
+  <div class="download-desc">Apache Lucene 9.3.0</div>
 </div>
 
 <h1 id="resources">Resources</h1>
@@ -2260,7 +2279,7 @@ with the release for a full list of details.</p>
 
 <h1 id="release-docs">Release Docs</h1>
 <ul>
-  <li><a href="/core/9_2_0/index.html">9.2.0</a></li>
+  <li><a href="/core/9_3_0/index.html">9.3.0</a></li>
 </ul>
 
 <h1 id="about">About</h1>
