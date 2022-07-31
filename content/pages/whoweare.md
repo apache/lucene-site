@@ -92,6 +92,7 @@ template: lucene/tlp/page
 - *[Patrick Zhai](https://www.linkedin.com/in/haoyu-zhai-23b226136)* (patrickz@...)
 - *Feng Guo* (guofeng@...)
 - *[Lu Xugang](https://www.amazingkoala.com.cn)* (luxugang@...)
+- *[Vigya Sharma](https://www.linkedin.com/in/vigyasharma)* (vigyasharma@...)
 
 ## Emeritus
 
