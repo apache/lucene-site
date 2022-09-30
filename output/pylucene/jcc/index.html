@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+  <head>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE- 2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<link href="/theme/css/lucene/global.css?v=0e493d7a" rel="stylesheet" type="text/css">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+<meta name="Distribution" content="Global"/>
+<meta name="Robots" content="index,follow"/>
+
+<script type="text/javascript" src="/theme/javascript/lucene/prototype.js?v=0e493d7a"></script>
+<script type="text/javascript" src="/theme/javascript/lucene/effects.js?v=0e493d7a"></script>
+<script type="text/javascript" src="/theme/javascript/lucene/slides.js?v=0e493d7a"></script>
+<script src="https://www.apachecon.com/event-images/snippet.js"></script>    <title>Apache Lucene - Welcome to JCC, PyLucene's code generator</title>
+<meta name="keywords"
+       content="apache, apache lucene, apache solr, solr, lucene
+       search, information retrieval, spell checking, faceting, inverted index,
+       open source"/>    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lucene.apache.org/pylucene/jcc/index.html"/>
+    <meta property="og:title" content="Welcome to JCC, PyLucene's code generator"/>
+    <meta property="og:description" content="What is JCC ? JCC is a C++ code generator that produces a C++ object interface wrapping a Java library via Java's Native Interface..."/>
+    <meta property="og:image" content="https://lucene.apache.org/theme/images/lucene/lucene_og_image.png?v=0e493d7a"/>
+    <meta property="og:image:secure_url" content="https://lucene.apache.org/theme/images/lucene/lucene_og_image.png?v=0e493d7a"/>
+<link rel="shortcut icon" type="image/png"
+                                                 href="/theme/images/lucene/lucene-favicon.png?v=0e493d7a"/><link href="/theme/css/lucene/pylucene.css?v=0e493d7a" rel="stylesheet" type="text/css">
+  </head>
+  <body id="home">
+    <div id="wrap">
+      <div id="header">
+        <div id="logo" style="float:left">
+          <a href="/">
+            <img border="0" src="/theme/images/lucene/lucene_logo_green_300.png?v=0e493d7a" alt="Lucene Logo"/>
+          </a>
+        </div>
+<!-- TODO: Search disabled as it does not work, 2021-02-21
+<div id="search" style="float:right;zoom:1">
+  <form id="quick-search" method="GET" action="https://sematext.com/opensee/lucene" name="searchform">
+    <fieldset>
+      <input type="search" id="q" name="q" placeholder="Search with Apache Solr..." class="class1 class2 hint" accesskey="q">
+    </fieldset>
+  </form>
+</div>-->
+        <div id="nav">
+          <ul>
+<li><a href="/pylucene/jcc/index.html">JCC</a></li>
+<li><a href="/pylucene/mailing-lists.html">Mailing Lists</a></li>
+<li><a href="https://issues.apache.org/jira/browse/PYLUCENE">Issue Tracker</a></li>
+<li><a href="/pylucene/index.html">PyLucene</a></li>
+<li><a class="last" href="/">Lucene</a></li>
+          </ul>
+        </div>
+
+      </div> <!-- End #header -->
+
+      <div id="content-wrap" class="clearfix">
+        <div id="main">
+<div>
+  <h1 class="title">Welcome to JCC, PyLucene's code generator</h1>
+  <h2 id="what-is-jcc">What is JCC ?</h2>
+<p>JCC is a C++ code generator that produces a C++ object interface wrapping a Java
+library via Java's Native Interface (JNI). JCC also generates C++ wrappers that
+conform to Python's C type system making the instances of Java classes directly
+available to a Python interpreter.</p>
+<p>When generating Python wrappers, JCC produces a complete Python extension module
+via the distutils or <a href="https://pypi.python.org/pypi/setuptools">setuptools</a> packages.</p>
+<p>See <a href="features.html">here</a> for more information and documentation about JCC.</p>
+<h2 id="requirements">Requirements</h2>
+<p>JCC is supported on Mac OS X, Linux, Solaris and Windows.</p>
+<p>JCC requires Python version 2.x (x &gt;= 3.5) or Python version 3.x (x &gt;= 3) and Java
+version 1.x (x &gt;= 4). Building JCC requires a C++ compiler. Use of
+<a href="https://pypi.python.org/pypi/setuptools">setuptools</a> is recommended.</p>
+<p>See the <a href="install.html">installation instructions</a> for more information about building
+JCC from sources.</p>
+<h2 id="source-code">Source Code</h2>
+<p>The source code to JCC is part of PyLucene's and can be obtained with a subversion
+client from <a href="https://svn.apache.org/repos/asf/lucene/pylucene/trunk/jcc">here</a></p>
+<h2 id="mailing-list">Mailing List</h2>
+<p>If you'd like to contribute to JCC or are having issues or questions with JCC,
+please subscribe to the PyLucene developer <a href="../mailing-lists.html">mailing list</a></p>
+</div>
+        </div>
+        <div id="sidebar">
+<h1 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">¶</a></h1>
+<ul>
+  <li><a href="https://www.apache.org/licenses/">License</a></li>
+  <li><a href="/pylucene/jcc/features.html">Features</a></li>
+  <li><a href="/pylucene/jcc/install.html">Install</a></li>
+</ul>
+
+<h1 id="events">Events<a class="headerlink" href="#events" title="Permanent link">¶</a></h1>
+<ul>
+  <a class="acevent" data-format="square" data-mode="light" data-width="160" data-style="border: 1px solid lightgrey"></a>
+</ul>
+
+<h1 id="asf-links">ASF links<a class="headerlink" href="#asf-links" title="Permanent link">¶</a></h1>
+<ul>
+  <li><a href="https://www.apache.org">Apache Software Foundation</a></li>
+  <li><a href="https://www.apache.org/foundation/thanks.html">Thanks</a></li>
+  <li><a href="https://www.apache.org/foundation/sponsorship.html">Become a Sponsor</a></li>
+  <li><a href="https://www.apache.org/security/">Security</a></li>
+</ul>
+
+<h1 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">¶</a></h1>
+<ul>
+  <li><a href="http://hadoop.apache.org">Apache Hadoop</a></li>
+  <li><a href="http://manifoldcf.apache.org/">Apache ManifoldCF</a></li>
+  <li><a href="http://lucenenet.apache.org/">Apache Lucene.Net</a></li>
+  <li><a href="http://mahout.apache.org">Apache Mahout</a></li>
+  <li><a href="http://nutch.apache.org">Apache Nutch</a></li>
+  <li><a href="http://opennlp.apache.org/">Apache OpenNLP</a></li>
+  <li><a href="http://tika.apache.org">Apache Tika</a></li>
+  <li><a href="http://zookeeper.apache.org">Apache Zookeeper</a></li>
+</ul>        </div>
+      </div> <!-- End #content-wrap -->
+
+<div id="footer">
+  <div class="copyright">
+    <p>
+      Copyright &copy; 2011-2022 The Apache Software Foundation, Licensed under
+      the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.  <a href="/privacy.html">Privacy Policy</a>      <br/>
+      Apache and the Apache feather logo are trademarks of The Apache Software Foundation.  Apache Lucene, Apache Solr and their
+      respective logos are trademarks of the Apache Software Foundation.  Please see the <a href="https://www.apache.org/foundation/marks/">Apache Trademark Policy</a>
+      for more information.
+    </p>
+  </div>
+</div>    </div> <!-- End #wrap -->
+  </body>
+</html>
