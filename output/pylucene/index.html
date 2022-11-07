@@ -77,7 +77,7 @@
 <p>PyLucene is a <a href="https://www.python.org">Python</a> extension for accessing Java
 <a href="https://lucene.apache.org/java/">Lucene</a>™. Its goal
 is to allow you to use Lucene's text indexing and searching capabilities from
-Python. It is API compatible with Java Lucene version 9.1.0 as of April 27th,
+Python. It is API compatible with Java Lucene version 9.4.1 as of November 7th,
 2022.</p>
 <p>PyLucene is not a Lucene port but a Python wrapper around Java Lucene. PyLucene
 embeds a Java VM with Lucene into a Python process. The PyLucene Python extension,
@@ -88,8 +88,9 @@ Interface (JNI). Sources for JCC are included with the PyLucene sources.</p>
 <p>See <a href="features.html">here</a> for more information and documentation about PyLucene.</p>
 <h2 id="requirements">Requirements</h2>
 <p>PyLucene is supported on macOS, Linux, Solaris and Windows.</p>
-<p>PyLucene requires Python 3.x (x &gt;= 3), or Python version 2.x (x &gt;= 3.5), and
-Java x (x &gt;= 8 for PyLucene 8 and earlier, x &gt;= 11 for PyLucene 9).
+<p>PyLucene requires Python 3.x (x &gt;= 3), and Java x (x &gt;= 8 for PyLucene 8 and
+earlier, x &gt;= 11 for PyLucene 9).
+Python 2 support is untested since PyLucene 9.4.1 / JCC 3.13.
 Building PyLucene requires GNU Make and a C++ compiler. Use of
 <a href="https://pypi.python.org/pypi/setuptools">setuptools</a> is recommended.</p>
 <p>See the JCC <a href="jcc/install.html">installation</a> instructions for more information
@@ -104,6 +105,13 @@ about building PyLucene from sources.</p>
 </h1>
 
 <div>
+  <h2 id="pylucene-941-available">
+    7 November 2022 - PyLucene 9.4.1 available
+    <a class="headerlink" href="news.html#pylucene-941-available" title="Permanent link">¶</a>
+  </h2>
+  <p>This release tracks Lucene Core's 9.4.1 <a href="https://lucene.apache.org/core/corenews.html">release</a> and requires Java 11.<br/>
+See <a href="https://svn.apache.org/repos/asf/lucene/pylucene/tags/pylucene_9_4_1/CHANGES">PyLucene 9.4.1 CHANGES</a> and <a href="https://svn.apache.org/repos/asf/lucene/pylucene/tags/pylucene_9_4_1/jcc/CHANGES">JCC 3.13 CHANGES</a> for details.<br/>
+Source distributions are available <a href="https://www.apache.org/dyn/closer.lua/lucene/pylucene/">here</a>.<br/></p>
   <h2 id="pylucene-910-available">
     27 April 2022 - PyLucene 9.1.0 available
     <a class="headerlink" href="news.html#pylucene-910-available" title="Permanent link">¶</a>
@@ -117,13 +125,6 @@ Source distributions are available <a href="https://www.apache.org/dyn/closer.lu
   </h2>
   <p>This release tracks Lucene Core's 8.11.0 <a href="https://lucene.apache.org/core/corenews.html">release</a> and requires Java 8.<br/>
 See <a href="https://svn.apache.org/repos/asf/lucene/pylucene/tags/pylucene_8_11_0/CHANGES">PyLucene 8.11.0 CHANGES</a> and <a href="https://svn.apache.org/repos/asf/lucene/pylucene/tags/pylucene_8_11_0/jcc/CHANGES">JCC 3.11 CHANGES</a> for details.<br/>
-Source distributions are available <a href="https://www.apache.org/dyn/closer.lua/lucene/pylucene/">here</a>.<br/></p>
-  <h2 id="pylucene-890-available">
-    22 June 2021 - PyLucene 8.9.0 available
-    <a class="headerlink" href="news.html#pylucene-890-available" title="Permanent link">¶</a>
-  </h2>
-  <p>This release tracks Lucene Core's 8.9.0 <a href="https://lucene.apache.org/core/corenews.html">release</a>.<br/>
-See <a href="https://svn.apache.org/repos/asf/lucene/pylucene/tags/pylucene_8_9_0/CHANGES">PyLucene 8.9.0 CHANGES</a> and <a href="https://svn.apache.org/repos/asf/lucene/pylucene/tags/pylucene_8_9_0/jcc/CHANGES">JCC 3.10 CHANGES</a> for details.<br/>
 Source distributions are available <a href="https://www.apache.org/dyn/closer.lua/lucene/pylucene/">here</a>.<br/></p>
 </div>
 <div>For all news items, see <a href="news.html">PyLucene News</a></div>
