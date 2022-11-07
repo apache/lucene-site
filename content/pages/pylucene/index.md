@@ -8,7 +8,7 @@ template: lucene/pylucene/index
 PyLucene is a [Python](https://www.python.org) extension for accessing Java
 [Lucene](https://lucene.apache.org/java/)™. Its goal
 is to allow you to use Lucene's text indexing and searching capabilities from
-Python. It is API compatible with Java Lucene version 9.1.0 as of April 27th,
+Python. It is API compatible with Java Lucene version 9.4.1 as of November 7th,
 2022.
 
 PyLucene is not a Lucene port but a Python wrapper around Java Lucene. PyLucene
@@ -25,8 +25,9 @@ See [here](features.html) for more information and documentation about PyLucene.
 
 PyLucene is supported on macOS, Linux, Solaris and Windows.
 
-PyLucene requires Python 3.x (x >= 3), or Python version 2.x (x >= 3.5), and
-Java x (x >= 8 for PyLucene 8 and earlier, x >= 11 for PyLucene 9).
+PyLucene requires Python 3.x (x >= 3), and Java x (x >= 8 for PyLucene 8 and
+earlier, x >= 11 for PyLucene 9).
+Python 2 support is untested since PyLucene 9.4.1 / JCC 3.13.
 Building PyLucene requires GNU Make and a C++ compiler. Use of
 [setuptools](https://pypi.python.org/pypi/setuptools) is recommended.
 
