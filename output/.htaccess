@@ -26,7 +26,7 @@ RewriteBase /
 ### Pre-CMS site redirects
 
 # DOAP file redirects to source repository
-RedirectMatch Permanent ^/core/doap.rdf https://gitbox.apache.org/repos/asf?p=lucene.git;a=blob_plain;f=dev-tools/doap/lucene.rdf;hb=HEAD
+RedirectMatch Permanent ^/core/doap.rdf https://gitbox.apache.org/repos/asf?p=lucene-solr.git;a=blob_plain;f=dev-tools/doap/lucene.rdf;hb=HEAD
 
 # page renames
 RedirectMatch Permanent ^/who.html /whoweare.html
@@ -42,7 +42,7 @@ RedirectMatch Permanent ^/core/\d+_\d+_\d+$ $0/
 # Other pages can always be redirected to the "most current" released javadocs
 # using "temp" instead of permanent so crawlers know that they
 # might change again in the future
-RedirectMatch temp ^/core/api/(.*) /core/9_4_1/$1
+RedirectMatch temp ^/core/api/(.*) /core/8_8_1/$1
 
 # we no longer have a TLP mail.html page use 'core' for now
 RedirectMatch Permanent ^/mail.html /core/discussion.html
@@ -97,10 +97,8 @@ Redirect permanent /solr https://solr.apache.org
 
 ### Javadocs
 
-# TODO: Move the javadocs to a subfolder core/docs/ instead of directly below core/
-
 # Hack: Append slash, if folder name does not end with slash - everything containing a "." is treated as file and excluded from redirect:
-RewriteRule ^core/\d+(?!.+\.\w+$|.+/$).+$   $0/ [R=301,L]
+RewriteRule ^core/\d+_\d+_\d+/(?!.+\.\w+$|.+/$).+$   $0/ [R=301,L]
 
-# __root/docs.lucene.apache.org/ is a special alias added by INFRA-19439, so we can refer to stuff in other places like SVN:
-RewriteRule ^core/\d+.*$         __root/docs.lucene.apache.org/$0 [PT]
+# __root/docs.lucene.apache.org/content/ is a special alias added by INFRA-19439, so we can refer to stuff in other places like SVN:
+RewriteRule ^core/\d+_\d+_\d+/.*$         __root/docs.lucene.apache.org/content/$0 [PT]
