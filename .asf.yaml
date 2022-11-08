@@ -6,6 +6,7 @@ staging:
   whoami: asf-staging
 
 github:
+  description: "Apache Lucene website"
   labels:
     - apache
     - lucene
