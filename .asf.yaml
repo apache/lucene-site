@@ -18,4 +18,6 @@ github:
   protected_branches:
     main
     production
-
+  features:
+    # Enable issues management
+    issues: true
