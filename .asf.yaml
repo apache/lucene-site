@@ -1,8 +1,9 @@
 pelican:
   whoami: main
-  target: asf-site
-publish:
-  whoami: asf-site
+  target: asf-staging
+
+staging:
+  whoami: asf-staging
 
 github:
   description: "Apache Lucene website"
