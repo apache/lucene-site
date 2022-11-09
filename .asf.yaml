@@ -5,6 +5,7 @@ publish:
   whoami: asf-site
 
 github:
+  description: "Apache Lucene website"
   labels:
     - apache
     - lucene
@@ -17,4 +18,6 @@ github:
   protected_branches:
     main
     production
-
+  features:
+    # Enable issues management
+    issues: true
