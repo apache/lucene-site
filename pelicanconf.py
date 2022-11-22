@@ -27,7 +27,6 @@ TIMEZONE = 'UTC'
 DEFAULT_LANG = 'en'
 
 DEFAULT_DATE_FORMAT = '%-d %B %Y'
-
 DATE_FORMATS = {
     'en': '%-d %B %Y',
 }
