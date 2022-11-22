@@ -8,7 +8,7 @@
 &lt;ul&gt;
 &lt;li&gt;Fixed integer overflow when opening segments containing more than ~16M KNN vectors.&lt;/li&gt;
 &lt;li&gt;Fixed cost computation of BitSets created via DocIdSetBuilder, such as for multi-term queries. This may improve performance of multi-term queries.&lt;/li&gt;
-&lt;li&gt;CheckIndex now verifies the consistency of KNN vectors more thoroughly. &lt;/li&gt;
+&lt;li&gt;CheckIndex now verifies the consistency of KNN vectors more thoroughly.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Please read CHANGES.txt for a full list of changes:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://lucene.apache.org/core/9_4_2/changes/Changes.html"&gt;https://lucene.apache.org/core/9_4_2/changes/Changes.html&lt;/a&gt;&lt;/p&gt;</content><category term="core/news"></category></entry><entry><title>PyLucene 9.4.1 available</title><link href="/" rel="alternate"></link><published>2022-11-07T00:00:00+00:00</published><updated>2022-11-07T00:00:00+00:00</updated><author><name>Lucene Developers</name></author><id>tag:None,2022-11-07:/</id><content type="html">&lt;p&gt;This release tracks Lucene Core's 9.4.1 &lt;a href="https://lucene.apache.org/core/corenews.html"&gt;release&lt;/a&gt; and requires Java 11.&lt;br/&gt;
