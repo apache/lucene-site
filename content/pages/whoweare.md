@@ -14,6 +14,7 @@ template: lucene/tlp/page
 - *[Scott Blum](https://github.com/dragonsinth)* (dragonsinth@...)
 - *Greg Bowyer* (gbowyer@...)
 - *Michael Busch* (buschmi@...)
+- *Luca Cavanna* (javanna@...)
 - *Gregory Chanan* (gchanan@...)
 - *Ishan Chattopadhyaya* (ishan@...)
 - *[Cao Manh Dat](https://www.linkedin.com/in/cao-manh-dat-44244435/)* (datcm@...)
@@ -93,7 +94,6 @@ template: lucene/tlp/page
 - *Feng Guo* (guofeng@...)
 - *[Lu Xugang](https://www.amazingkoala.com.cn)* (luxugang@...)
 - *[Vigya Sharma](https://www.linkedin.com/in/vigyasharma)* (vigyasharma@...)
-
 
 ## Emeritus
 
