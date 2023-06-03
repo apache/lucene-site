@@ -6,7 +6,7 @@
 &lt;p&gt;&lt;a href="https://lucene.apache.org/core/downloads.html"&gt;https://lucene.apache.org/core/downloads.html&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id="lucene-960-release-highlights"&gt;Lucene 9.6.0 Release Highlights:&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Introduce a new KeywordField for simple and efficient  filtering, sorting and faceting.&lt;/li&gt;
+&lt;li&gt;Introduce a new KeywordField for simple and efficient filtering, sorting and faceting.&lt;/li&gt;
 &lt;li&gt;Add support for Java 20 foreign memory API. If exactly Java 19 or 20 is used, MMapDirectory will mmap Lucene indexes in chunks of 16 GiB (instead of 1 GiB) and indexes closed while queries are running can no longer crash the JVM.&lt;/li&gt;
 &lt;li&gt;Improved performance for TermInSetQuery, PrefixQuery, WildcardQuery and TermRangeQuery&lt;/li&gt;
 &lt;li&gt;Lower memory usage for BloomFilteringPostingsFormat&lt;/li&gt;
