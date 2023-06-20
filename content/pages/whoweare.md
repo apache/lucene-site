@@ -94,6 +94,7 @@ template: lucene/tlp/page
 - *Feng Guo* (guofeng@...)
 - *[Lu Xugang](https://www.amazingkoala.com.cn)* (luxugang@...)
 - *[Vigya Sharma](https://www.linkedin.com/in/vigyasharma)* (vigyasharma@...)
+- *[Chris Hegarty](https://www.linkedin.com/in/chegar999/)* (chegar@...)
 
 ## Emeritus
 
@@ -182,6 +183,7 @@ template: lucene/tlp/page
   - *[Cao Manh Dat](https://www.linkedin.com/in/cao-manh-dat-44244435/)* (datcm@...)
   - *[Areek Zillur](http://www.linkedin.com/in/areekzillur)* (areek@...)
   - *Nhat Nguyen* (dnhatn@...)
+  - *[Chris Hegarty](https://www.linkedin.com/in/chegar999/)* (chegar@...)
 
 ## Emeritus PMC members:
 
