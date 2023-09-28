@@ -11,7 +11,7 @@ SITEURL = ''
 CURRENTYEAR = date.today().year
 
 LUCENE_LATEST_RELEASE = '9.8.0'
-LUCENE_LATEST_RELEASE_DATE = datetime(2023, 6, 26)
+LUCENE_LATEST_RELEASE_DATE = datetime(2023, 9, 28)
 LUCENE_PREVIOUS_MAJOR_RELEASE = '8.11.2'
 
 # This string will be appended to all unversioned css and js resources to prevent caching surprises on edits.
