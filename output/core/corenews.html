@@ -149,6 +149,39 @@ It is a technology suitable for nearly any application that requires structured 
 </div>
 
   <div>
+    <h2 id="apache-lucenetm-980-available">
+      28 September 2023 - Apache Lucene™ 9.8.0 available
+      <a class="headerlink" href="#apache-lucenetm-980-available" title="Permanent link">¶</a>
+    </h2>
+    <p>The Lucene PMC is pleased to announce the release of Apache Lucene 9.8.0.</p>
+<p>Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search across high-dimensionality vectors, spell correction or query suggestions.</p>
+<p>This release contains numerous bug fixes, optimizations, and improvements, some of which are highlighted below. The release is available for immediate download at:</p>
+<p><a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a></p>
+<h3 id="lucene-980-release-highlights">Lucene 9.8.0 Release Highlights:</h3>
+<h4 id="optimizations">Optimizations</h4>
+<ul>
+<li>Faster computation of top-k hits on boolean queries. Lucene's nightly benchmarks report a 20%-30% speedup for disjunctive queries and a 11%-13% speedup for conjunctive queries since Lucene 9.7. Disjunctive queries with many and/or high-frequency terms should see even higher speedups.</li>
+<li>Faster computation of top-k hits when sorting by field. Lucene's nightly benchmarks report speedups between 7% and 33% since 9.7 depending on the type and cardinality of the field that is used for sorting.</li>
+<li>Faster indexing of numeric doc values when index sorting is turned on.</li>
+<li>Expressions now evaluate all arguments in a fully lazy manner, which may provide significant speedups and throughput improvements for heavy expression users.</li>
+</ul>
+<h4 id="api-changes">API Changes</h4>
+<ul>
+<li>Move max vector dims limit to Codec (Mayya Sharipova)</li>
+</ul>
+<h4 id="new-features">New features</h4>
+<ul>
+<li>Introduced LeafCollector#finish, a hook that runs after collection has finished running on a leaf.</li>
+<li>Add "KnnCollector" to "LeafReader" and "KnnVectorReader" so that custom collection of vector search results can be provided. The first custom collector provides "ToParentBlockJoin[Float|Byte]KnnVectorQuery" joining child vector documents with their parent documents.</li>
+<li>Add support for recursive graph bisection, also called bipartite graph partitioning, and often abbreviated BP, an algorithm for reordering doc IDs that results in more compact postings and faster queries, especially conjunctions.</li>
+</ul>
+<h4 id="bug-fixes">Bug fixes</h4>
+<ul>
+<li>Fix HNSW graph search bug that potentially leaked unapproved docs</li>
+<li>Fix bug in TermsEnum#seekCeil on doc values terms enums that causes IndexOutOfBoundsException.</li>
+</ul>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="https://lucene.apache.org/core/9_8_0/changes/Changes.html">https://lucene.apache.org/core/9_8_0/changes/Changes.html</a></p>
     <h2 id="apache-lucenetm-970-available">
       25 June 2023 - Apache Lucene™ 9.7.0 available
       <a class="headerlink" href="#apache-lucenetm-970-available" title="Permanent link">¶</a>
@@ -2424,9 +2457,9 @@ with the release for a full list of details.</p>
   <div class="button-green">
     <a href="/core/downloads.html">Download</a>
     <div class="flap top">Click to</div>
-    <div class="flap bottom">Apache Lucene 9.7.0</div>
+    <div class="flap bottom">Apache Lucene 9.8.0</div>
   </div>
-  <div class="download-desc">Apache Lucene 9.7.0</div>
+  <div class="download-desc">Apache Lucene 9.8.0</div>
 </div>
 
 <h1 id="resources">Resources</h1>
@@ -2440,7 +2473,7 @@ with the release for a full list of details.</p>
 
 <h1 id="release-docs">Release Docs</h1>
 <ul>
-  <li><a href="/core/9_7_0/index.html">9.7.0</a></li>
+  <li><a href="/core/9_8_0/index.html">9.8.0</a></li>
 </ul>
 
 <h1 id="about">About</h1>
