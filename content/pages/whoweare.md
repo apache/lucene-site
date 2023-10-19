@@ -126,6 +126,7 @@ template: lucene/tlp/page
   - *Joel Bernstein* (jbernste@...)
   - *Andrzej Bialecki* (ab@...)
   - *Michael Busch* (buschmi@...)
+  - *Luca Cavanna* (javanna@...)
   - *Doron Cohen* (doronc@...)
   - *Mike Drob* (mdrob@...)
   - *James Dyer* (jdyer@...)
