@@ -185,6 +185,7 @@ template: lucene/tlp/page
   - *[Areek Zillur](http://www.linkedin.com/in/areekzillur)* (areek@...)
   - *Nhat Nguyen* (dnhatn@...)
   - *[Chris Hegarty](https://www.linkedin.com/in/chegar999/)* (chegar@...)
+  - *Feng Guo* (guofeng@...)
 
 ## Emeritus PMC members:
 
