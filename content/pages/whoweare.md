@@ -186,6 +186,7 @@ template: lucene/tlp/page
   - *Nhat Nguyen* (dnhatn@...)
   - *[Chris Hegarty](https://www.linkedin.com/in/chegar999/)* (chegar@...)
   - *Feng Guo* (guofeng@...)
+  - *[Patrick Zhai](https://www.linkedin.com/in/haoyu-zhai-23b226136)* (patrickz@...)
 
 ## Emeritus PMC members:
 
