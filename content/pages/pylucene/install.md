@@ -28,15 +28,11 @@ See JCC's [installation instructions](jcc/install.html) for more information.
 ## For the Impatient Ones
 
 - **pushd jcc**
-- 
 - **edit _setup.py_ to match your environment**
--
 - **python setup.py build**
 - **sudo python setup.py install**
 - **popd**
--
 - **edit _Makefile_ to match your environment**
--
 - **make**
 - **make test** (look for failures)
 - **sudo make install**
