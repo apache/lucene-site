@@ -95,6 +95,7 @@ template: lucene/tlp/page
 - *[Lu Xugang](https://www.amazingkoala.com.cn)* (luxugang@...)
 - *[Vigya Sharma](https://www.linkedin.com/in/vigyasharma)* (vigyasharma@...)
 - *[Chris Hegarty](https://www.linkedin.com/in/chegar999/)* (chegar@...)
+- *[Stefan Vodita](https://www.linkedin.com/in/stefan-vodita-8bbb51153)* (voditas@...)
 
 ## Emeritus
 
