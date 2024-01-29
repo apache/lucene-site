@@ -10,8 +10,8 @@ SITESUBTITLE = ''
 SITEURL = ''
 CURRENTYEAR = date.today().year
 
-LUCENE_LATEST_RELEASE = '9.9.1'
-LUCENE_LATEST_RELEASE_DATE = datetime(2023, 12, 16)
+LUCENE_LATEST_RELEASE = '9.9.2'
+LUCENE_LATEST_RELEASE_DATE = datetime(2024, 01, 29)
 LUCENE_PREVIOUS_MAJOR_RELEASE = '8.11.2'
 
 # This string will be appended to all unversioned css and js resources to prevent caching surprises on edits.
