@@ -97,6 +97,7 @@ template: lucene/tlp/page
 - *[Chris Hegarty](https://www.linkedin.com/in/chegar999/)* (chegar@...)
 - *[Stefan Vodita](https://www.linkedin.com/in/stefan-vodita-8bbb51153)* (voditas@...)
 - *Zhang Chao* (zhangchao@...)
+- *[Benjamin Trent](https://github.com/benwtrent)* (benwtrent@...)
 
 ## Emeritus
 
@@ -189,6 +190,7 @@ template: lucene/tlp/page
   - *[Chris Hegarty](https://www.linkedin.com/in/chegar999/)* (chegar@...)
   - *Feng Guo* (guofeng@...)
   - *[Patrick Zhai](https://www.linkedin.com/in/haoyu-zhai-23b226136)* (patrickz@...)
+  - *[Benjamin Trent](https://github.com/benwtrent)* (benwtrent@...)
 
 ## Emeritus PMC members:
 
