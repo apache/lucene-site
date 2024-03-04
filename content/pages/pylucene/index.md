@@ -8,8 +8,8 @@ template: lucene/pylucene/index
 PyLucene is a [Python](https://www.python.org) extension for accessing Java
 [Lucene](https://lucene.apache.org/java/)™. Its goal
 is to allow you to use Lucene's text indexing and searching capabilities from
-Python. It is API compatible with Java Lucene version 9.7.0 as of July 12th,
-2023.
+Python. It is API compatible with Java Lucene version 9.10.0 as of March 4th,
+2024.
 
 PyLucene is not a Lucene port but a Python wrapper around Java Lucene. PyLucene
 embeds a Java VM with Lucene into a Python process. The PyLucene Python extension,
