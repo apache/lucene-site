@@ -7,7 +7,7 @@
 &lt;h3 id="lucene-9110-release-highlights"&gt;Lucene 9.11.0 Release Highlights:&lt;/h3&gt;
 &lt;h4 id="new-features"&gt;New features&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;Add support for &lt;code&gt;posix_madvise&lt;/code&gt; to MMapDirectory: If running on Linux/macOS and Java 21 or later, MMapDirectory uses IOContext to pass suitable MADV flags to kernel of operating system. This may improve paging logic especially when working with large indexes under memory pressure. &lt;/li&gt;
+&lt;li&gt;Add support for posix_madvise to MMapDirectory: If running on Linux/macOS and Java 21 or later, MMapDirectory uses IOContext to pass suitable MADV flags to kernel of operating system. This may improve paging logic especially when working with large indexes under memory pressure. &lt;/li&gt;
 &lt;li&gt;Expand support for new scalar bit levels for HNSW vectors. This includes 4-bit vectors and an option to compress them to gain a 50% reduction in memory usage.&lt;/li&gt;
 &lt;li&gt;Recursive graph bisection is now supported on indexes that have blocks &lt;/li&gt;
 &lt;/ul&gt;
@@ -20,7 +20,7 @@
 &lt;ul&gt;
 &lt;li&gt;Use RWLock to access LRUQueryCache to reduce contention.&lt;/li&gt;
 &lt;li&gt;Speedup multi-segment HNSW graph search for diversifying child kNN queries.&lt;/li&gt;
-&lt;li&gt;Add a MemorySegment Vector scorer - for scoring without copying on-heap. This can improve search latency by almost 2x for &lt;code&gt;byte[]&lt;/code&gt; vectors.&lt;/li&gt;
+&lt;li&gt;Add a MemorySegment Vector scorer - for scoring without copying on-heap. This can improve search latency by almost 2x for byte vectors.&lt;/li&gt;
 &lt;li&gt;Switch to using optimized, primitive collections where possible to improve performance and heap utilization.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Please read CHANGES.txt for a full list of new features and changes:&lt;/p&gt;
