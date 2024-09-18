@@ -26,11 +26,16 @@ Lucene offers powerful features through a simple API:
 * pluggable ranking models, including the [Vector Space Model](http://en.wikipedia.org/wiki/Vector_Space_Model) and [Okapi BM25](http://en.wikipedia.org/wiki/Okapi_BM25)
 * configurable storage engine (codecs)
 
+Search performance of Apache Lucene is tracked in muliple places. Check out
+
+ * [Mike McCandless' nightly benchmarks for Lucene](https://benchmarks.mikemccandless.com/) for an historical view of Lucene's query performance, going back to 2011 for some queries
+ * [Search Benchmark, the Game](https://tantivy-search.github.io/bench/) for a comparison of Lucene with other search engines
+
 ## Cross-Platform Solution
 
 * Available as Open Source software under the [Apache License](https://www.apache.org/licenses/LICENSE-2.0.html) which lets you use Lucene in both commercial and Open Source programs
 * 100%-pure Java
-* Implementations in [other programming languages available](https://cwiki.apache.org/confluence/display/lucene/LuceneImplementations) that are index-compatible
+* Implementations in [other programming languages available](https://cwiki.apache.org/confluence/display/lucene/LuceneImplementations)
 
 ## Utility tools
 
