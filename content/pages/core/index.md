@@ -52,7 +52,7 @@ Search performance of Apache Lucene is tracked in muliple places. Check out
 - 100%-pure Java
 - Implementations [in other programming languages available][5]
 
-[1]: http://home.apache.org/~mikemccand/lucenebench/indexing.html
+[1]: https://benchmarks.mikemccandless.com/indexing.html
 [2]: http://en.wikipedia.org/wiki/Vector_Space_Model
 [3]: http://en.wikipedia.org/wiki/Okapi_BM25
 [4]: https://www.apache.org/licenses/LICENSE-2.0.html

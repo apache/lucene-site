@@ -7,7 +7,7 @@ Lucene offers powerful features through a simple API:
 
 ## Scalable, High-Performance Indexing
 
-* over [800GB/hour on modern hardware](http://home.apache.org/~mikemccand/lucenebench/indexing.html)
+* over [800GB/hour on modern hardware](https://benchmarks.mikemccandless.com/indexing.html)
 * small RAM requirements -- only 1MB heap
 * incremental indexing as fast as batch indexing
 * index size roughly 20-30% the size of text indexed
