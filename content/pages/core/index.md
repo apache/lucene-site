@@ -40,6 +40,7 @@ Lucene offers powerful features through a simple API:
 - configurable storage engine (codecs)
 
 Search performance of Apache Lucene is tracked in muliple places. Check out
+
  * [Mike McCandless' nightly benchmarks for Lucene](https://benchmarks.mikemccandless.com/) for an historical view of Lucene's query performance, going back to 2011 for some queries
  * [Search Benchmark, the Game](https://tantivy-search.github.io/bench/) for a comparison of Lucene with other search engines
 
