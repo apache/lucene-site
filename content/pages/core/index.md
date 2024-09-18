@@ -45,7 +45,7 @@ Lucene offers powerful features through a simple API:
 - Available as Open Source software under the [Apache License][4] which lets you use
   Lucene in both commercial and Open Source programs
 - 100%-pure Java
-- Implementations [in other programming languages available][5] that are index-compatible
+- Implementations [in other programming languages available][5]
 
 [1]: http://home.apache.org/~mikemccand/lucenebench/indexing.html
 [2]: http://en.wikipedia.org/wiki/Vector_Space_Model
