@@ -149,6 +149,50 @@ It is a technology suitable for nearly any application that requires structured 
 </div>
 
   <div>
+    <h2 id="apache-lucenetm-9120-available">
+      28 September 2024 - Apache Lucene™ 9.12.0 available
+      <a class="headerlink" href="#apache-lucenetm-9120-available" title="Permanent link">¶</a>
+    </h2>
+    <p>The Lucene PMC is pleased to announce the release of Apache Lucene 9.12.0.</p>
+<p>Apache Lucene is a high-performance, full-featured search engine library
+written entirely in Java. It is a technology suitable for nearly any
+application that requires structured search, full-text search, faceting,
+nearest-neighbor search across high-dimensionality vectors, spell
+correction or query suggestions.</p>
+<p>This release contains numerous bug fixes, optimizations, and
+improvements, some of which are highlighted below. The release is
+available for immediate download at:</p>
+<p><a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a></p>
+<h3 id="lucene-9120-release-highlights">Lucene 9.12.0 Release Highlights:</h3>
+<h4 id="security-fixes">Security Fixes</h4>
+<ul>
+<li>Deserialization of Untrusted Data vulnerability in Apache Lucene
+   Replicator - CVE-2024-45772 </li>
+</ul>
+<h4 id="new-features">New Features</h4>
+<ul>
+<li>Improve intra-merge parallelism for many value types. (Ben Trent)</li>
+<li>Add support JDK 23 to the Panama Vectorization Provider. (Chris Hegarty)</li>
+</ul>
+<h4 id="improvements">Improvements</h4>
+<ul>
+<li>Add Intervals.regexp and Intervals.range methods to produce IntervalsSource
+   for regexp and range queries. (Mayya Sharipova)</li>
+<li>Remove support for writing 8 bit scalar vector quantization. 4 and 7 bit
+   quantization are still supported (Michael McCandless )</li>
+</ul>
+<h4 id="optimizations">Optimizations</h4>
+<ul>
+<li>Inline postings skip data to improve performance of queries that need
+   skipping such as conjunctions. (Adrien Grand)</li>
+<li>Optimizations to the decoding logic of blocks of postings. (Adrien Grand,
+   Uwe Schindler, Greg Miller)</li>
+<li>Avoid performance degradation with closing shared mapped segment data
+   (Chris Hegarty, Michael Gibney, Uwe Schindler)</li>
+</ul>
+<p>... plus a multitude of helpful bug fixes!</p>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="https://lucene.apache.org/core/9_12_0/changes/Changes.html">https://lucene.apache.org/core/9_12_0/changes/Changes.html</a></p>
     <h2 id="apache-lucenetm-8114-available">
       24 September 2024 - Apache Lucene™ 8.11.4 available
       <a class="headerlink" href="#apache-lucenetm-8114-available" title="Permanent link">¶</a>
@@ -2630,9 +2674,9 @@ with the release for a full list of details.</p>
   <div class="button-green">
     <a href="/core/downloads.html">Download</a>
     <div class="flap top">Click to</div>
-    <div class="flap bottom">Apache Lucene 9.11.1</div>
+    <div class="flap bottom">Apache Lucene 9.12.0</div>
   </div>
-  <div class="download-desc">Apache Lucene 9.11.1</div>
+  <div class="download-desc">Apache Lucene 9.12.0</div>
 </div>
 
 <h1 id="resources">Resources</h1>
@@ -2646,7 +2690,7 @@ with the release for a full list of details.</p>
 
 <h1 id="release-docs">Release Docs</h1>
 <ul>
-  <li><a href="/core/9_11_1/index.html">9.11.1</a></li>
+  <li><a href="/core/9_12_0/index.html">9.12.0</a></li>
 </ul>
 
 <h1 id="about">About</h1>
