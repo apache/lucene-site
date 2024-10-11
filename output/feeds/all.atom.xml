@@ -23,6 +23,8 @@ available for immediate download at:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Improve intra-merge parallelism for many value types. (Ben Trent)&lt;/li&gt;
 &lt;li&gt;Add support JDK 23 to the Panama Vectorization Provider. (Chris Hegarty)&lt;/li&gt;
+&lt;li&gt;Match-time aggregation engine with improved flexibility and performance.
+   (Egor Potemkin, Shradha Shankar)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id="improvements"&gt;Improvements&lt;/h4&gt;
 &lt;ul&gt;
