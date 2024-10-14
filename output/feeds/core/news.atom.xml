@@ -25,6 +25,7 @@
 &lt;ul&gt;
 &lt;li&gt;Lucene now opens files with the MADV_RANDOM advice by default on Linux and Mac OS. This results in better efficiency for indexes that exceed the size of the page cache, but can make it slower to load indexes in the page cache. It is possible to revert to the MADV_NORMAL read advice by default by passing -Dorg.apache.lucene.store.defaultReadAdvice=NORMAL as a JVM startup flag.&lt;/li&gt;
 &lt;li&gt;Snowball dictionaries have been upgraded, resulting in improved tokenization. This may require reindexing to ensure consistency of search results with pre-10.0 indexes.&lt;/li&gt;
+&lt;li&gt;The expressions module is now using MethodHandles and &lt;a href="https://openjdk.org/jeps/309"&gt;Dynamic Class-File Constants (JEP 309)&lt;/a&gt; in combination with &lt;a href="https://openjdk.org/jeps/371"&gt;hidden classes (JEP 371)&lt;/a&gt; to implement a strict and type-safe call to external functions. This allows to easier extend expressions with custom functions in secure way because runtime linking of custom functions is no longer the responsibility of the expressions scripting engine. In addition, the hidden classes created by the expressions engine no longer suffer from global classloader locks.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;... plus a multitude of helpful bug fixes!&lt;/p&gt;
 &lt;p&gt;Please read CHANGES.txt for a full list of new features and changes:&lt;/p&gt;
