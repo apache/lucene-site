@@ -149,6 +149,39 @@ It is a technology suitable for nearly any application that requires structured 
 </div>
 
   <div>
+    <h2 id="apache-lucenetm-1000-available">
+      14 October 2024 - Apache Lucene™ 10.0.0 available
+      <a class="headerlink" href="#apache-lucenetm-1000-available" title="Permanent link">¶</a>
+    </h2>
+    <p>The Lucene PMC is pleased to announce the release of Apache Lucene 10.0.0.</p>
+<p>Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search across high-dimensionality vectors, spell correction or query suggestions.</p>
+<p>This release contains numerous bug fixes, optimizations, and improvements, some of which are highlighted below. The release is available for immediate download at:</p>
+<p><a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a></p>
+<h3 id="lucene-1000-release-highlights">Lucene 10.0.0 Release Highlights:</h3>
+<h4 id="system-requirements">System requirements</h4>
+<ul>
+<li>Lucene 10.0 requires JDK 21 or newer</li>
+</ul>
+<h4 id="api-changes">API changes</h4>
+<ul>
+<li>KNN vector values now have a random-access API.</li>
+<li>Deprecated APIs have been removed and a number of API changes have been made. Please consult the migrate guide for an extensive list and actions to take to migrate to 10.0.</li>
+</ul>
+<h4 id="new-features">New Features</h4>
+<ul>
+<li>A new IndexInput#prefetch API has been added, allowing query evaluation logic to let the Directory know about regions of data that are about to be read. This helps perform I/O concurrently under the hood. MMapDirectory implements this API using the madvise system call and the MADV_WILLNEED flag on Linux and Mac OS.</li>
+<li>Lucene now supports sparse indexing on doc values via FieldType#setDocValuesSkipIndexType. The sparse index will record the minimum and maximum values per block of doc IDs. Used in conjunction with index sorting to cluster similar documents together, this allows for very space-efficient and CPU-efficient filtering.</li>
+<li>Search concurrency is now decoupled from the index geometry, so that an index can be searched using any number of threads, regardless of its number of segments.</li>
+<li>Kmeans clustering on vectors</li>
+</ul>
+<h4 id="improvements">Improvements</h4>
+<ul>
+<li>Lucene now opens files with the MADV_RANDOM advice by default on Linux and Mac OS. This results in better efficiency for indexes that exceed the size of the page cache, but can make it slower to load indexes in the page cache. It is possible to revert to the MADV_NORMAL read advice by default by passing -Dorg.apache.lucene.store.defaultReadAdvice=NORMAL as a JVM startup flag.</li>
+<li>Snowball dictionaries have been upgraded, resulting in improved tokenization. This may require reindexing to ensure consistency of search results with pre-10.0 indexes.</li>
+</ul>
+<p>... plus a multitude of helpful bug fixes!</p>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="https://lucene.apache.org/core/10_0_0/changes/Changes.html">https://lucene.apache.org/core/10_0_0/changes/Changes.html</a></p>
     <h2 id="apache-lucenetm-9120-available">
       28 September 2024 - Apache Lucene™ 9.12.0 available
       <a class="headerlink" href="#apache-lucenetm-9120-available" title="Permanent link">¶</a>
@@ -2676,9 +2709,9 @@ with the release for a full list of details.</p>
   <div class="button-green">
     <a href="/core/downloads.html">Download</a>
     <div class="flap top">Click to</div>
-    <div class="flap bottom">Apache Lucene 9.12.0</div>
+    <div class="flap bottom">Apache Lucene 10.0.0</div>
   </div>
-  <div class="download-desc">Apache Lucene 9.12.0</div>
+  <div class="download-desc">Apache Lucene 10.0.0</div>
 </div>
 
 <h1 id="resources">Resources</h1>
@@ -2692,7 +2725,7 @@ with the release for a full list of details.</p>
 
 <h1 id="release-docs">Release Docs</h1>
 <ul>
-  <li><a href="/core/9_12_0/index.html">9.12.0</a></li>
+  <li><a href="/core/10_0_0/index.html">10.0.0</a></li>
 </ul>
 
 <h1 id="about">About</h1>
