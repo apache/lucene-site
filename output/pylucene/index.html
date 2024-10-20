@@ -77,7 +77,7 @@
 <p>PyLucene is a <a href="https://www.python.org">Python</a> extension for accessing Java
 <a href="https://lucene.apache.org/java/">Lucene</a>™. Its goal
 is to allow you to use Lucene's text indexing and searching capabilities from
-Python. It is API compatible with Java Lucene version 9.12.0 as of October 11th,
+Python. It is API compatible with Java Lucene version 10.0.0 as of October 20th,
 2024.</p>
 <p>PyLucene is not a Lucene port but a Python wrapper around Java Lucene. PyLucene
 embeds a Java VM with Lucene into a Python process. The PyLucene Python extension,
@@ -89,7 +89,7 @@ Interface (JNI). Sources for JCC are included with the PyLucene sources.</p>
 <h2 id="requirements">Requirements</h2>
 <p>PyLucene is supported on macOS, Linux, Solaris and Windows.</p>
 <p>PyLucene requires Python 3.x (x &gt;= 3), and Java x (x &gt;= 8 for PyLucene 8 and
-earlier, x &gt;= 11 for PyLucene 9).
+earlier, x &gt;= 11 for PyLucene 9, x &gt;= 21 for PyLucene 10).
 Python 2 support is untested since PyLucene 9.4.1 / JCC 3.13.
 Building PyLucene requires GNU Make and a C++ compiler. Use of
 <a href="https://pypi.python.org/pypi/setuptools">setuptools</a> is recommended.</p>
@@ -105,6 +105,13 @@ about building PyLucene from sources.</p>
 </h1>
 
 <div>
+  <h2 id="pylucene-1000-available">
+    20 October 2024 - PyLucene 10.0.0 available
+    <a class="headerlink" href="news.html#pylucene-1000-available" title="Permanent link">¶</a>
+  </h2>
+  <p>This release tracks Lucene Core's 10.0.0 <a href="https://lucene.apache.org/core/corenews.html">release</a> and <a href="https://lucene.apache.org/core/10_0_0/SYSTEM_REQUIREMENTS.html">requires Java 21 or greater</a>.<br/>
+See <a href="https://svn.apache.org/repos/asf/lucene/pylucene/tags/pylucene_10_0_0/CHANGES">PyLucene 10.0.0 CHANGES</a> and <a href="https://svn.apache.org/repos/asf/lucene/pylucene/tags/pylucene_10_0_0/jcc/CHANGES">JCC 3.15 CHANGES</a> for details.<br/>
+Source distributions are available <a href="https://www.apache.org/dyn/closer.lua/lucene/pylucene/">here</a>.<br/></p>
   <h2 id="pylucene-9120-available">
     11 October 2024 - PyLucene 9.12.0 available
     <a class="headerlink" href="news.html#pylucene-9120-available" title="Permanent link">¶</a>
@@ -118,13 +125,6 @@ Source distributions are available <a href="https://www.apache.org/dyn/closer.lu
   </h2>
   <p>This release tracks Lucene Core's 9.10.0 <a href="https://lucene.apache.org/core/corenews.html">release</a> and requires Java 11.<br/>
 See <a href="https://svn.apache.org/repos/asf/lucene/pylucene/tags/pylucene_9_10_0/CHANGES">PyLucene 9.10.0 CHANGES</a> and <a href="https://svn.apache.org/repos/asf/lucene/pylucene/tags/pylucene_9_10_0/jcc/CHANGES">JCC 3.14 CHANGES</a> for details.<br/>
-Source distributions are available <a href="https://www.apache.org/dyn/closer.lua/lucene/pylucene/">here</a>.<br/></p>
-  <h2 id="pylucene-970-available">
-    12 July 2023 - PyLucene 9.7.0 available
-    <a class="headerlink" href="news.html#pylucene-970-available" title="Permanent link">¶</a>
-  </h2>
-  <p>This release tracks Lucene Core's 9.7.0 <a href="https://lucene.apache.org/core/corenews.html">release</a> and requires Java 11.<br/>
-See <a href="https://svn.apache.org/repos/asf/lucene/pylucene/tags/pylucene_9_7_0/CHANGES">PyLucene 9.7.0 CHANGES</a> and <a href="https://svn.apache.org/repos/asf/lucene/pylucene/tags/pylucene_9_7_0/jcc/CHANGES">JCC 3.13 CHANGES</a> for details.<br/>
 Source distributions are available <a href="https://www.apache.org/dyn/closer.lua/lucene/pylucene/">here</a>.<br/></p>
 </div>
 <div>For all news items, see <a href="news.html">PyLucene News</a></div>
