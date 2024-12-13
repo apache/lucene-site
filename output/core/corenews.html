@@ -149,6 +149,27 @@ It is a technology suitable for nearly any application that requires structured 
 </div>
 
   <div>
+    <h2 id="apache-lucenetm-9121-available">
+      13 December 2024 - Apache Lucene™ 9.12.1 available
+      <a class="headerlink" href="#apache-lucenetm-9121-available" title="Permanent link">¶</a>
+    </h2>
+    <p>The Lucene PMC is pleased to announce the release of Apache Lucene 9.12.1.</p>
+<p>Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search across high-dimensionality vectors, spell correction or query suggestions.</p>
+<p>This release contains numerous bug fixes, optimizations, and improvements, some of which are highlighted below. The release is available for immediate download at:</p>
+<p><a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a></p>
+<h3 id="lucene-9121-release-highlights">Lucene 9.12.1 Release Highlights:</h3>
+<h4 id="improvements">Improvements</h4>
+<ul>
+<li>Allow easier configuration of the Panama vectorization provider with newer Java versions. Set the org.apache.lucene.vectorization.upperJavaFeatureVersion system property to increase the set of Java versions that Panama vectorization will provide optimized implementations for.</li>
+</ul>
+<h4 id="bug-fixes">Bug fixes</h4>
+<ul>
+<li>Fixed backwards compatibility bug that caused sparse (not all documents have a vector) KNN indices written with 9.0.0 to give silently (no exception) terrible recall results when searched by any 9.x release</li>
+<li>Improve Tessellatorlogic when two holes share the same vertex with the polygon which was failing in valid polygons.</li>
+<li>Fix backwards compatibility bug that caused 9.12.0 to incorrectly throw IllegalStateException when trying to open an IndexReader on an index created with quantized (int4, int7, int8) KNN vectors using Lucene99HnswScalarQuantizedVectorsFormat.</li>
+</ul>
+<p>Please read CHANGES.txt for a full list of changes:</p>
+<p><a href="https://lucene.apache.org/core/9_12_1/changes/Changes.html">https://lucene.apache.org/core/9_12_1/changes/Changes.html</a></p>
     <h2 id="apache-lucenetm-1000-available">
       14 October 2024 - Apache Lucene™ 10.0.0 available
       <a class="headerlink" href="#apache-lucenetm-1000-available" title="Permanent link">¶</a>
