@@ -7,7 +7,7 @@
 &lt;h3 id="lucene-9121-release-highlights"&gt;Lucene 9.12.1 Release Highlights:&lt;/h3&gt;
 &lt;h4 id="improvements"&gt;Improvements&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;Allow easier configuration of the Panama vectorization provider with newer Java versions. Set the &lt;code&gt;org.apache.lucene.vectorization.upperJavaFeatureVersion&lt;/code&gt; system property to increase the set of Java versions that Panama vectorization will provide optimized implementations for.&lt;/li&gt;
+&lt;li&gt;Allow easier configuration of the Panama vectorization provider with newer Java versions. Set the org.apache.lucene.vectorization.upperJavaFeatureVersion system property to increase the set of Java versions that Panama vectorization will provide optimized implementations for.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id="bug-fixes"&gt;Bug fixes&lt;/h4&gt;
 &lt;ul&gt;
