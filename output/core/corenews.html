@@ -149,6 +149,33 @@ It is a technology suitable for nearly any application that requires structured 
 </div>
 
   <div>
+    <h2 id="apache-lucenetm-1010-available">
+      20 December 2024 - Apache Lucene™ 10.1.0 available
+      <a class="headerlink" href="#apache-lucenetm-1010-available" title="Permanent link">¶</a>
+    </h2>
+    <p>The Lucene PMC is pleased to announce the release of Apache Lucene 10.1.0.</p>
+<p>Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search across high-dimensionality vectors, spell correction or query suggestions.</p>
+<p>This release contains numerous bug fixes, optimizations, and improvements, some of which are highlighted below. The release is available for immediate download at:</p>
+<p><a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a></p>
+<h3 id="lucene-1010-release-highlights">Lucene 10.1.0 Release Highlights:</h3>
+<h4 id="new-features">New Features</h4>
+<ul>
+<li>Add IndexInput::isLoaded to determine if the contents of an  input is resident in physical memory</li>
+<li>FeatureField now supports storing term vectors.</li>
+</ul>
+<h4 id="improvements">Improvements</h4>
+<ul>
+<li>TieredMergePolicy now allows merging up to maxMergeAtOnce segments for merges below the floor segment size, even if maxMergeAtOnce is greater than segmentsPerTier. This makes it more efficient to configure TieredMergePolicy to merge segments aggressively by configuring a high value of floorSegmentSize (e.g. 64MB), a low value of segmentsPerTier (e.g. 4) and a high value of maxMergeAtOnce (e.g. 32).</li>
+</ul>
+<h4 id="optimizations">Optimizations</h4>
+<ul>
+<li>Many speedups to top-k query evaluation, in particular: top-level disjunctions, filtered disjunctions, conjunctions, DisjunctionMaxQuery.</li>
+<li>Speedup to exhaustive evaluation of conjunctive queries by vectorizing the intersection of postings lists.</li>
+<li>Reduced contention for top-k query evaluation when IndexSearcher is configured with an executor.</li>
+</ul>
+<p>... plus a multitude of helpful bug fixes!</p>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="https://lucene.apache.org/core/10_1_0/changes/Changes.html">https://lucene.apache.org/core/10_1_0/changes/Changes.html</a></p>
     <h2 id="apache-lucenetm-9121-available">
       13 December 2024 - Apache Lucene™ 9.12.1 available
       <a class="headerlink" href="#apache-lucenetm-9121-available" title="Permanent link">¶</a>
@@ -2731,9 +2758,9 @@ with the release for a full list of details.</p>
   <div class="button-green">
     <a href="/core/downloads.html">Download</a>
     <div class="flap top">Click to</div>
-    <div class="flap bottom">Apache Lucene 10.0.0</div>
+    <div class="flap bottom">Apache Lucene 10.1.0</div>
   </div>
-  <div class="download-desc">Apache Lucene 10.0.0</div>
+  <div class="download-desc">Apache Lucene 10.1.0</div>
 </div>
 
 <h1 id="resources">Resources</h1>
@@ -2747,7 +2774,7 @@ with the release for a full list of details.</p>
 
 <h1 id="release-docs">Release Docs</h1>
 <ul>
-  <li><a href="/core/10_0_0/index.html">10.0.0</a></li>
+  <li><a href="/core/10_1_0/index.html">10.1.0</a></li>
 </ul>
 
 <h1 id="about">About</h1>
