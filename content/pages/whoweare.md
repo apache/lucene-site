@@ -98,6 +98,7 @@ template: lucene/tlp/page
 - *[Stefan Vodita](https://www.linkedin.com/in/stefan-vodita-8bbb51153)* (voditas@...)
 - *Zhang Chao* (zhangchao@...)
 - *[Benjamin Trent](https://github.com/benwtrent)* (benwtrent@...)
+- *[Michael Froh](https:///www.linkedin.com/in/msfroh)* (msfroh@...)
 
 ## Emeritus
 
