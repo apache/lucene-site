@@ -17,8 +17,8 @@ github:
     merge:  true
     rebase: false
   protected_branches:
-    main
-    production
+    main:
+    production:
   features:
     # Enable issues management
     issues: true
