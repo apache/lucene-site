@@ -9,4 +9,4 @@ The web site is hosted in its own git repository **lucene-site** (see [Github](h
 
 Pushing to the `main` branch will update the staging site while pushing to `production` branch will update the main web site. Read the `README.md` file for further instructions.
 
-For reporting website-related issues or suggesting improvements, please visit our [Issue Tracker](https://issues.apache.org/jira/projects/LUCENE).
+For reporting website-related issues or suggesting improvements, please use [GitHub Issues](https://github.com/apache/lucene-site/issues).
