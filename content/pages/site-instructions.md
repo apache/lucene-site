@@ -3,8 +3,10 @@ URL: site-instructions.html
 save_as: site-instructions.html
 template: lucene/tlp/page
 
+
 ## Editing Content on the Lucene™ sites
+The web site is hosted in its own git repository **lucene-site** (see [Github](https://github.com/apache/lucene-site) and [Gitbox](https://gitbox.apache.org/repos/asf?p=lucene-site.git)).
 
-The web site is hosted in its own git repository `lucene-site` (see [Github](https://github.com/apache/lucene-site/) and [Gitbox](https://gitbox.apache.org/repos/asf/lucene-site.git)).
+Pushing to the `main` branch will update the staging site while pushing to `production` branch will update the main web site. Read the `README.md` file for further instructions.
 
-Pushing to the `main` branch will update the [staging site](https://lucene.staged.apache.org) while pushing to `production` branch will update the main web site. Read the [README.md](https://github.com/apache/lucene-site/blob/main/README.md) file for further instructions.
+For reporting website-related issues or suggesting improvements, please use [GitHub Issues](https://github.com/apache/lucene-site/issues).
