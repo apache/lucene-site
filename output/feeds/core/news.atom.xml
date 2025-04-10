@@ -19,8 +19,10 @@ Implementing the ACORN-1 algorithm for pre-filtered vector searches.&lt;/li&gt;
 &lt;li&gt;Filtered PointRangeQuery: 3.5x faster&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;And the following speedup when computing top-100 hits: 
-    *Pre-filtered vector search: 3.5x faster&lt;/li&gt;
+&lt;li&gt;And the following speedup when computing top-100 hits: &lt;ul&gt;
+&lt;li&gt;Pre-filtered vector search: 3.5x faster&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="changes-in-runtime-behavior"&gt;Changes in Runtime Behavior&lt;/h3&gt;
 &lt;ul&gt;
