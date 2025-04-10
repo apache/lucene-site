@@ -1,5 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Apache Lucene - core/news</title><link href="/" rel="alternate"></link><link href="/feeds/core/news.atom.xml" rel="self"></link><id>/</id><updated>2024-12-20T00:00:00+00:00</updated><subtitle></subtitle><subtitle></subtitle><entry><title>Apache Lucene™ 10.1.0 available</title><link href="/" rel="alternate"></link><published>2024-12-20T00:00:00+00:00</published><updated>2024-12-20T00:00:00+00:00</updated><author><name>Lucene Developers</name></author><id>tag:None,2024-12-20:/</id><summary type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 10.1.0.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Apache Lucene - core/news</title><link href="/" rel="alternate"></link><link href="/feeds/core/news.atom.xml" rel="self"></link><id>/</id><updated>2025-04-10T00:00:00+00:00</updated><subtitle></subtitle><subtitle></subtitle><entry><title>Apache Lucene™ 10.2.0 available</title><link href="/" rel="alternate"></link><published>2025-04-10T00:00:00+00:00</published><updated>2025-04-10T00:00:00+00:00</updated><author><name>Lucene Developers</name></author><id>tag:None,2025-04-10:/</id><summary type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 10.2.0.&lt;/p&gt;
+&lt;p&gt;Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search on high-dimensionality vectors, spell …&lt;/p&gt;</summary><content type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 10.2.0.&lt;/p&gt;
+&lt;p&gt;Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search on high-dimensionality vectors, spell correction or query suggestions.&lt;/p&gt;
+&lt;p&gt;This release contains numerous features, optimizations, and improvements, some of which are highlighted below. The release is available for immediate download at:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://lucene.apache.org/core/downloads.html"&gt;https://lucene.apache.org/core/downloads.html&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="lucene-1020-release-highlights"&gt;Lucene 10.2.0 Release Highlights&lt;/h3&gt;
+&lt;p&gt;Lucene 10.2 includes major search-time performance improvements for a wide variety of queries. This is most notably due to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Improved storage format of doc IDs in BKD trees for faster decoding.
+More vectorization when processing PointRangeQuerys and non-scoring BooleanQuerys.&lt;/li&gt;
+&lt;li&gt;Encoding of dense blocks of postings lists as bit sets instead of FOR-delta. This change also saves a bit of storage.&lt;/li&gt;
+&lt;li&gt;Merging matches of dense conjunctive clauses using bitwise ANDs. This especially helps on postings blocks that are encoded as bit sets.
+Implementing the ACORN-1 algorithm for pre-filtered vector searches.&lt;/li&gt;
+&lt;li&gt;Searches that don't require scores and match many docs should generally see good speedups, depending on how expensive the Collector is. Compared with Lucene 10.1.0, Lucene's nightly benchmarks report the following speedups when counting the number of hits of a the following queries:&lt;ul&gt;
+&lt;li&gt;Disjunctions of term queries: 77% to 4x faster&lt;/li&gt;
+&lt;li&gt;Conjunctions of term queries: 38% to 5x faster&lt;/li&gt;
+&lt;li&gt;Filtered disjunctions of term queries: 2.5x to 4x faster&lt;/li&gt;
+&lt;li&gt;Filtered PointRangeQuery: 3.5x faster&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;And the following speedup when computing top-100 hits: &lt;ul&gt;
+&lt;li&gt;Pre-filtered vector search: 3.5x faster&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="changes-in-runtime-behavior"&gt;Changes in Runtime Behavior&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;TieredMergePolicy's default floor segment size was increased from 2MB to 16MB. This is expected to result in slightly slower indexing and about 10 fewer segments per index for applications that flush frequently. This should in-turn help speed up queries that have a high per-segment overhead such as multi-term queries, point queries and vector search.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="new-features"&gt;New Features&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Added TopDocs#rrf to combine multiple TopDocs instances using reciprocal rank fusion.&lt;/li&gt;
+&lt;li&gt;Added SeededKnnVectorQuery, an optimization to KnnVectorQuery that allows selecting better entry points for vector search using a seed Query.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="improvements"&gt;Improvements&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;RegexpQuery support for unicode case-insensitive characters and ranges.&lt;br&gt;
+Optimizations&lt;/li&gt;
+&lt;li&gt;Java 24 vector API support&lt;/li&gt;
+&lt;li&gt;Efficiency improvements to Automaton and RegExp&lt;/li&gt;
+&lt;li&gt;Faster merging of HNSW graphs which translated in a 25% indexing speedup in Lucene's nightly benchmarks.&lt;/li&gt;
+&lt;li&gt;Conjunctive queries can now skip applying clauses when they have long runs of matching docs, a case which is not uncommon when an index sort is configured.
+Reduce heap usage during BKD tree merges.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;... plus a multitude of helpful bug fixes!&lt;/p&gt;
+&lt;p&gt;Further details of changes are available in the change log available at: &lt;/p&gt;
+&lt;p&gt;&lt;a href="http://lucene.apache.org/core/10_2_0/changes/Changes.html"&gt;http://lucene.apache.org/core/10_2_0/changes/Changes.html&lt;/a&gt; &lt;/p&gt;</content><category term="core/news"></category></entry><entry><title>Apache Lucene™ 10.1.0 available</title><link href="/" rel="alternate"></link><published>2024-12-20T00:00:00+00:00</published><updated>2024-12-20T00:00:00+00:00</updated><author><name>Lucene Developers</name></author><id>tag:None,2024-12-20:/</id><summary type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 10.1.0.&lt;/p&gt;
 &lt;p&gt;Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search across high-dimensionality vectors, spell …&lt;/p&gt;</summary><content type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 10.1.0.&lt;/p&gt;
 &lt;p&gt;Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search across high-dimensionality vectors, spell correction or query suggestions.&lt;/p&gt;
 &lt;p&gt;This release contains numerous bug fixes, optimizations, and improvements, some of which are highlighted below. The release is available for immediate download at:&lt;/p&gt;

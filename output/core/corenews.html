@@ -149,6 +149,56 @@ It is a technology suitable for nearly any application that requires structured 
 </div>
 
   <div>
+    <h2 id="apache-lucenetm-1020-available">
+      10 April 2025 - Apache Lucene™ 10.2.0 available
+      <a class="headerlink" href="#apache-lucenetm-1020-available" title="Permanent link">¶</a>
+    </h2>
+    <p>The Lucene PMC is pleased to announce the release of Apache Lucene 10.2.0.</p>
+<p>Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search on high-dimensionality vectors, spell correction or query suggestions.</p>
+<p>This release contains numerous features, optimizations, and improvements, some of which are highlighted below. The release is available for immediate download at:</p>
+<p><a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a></p>
+<h3 id="lucene-1020-release-highlights">Lucene 10.2.0 Release Highlights</h3>
+<p>Lucene 10.2 includes major search-time performance improvements for a wide variety of queries. This is most notably due to:</p>
+<ul>
+<li>Improved storage format of doc IDs in BKD trees for faster decoding.
+More vectorization when processing PointRangeQuerys and non-scoring BooleanQuerys.</li>
+<li>Encoding of dense blocks of postings lists as bit sets instead of FOR-delta. This change also saves a bit of storage.</li>
+<li>Merging matches of dense conjunctive clauses using bitwise ANDs. This especially helps on postings blocks that are encoded as bit sets.
+Implementing the ACORN-1 algorithm for pre-filtered vector searches.</li>
+<li>Searches that don't require scores and match many docs should generally see good speedups, depending on how expensive the Collector is. Compared with Lucene 10.1.0, Lucene's nightly benchmarks report the following speedups when counting the number of hits of a the following queries:<ul>
+<li>Disjunctions of term queries: 77% to 4x faster</li>
+<li>Conjunctions of term queries: 38% to 5x faster</li>
+<li>Filtered disjunctions of term queries: 2.5x to 4x faster</li>
+<li>Filtered PointRangeQuery: 3.5x faster</li>
+</ul>
+</li>
+<li>And the following speedup when computing top-100 hits: <ul>
+<li>Pre-filtered vector search: 3.5x faster</li>
+</ul>
+</li>
+</ul>
+<h4 id="changes-in-runtime-behavior">Changes in Runtime Behavior</h4>
+<ul>
+<li>TieredMergePolicy's default floor segment size was increased from 2MB to 16MB. This is expected to result in slightly slower indexing and about 10 fewer segments per index for applications that flush frequently. This should in-turn help speed up queries that have a high per-segment overhead such as multi-term queries, point queries and vector search.</li>
+</ul>
+<h4 id="new-features">New Features</h4>
+<ul>
+<li>Added TopDocs#rrf to combine multiple TopDocs instances using reciprocal rank fusion.</li>
+<li>Added SeededKnnVectorQuery, an optimization to KnnVectorQuery that allows selecting better entry points for vector search using a seed Query.</li>
+</ul>
+<h4 id="improvements">Improvements</h4>
+<ul>
+<li>RegexpQuery support for unicode case-insensitive characters and ranges.<br>
+Optimizations</li>
+<li>Java 24 vector API support</li>
+<li>Efficiency improvements to Automaton and RegExp</li>
+<li>Faster merging of HNSW graphs which translated in a 25% indexing speedup in Lucene's nightly benchmarks.</li>
+<li>Conjunctive queries can now skip applying clauses when they have long runs of matching docs, a case which is not uncommon when an index sort is configured.
+Reduce heap usage during BKD tree merges.</li>
+</ul>
+<p>... plus a multitude of helpful bug fixes!</p>
+<p>Further details of changes are available in the change log available at: </p>
+<p><a href="http://lucene.apache.org/core/10_2_0/changes/Changes.html">http://lucene.apache.org/core/10_2_0/changes/Changes.html</a> </p>
     <h2 id="apache-lucenetm-1010-available">
       20 December 2024 - Apache Lucene™ 10.1.0 available
       <a class="headerlink" href="#apache-lucenetm-1010-available" title="Permanent link">¶</a>
@@ -2758,9 +2808,9 @@ with the release for a full list of details.</p>
   <div class="button-green">
     <a href="/core/downloads.html">Download</a>
     <div class="flap top">Click to</div>
-    <div class="flap bottom">Apache Lucene 10.1.0</div>
+    <div class="flap bottom">Apache Lucene 10.2.0</div>
   </div>
-  <div class="download-desc">Apache Lucene 10.1.0</div>
+  <div class="download-desc">Apache Lucene 10.2.0</div>
 </div>
 
 <h1 id="resources">Resources</h1>
@@ -2774,7 +2824,7 @@ with the release for a full list of details.</p>
 
 <h1 id="release-docs">Release Docs</h1>
 <ul>
-  <li><a href="/core/10_1_0/index.html">10.1.0</a></li>
+  <li><a href="/core/10_2_0/index.html">10.2.0</a></li>
 </ul>
 
 <h1 id="about">About</h1>
