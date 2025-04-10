@@ -12,21 +12,15 @@ More vectorization when processing PointRangeQuerys and non-scoring BooleanQuery
 &lt;li&gt;Encoding of dense blocks of postings lists as bit sets instead of FOR-delta. This change also saves a bit of storage.&lt;/li&gt;
 &lt;li&gt;Merging matches of dense conjunctive clauses using bitwise ANDs. This especially helps on postings blocks that are encoded as bit sets.
 Implementing the ACORN-1 algorithm for pre-filtered vector searches.&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Searches that don't require scores and match many docs should generally see good speedups, depending on how expensive the Collector is. Compared with Lucene 10.1.0, Lucene's nightly benchmarks report the following speedups when counting the number of hits of a the following queries:&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Disjunctions of term queries: 77% to 4x faster&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;Searches that don't require scores and match many docs should generally see good speedups, depending on how expensive the Collector is. Compared with Lucene 10.1.0, Lucene's nightly benchmarks report the following speedups when counting the number of hits of a the following queries:&lt;ul&gt;
+&lt;li&gt;Disjunctions of term queries: 77% to 4x faster&lt;/li&gt;
 &lt;li&gt;Conjunctions of term queries: 38% to 5x faster&lt;/li&gt;
 &lt;li&gt;Filtered disjunctions of term queries: 2.5x to 4x faster&lt;/li&gt;
 &lt;li&gt;Filtered PointRangeQuery: 3.5x faster&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;And the following speedup when computing top-100 hits:&lt;/p&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Pre-filtered vector search: 3.5x faster&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;And the following speedup when computing top-100 hits: 
+    *Pre-filtered vector search: 3.5x faster&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="changes-in-runtime-behavior"&gt;Changes in Runtime Behavior&lt;/h3&gt;
 &lt;ul&gt;
