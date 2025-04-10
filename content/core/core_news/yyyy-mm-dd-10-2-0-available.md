@@ -1,0 +1,54 @@
+Title: Apache Lucene™ 10.2.0 available
+category: core/news
+URL:
+save_as:
+
+The Lucene PMC is pleased to announce the release of Apache Lucene 10.2.0.
+
+Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search on high-dimensionality vectors, spell correction or query suggestions.
+
+This release contains numerous features, optimizations, and improvements, some of which are highlighted below. The release is available for immediate download at:
+
+https://lucene.apache.org/core/downloads.html
+
+Lucene 10.2.0 Release Highlights
+Lucene 10.2 includes major search-time performance improvements for a wide variety of queries. This is most notably due to:
+
+Improved storage format of doc IDs in BKD trees for faster decoding.
+More vectorization when processing PointRangeQuerys and non-scoring BooleanQuerys.
+Encoding of dense blocks of postings lists as bit sets instead of FOR-delta. This change also saves a bit of storage.
+Merging matches of dense conjunctive clauses using bitwise ANDs. This especially helps on postings blocks that are encoded as bit sets.
+Implementing the ACORN-1 algorithm for pre-filtered vector searches.
+Searches that don't require scores and match many docs should generally see good speedups, depending on how expensive the Collector is. Compared with Lucene 10.1.0, Lucene's nightly benchmarks report the following speedups when counting the number of hits of a the following queries:
+
+Disjunctions of term queries: 77% to 4x faster
+Conjunctions of term queries: 38% to 5x faster
+Filtered disjunctions of term queries: 2.5x to 4x faster
+Filtered PointRangeQuery: 3.5x faster
+And the following speedup when computing top-100 hits:
+
+Pre-filtered vector search: 3.5x faster
+Changes in Runtime Behavior
+
+TieredMergePolicy's default floor segment size was increased from 2MB to 16MB. This is expected to result in slightly slower indexing and about 10 fewer segments per index for applications that flush frequently. This should in-turn help speed up queries that have a high per-segment overhead such as multi-term queries, point queries and vector search.
+New Features
+
+Added TopDocs#rrf to combine multiple TopDocs instances using reciprocal rank fusion.
+Added SeededKnnVectorQuery, an optimization to KnnVectorQuery that allows selecting better entry points for vector search using a seed Query.
+Improvements
+
+RegexpQuery support for unicode case-insensitive characters and ranges.  
+Optimizations
+
+Java 24 vector API support
+Efficiency improvements to Automaton and RegExp
+Faster merging of HNSW graphs which translated in a 25% indexing speedup in Lucene's nightly benchmarks.
+Conjunctive queries can now skip applying clauses when they have long runs of matching docs, a case which is not uncommon when an index sort is configured.
+Reduce heap usage during BKD tree merges.
+... plus a multitude of helpful bug fixes!
+
+Further details of changes are available in the change log available at: http://lucene.apache.org/core/10_2_0/changes/Changes.html. 
+
+Please report any feedback to the mailing lists (http://lucene.apache.org/core/discussion.html)
+
+Note: The Apache Software Foundation uses an extensive mirroring network for distributing releases. It is possible that the mirror you are using may not have replicated the release yet. If that is the case, please try another mirror. This also applies to Maven access.
