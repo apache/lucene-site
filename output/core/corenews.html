@@ -177,16 +177,16 @@ Implementing the ACORN-1 algorithm for pre-filtered vector searches.</li>
 </ul>
 </li>
 </ul>
-<h3 id="changes-in-runtime-behavior">Changes in Runtime Behavior</h3>
+<h4 id="changes-in-runtime-behavior">Changes in Runtime Behavior</h4>
 <ul>
 <li>TieredMergePolicy's default floor segment size was increased from 2MB to 16MB. This is expected to result in slightly slower indexing and about 10 fewer segments per index for applications that flush frequently. This should in-turn help speed up queries that have a high per-segment overhead such as multi-term queries, point queries and vector search.</li>
 </ul>
-<h3 id="new-features">New Features</h3>
+<h4 id="new-features">New Features</h4>
 <ul>
 <li>Added TopDocs#rrf to combine multiple TopDocs instances using reciprocal rank fusion.</li>
 <li>Added SeededKnnVectorQuery, an optimization to KnnVectorQuery that allows selecting better entry points for vector search using a seed Query.</li>
 </ul>
-<h3 id="improvements">Improvements</h3>
+<h4 id="improvements">Improvements</h4>
 <ul>
 <li>RegexpQuery support for unicode case-insensitive characters and ranges.<br>
 Optimizations</li>
