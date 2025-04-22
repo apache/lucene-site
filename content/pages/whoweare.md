@@ -95,7 +95,7 @@ template: lucene/tlp/page
 - *[Lu Xugang](https://www.amazingkoala.com.cn)* (luxugang@...)
 - *[Vigya Sharma](https://www.linkedin.com/in/vigyasharma)* (vigyasharma@...)
 - *[Chris Hegarty](https://www.linkedin.com/in/chegar999/)* (chegar@...)
-- *[Stefan Vodita](https://www.linkedin.com/in/stefan-vodita-8bbb51153)* (voditas@...)
+- *[Stefan Vodita](https://www.linkedin.com/in/stefan-vodita)* (voditas@...)
 - *Zhang Chao* (zhangchao@...)
 - *[Benjamin Trent](https://github.com/benwtrent)* (benwtrent@...)
 - *[Michael Froh](https:///www.linkedin.com/in/msfroh)* (msfroh@...)
@@ -193,6 +193,7 @@ template: lucene/tlp/page
   - *Feng Guo* (guofeng@...)
   - *[Patrick Zhai](https://www.linkedin.com/in/haoyu-zhai-23b226136)* (patrickz@...)
   - *[Benjamin Trent](https://github.com/benwtrent)* (benwtrent@...)
+  - *[Stefan Vodita](https://www.linkedin.com/in/stefan-vodita)* (voditas@...)
 
 ## Emeritus PMC members:
 
