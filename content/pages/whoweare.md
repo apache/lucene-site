@@ -99,6 +99,7 @@ template: lucene/tlp/page
 - *Zhang Chao* (zhangchao@...)
 - *[Benjamin Trent](https://github.com/benwtrent)* (benwtrent@...)
 - *[Michael Froh](https:///www.linkedin.com/in/msfroh)* (msfroh@...)
+- *[Ankit Jain](https://github.com/jainankitk)* (jainankitk@...)
 
 ## Emeritus
 
