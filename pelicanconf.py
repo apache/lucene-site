@@ -11,8 +11,8 @@ SITEURL = ''
 CURRENTYEAR = date.today().year
 
 LUCENE_LATEST_RELEASE = '10.2.1'
-LUCENE_LATEST_RELEASE_DATE = datetime(2025, 5, 1)
-LUCENE_PREVIOUS_MAJOR_RELEASE = '9.12.1'
+LUCENE_LATEST_RELEASE_DATE = datetime(2025, 6, 20)
+LUCENE_PREVIOUS_MAJOR_RELEASE = '9.12.2'
 
 # This string will be appended to all unversioned css and js resources to prevent caching surprises on edits.
 # The theme's htaccess file also sets a cache-control header with longer lifetime, if the v=XXXX query string is added.
