@@ -100,6 +100,8 @@ template: lucene/tlp/page
 - *[Benjamin Trent](https://github.com/benwtrent)* (benwtrent@...)
 - *[Michael Froh](https:///www.linkedin.com/in/msfroh)* (msfroh@...)
 - *[Ankit Jain](https://github.com/jainankitk)* (jainankitk@...)
+- *[Pan Guixin](https://github.com/bugmakerrrrrr)* (panguixin@...)
+- *[Ge Song](https://github.com/HUSTERGS)* (gesong@...)
 
 ## Emeritus
 
