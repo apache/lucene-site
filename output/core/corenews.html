@@ -149,6 +149,45 @@ It is a technology suitable for nearly any application that requires structured 
 </div>
 
   <div>
+    <h2 id="apache-lucenetm-1030-available">
+      13 September 2025 - Apache Lucene™ 10.3.0 available
+      <a class="headerlink" href="#apache-lucenetm-1030-available" title="Permanent link">¶</a>
+    </h2>
+    <p>The Lucene PMC is pleased to announce the release of Apache Lucene 10.3.0.</p>
+<p>Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search across high-dimensionality vectors, spell correction or query suggestions.</p>
+<p>This release contains numerous bug fixes, optimizations, and improvements, some of which are highlighted below. The release is available for immediate download at:</p>
+<p><a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a></p>
+<h3 id="lucene-1030-release-highlights">Lucene 10.3.0 Release Highlights:</h3>
+<p>Lucene 10.3 brings major performance improvements.</p>
+<p>Lexical search is now vectorized to better take advantage of SIMD instructions, more efficient memory access patterns, CPU pipelining and amortize the cost of virtual function calls. Lucene's nightly benchmarks report a 40% speedup compared with Lucene 10.2 when computing top-100 hits by score on disjunctive and conjunctive queries.</p>
+<p>Vector search now better parallelizes fetching vectors into the CPU cache. Lucene's nightly benchmarks report a 15%-20% speedup compared with Lucene 10.2.</p>
+<p>The terms dictionary performs about 30% faster than in Lucene 10.2 on primary-key lookups according to Lucene's nightly benchmarks. This should help speed up workloads that rely on terms dictionary lookup performance including primary-key lookups, indexing operations that specify an ID and TermInSet queries.</p>
+<p><strong>New Features</strong></p>
+<ul>
+<li>Supports reranking with late interaction model multi-vectors, full precision vector similarity scores, or any provided DoubleValuesSource, enabling improved ranking of search results.</li>
+<li>Adds a MultiIndexMergeScheduler – a multi-tenant wrapper that allows sharing a common merge scheduler across multiple instances.</li>
+</ul>
+<p><strong>API Changes</strong></p>
+<ul>
+<li>Adds API to fetch the size of off-heap memory required by a KNN field. This size can be used to help determine the memory requirements for optimal search performance, which can be greatly affected by page faults when not enough memory is available.</li>
+<li>RandomVectorScorer now supports a bulk scoring interface.</li>
+<li>LeafReader#searchNearestVectors now accepts an AcceptDocs instance instead of a Bits instance to identify document IDs to filter.</li>
+<li>Collectors can now take advantage of pre-aggregated data to speed up faceting using LeafCollector#collectRange.</li>
+</ul>
+<p><strong>Improvements and Optimizations</strong></p>
+<ul>
+<li>Adds optimistic knn search to vector queries. Optimistic knn search addresses a major issue where we return inconsistent results due to race conditions in the shared queue previously used over multi-segment search.</li>
+<li>Faster vector search on HNSW graphs through GroupVarInt encoding.</li>
+<li>Searcher managers now support 'Adaptive Refresh', enabling users to control the commit points it refreshes on. This helps with graceful handling of large replication payloads in segment-replicated systems.</li>
+</ul>
+<p><strong>Runtime Behavior Changes and Bug Fixes</strong></p>
+<ul>
+<li>The default ReadAdvice has been changed from RANDOM to NORMAL. MMapDirectory will no longer set any specific read advice out-of-the-box.</li>
+<li>Default RefCountedSharedArena.DEFAULT_MAX_PERMITS are reduced to 64. Also fixes the infinite loop when RefCountedSharedArena's underlying Arena#close fails due to concurrent usage of segments.</li>
+<li>Uses READONCE when reading segment infos, to fix mmap leaks on segment info files. Includes fixes for multiple other resource leaks.</li>
+</ul>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="https://lucene.apache.org/core/10_3_0/changes/Changes.html">https://lucene.apache.org/core/10_3_0/changes/Changes.html</a></p>
     <h2 id="apache-lucenetm-1022-available">
       20 June 2025 - Apache Lucene™ 10.2.2 available
       <a class="headerlink" href="#apache-lucenetm-1022-available" title="Permanent link">¶</a>
@@ -2860,9 +2899,9 @@ with the release for a full list of details.</p>
   <div class="button-green">
     <a href="/core/downloads.html">Download</a>
     <div class="flap top">Click to</div>
-    <div class="flap bottom">Apache Lucene 10.2.2</div>
+    <div class="flap bottom">Apache Lucene 10.3.0</div>
   </div>
-  <div class="download-desc">Apache Lucene 10.2.2</div>
+  <div class="download-desc">Apache Lucene 10.3.0</div>
 </div>
 
 <h1 id="resources">Resources</h1>
@@ -2876,7 +2915,7 @@ with the release for a full list of details.</p>
 
 <h1 id="release-docs">Release Docs</h1>
 <ul>
-  <li><a href="/core/10_2_2/index.html">10.2.2</a></li>
+  <li><a href="/core/10_3_0/index.html">10.3.0</a></li>
 </ul>
 
 <h1 id="about">About</h1>
