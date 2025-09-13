@@ -9,22 +9,30 @@
 &lt;p&gt;Lexical search is now vectorized to better take advantage of SIMD instructions, more efficient memory access patterns, CPU pipelining and amortize the cost of virtual function calls. Lucene's nightly benchmarks report a 40% speedup compared with Lucene 10.2 when computing top-100 hits by score on disjunctive and conjunctive queries.&lt;/p&gt;
 &lt;p&gt;Vector search now better parallelizes fetching vectors into the CPU cache. Lucene's nightly benchmarks report a 15%-20% speedup compared with Lucene 10.2.&lt;/p&gt;
 &lt;p&gt;The terms dictionary performs about 30% faster than in Lucene 10.2 on primary-key lookups according to Lucene's nightly benchmarks. This should help speed up workloads that rely on terms dictionary lookup performance including primary-key lookups, indexing operations that specify an ID and TermInSet queries.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;New Features&lt;/strong&gt;
- * Supports reranking with late interaction model multi-vectors, full precision vector similarity scores, or any provided DoubleValuesSource, enabling improved ranking of search results.
- * Adds a MultiIndexMergeScheduler – a multi-tenant wrapper that allows sharing a common merge scheduler across multiple instances.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;API Changes&lt;/strong&gt;
- * Adds API to fetch the size of off-heap memory required by a KNN field. This size can be used to help determine the memory requirements for optimal search performance, which can be greatly affected by page faults when not enough memory is available.
- * RandomVectorScorer now supports a bulk scoring interface.
- * &lt;code&gt;LeafReader#searchNearestVectors&lt;/code&gt; now accepts an AcceptDocs instance instead of a Bits instance to identify document IDs to filter.
- * Collectors can now take advantage of pre-aggregated data to speed up faceting using LeafCollector#collectRange.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Improvements and Optimizations&lt;/strong&gt;
- * Adds optimistic knn search to vector queries. Optimistic knn search addresses a major issue where we return inconsistent results due to race conditions in the shared queue previously used over multi-segment search.
- * Faster vector search on HNSW graphs through GroupVarInt encoding.
- * Searcher managers now support 'Adaptive Refresh', enabling users to control the commit points it refreshes on. This helps with graceful handling of large replication payloads in segment-replicated systems.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Runtime Behavior Changes and Bug Fixes&lt;/strong&gt;
- * The default ReadAdvice has been changed from RANDOM to NORMAL. MMapDirectory will no longer set any specific read advice out-of-the-box.
- * Default &lt;code&gt;RefCountedSharedArena.DEFAULT_MAX_PERMITS&lt;/code&gt; are reduced to 64. Also fixes the infinite loop when RefCountedSharedArena's underlying Arena#close fails due to concurrent usage of segments.
- * Uses &lt;code&gt;READONCE&lt;/code&gt; when reading segment infos, to fix mmap leaks on segment info files. Includes fixes for multiple other resource leaks.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;New Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Supports reranking with late interaction model multi-vectors, full precision vector similarity scores, or any provided DoubleValuesSource, enabling improved ranking of search results.&lt;/li&gt;
+&lt;li&gt;Adds a MultiIndexMergeScheduler – a multi-tenant wrapper that allows sharing a common merge scheduler across multiple instances.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;API Changes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Adds API to fetch the size of off-heap memory required by a KNN field. This size can be used to help determine the memory requirements for optimal search performance, which can be greatly affected by page faults when not enough memory is available.&lt;/li&gt;
+&lt;li&gt;RandomVectorScorer now supports a bulk scoring interface.&lt;/li&gt;
+&lt;li&gt;LeafReader#searchNearestVectors now accepts an AcceptDocs instance instead of a Bits instance to identify document IDs to filter.&lt;/li&gt;
+&lt;li&gt;Collectors can now take advantage of pre-aggregated data to speed up faceting using LeafCollector#collectRange.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Improvements and Optimizations&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Adds optimistic knn search to vector queries. Optimistic knn search addresses a major issue where we return inconsistent results due to race conditions in the shared queue previously used over multi-segment search.&lt;/li&gt;
+&lt;li&gt;Faster vector search on HNSW graphs through GroupVarInt encoding.&lt;/li&gt;
+&lt;li&gt;Searcher managers now support 'Adaptive Refresh', enabling users to control the commit points it refreshes on. This helps with graceful handling of large replication payloads in segment-replicated systems.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Runtime Behavior Changes and Bug Fixes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The default ReadAdvice has been changed from RANDOM to NORMAL. MMapDirectory will no longer set any specific read advice out-of-the-box.&lt;/li&gt;
+&lt;li&gt;Default RefCountedSharedArena.DEFAULT_MAX_PERMITS are reduced to 64. Also fixes the infinite loop when RefCountedSharedArena's underlying Arena#close fails due to concurrent usage of segments.&lt;/li&gt;
+&lt;li&gt;Uses READONCE when reading segment infos, to fix mmap leaks on segment info files. Includes fixes for multiple other resource leaks.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;Please read CHANGES.txt for a full list of new features and changes:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://lucene.apache.org/core/10_3_0/changes/Changes.html"&gt;https://lucene.apache.org/core/10_3_0/changes/Changes.html&lt;/a&gt;&lt;/p&gt;</content><category term="core/news"></category></entry><entry><title>Apache Lucene™ 10.2.2 available</title><link href="/" rel="alternate"></link><published>2025-06-20T00:00:00+00:00</published><updated>2025-06-20T00:00:00+00:00</updated><author><name>Lucene Developers</name></author><id>tag:None,2025-06-20:/</id><summary type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 10.2.2.&lt;/p&gt;
 &lt;p&gt;Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search across high-dimensionality vectors, spell …&lt;/p&gt;</summary><content type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 10.2.2.&lt;/p&gt;
