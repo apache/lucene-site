@@ -102,6 +102,7 @@ template: lucene/tlp/page
 - *[Ankit Jain](https://github.com/jainankitk)* (jainankitk@...)
 - *[Pan Guixin](https://github.com/bugmakerrrrrr)* (panguixin@...)
 - *[Ge Song](https://github.com/HUSTERGS)* (gesong@...)
+- *[Ramakrishna Chilaka](https://github.com/RamakrishnaChilaka)* (ramachil@...)
 
 ## Emeritus
 
