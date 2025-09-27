@@ -1,0 +1,26 @@
+Title: Apache Lucene™ 9.12.3 available
+category: core/news
+URL:
+save_as:
+
+The Lucene PMC is pleased to announce the release of Apache Lucene 9.12.3.
+
+Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search across high-dimensionality vectors, spell correction or query suggestions.
+
+This patch release contains bug fixes that are highlighted below. The release is available for immediate download at:
+
+  <https://lucene.apache.org/core/downloads.html>
+
+### Lucene 9.12.3 Release Highlights:
+
+**Bug fixes**
+* Support for JDK24+
+* Reduce sharedArenaMaxPermits from 1024 to 64
+* Use READONCE to read segment infos
+* Fix rare spin-loop in RefCountedSharedArena
+* Ensure vector queries handle advanceShallow correctly
+* Fix failure due to hole bridge being coplanar with polygon edge
+
+Further details of changes are available in the change log available at:
+
+  <https://lucene.apache.org/core/9_12_3/changes/Changes.html>
