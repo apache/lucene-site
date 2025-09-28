@@ -5,13 +5,15 @@
 &lt;p&gt;This patch release contains bug fixes that are highlighted below. The release is available for immediate download at:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://lucene.apache.org/core/downloads.html"&gt;https://lucene.apache.org/core/downloads.html&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id="lucene-9123-release-highlights"&gt;Lucene 9.12.3 Release Highlights:&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Bug fixes&lt;/strong&gt;
- * Support for JDK24+
- * Reduce sharedArenaMaxPermits from 1024 to 64
- * Use READONCE to read segment infos
- * Fix rare spin-loop in RefCountedSharedArena
- * Ensure vector queries handle advanceShallow correctly
- * Fix failure due to hole bridge being coplanar with polygon edge&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Bug fixes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Support for JDK24+&lt;/li&gt;
+&lt;li&gt;Reduce sharedArenaMaxPermits from 1024 to 64&lt;/li&gt;
+&lt;li&gt;Use READONCE to read segment infos&lt;/li&gt;
+&lt;li&gt;Fix rare spin-loop in RefCountedSharedArena&lt;/li&gt;
+&lt;li&gt;Ensure vector queries handle advanceShallow correctly&lt;/li&gt;
+&lt;li&gt;Fix failure due to hole bridge being coplanar with polygon edge&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;Further details of changes are available in the change log available at:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://lucene.apache.org/core/9_12_3/changes/Changes.html"&gt;https://lucene.apache.org/core/9_12_3/changes/Changes.html&lt;/a&gt;&lt;/p&gt;</content><category term="core/news"></category></entry><entry><title>Apache Lucene™ 10.3.0 available</title><link href="/" rel="alternate"></link><published>2025-09-13T00:00:00+00:00</published><updated>2025-09-13T00:00:00+00:00</updated><author><name>Lucene Developers</name></author><id>tag:None,2025-09-13:/</id><summary type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 10.3.0.&lt;/p&gt;
 &lt;p&gt;Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search across high-dimensionality vectors, spell …&lt;/p&gt;</summary><content type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 10.3.0.&lt;/p&gt;

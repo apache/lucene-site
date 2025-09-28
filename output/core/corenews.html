@@ -158,13 +158,15 @@ It is a technology suitable for nearly any application that requires structured 
 <p>This patch release contains bug fixes that are highlighted below. The release is available for immediate download at:</p>
 <p><a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a></p>
 <h3 id="lucene-9123-release-highlights">Lucene 9.12.3 Release Highlights:</h3>
-<p><strong>Bug fixes</strong>
- * Support for JDK24+
- * Reduce sharedArenaMaxPermits from 1024 to 64
- * Use READONCE to read segment infos
- * Fix rare spin-loop in RefCountedSharedArena
- * Ensure vector queries handle advanceShallow correctly
- * Fix failure due to hole bridge being coplanar with polygon edge</p>
+<p><strong>Bug fixes</strong></p>
+<ul>
+<li>Support for JDK24+</li>
+<li>Reduce sharedArenaMaxPermits from 1024 to 64</li>
+<li>Use READONCE to read segment infos</li>
+<li>Fix rare spin-loop in RefCountedSharedArena</li>
+<li>Ensure vector queries handle advanceShallow correctly</li>
+<li>Fix failure due to hole bridge being coplanar with polygon edge</li>
+</ul>
 <p>Further details of changes are available in the change log available at:</p>
 <p><a href="https://lucene.apache.org/core/9_12_3/changes/Changes.html">https://lucene.apache.org/core/9_12_3/changes/Changes.html</a></p>
     <h2 id="apache-lucenetm-1030-available">
