@@ -103,6 +103,7 @@ template: lucene/tlp/page
 - *[Pan Guixin](https://github.com/bugmakerrrrrr)* (panguixin@...)
 - *[Ge Song](https://github.com/HUSTERGS)* (gesong@...)
 - *[Ramakrishna Chilaka](https://github.com/RamakrishnaChilaka)* (ramachil@...)
+- *[Trevor McCulloch](https://github.com/mccullocht)* (mccullocht@...)
 
 ## Emeritus
 
