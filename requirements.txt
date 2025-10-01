@@ -1,6 +1,8 @@
 pelican==4.5.4
 Markdown==3.3.3
 checksumdir>=1.2.0
+markupsafe==2.0.1
+importlib-metadata<5.0
 
 # Pelican plugins
 mdx-include==1.4.1
