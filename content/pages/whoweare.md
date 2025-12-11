@@ -104,6 +104,7 @@ template: lucene/tlp/page
 - *[Ge Song](https://github.com/HUSTERGS)* (gesong@...)
 - *[Ramakrishna Chilaka](https://github.com/RamakrishnaChilaka)* (ramachil@...)
 - *[Trevor McCulloch](https://github.com/mccullocht)* (mccullocht@...)
+- *[Kaival Parikh](https://www.linkedin.com/in/kaivalnp)* (kaivalnp@...)
 
 ## Emeritus
 
