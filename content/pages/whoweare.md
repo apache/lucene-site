@@ -105,6 +105,7 @@ template: lucene/tlp/page
 - *[Ramakrishna Chilaka](https://github.com/RamakrishnaChilaka)* (ramachil@...)
 - *[Trevor McCulloch](https://github.com/mccullocht)* (mccullocht@...)
 - *[Kaival Parikh](https://www.linkedin.com/in/kaivalnp)* (kaivalnp@...)
+- *[Shubham Chaudhary](https://www.linkedin.com/in/shubham-chaudhary13)* (shubhamvishu@...)
 
 ## Emeritus
 
