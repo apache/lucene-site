@@ -26,10 +26,8 @@
 &lt;p&gt;&lt;strong&gt;Runtime Behavior Changes and Bug Fixes&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Fix tessellator failure by preferring the shared vertex that is the leftmost vertex of the hole&lt;/li&gt;
-&lt;li&gt;The &lt;code&gt;reverse&lt;/code&gt; field of SortField is now final. If you have subclassed SortField,
-  you should set &lt;code&gt;reverse&lt;/code&gt; in the super constructor.&lt;/li&gt;
-&lt;li&gt;Align float vectors on disk to 64 bytes, for optimal performance on Arm Neoverse
-  machines&lt;/li&gt;
+&lt;li&gt;The "reverse" field of SortField is now final. If you have subclassed SortField, you should set "reverse" in the super constructor.&lt;/li&gt;
+&lt;li&gt;Align float vectors on disk to 64 bytes, for optimal performance on Arm Neoverse machines&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Please read CHANGES.txt for a full list of new features and changes:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://lucene.apache.org/core/10_4_0/changes/Changes.html"&gt;https://lucene.apache.org/core/10_4_0/changes/Changes.html&lt;/a&gt;&lt;/p&gt;</content><category term="core/news"></category></entry><entry><title>Apache Lucene™ 10.3.2 available</title><link href="/" rel="alternate"></link><published>2025-11-17T00:00:00+00:00</published><updated>2025-11-17T00:00:00+00:00</updated><author><name>Lucene Developers</name></author><id>tag:None,2025-11-17:/</id><summary type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 10.3.2.&lt;/p&gt;
