@@ -168,6 +168,41 @@ It is a technology suitable for nearly any application that requires structured 
 </div>
 
   <div>
+    <h2 id="apache-lucenetm-1040-available">
+      25 February 2026 - Apache Lucene™ 10.4.0 available
+      <a class="headerlink" href="#apache-lucenetm-1040-available" title="Permanent link">¶</a>
+    </h2>
+    <p>The Lucene PMC is pleased to announce the release of Apache Lucene 10.4.0.</p>
+<p>Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search across high-dimensionality vectors, spell correction or query suggestions.</p>
+<p>This release contains numerous bug fixes, optimizations, and improvements, some of which are highlighted below. The release is available for immediate download at:</p>
+<p><a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a></p>
+<h3 id="lucene-1040-release-highlights">Lucene 10.4.0 Release Highlights:</h3>
+<p>Lucene 10.4 brings some significant performance improvements and a brand new knn vectors format.</p>
+<p>Many lucene queries should see a performance improvement of 10-15%, some might even see a 35% improvement! This is due to increasing the block size of the terms postings and better utilization of SIMD optimized code.</p>
+<p>Additionally, there is a new scalar quantized format for dense vectors and knn search. Lucene104ScalarQuantizedVectorsFormat and Lucene104HnswScalarQuantizedVectorsFormat allow custom quantized bits for 1, 2, 4, 7, and 8. The recall has improved significantly and for many vector types, quantizing to 2 bits will achieve even better recall than older formats at the 4 bit level. This improves latency while increasing recall for various vector work loads.</p>
+<p><strong>New Features</strong></p>
+<ul>
+<li>Provides new and improved scalar quantized formats Lucene104ScalarQuantizedVectorsFormat  and Lucene104HnswScalarQuantizedVectorsFormat  for dense vectors. Allowing for quantizing to 1, 2, 4, 7, and 8 bits. For reference, the new 2 bit quantization technique provides better recall and speed than the old 4 bit.</li>
+</ul>
+<p><strong>API Changes</strong></p>
+<ul>
+<li>New bulk operation APIs for dense vectors and numeric doc values</li>
+</ul>
+<p><strong>Improvements and Optimizations</strong></p>
+<ul>
+<li>HNSW graphs can now delay being built for tiny segments and will prevent completely rebuilding the graphs when handling deletes</li>
+<li>Handling of deletes in general got much faster and cheaper, improving storage costs significantly when there are very few deleted docs</li>
+<li>Block size increased for terms postings, significantly improving query latency for many types of queries</li>
+<li>Use a coarser-grained competitive iterator with lower construction costs for numeric sorts against fields with DocValuesSkippers.</li>
+</ul>
+<p><strong>Runtime Behavior Changes and Bug Fixes</strong></p>
+<ul>
+<li>Fix tessellator failure by preferring the shared vertex that is the leftmost vertex of the hole</li>
+<li>The "reverse" field of SortField is now final. If you have subclassed SortField, you should set "reverse" in the super constructor.</li>
+<li>Align float vectors on disk to 64 bytes, for optimal performance on Arm Neoverse machines</li>
+</ul>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="https://lucene.apache.org/core/10_4_0/changes/Changes.html">https://lucene.apache.org/core/10_4_0/changes/Changes.html</a></p>
     <h2 id="apache-lucenetm-1032-available">
       17 November 2025 - Apache Lucene™ 10.3.2 available
       <a class="headerlink" href="#apache-lucenetm-1032-available" title="Permanent link">¶</a>
@@ -2968,9 +3003,9 @@ with the release for a full list of details.</p>
   <div class="button-green">
     <a href="/core/downloads.html">Download</a>
     <div class="flap top">Click to</div>
-    <div class="flap bottom">Apache Lucene 10.3.2</div>
+    <div class="flap bottom">Apache Lucene 10.4.0</div>
   </div>
-  <div class="download-desc">Apache Lucene 10.3.2</div>
+  <div class="download-desc">Apache Lucene 10.4.0</div>
 </div>
 
 <h1 id="resources">Resources</h1>
@@ -2984,7 +3019,7 @@ with the release for a full list of details.</p>
 
 <h1 id="release-docs">Release Docs</h1>
 <ul>
-  <li><a href="/core/10_3_2/index.html">10.3.2</a></li>
+  <li><a href="/core/10_4_0/index.html">10.4.0</a></li>
 </ul>
 
 <h1 id="about">About</h1>
