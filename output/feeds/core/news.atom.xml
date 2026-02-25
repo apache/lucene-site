@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Apache Lucene - core/news</title><link href="/" rel="alternate"></link><link href="/feeds/core/news.atom.xml" rel="self"></link><id>/</id><updated>2025-11-17T00:00:00+00:00</updated><subtitle></subtitle><subtitle></subtitle><entry><title>Apache Lucene™ 10.3.2 available</title><link href="/" rel="alternate"></link><published>2025-11-17T00:00:00+00:00</published><updated>2025-11-17T00:00:00+00:00</updated><author><name>Lucene Developers</name></author><id>tag:None,2025-11-17:/</id><summary type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 10.3.2.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Apache Lucene - core/news</title><link href="/" rel="alternate"></link><link href="/feeds/core/news.atom.xml" rel="self"></link><id>/</id><updated>2026-02-25T00:00:00+00:00</updated><subtitle></subtitle><subtitle></subtitle><entry><title>Apache Lucene™ 10.4.0 available</title><link href="/" rel="alternate"></link><published>2026-02-25T00:00:00+00:00</published><updated>2026-02-25T00:00:00+00:00</updated><author><name>Lucene Developers</name></author><id>tag:None,2026-02-25:/</id><summary type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 10.4.0.&lt;/p&gt;
+&lt;p&gt;Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search across high-dimensionality vectors, spell …&lt;/p&gt;</summary><content type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 10.4.0.&lt;/p&gt;
+&lt;p&gt;Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search across high-dimensionality vectors, spell correction or query suggestions.&lt;/p&gt;
+&lt;p&gt;This release contains numerous bug fixes, optimizations, and improvements, some of which are highlighted below. The release is available for immediate download at:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://lucene.apache.org/core/downloads.html"&gt;https://lucene.apache.org/core/downloads.html&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="lucene-1040-release-highlights"&gt;Lucene 10.4.0 Release Highlights:&lt;/h3&gt;
+&lt;p&gt;Lucene 10.4 brings some significant performance improvements and a brand new knn vectors format.&lt;/p&gt;
+&lt;p&gt;Many lucene queries should see a performance improvement of 10-15%, some might even see a 35% improvement! This is due to increasing the block size of the terms postings and better utilization of SIMD optimized code.&lt;/p&gt;
+&lt;p&gt;Additionally, there is a new scalar quantized format for dense vectors and knn search. Lucene104ScalarQuantizedVectorsFormat and Lucene104HnswScalarQuantizedVectorsFormat allow custom quantized bits for 1, 2, 4, 7, and 8. The recall has improved significantly and for many vector types, quantizing to 2 bits will achieve even better recall than older formats at the 4 bit level. This improves latency while increasing recall for various vector work loads.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;New Features&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Provides new and improved scalar quantized formats Lucene104ScalarQuantizedVectorsFormat  and Lucene104HnswScalarQuantizedVectorsFormat  for dense vectors. Allowing for quantizing to 1, 2, 4, 7, and 8 bits. For reference, the new 2 bit quantization technique provides better recall and speed than the old 4 bit.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;API Changes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;New bulk operation APIs for dense vectors and numeric doc values&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Improvements and Optimizations&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HNSW graphs can now delay being built for tiny segments and will prevent completely rebuilding the graphs when handling deletes&lt;/li&gt;
+&lt;li&gt;Handling of deletes in general got much faster and cheaper, improving storage costs significantly when there are very few deleted docs&lt;/li&gt;
+&lt;li&gt;Block size increased for terms postings, significantly improving query latency for many types of queries&lt;/li&gt;
+&lt;li&gt;Use a coarser-grained competitive iterator with lower construction costs for numeric sorts against fields with DocValuesSkippers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Runtime Behavior Changes and Bug Fixes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix tessellator failure by preferring the shared vertex that is the leftmost vertex of the hole&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;reverse&lt;/code&gt; field of SortField is now final. If you have subclassed SortField,
+  you should set &lt;code&gt;reverse&lt;/code&gt; in the super constructor.&lt;/li&gt;
+&lt;li&gt;Align float vectors on disk to 64 bytes, for optimal performance on Arm Neoverse
+  machines&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please read CHANGES.txt for a full list of new features and changes:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://lucene.apache.org/core/10_4_0/changes/Changes.html"&gt;https://lucene.apache.org/core/10_4_0/changes/Changes.html&lt;/a&gt;&lt;/p&gt;</content><category term="core/news"></category></entry><entry><title>Apache Lucene™ 10.3.2 available</title><link href="/" rel="alternate"></link><published>2025-11-17T00:00:00+00:00</published><updated>2025-11-17T00:00:00+00:00</updated><author><name>Lucene Developers</name></author><id>tag:None,2025-11-17:/</id><summary type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 10.3.2.&lt;/p&gt;
 &lt;p&gt;Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search across high-dimensionality vectors, spell …&lt;/p&gt;</summary><content type="html">&lt;p&gt;The Lucene PMC is pleased to announce the release of Apache Lucene 10.3.2.&lt;/p&gt;
 &lt;p&gt;Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search across high-dimensionality vectors, spell correction or query suggestions.&lt;/p&gt;
 &lt;p&gt;This release contains numerous bug fixes, optimizations, and improvements, some of which are highlighted below. The release is available for immediate download at:&lt;/p&gt;
