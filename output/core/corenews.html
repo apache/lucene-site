@@ -17,16 +17,16 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<link href="/theme/css/lucene/global.css?v=668d0966" rel="stylesheet" type="text/css">
+<link href="/theme/css/lucene/global.css?v=9c599056" rel="stylesheet" type="text/css">
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta name="Distribution" content="Global"/>
 <meta name="Robots" content="index,follow"/>
 
-<script type="text/javascript" src="/theme/javascript/lucene/prototype.js?v=668d0966"></script>
-<script type="text/javascript" src="/theme/javascript/lucene/effects.js?v=668d0966"></script>
-<script type="text/javascript" src="/theme/javascript/lucene/slides.js?v=668d0966"></script>
+<script type="text/javascript" src="/theme/javascript/lucene/prototype.js?v=9c599056"></script>
+<script type="text/javascript" src="/theme/javascript/lucene/effects.js?v=9c599056"></script>
+<script type="text/javascript" src="/theme/javascript/lucene/slides.js?v=9c599056"></script>
 <script src="https://www.apachecon.com/event-images/snippet.js"></script>
 <!-- Matomo -->
 <script>
@@ -54,17 +54,17 @@ s=d.getElementsByTagName('script')[0];
     <meta property="og:url" content="https://lucene.apache.org/core/corenews.html"/>
     <meta property="og:title" content="Lucene™ Core News"/>
     <meta property="og:description" content="Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for..."/>
-    <meta property="og:image" content="https://lucene.apache.org/theme/images/lucene/lucene_og_image.png?v=668d0966"/>
-    <meta property="og:image:secure_url" content="https://lucene.apache.org/theme/images/lucene/lucene_og_image.png?v=668d0966"/>
+    <meta property="og:image" content="https://lucene.apache.org/theme/images/lucene/lucene_og_image.png?v=9c599056"/>
+    <meta property="og:image:secure_url" content="https://lucene.apache.org/theme/images/lucene/lucene_og_image.png?v=9c599056"/>
 <link rel="shortcut icon" type="image/png"
-                                                 href="/theme/images/lucene/lucene-favicon.png?v=668d0966"/><link href="/theme/css/lucene/core.css?v=668d0966" rel="stylesheet" type="text/css">
+                                                 href="/theme/images/lucene/lucene-favicon.png?v=9c599056"/><link href="/theme/css/lucene/core.css?v=9c599056" rel="stylesheet" type="text/css">
   </head>
   <body id="home">
     <div id="wrap">
       <div id="header">
         <div id="logo" style="float:left">
           <a href="/">
-            <img border="0" src="/theme/images/lucene/lucene_logo_green_300.png?v=668d0966" alt="Lucene Logo"/>
+            <img border="0" src="/theme/images/lucene/lucene_logo_green_300.png?v=9c599056" alt="Lucene Logo"/>
           </a>
         </div>
 <!-- TODO: Search disabled as it does not work, 2021-02-21
@@ -100,7 +100,7 @@ s=d.getElementsByTagName('script')[0];
     </div>
   </div>
   <div class="mantle">
-    <img alt="Apache Lucene" src="/theme/images/lucene/core/mantle-lucene.png?v=668d0966"/>
+    <img alt="Apache Lucene" src="/theme/images/lucene/core/mantle-lucene.png?v=9c599056"/>
   </div>
 </div>
 <div id="slide2" style="display:none">
@@ -113,7 +113,7 @@ s=d.getElementsByTagName('script')[0];
     </div>
   </div>
   <div class="mantle">
-    <img alt="Lucene Power" src="/theme/images/lucene/mantle-power.png?v=668d0966"/>
+    <img alt="Lucene Power" src="/theme/images/lucene/mantle-power.png?v=9c599056"/>
   </div>
 </div>
 <div id="slide3" style="display:none">
@@ -126,7 +126,7 @@ s=d.getElementsByTagName('script')[0];
     </div>
   </div>
   <div class="mantle">
-    <img alt="Apache Lucene" src="/theme/images/lucene/core/mantle-innovation.png?v=668d0966"/>
+    <img alt="Apache Lucene" src="/theme/images/lucene/core/mantle-innovation.png?v=9c599056"/>
   </div>
 </div>
 <div id="slide4" style="display:none">
@@ -139,7 +139,7 @@ s=d.getElementsByTagName('script')[0];
     </div>
   </div>
   <div class="mantle">
-    <img alt="Apache Software Foundation" src="/theme/images/lucene/mantle-asf.png?v=668d0966"/>
+    <img alt="Apache Software Foundation" src="/theme/images/lucene/mantle-asf.png?v=9c599056"/>
   </div>
 </div>  </div>
   <div class="controls">
@@ -168,6 +168,24 @@ It is a technology suitable for nearly any application that requires structured 
 </div>
 
   <div>
+    <h2 id="apache-lucenetm-1052-available">
+      4 October 2026 - Apache Lucene™ 10.5.2 available
+      <a class="headerlink" href="#apache-lucenetm-1052-available" title="Permanent link">¶</a>
+    </h2>
+    <p>The Lucene PMC is pleased to announce the release of Apache Lucene 10.5.2.</p>
+<p>Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search across high-dimensionality vectors, spell correction or query suggestions.</p>
+<p>Apache Lucene 10.5.2 is a bug-fix release addressing HNSW vector search recall, Hunspell analyzer performance, and a bug in SortedNumericDocValuesRangeQuery that could yield incorrect results. Users on 10.5.1  — especially those using the aforementioned features — are encouraged to upgrade.</p>
+<p>The release is available for immediate download at:</p>
+<p><a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a></p>
+<p>Bug fixes</p>
+<ul>
+<li>Fixed HNSW graph reconstruction that can yield worse recall (for workloads with persistent low rate of deletes) after a performance fix that was included in the 10.5.1 release. </li>
+<li>Enabled Hunspell analyzer's pre-built cache activity to be interrupted</li>
+<li>Fixed condition that enabled analysis errors (eg from WordDelimiterFilter) to propagate and result in more serious stored field indexing failures.</li>
+<li>Removed the NumericFieldStats API (added in 10.5.0) and revert SortedNumericDocValuesRangeQuery to no longer use it.</li>
+</ul>
+<p>Please read CHANGES.txt for a full list of changes:</p>
+<p><a href="https://lucene.apache.org/core/10_5_2/changes/Changes.html">https://lucene.apache.org/core/10_5_2/changes/Changes.html</a></p>
     <h2 id="apache-lucenetm-1051-available">
       12 August 2026 - Apache Lucene™ 10.5.1 available
       <a class="headerlink" href="#apache-lucenetm-1051-available" title="Permanent link">¶</a>
@@ -3045,9 +3063,9 @@ with the release for a full list of details.</p>
   <div class="button-green">
     <a href="/core/downloads.html">Download</a>
     <div class="flap top">Click to</div>
-    <div class="flap bottom">Apache Lucene 10.5.1</div>
+    <div class="flap bottom">Apache Lucene 10.5.2</div>
   </div>
-  <div class="download-desc">Apache Lucene 10.5.1</div>
+  <div class="download-desc">Apache Lucene 10.5.2</div>
 </div>
 
 <h1 id="resources">Resources</h1>
@@ -3061,7 +3079,7 @@ with the release for a full list of details.</p>
 
 <h1 id="release-docs">Release Docs</h1>
 <ul>
-  <li><a href="/core/10_5_1/index.html">10.5.1</a></li>
+  <li><a href="/core/10_5_2/index.html">10.5.2</a></li>
 </ul>
 
 <h1 id="about">About</h1>
