@@ -17,16 +17,16 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<link href="/theme/css/lucene/global.css?v=9c599056" rel="stylesheet" type="text/css">
+<link href="/theme/css/lucene/global.css?v=36aba83d" rel="stylesheet" type="text/css">
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta name="Distribution" content="Global"/>
 <meta name="Robots" content="index,follow"/>
 
-<script type="text/javascript" src="/theme/javascript/lucene/prototype.js?v=9c599056"></script>
-<script type="text/javascript" src="/theme/javascript/lucene/effects.js?v=9c599056"></script>
-<script type="text/javascript" src="/theme/javascript/lucene/slides.js?v=9c599056"></script>
+<script type="text/javascript" src="/theme/javascript/lucene/prototype.js?v=36aba83d"></script>
+<script type="text/javascript" src="/theme/javascript/lucene/effects.js?v=36aba83d"></script>
+<script type="text/javascript" src="/theme/javascript/lucene/slides.js?v=36aba83d"></script>
 <script src="https://www.apachecon.com/event-images/snippet.js"></script>
 <!-- Matomo -->
 <script>
@@ -54,17 +54,17 @@ s=d.getElementsByTagName('script')[0];
     <meta property="og:url" content="https://lucene.apache.org/core/corenews.html"/>
     <meta property="og:title" content="Lucene™ Core News"/>
     <meta property="og:description" content="Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for..."/>
-    <meta property="og:image" content="https://lucene.apache.org/theme/images/lucene/lucene_og_image.png?v=9c599056"/>
-    <meta property="og:image:secure_url" content="https://lucene.apache.org/theme/images/lucene/lucene_og_image.png?v=9c599056"/>
+    <meta property="og:image" content="https://lucene.apache.org/theme/images/lucene/lucene_og_image.png?v=36aba83d"/>
+    <meta property="og:image:secure_url" content="https://lucene.apache.org/theme/images/lucene/lucene_og_image.png?v=36aba83d"/>
 <link rel="shortcut icon" type="image/png"
-                                                 href="/theme/images/lucene/lucene-favicon.png?v=9c599056"/><link href="/theme/css/lucene/core.css?v=9c599056" rel="stylesheet" type="text/css">
+                                                 href="/theme/images/lucene/lucene-favicon.png?v=36aba83d"/><link href="/theme/css/lucene/core.css?v=36aba83d" rel="stylesheet" type="text/css">
   </head>
   <body id="home">
     <div id="wrap">
       <div id="header">
         <div id="logo" style="float:left">
           <a href="/">
-            <img border="0" src="/theme/images/lucene/lucene_logo_green_300.png?v=9c599056" alt="Lucene Logo"/>
+            <img border="0" src="/theme/images/lucene/lucene_logo_green_300.png?v=36aba83d" alt="Lucene Logo"/>
           </a>
         </div>
 <!-- TODO: Search disabled as it does not work, 2021-02-21
@@ -100,7 +100,7 @@ s=d.getElementsByTagName('script')[0];
     </div>
   </div>
   <div class="mantle">
-    <img alt="Apache Lucene" src="/theme/images/lucene/core/mantle-lucene.png?v=9c599056"/>
+    <img alt="Apache Lucene" src="/theme/images/lucene/core/mantle-lucene.png?v=36aba83d"/>
   </div>
 </div>
 <div id="slide2" style="display:none">
@@ -113,7 +113,7 @@ s=d.getElementsByTagName('script')[0];
     </div>
   </div>
   <div class="mantle">
-    <img alt="Lucene Power" src="/theme/images/lucene/mantle-power.png?v=9c599056"/>
+    <img alt="Lucene Power" src="/theme/images/lucene/mantle-power.png?v=36aba83d"/>
   </div>
 </div>
 <div id="slide3" style="display:none">
@@ -126,7 +126,7 @@ s=d.getElementsByTagName('script')[0];
     </div>
   </div>
   <div class="mantle">
-    <img alt="Apache Lucene" src="/theme/images/lucene/core/mantle-innovation.png?v=9c599056"/>
+    <img alt="Apache Lucene" src="/theme/images/lucene/core/mantle-innovation.png?v=36aba83d"/>
   </div>
 </div>
 <div id="slide4" style="display:none">
@@ -139,7 +139,7 @@ s=d.getElementsByTagName('script')[0];
     </div>
   </div>
   <div class="mantle">
-    <img alt="Apache Software Foundation" src="/theme/images/lucene/mantle-asf.png?v=9c599056"/>
+    <img alt="Apache Software Foundation" src="/theme/images/lucene/mantle-asf.png?v=36aba83d"/>
   </div>
 </div>  </div>
   <div class="controls">
@@ -168,6 +168,62 @@ It is a technology suitable for nearly any application that requires structured 
 </div>
 
   <div>
+    <h2 id="apache-lucenetm-1060-available">
+      29 October 2026 - Apache Lucene™ 10.6.0 available
+      <a class="headerlink" href="#apache-lucenetm-1060-available" title="Permanent link">¶</a>
+    </h2>
+    <p>The Lucene PMC is pleased to announce the release of Apache Lucene 10.6.0.</p>
+<p>Apache Lucene is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search across high-dimensionality vectors, spell correction or query suggestions.</p>
+<p>This release contains numerous bug fixes, optimizations, and improvements, some of which are highlighted below. The release is available for immediate download at:</p>
+<p><a href="https://lucene.apache.org/core/downloads.html">https://lucene.apache.org/core/downloads.html</a></p>
+<h3 id="lucene-1060-release-highlights">Lucene 10.6.0 Release Highlights:</h3>
+<p><strong>Highlights</strong></p>
+<ul>
+<li><strong>Doc-values updates:</strong><ul>
+<li>Incremental updates are written as sparse delta overlays instead of rewriting the whole column. This is on by default, and <code>IndexWriterConfig#setMaxDocValuesOverlays(0)</code> disables it.</li>
+<li><code>SORTED_NUMERIC</code> fields can now also be updated in place (with a single value).</li>
+</ul>
+</li>
+<li><strong>Vector search:</strong><ul>
+<li>New sandboxed de-duplicating HNSW formats that store each distinct vector once.</li>
+<li>Faster HNSW merge-reuse, with graph repair running in parallel.</li>
+<li>Merges can be aborted promptly (<code>IndexWriter#rollback</code> no longer blocks on a full graph build).</li>
+<li>Vectorized uint4 unpacking for scalar quantization.</li>
+</ul>
+</li>
+<li><strong>Merge I/O:</strong> merges open their own file mappings and advise sequential reads. This leaves the access advice that searches use unchanged.</li>
+<li><strong>Query performance:</strong><ul>
+<li>Faster bulk scoring, including <code>MUST_NOT</code> handling and <code>MaxScoreBulkScorer</code> filtering.</li>
+<li>Faster doc-values range queries (SIMD, GCD-aware).</li>
+<li>Faster string sorting.</li>
+<li>Bulk live-docs masking.</li>
+</ul>
+</li>
+</ul>
+<p><strong>New features</strong></p>
+<ul>
+<li><code>StableTflSimilarity</code> estimates term rarity from term length and document length instead of corpus statistics.</li>
+<li><code>CaseFoldingFilter</code> does Unicode simple case folding without the ICU module.</li>
+<li>Thai analysis additions: user dictionary and char, normalization and repeat filters.</li>
+<li><code>BinaryDocValues#binaryValues</code> for bulk retrieval.</li>
+</ul>
+<p><strong>Notable fixes</strong></p>
+<ul>
+<li><code>TopFieldCollector</code> returned wrong results when a <code>MultiReader</code> combined indexes with different index sorts.</li>
+<li><code>DocValuesRangeIterator.docIDRunEnd()</code> returned wrong run boundaries, so range and ordinal-set queries could skip or mis-score documents.</li>
+<li><code>BitSetIterator#docIDRunEnd()</code> had quadratic cost over long runs of set bits, which has slowed <code>DenseConjunctionBulkScorer</code> since 10.5.0.</li>
+<li>Byte-vector dot products and square distances stayed several times slower for the life of the JVM once both signed and unsigned variants had been used.</li>
+<li>The HNSW merge base graph was chosen by comparing the wrong counts. It now compares live vector counts.</li>
+<li>A join-score float accumulation bug caused intermittent failures.</li>
+<li><code>IBSimilarity</code> with <code>DistributionSPL</code> could produce negative scores.</li>
+</ul>
+<p><strong>API changes</strong></p>
+<ul>
+<li><code>ReaderUtil.partitionByLeaf</code> is redesigned. It now takes an <code>int[]</code> of doc IDs and returns a <code>PartitionedHits</code> record.</li>
+<li>Added <code>KnnVectorsReader.getVectorCount</code>.</li>
+</ul>
+<p>Please read CHANGES.txt for a full list of new features and changes:</p>
+<p><a href="https://lucene.apache.org/core/10_6_0/changes/Changes.html">https://lucene.apache.org/core/10_6_0/changes/Changes.html</a></p>
     <h2 id="apache-lucenetm-1052-available">
       4 October 2026 - Apache Lucene™ 10.5.2 available
       <a class="headerlink" href="#apache-lucenetm-1052-available" title="Permanent link">¶</a>
@@ -3063,9 +3119,9 @@ with the release for a full list of details.</p>
   <div class="button-green">
     <a href="/core/downloads.html">Download</a>
     <div class="flap top">Click to</div>
-    <div class="flap bottom">Apache Lucene 10.5.2</div>
+    <div class="flap bottom">Apache Lucene 10.6.0</div>
   </div>
-  <div class="download-desc">Apache Lucene 10.5.2</div>
+  <div class="download-desc">Apache Lucene 10.6.0</div>
 </div>
 
 <h1 id="resources">Resources</h1>
@@ -3079,7 +3135,7 @@ with the release for a full list of details.</p>
 
 <h1 id="release-docs">Release Docs</h1>
 <ul>
-  <li><a href="/core/10_5_2/index.html">10.5.2</a></li>
+  <li><a href="/core/10_6_0/index.html">10.6.0</a></li>
 </ul>
 
 <h1 id="about">About</h1>
