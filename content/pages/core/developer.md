@@ -7,9 +7,18 @@ template: lucene/core/page
 ## Source Code
 The source files are stored using GIT (see https://git-scm.com/documentation)
 
-- Latest **main**:
-`git clone https://github.com/apache/lucene.git` or `git clone https://gitbox.apache.org/repos/asf/lucene.git`
-  
+Latest **main**:
+
+```
+git clone https://github.com/apache/lucene.git
+```
+
+or
+
+```
+git clone https://gitbox.apache.org/repos/asf/lucene.git
+```
+
 ## Making a Contribution
 Lucene Java is always looking for contributions. See the [Wiki][1] for details on contributing.
 

@@ -147,7 +147,9 @@ invoke the correct compiler. Sun Studio's C compiler is called _cc_ while its C+
 compiler is called _CC_. To build JCC, use the following shell command to ensure
 that the C++ compiler is used:
 
-`$ CC=CC python setup.py build`
+```
+$ CC=CC python setup.py build
+```
 
 Shared mode is not currently implemented for Solaris, _setuptools_ needs to be
 taught how to build plain shared libraries on Solaris first.
